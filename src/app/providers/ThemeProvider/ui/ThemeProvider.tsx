@@ -1,9 +1,10 @@
-import React, { FC, useMemo, useState } from "react";
+import { FC, useMemo, useState } from "react";
+
 import {
   LOCAL_STORAGE_UI_THEME_KEY,
   Theme,
   ThemeContext,
-} from "./ThemeContext";
+} from "../lib/ThemeContext";
 
 type Props = {
   children: React.ReactNode;

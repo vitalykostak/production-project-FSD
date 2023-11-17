@@ -5,6 +5,12 @@ import { BuildOptions } from "./types/config";
 export default (options: BuildOptions): RuleSetRule[] => {
   const { isDev } = options;
 
+  const typescriptLoader = {
+    test: /\.tsx?$/,
+    use: "ts-loader",
+    exclude: /node_modules/,
+  };
+
   const sassLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -25,11 +31,23 @@ export default (options: BuildOptions): RuleSetRule[] => {
     ],
   };
 
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: "ts-loader",
-    exclude: /node_modules/,
+  const svgrLoader = {
+    test: /\.svg$/,
+    use: [
+      {
+        loader: "@svgr/webpack",
+      },
+    ],
   };
 
-  return [typescriptLoader, sassLoader];
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
+    ],
+  };
+
+  return [typescriptLoader, sassLoader, svgrLoader, fileLoader];
 };

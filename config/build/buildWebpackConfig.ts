@@ -7,7 +7,7 @@ import { BuildOptions } from "./types/config";
 import buildDevServer from "./buildDevServer";
 
 export default (options: BuildOptions): Configuration => {
-  const { isDev, mode, paths } = options;
+  const { isDev } = options;
 
   return {
     mode: options.mode,
@@ -21,7 +21,7 @@ export default (options: BuildOptions): Configuration => {
     module: {
       rules: buildLoaders(options),
     },
-    resolve: buildResolvers(),
+    resolve: buildResolvers(options),
     devtool: isDev ? "inline-source-map" : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
   };
