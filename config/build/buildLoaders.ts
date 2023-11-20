@@ -6,7 +6,7 @@ export default (options: BuildOptions): RuleSetRule[] => {
   const { isDev } = options;
 
   const babelLoader = {
-    test: /\.m?js$/,
+    test: /\.m?(js|jsx|tsx)$/,
     exclude: /node_modules/,
     use: {
       loader: "babel-loader",
