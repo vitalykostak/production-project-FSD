@@ -1,23 +1,25 @@
-import { FC, useState } from "react";
-import sidebarStyles from "./Sidebar.module.scss";
-import { classNames } from "shared/lib/classNames";
-import { ThemeSwitcher, LanguageSwitcher } from "shared/ui";
+import { type FC, useState } from 'react'
+import sidebarStyles from './Sidebar.module.scss'
+import { classNames } from 'shared/lib/classNames'
+import { ThemeSwitcher, LanguageSwitcher } from 'shared/ui'
 
 interface SidebarProps {
-  className?: string;
+  className?: string
 }
 
 const Sidebar: FC<SidebarProps> = ({ className }) => {
-  const [collapsed, setCollapsed] = useState<boolean>();
+  const [collapsed, setCollapsed] = useState<boolean>(false)
 
-  const toggleSidebar = () => setCollapsed((prev) => !prev);
+  const toggleSidebar = () => {
+    setCollapsed((prev) => !prev)
+  }
 
   return (
     <div
       className={classNames(
         sidebarStyles.Sidebar,
         { [sidebarStyles.collapsed]: collapsed },
-        [className],
+        [className]
       )}
     >
       <button onClick={toggleSidebar}>toggle</button>
@@ -28,7 +30,7 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

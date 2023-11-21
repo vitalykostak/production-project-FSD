@@ -1,19 +1,23 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import { ProgressPlugin, WebpackPluginInstance, DefinePlugin } from "webpack";
-import { BuildOptions } from "./types/config";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import {
+  ProgressPlugin,
+  type WebpackPluginInstance,
+  DefinePlugin
+} from 'webpack'
+import { type BuildOptions } from './types/config'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 export default (options: BuildOptions): WebpackPluginInstance[] => {
-  const { paths, isDev } = options;
+  const { paths, isDev } = options
 
   return [
     new HtmlWebpackPlugin({
-      template: paths.html,
+      template: paths.html
     }),
     new ProgressPlugin(),
-    new MiniCssExtractPlugin({ filename: "[name].[contenthash:8].css" }),
+    new MiniCssExtractPlugin({ filename: '[name].[contenthash:8].css' }),
     new DefinePlugin({
-      __IS_DEV__: isDev,
-    }),
-  ];
-};
+      IS_DEV: isDev
+    })
+  ]
+}
