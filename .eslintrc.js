@@ -19,7 +19,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react"],
+  plugins: ["react", "i18next"],
   rules: {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -28,5 +28,10 @@ module.exports = {
     "@typescript-eslint/return-await": "off",
     "@typescript-eslint/no-misused-promises": "off",
     "@typescript-eslint/no-floating-promises": "warn",
+    "i18next/no-literal-string": ["error", { markupOnly: true }],
+    "@typescript-eslint/no-confusing-void-expression": [
+      "error",
+      { ignoreArrowShorthand: true, ignoreVoidOperator: true },
+    ],
   },
 };

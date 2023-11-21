@@ -1,3 +1,5 @@
 {
-  "language": "Language"
+  "language": "Language",
+  "toggle": "Toggle",
+  "loading": "Loading"
 }
