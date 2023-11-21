@@ -3,9 +3,9 @@ import { useTheme } from './providers/ThemeProvider'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
 import { AppRouter } from './providers/router'
-import { Suspense } from 'react'
+import { Suspense, type FC } from 'react'
 
-const App = () => {
+const App: FC = () => {
   const { theme } = useTheme()
 
   return (
