@@ -1,6 +1,6 @@
 import { type FC, useState } from 'react'
 import sidebarStyles from './Sidebar.module.scss'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from 'shared/lib/classNames/classNames'
 import { ThemeSwitcher, LanguageSwitcher } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
 

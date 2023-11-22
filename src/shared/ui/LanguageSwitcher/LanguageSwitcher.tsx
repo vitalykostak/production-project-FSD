@@ -1,5 +1,5 @@
 import { type FC } from 'react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from 'shared/lib/classNames/classNames'
 import { Button, ThemeButton } from 'shared/ui/'
 import languageSwitcherStyle from './LanguageSwitcher.module.scss'
 import { useTranslation } from 'react-i18next'

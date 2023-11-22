@@ -1,7 +1,7 @@
 import { type FC } from 'react'
 import { routePaths } from 'shared/config/routeConfig/routeConfig'
 import navbarStyles from './Navbar.module.scss'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from 'shared/lib/classNames/classNames'
 import { AppLink, AppLinkTheme } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
 
