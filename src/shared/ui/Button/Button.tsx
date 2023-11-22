@@ -19,8 +19,6 @@ const Button: FC<ButtonProps> = (props) => {
     ...otherButtonProps
   } = props
 
-  console.log({ theme })
-
   return (
     <button
       {...otherButtonProps}
