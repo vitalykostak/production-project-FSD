@@ -17,13 +17,16 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
 
   return (
     <div
+      data-testid={'sidebar'}
       className={classNames(
         sidebarStyles.Sidebar,
         { [sidebarStyles.collapsed]: collapsed },
         [className]
       )}
     >
-      <button onClick={toggleSidebar}>{t('toggle')}</button>
+      <button onClick={toggleSidebar} data-testid="toggle-button">
+        {t('toggle')}
+      </button>
       <div className={sidebarStyles.switchers}>
         <ThemeSwitcher />
         <LanguageSwitcher

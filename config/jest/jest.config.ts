@@ -31,7 +31,11 @@ const config: Config = {
     'node'
   ],
   // An array of directory names to be searched recursively up from the requiring module's location
-  moduleDirectories: ['node_modules']
+  moduleDirectories: ['node_modules'],
+  setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.js'],
+  moduleNameMapper: {
+    '\\.(s?css|svg)$': 'identity-obj-proxy'
+  }
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 

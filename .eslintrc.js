@@ -29,10 +29,21 @@ module.exports = {
     "@typescript-eslint/return-await": "off",
     "@typescript-eslint/no-misused-promises": "off",
     "@typescript-eslint/no-floating-promises": "warn",
-    "i18next/no-literal-string": ["error", { markupOnly: true }],
+    "i18next/no-literal-string": [
+      "error",
+      { markupOnly: true, "jsx-attributes": { exclude: ["data-testid"] } },
+    ],
     "@typescript-eslint/no-confusing-void-expression": [
       "error",
       { ignoreArrowShorthand: true, ignoreVoidOperator: true },
     ],
   },
+  overrides: [
+    {
+      files: ["*.test.tsx", "*.test.ts"],
+      rules: {
+        "i18next/no-literal-string": "off",
+      },
+    },
+  ],
 };
