@@ -7,11 +7,12 @@ import {
 import { type BuildOptions } from './types/config'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import { getImpliedNodeFormatForFile } from 'typescript'
 
 export default (options: BuildOptions): WebpackPluginInstance[] => {
   const { paths, isDev } = options
 
-  return [
+  const plugins = [
     new HtmlWebpackPlugin({
       template: paths.html
     }),
@@ -19,7 +20,13 @@ export default (options: BuildOptions): WebpackPluginInstance[] => {
     new MiniCssExtractPlugin({ filename: '[name].[contenthash:8].css' }),
     new DefinePlugin({
       IS_DEV: isDev
-    }),
-    new BundleAnalyzerPlugin({ openAnalyzer: false })
+    })
   ]
+
+  if (isDev) {
+    // NOTE when the plugin is included in build, BundleAnalyzerPlugin runs server and npm script can't get finished
+    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }))
+  }
+
+  return plugins
 }
