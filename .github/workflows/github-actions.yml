@@ -29,3 +29,15 @@ jobs:
           node-version: '18.x'
       - name: node_modules installing 
         run: npm install
+      - name: build:prod 
+        run: npm run build:prod
+      - name: test:unit 
+        run: npm run test:unit
+      - name: storybook:build 
+        run: npm run storybook:build
+      # - name: test:ui
+      #   run: npm run test:ui
+      - name: lint:ts 
+        run: npm run lint:ts
+      - name: lint:scss 
+        run: npm run lint:scss
