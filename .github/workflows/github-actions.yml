@@ -22,10 +22,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3 
         with:
           node-version: '18.x'
-       - name: node_modules installing 
-          run: npm install
+      - name: node_modules installing 
+        run: npm install
