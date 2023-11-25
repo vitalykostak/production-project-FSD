@@ -9,7 +9,7 @@ interface Props {
   children: React.ReactNode
 }
 
-const defaultTheme = localStorage.getItem(LOCAL_STORAGE_UI_THEME_KEY) as Theme
+const defaultTheme = localStorage?.getItem(LOCAL_STORAGE_UI_THEME_KEY) as Theme
 
 const ThemeProvider: FC<Props> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(defaultTheme || Theme.LIGHT)
