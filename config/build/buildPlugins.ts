@@ -7,7 +7,6 @@ import {
 import { type BuildOptions } from './types/config'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
-import { getImpliedNodeFormatForFile } from 'typescript'
 
 export default (options: BuildOptions): WebpackPluginInstance[] => {
   const { paths, isDev } = options
