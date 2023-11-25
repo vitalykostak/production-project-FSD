@@ -4,7 +4,11 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ["standard-with-typescript", "plugin:react/recommended"],
+  extends: [
+    "standard-with-typescript",
+    "plugin:react/recommended",
+    "plugin:storybook/recommended",
+  ],
   overrides: [
     {
       env: {
@@ -31,12 +35,13 @@ module.exports = {
     "@typescript-eslint/no-floating-promises": "warn",
     "i18next/no-literal-string": [
       "error",
-      { markupOnly: true, "jsx-attributes": { exclude: ["data-testid"] } },
+      { "markupOnly": true, "jsx-attributes": { exclude: ["data-testid"] } },
     ],
     "@typescript-eslint/no-confusing-void-expression": [
       "error",
       { ignoreArrowShorthand: true, ignoreVoidOperator: true },
     ],
+    "@typescript-eslint/prefer-includes":"off"
   },
   overrides: [
     {
