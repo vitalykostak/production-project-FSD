@@ -3,6 +3,8 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { Button } from 'shared/ui'
 import pageErrorStyles from './PageError.module.scss'
 
+// TODO Theme variables styles are not handling
+
 const PageError = () => {
   const { t } = useTranslation('page_error')
 
