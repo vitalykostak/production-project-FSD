@@ -9,6 +9,8 @@ interface StateType {
   hasError: boolean
 }
 
+// TODO global styles are not included in ErrorBoundaryProps
+
 class ErrorBoundary extends Component<ErrorBoundaryProps, StateType> {
   constructor (props: ErrorBoundaryProps) {
     super(props)
