@@ -12,9 +12,9 @@
     "lint:scss": "./node_modules/stylelint/bin/stylelint.mjs '**/*.scss'",
     "lint:scss:fix": "./node_modules/stylelint/bin/stylelint.mjs '**/*.scss' --fix",
     "test:unit": "jest --config=./config/jest/jest.config.ts",
-    "test:ui": "./node_modules/loki/bin/loki test",
-    "test:ui:ok": "./node_modules/loki/bin/loki approve",
-    "test:ui:ci": "./node_modules/loki/bin/loki --requireReference --reactUri file:./storybook-static",
+    "test:ui": "./node_modules/loki/bin/loki test --host $(ipconfig getifaddr en0)",
+    "test:ui:ok": "./node_modules/loki/bin/loki approve --host $(ipconfig getifaddr en0)",
+    "test:ui:ci": "./node_modules/loki/bin/loki --requireReference --reactUri file:./storybook-static --host $(ipconfig getifaddr en0)",
     "storybook": "./node_modules/storybook/index.js dev -p 6006 -c config/storybook",
     "storybook:build": "./node_modules/storybook/index.js build -c config/storybook"
   },
