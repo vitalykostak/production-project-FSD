@@ -29,6 +29,10 @@ jobs:
           node-version: "18.x"
       - name: node_modules installing
         run: npm install
+      - name: lint:ts
+        run: npm run lint:ts
+      - name: lint:scss
+        run: npm run lint:scss
       - name: build:prod
         run: npm run build:prod
       - name: test:unit
@@ -37,7 +41,3 @@ jobs:
         run: npm run storybook:build
       - name: test:ui:ci
         run: npm run test:ui:ci
-      - name: lint:ts
-        run: npm run lint:ts
-      - name: lint:scss
-        run: npm run lint:scss
