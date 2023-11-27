@@ -15,6 +15,9 @@
     "test:ui": "./node_modules/loki/bin/loki test --host $(ipconfig getifaddr en0)",
     "test:ui:ok": "./node_modules/loki/bin/loki approve --host $(ipconfig getifaddr en0)",
     "test:ui:ci": "./node_modules/loki/bin/loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:report": "npm run test:ui:generate_json && npm run test:ui:generate_html",
+    "test:ui:generate_json": "rm ./.loki/report.json & node scripts/generate-visual-json-report.js",
+    "test:ui:generate_html": "rm ./.loki/report.html & ./node_modules/reg-cli/dist/cli.js --from .loki/report.json --report .loki/report.html",
     "storybook": "./node_modules/storybook/index.js dev -p 6006 -c config/storybook",
     "storybook:build": "./node_modules/storybook/index.js build -c config/storybook"
   },
@@ -61,6 +64,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "loki": "^0.33.1",
     "mini-css-extract-plugin": "^2.7.6",
+    "reg-cli": "^0.17.7",
     "sass": "^1.69.3",
     "sass-loader": "^13.3.2",
     "storybook": "^7.5.3",
