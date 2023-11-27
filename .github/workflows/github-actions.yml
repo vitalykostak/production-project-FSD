@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,20 +24,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js
-        uses: actions/setup-node@v3 
+        uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
-      - name: node_modules installing 
+          node-version: "14.x"
+      - name: node_modules installing
         run: npm install
-      - name: build:prod 
+      - name: build:prod
         run: npm run build:prod
-      - name: test:unit 
+      - name: test:unit
         run: npm run test:unit
-      - name: storybook:build 
+      - name: storybook:build
         run: npm run storybook:build
       - name: test:ui:ci
         run: npm run test:ui:ci
-      - name: lint:ts 
+      - name: lint:ts
         run: npm run lint:ts
-      - name: lint:scss 
+      - name: lint:scss
         run: npm run lint:scss
