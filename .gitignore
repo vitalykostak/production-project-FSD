@@ -3,3 +3,5 @@ node_modules
 /build
 .idea
 .DS_Store
+/.loki/report.html
+/.loki/report.json
