@@ -7,11 +7,16 @@
   background: var(--inverted-bg-color);
 }
 
+.clearInverted,
 .clear {
   padding: 0;
   margin: 0;
   background: none;
   border: none;
+}
+
+.clearInverted {
+  color:var(--inverted-primary-color)
 }
 
 .outline {
