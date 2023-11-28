@@ -34,8 +34,12 @@ const config: Config = {
   moduleDirectories: ['node_modules'],
   setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.js'],
   moduleNameMapper: {
-    '\\.(s?css|svg)$': 'identity-obj-proxy'
+    '\\.(s?css)$': 'identity-obj-proxy',
+    '\\.svg$': '<rootDir>/config/jest/__mocks__/svg.js'
   }
+  // A map from regular expressions to paths to transformers
+  // transform: undefined
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -159,9 +163,6 @@ const config: Config = {
 
   // This option allows use of a custom test runner
   // testRunner: "jest-circus/runner",
-
-  // A map from regular expressions to paths to transformers
-  // transform: undefined,
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
