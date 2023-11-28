@@ -8,6 +8,7 @@ module.exports = {
     "standard-with-typescript",
     "plugin:react/recommended",
     "plugin:storybook/recommended",
+    "plugin:react-hooks/recommended",
   ],
   overrides: [
     {
@@ -24,7 +25,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "i18next"],
+  plugins: ["react", "i18next", "react-hooks"],
   rules: {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -35,13 +36,15 @@ module.exports = {
     "@typescript-eslint/no-floating-promises": "warn",
     "i18next/no-literal-string": [
       "error",
-      { "markupOnly": true, "jsx-attributes": { exclude: ["data-testid"] } },
+      { markupOnly: true, "jsx-attributes": { exclude: ["data-testid"] } },
     ],
     "@typescript-eslint/no-confusing-void-expression": [
       "error",
       { ignoreArrowShorthand: true, ignoreVoidOperator: true },
     ],
-    "@typescript-eslint/prefer-includes":"off"
+    "@typescript-eslint/prefer-includes": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
   },
   overrides: [
     {
