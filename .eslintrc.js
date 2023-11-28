@@ -45,6 +45,7 @@ module.exports = {
     "@typescript-eslint/prefer-includes": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
+    "@typescript-eslint/prefer-nullish-coalescing": 'off'
   },
   overrides: [
     {
