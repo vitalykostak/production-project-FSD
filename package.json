@@ -90,6 +90,9 @@
     "react-router-dom": "^6.16.0"
   },
   "loki": {
+    "pixelmatch": {
+      "threshold": 0.2
+    },
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",
