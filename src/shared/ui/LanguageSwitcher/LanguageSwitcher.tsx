@@ -11,10 +11,11 @@ export enum Language {
 
 interface LanguageSwitcherProps {
   className?: string
+  short?: boolean
 }
 
 const LanguageSwitcher: FC<LanguageSwitcherProps> = (props) => {
-  const { className } = props
+  const { className, short } = props
 
   const { t, i18n } = useTranslation('translation')
 
@@ -37,7 +38,7 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = (props) => {
       ])}
       theme={ButtonTheme.CLEAR}
     >
-      {t('language')}
+      {t(short ? 'language_contracted' : 'language')}
     </Button>
   )
 }
