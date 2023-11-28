@@ -16,6 +16,7 @@ const useTheme = (): UseThemeResult => {
   const toggleTheme = () => {
     const value = theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
     setTheme?.(value)
+    document.body.className = value
     localStorage.setItem(LOCAL_STORAGE_UI_THEME_KEY, value)
   }
 

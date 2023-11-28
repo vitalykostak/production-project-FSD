@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames'
-import { useTheme } from './providers/ThemeProvider'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
 import { AppRouter } from './providers/router'
@@ -9,11 +8,9 @@ import { useTranslation } from 'react-i18next'
 const App: FC = () => {
   const { t } = useTranslation()
 
-  const { theme } = useTheme()
-
   return (
     <Suspense fallback={<p>{t('loading')}</p>}>
-      <div className={classNames('app', {}, [theme])}>
+      <div className={classNames('app', {})}>
         <Navbar />
         <div className="content-page">
           <Sidebar />
