@@ -4,7 +4,7 @@ import {
   type BuildOptions,
   type BuildPaths
 } from '../build/types/config'
-import { type RuleSetRule, type Configuration } from 'webpack'
+import { type RuleSetRule, type Configuration, DefinePlugin } from 'webpack'
 import buildSvgLoader from '../build/loaders/buildSvgLoader'
 import buildSassLoader from '../build/loaders/buildSassLoader'
 import buildFileLoader from '../build/loaders/buildFileLoader'
@@ -52,6 +52,12 @@ export const buildStorybookWebpackConfig = async (config: Configuration) => {
     buildSvgLoader(),
     buildSassLoader(buildOptions),
     buildFileLoader()
+  )
+
+  config.plugins?.push(
+    new DefinePlugin({
+      IS_DEV: true
+    })
   )
 
   return config
