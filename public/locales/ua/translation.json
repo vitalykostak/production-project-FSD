@@ -3,5 +3,7 @@
   "language_contracted": "UA",
   "toggle": "Змінити",
   "loading": "Загрузка",
-  "sign_in": "Увійти"
+  "sign_in": "Увійти",
+  "increment": "Збільшити",
+  "decrement": "Зменшити"
 }
