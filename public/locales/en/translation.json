@@ -3,5 +3,7 @@
   "language_contracted": "EN",
   "toggle": "Toggle",
   "loading": "Loading",
-  "sign_in": "Sign in"
+  "sign_in": "Sign in",
+  "increment": "Increment",
+  "decrement": "Decrement"
 }

@@ -36,7 +36,13 @@ const config: Config = {
   moduleNameMapper: {
     '\\.(s?css)$': 'identity-obj-proxy',
     '\\.svg$': '<rootDir>/config/jest/__mocks__/svg.js'
+  },
+
+  // A set of global variables that need to be available in all test environments
+  globals: {
+    IS_DEV: true
   }
+
   // A map from regular expressions to paths to transformers
   // transform: undefined
 
