@@ -5,7 +5,8 @@ const ReduxStoreDecorator = (Story: StoryFn) => {
   const ininitialState: StateSchema = {
     counter: {
       value: 10
-    }
+    },
+    user: {}
   }
 
   return (
