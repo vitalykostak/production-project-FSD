@@ -5,5 +5,8 @@
   "loading": "Загрузка",
   "sign_in": "Увійти",
   "increment": "Збільшити",
-  "decrement": "Зменшити"
+  "decrement": "Зменшити",
+  "type_password": "Пароль",
+  "type_username": "Username"
+
 }

@@ -5,5 +5,7 @@
   "loading": "Loading",
   "sign_in": "Sign in",
   "increment": "Increment",
-  "decrement": "Decrement"
+  "decrement": "Decrement",
+  "type_password": "Password",
+  "type_username": "Username"
 }
