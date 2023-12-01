@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import Navbar from './Navbar'
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
+import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
 
 const meta = {
   title: 'widgets/Navbar',
@@ -12,12 +13,40 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Light: Story = {
-  args: {}
+const userAuthTestData = { id: '1', username: 'username' }
+
+export const NotAuthorzied: Story = {
+  args: {},
+  decorators: [ReduxStoreDecorator({ user: { authData: undefined } })]
 }
 
-export const Dark: Story = {
-  args: {
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
+export const NotAuthorziedDark: Story = {
+  args: {},
+  decorators: [
+    ThemeDecorator(Theme.DARK),
+    ReduxStoreDecorator({ user: { authData: undefined } })
+  ]
+}
+
+export const Authorized: Story = {
+  args: {},
+  decorators: [
+    ReduxStoreDecorator({
+      user: {
+        authData: userAuthTestData
+      }
+    })
+  ]
+}
+
+export const AuthorizedDark: Story = {
+  args: {},
+  decorators: [
+    ReduxStoreDecorator({
+      user: {
+        authData: userAuthTestData
+      }
+    }),
+    ThemeDecorator(Theme.DARK)
+  ]
 }

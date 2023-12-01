@@ -7,6 +7,8 @@
   "increment": "Збільшити",
   "decrement": "Зменшити",
   "type_password": "Пароль",
-  "type_username": "Username"
-
+  "type_username": "Username",
+  "authorization_form": "Форма авторизації",
+  "incorrect_login_credentials": "Неправильний username або пароль",
+  "sign_out": "Вийти"
 }

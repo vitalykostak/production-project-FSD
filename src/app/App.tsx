@@ -2,11 +2,19 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
 import { AppRouter } from './providers/router'
-import { Suspense, type FC } from 'react'
+import { Suspense, type FC, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useDispatch } from 'react-redux'
+import { userActions } from 'entities/User'
 
 const App: FC = () => {
   const { t } = useTranslation()
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(userActions.initAuthData())
+  }, [dispatch])
 
   return (
     <Suspense fallback={<p>{t('loading')}</p>}>
