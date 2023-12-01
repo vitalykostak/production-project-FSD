@@ -112,6 +112,14 @@ export const OutlineXL: Story = {
   }
 }
 
+export const Disabled: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonTheme.OUTLINE,
+    disabled: true
+  }
+}
+
 export const SquareM: Story = {
   args: {
     children: '>',

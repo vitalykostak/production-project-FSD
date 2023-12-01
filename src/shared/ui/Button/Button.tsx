@@ -31,11 +31,13 @@ const Button: FC<ButtonProps> = (props) => {
     theme = ButtonTheme.PRIMARY,
     size = ButtonSize.M,
     square = false,
+    disabled,
     ...otherButtonProps
   } = props
 
   const mods = {
-    [buttonStyle.square]: square
+    [buttonStyle.square]: square,
+    [buttonStyle.disabled]: disabled
   }
 
   const additionalsClasses = [className, buttonStyle[theme], buttonStyle[size]]
@@ -43,6 +45,7 @@ const Button: FC<ButtonProps> = (props) => {
   return (
     <button
       {...otherButtonProps}
+      disabled={disabled}
       className={classNames(buttonStyle.Button, mods, additionalsClasses)}
     >
       {children}
