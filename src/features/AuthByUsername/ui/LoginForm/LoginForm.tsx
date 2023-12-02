@@ -3,7 +3,7 @@ import loginFormStyles from './LoginForm.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import { Button, ButtonTheme, Input, Text, TextTheme } from 'shared/ui'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername'
@@ -11,6 +11,7 @@ import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLogi
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
 import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 const dynamicReducers: ReducersList = {
   loginForm: loginReducer
@@ -18,17 +19,18 @@ const dynamicReducers: ReducersList = {
 
 export interface LoginFormProps {
   className?: string
+  onSuccessLogin: () => void
 }
 
 const LoginForm: FC<LoginFormProps> = memo((props) => {
-  const { className } = props
+  const { className, onSuccessLogin } = props
 
   const username = useSelector(getLoginUsername)
   const password = useSelector(getLoginPassword)
   const error = useSelector(getLoginError)
   const isLoading = useSelector(getLoginLoading)
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const { t } = useTranslation()
 
   const onChangeUsername = useCallback(
@@ -45,16 +47,20 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
     [dispatch]
   )
 
-  const onLoginClick = useCallback(() => {
-    dispatch(
+  const onLoginClick = useCallback(async () => {
+    const result = await dispatch(
       loginByUsername({
         username,
         password
       })
     )
-  }, [dispatch, username, password])
 
-  const additionalsClasses = [className]
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccessLogin()
+    }
+  }, [dispatch, username, password, onSuccessLogin])
+
+  const additionsClasses = [className]
 
   return (
     <DynamicModuleLoader reducers={dynamicReducers} shouldRemoveOnUnmout>
@@ -62,7 +68,7 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
         className={classNames(
           loginFormStyles.LoginForm,
           {},
-          additionalsClasses
+          additionsClasses
         )}
       >
         <Text title={t('authorization_form')} />
