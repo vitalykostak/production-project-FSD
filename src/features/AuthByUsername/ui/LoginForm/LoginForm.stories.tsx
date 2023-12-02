@@ -4,7 +4,6 @@ import LoginForm from './LoginForm'
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
-import { type DeepPartial } from '@reduxjs/toolkit'
 import { type LoginSchema } from '../../model/types/loginSchema'
 
 const meta = {
@@ -16,17 +15,18 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-const loginFormPrefilledState: DeepPartial<LoginSchema> = {
+const loginFormPrefilledState: LoginSchema = {
   username: 'username',
-  password: '1234'
+  password: '1234',
+  isLoading: false
 }
 
-const loginFormErrorState: DeepPartial<LoginSchema> = {
+const loginFormErrorState: LoginSchema = {
   ...loginFormPrefilledState,
   error: 'error'
 }
 
-const loginFormIsLogaingState: DeepPartial<LoginSchema> = {
+const loginFormIsLoadingState: LoginSchema = {
   ...loginFormPrefilledState,
   isLoading: true
 }
@@ -68,7 +68,7 @@ export const LoginFormErrorDark: Story = {
 export const LoginFormLoading: Story = {
   decorators: [
     ReduxStoreDecorator({
-      loginForm: loginFormIsLogaingState
+      loginForm: loginFormIsLoadingState
     })
   ]
 }
@@ -76,7 +76,7 @@ export const LoginFormLoading: Story = {
 export const LoginFormLoadingDark: Story = {
   decorators: [
     ReduxStoreDecorator({
-      loginForm: loginFormIsLogaingState
+      loginForm: loginFormIsLoadingState
     }),
     ThemeDecorator(Theme.DARK)
   ]

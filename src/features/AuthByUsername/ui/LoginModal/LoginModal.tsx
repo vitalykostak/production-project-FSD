@@ -1,6 +1,6 @@
-import { type FC } from 'react'
-import LoginForm from '../LoginForm/LoginForm'
-import { Modal } from 'shared/ui'
+import { Suspense, type FC } from 'react'
+import LoginFormAsync from '../LoginForm/LoginFormAsync'
+import { EllipsesLoader, Modal } from 'shared/ui'
 
 interface LoginModalProps {
   className?: string
@@ -12,12 +12,10 @@ const LoginModal: FC<LoginModalProps> = (props) => {
   const { isOpen, onClose } = props
 
   return (
-    <Modal
-      onClose={onClose}
-      isOpen={isOpen}
-      lazy
-    >
-      <LoginForm />
+    <Modal onClose={onClose} isOpen={isOpen} lazy>
+      <Suspense fallback={<EllipsesLoader />}>
+        <LoginFormAsync />
+      </Suspense>
     </Modal>
   )
 }
