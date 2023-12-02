@@ -1,7 +1,7 @@
 import { type CounterSchema } from '../types/counterSchema'
 import { counterActions, counterReducer } from './counterSlice'
 
-describe('conterSlice', () => {
+describe('counterSlice', () => {
   test('decrement', () => {
     const state: CounterSchema = {
       value: 10
