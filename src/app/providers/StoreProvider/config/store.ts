@@ -27,3 +27,5 @@ export const configureReduxStore = (
 
   return store
 }
+
+export type AppDispatch = ReturnType<typeof configureReduxStore>['dispatch']

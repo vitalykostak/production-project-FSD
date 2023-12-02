@@ -1,5 +1,6 @@
 import { type FC } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { counterActions } from '../model/slice/counterSlice'
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue'
 import { Button } from 'shared/ui'
@@ -9,7 +10,7 @@ const Counter: FC = () => {
   const { t } = useTranslation()
 
   const count = useSelector(getCounterValue)
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const decrement = () => {
     dispatch(counterActions.decrement())

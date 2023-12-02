@@ -4,13 +4,13 @@ import { Sidebar } from 'widgets/Sidebar'
 import { AppRouter } from './providers/router'
 import { Suspense, type FC, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDispatch } from 'react-redux'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { userActions } from 'entities/User'
 
 const App: FC = () => {
   const { t } = useTranslation()
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
     dispatch(userActions.initAuthData())
