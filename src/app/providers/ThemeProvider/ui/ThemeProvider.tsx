@@ -10,15 +10,14 @@ interface Props {
   initialTheme?: Theme
 }
 
-const defaultTheme = localStorage?.getItem(LOCAL_STORAGE_UI_THEME_KEY) as Theme
+const defaultTheme =
+  (localStorage?.getItem(LOCAL_STORAGE_UI_THEME_KEY) as Theme) || Theme.LIGHT
 document.body.className = defaultTheme
 
 const ThemeProvider: FC<Props> = (props) => {
   const { children, initialTheme } = props
 
-  const [theme, setTheme] = useState<Theme>(
-    initialTheme || defaultTheme || Theme.LIGHT
-  )
+  const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme)
 
   const defaultProps = useMemo(() => ({ theme, setTheme }), [theme])
 
