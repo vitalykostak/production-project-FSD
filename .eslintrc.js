@@ -48,6 +48,7 @@ module.exports = {
     "@typescript-eslint/prefer-nullish-coalescing": 'off',
     "react/display-name": "off",
     "react/prop-types": 'off',
+    "@typescript-eslint/no-dynamic-delete": "off",
   },
   overrides: [
     {
