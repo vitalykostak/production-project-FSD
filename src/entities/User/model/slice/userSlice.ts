@@ -5,7 +5,7 @@ import { USER_LOCALSTORAGE_KEY } from 'shared/consts/localStorageKeys'
 const initialState: UserSchema = {}
 
 export const userSlice = createSlice({
-  name: 'counter',
+  name: 'user',
   initialState,
   reducers: {
     setAuthData: (state, action: PayloadAction<User>) => {
