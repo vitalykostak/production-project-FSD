@@ -7,8 +7,6 @@ import { useEffect, type FC, type ReactNode } from 'react'
 import { useStore } from 'react-redux'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 
-type ReducersListEntry = [StateSchemaKeys, Reducer]
-
 export type ReducersList = {
   [reducerName in StateSchemaKeys]?: Reducer;
 }
@@ -27,16 +25,16 @@ const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
   useEffect(() => {
     const entries = Object.entries(reducers)
 
-    entries.forEach(([reducerName, reducer]: ReducersListEntry) => {
-      store.reducerManager.add(reducerName, reducer)
+    entries.forEach(([reducerName, reducer]) => {
+      store.reducerManager.add(reducerName as StateSchemaKeys, reducer)
       dispatch({ type: `@INIT ${reducerName} reducer` })
     })
 
     return () => {
       if (shouldRemoveOnUnmout) {
-        entries.forEach(([reducerName]: ReducersListEntry) => {
+        entries.forEach(([reducerName]) => {
           dispatch({ type: `@DESTROY ${reducerName} reducer` })
-          store.reducerManager.remove(reducerName)
+          store.reducerManager.remove(reducerName as StateSchemaKeys)
         })
       }
     }
