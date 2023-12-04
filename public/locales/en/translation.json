@@ -10,5 +10,6 @@
   "type_username": "Username",
   "authorization_form": "Authorization form",
   "incorrect_login_credentials": "Incorrect password or username",
-  "sign_out": "Logout"
+  "sign_out": "Logout",
+  "edit": "Edit"
 }

@@ -10,5 +10,6 @@
   "type_username": "Username",
   "authorization_form": "Форма авторизації",
   "incorrect_login_credentials": "Неправильний username або пароль",
-  "sign_out": "Вийти"
+  "sign_out": "Вийти",
+  "edit": "Редагувати"
 }
