@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import textStyles from './Text.module.scss'
 
@@ -14,7 +14,7 @@ interface TextProps {
   theme?: TextTheme
 }
 
-const Text: FC<TextProps> = (props) => {
+const Text: FC<TextProps> = memo((props) => {
   const { className, title, text, theme = TextTheme.PRIMARY } = props
 
   const additionalsClasses = [className, textStyles[theme]]
@@ -25,6 +25,6 @@ const Text: FC<TextProps> = (props) => {
       {text && <p className={textStyles.text}>{text}</p>}
     </div>
   )
-}
+})
 
 export default Text

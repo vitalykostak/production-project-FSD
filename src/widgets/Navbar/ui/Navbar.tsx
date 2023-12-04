@@ -1,4 +1,4 @@
-import { useCallback, type FC, useState } from 'react'
+import { useCallback, type FC, useState, memo } from 'react'
 import navbarStyles from './Navbar.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Button, ButtonTheme } from 'shared/ui'
@@ -12,7 +12,7 @@ interface NavbarProps {
   className?: string
 }
 
-const Navbar: FC<NavbarProps> = ({ className }) => {
+const Navbar: FC<NavbarProps> = memo(({ className }) => {
   const { t } = useTranslation()
 
   const dispatch = useAppDispatch()
@@ -50,6 +50,6 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
       </div>
     </nav>
   )
-}
+})
 
 export default Navbar

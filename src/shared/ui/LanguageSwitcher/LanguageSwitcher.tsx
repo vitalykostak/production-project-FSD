@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Button, ButtonTheme } from 'shared/ui/'
 import languageSwitcherStyle from './LanguageSwitcher.module.scss'
@@ -14,7 +14,7 @@ interface LanguageSwitcherProps {
   short?: boolean
 }
 
-const LanguageSwitcher: FC<LanguageSwitcherProps> = (props) => {
+const LanguageSwitcher: FC<LanguageSwitcherProps> = memo((props) => {
   const { className, short } = props
 
   const { t, i18n } = useTranslation('translation')
@@ -41,6 +41,6 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = (props) => {
       {t(short ? 'language_contracted' : 'language')}
     </Button>
   )
-}
+})
 
 export default LanguageSwitcher
