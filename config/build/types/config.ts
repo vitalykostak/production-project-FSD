@@ -3,6 +3,7 @@ export interface BuildOptions {
   paths: BuildPaths
   port: number
   isDev: boolean
+  apiUrl: string
 }
 
 export enum BuildMode {
@@ -20,4 +21,5 @@ export interface BuildPaths {
 export interface Env {
   port: number
   mode: BuildMode
+  apiUrl: string
 }

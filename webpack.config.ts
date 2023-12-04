@@ -11,6 +11,11 @@ import {
 
 export default (env: Env) => {
   const mode: BuildMode = env.mode || BuildMode.DEVELOPMENT
+  const isDev: boolean = mode === BuildMode.DEVELOPMENT
+  const apiUrl: string = env.apiUrl
+  const port: number = Number(env.port) || 3000
+
+  console.log({ env })
 
   const paths: BuildPaths = {
     entry: path.resolve(__dirname, './src/index.tsx'),
@@ -19,15 +24,12 @@ export default (env: Env) => {
     src: path.resolve(__dirname, './src')
   }
 
-  const isDev: boolean = mode === BuildMode.DEVELOPMENT
-  console.log({ env })
-  const port: number = Number(env.port) || 3000
-
   const buildOptions: BuildOptions = {
     mode,
     paths,
     isDev,
-    port
+    port,
+    apiUrl
   }
 
   const config: Configuration = buildWebpackConfig(buildOptions)

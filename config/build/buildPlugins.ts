@@ -9,7 +9,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 export default (options: BuildOptions): WebpackPluginInstance[] => {
-  const { paths, isDev } = options
+  const { paths, isDev, apiUrl } = options
 
   const plugins = [
     new HtmlWebpackPlugin({
@@ -18,7 +18,8 @@ export default (options: BuildOptions): WebpackPluginInstance[] => {
     new ProgressPlugin(),
     new MiniCssExtractPlugin({ filename: '[name].[contenthash:8].css' }),
     new DefinePlugin({
-      IS_DEV: isDev
+      IS_DEV: isDev,
+      API_URL: JSON.stringify(apiUrl)
     })
   ]
 

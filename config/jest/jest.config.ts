@@ -40,7 +40,8 @@ const config: Config = {
 
   // A set of global variables that need to be available in all test environments
   globals: {
-    IS_DEV: true
+    IS_DEV: true,
+    API_URL: ''
   }
 
   // A map from regular expressions to paths to transformers

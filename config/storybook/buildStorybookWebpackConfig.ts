@@ -19,14 +19,16 @@ export const buildStorybookWebpackConfig = async (config: Configuration) => {
     src: path.resolve(__dirname, '..', '..', 'src')
   }
 
-  const isDev: boolean = true
+  const isDev: boolean = mode === BuildMode.DEVELOPMENT
   const port: number = 3000
+  const apiUrl: string = ''
 
   const buildOptions: BuildOptions = {
     mode,
     paths,
     isDev,
-    port
+    port,
+    apiUrl
   }
 
   // remove svg from existing rule
@@ -56,7 +58,8 @@ export const buildStorybookWebpackConfig = async (config: Configuration) => {
 
   config.plugins?.push(
     new DefinePlugin({
-      IS_DEV: true
+      IS_DEV: buildOptions.isDev,
+      API_URL: buildOptions.apiUrl
     })
   )
 

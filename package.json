@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx webpack serve --env port=3001 --env mode=development",
+    "start": "npx webpack serve --env port=3001 --env mode=development apiUrl=http://localhost:8000",
     "start:dev-server": "node ./json-server/index.js",
-    "build:prod": "npx webpack  --env mode=production",
-    "build:dev": "npx webpack  --env mode=development",
+    "build:prod": "npx webpack  --env mode=production apiUrl=http://localhost:8000",
+    "build:dev": "npx webpack  --env mode=development apiUrl=http://localhost:8000",
     "lint:ts": "./node_modules/eslint/bin/eslint.js '**/*.{ts,tsx}'",
     "lint:ts:fix": "./node_modules/eslint/bin/eslint.js --fix '**/*.{ts,tsx}'",
     "lint:scss": "./node_modules/stylelint/bin/stylelint.mjs '**/*.scss'",
