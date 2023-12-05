@@ -2,25 +2,32 @@ import { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import textStyles from './Text.module.scss'
 
-export enum TextTheme {
-  PRIMARY = 'primary',
-  ERROR = 'error',
-}
-
 interface TextProps {
   className?: string
   title?: string
   text?: string
   theme?: TextTheme
+  align?: TextAlign
+}
+
+export enum TextTheme {
+  PRIMARY = 'primary',
+  ERROR = 'error',
+}
+
+export enum TextAlign {
+  LEFT = 'left',
+  CENTER = 'center',
+  RIGHT = 'right'
 }
 
 const Text: FC<TextProps> = memo((props) => {
-  const { className, title, text, theme = TextTheme.PRIMARY } = props
+  const { className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT } = props
 
-  const additionalsClasses = [className, textStyles[theme]]
+  const additionsClasses = [className, textStyles[theme], textStyles[align]]
 
   return (
-    <div className={classNames(textStyles.Text, {}, additionalsClasses)}>
+    <div className={classNames(textStyles.Text, {}, additionsClasses)}>
       {title && <p className={textStyles.title}>{title}</p>}
       {text && <p className={textStyles.text}>{text}</p>}
     </div>

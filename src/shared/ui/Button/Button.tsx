@@ -14,6 +14,7 @@ export enum ButtonTheme {
   CLEAR_INVERTED = 'clearInverted',
   PRIMARY = 'primary',
   OUTLINE = 'outline',
+  OUTLINE_RED = 'outlineRed',
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'backgroundInverted',
 }
@@ -40,13 +41,13 @@ const Button: FC<ButtonProps> = memo((props) => {
     [buttonStyle.disabled]: disabled
   }
 
-  const additionalsClasses = [className, buttonStyle[theme], buttonStyle[size]]
+  const additionsClasses = [className, buttonStyle[theme], buttonStyle[size]]
 
   return (
     <button
       {...otherButtonProps}
       disabled={disabled}
-      className={classNames(buttonStyle.Button, mods, additionalsClasses)}
+      className={classNames(buttonStyle.Button, mods, additionsClasses)}
     >
       {children}
     </button>
