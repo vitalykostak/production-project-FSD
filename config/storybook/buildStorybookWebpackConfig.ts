@@ -34,12 +34,12 @@ export const buildStorybookWebpackConfig = async (config: Configuration) => {
   // remove svg from existing rule
   if (config.module?.rules) {
     config.module.rules = config.module.rules.map((rule) => {
-      if (/svg/.test((rule as RuleSetRule)?.test as string)) {
+      if (/svg/.test((rule as RuleSetRule)?.test as string) || /png/.test((rule as RuleSetRule)?.test as string)) {
         return {
           ...(rule as RuleSetRule),
-          // without svg
+          // without svg and png
 
-          test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/
+          test: /\.(ico|jpg|jpeg|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/
         }
       }
 
@@ -59,7 +59,7 @@ export const buildStorybookWebpackConfig = async (config: Configuration) => {
   config.plugins?.push(
     new DefinePlugin({
       IS_DEV: buildOptions.isDev,
-      API_URL: buildOptions.apiUrl
+      API_URL: JSON.stringify(buildOptions.apiUrl)
     })
   )
 
