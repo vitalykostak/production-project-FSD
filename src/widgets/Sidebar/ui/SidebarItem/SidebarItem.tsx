@@ -7,6 +7,8 @@ import {
 } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
 import { type SidebarItemType } from '../../model/items'
+import { useSelector } from 'react-redux'
+import { getUserAuthData } from 'entities/User'
 
 interface SidebarItemProps {
   item: SidebarItemType
@@ -17,6 +19,11 @@ const SidebarItem: FC<SidebarItemProps> = (props) => {
   const { item, collapsed } = props
 
   const { t } = useTranslation(['main', 'about', 'profile'])
+  const isAuth = useSelector(getUserAuthData)
+
+  if (!isAuth && item.authOnly) {
+    return null
+  }
 
   return (
 
