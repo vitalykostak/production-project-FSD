@@ -1,6 +1,7 @@
 import path from 'path'
 import {
   BuildMode,
+  type ExecutionEnvironment,
   type BuildOptions,
   type BuildPaths
 } from '../build/types/config'
@@ -22,13 +23,15 @@ export const buildStorybookWebpackConfig = async (config: Configuration) => {
   const isDev: boolean = mode === BuildMode.DEVELOPMENT
   const port: number = 3000
   const apiUrl: string = ''
+  const executionEnvironment: ExecutionEnvironment = 'storybook'
 
   const buildOptions: BuildOptions = {
     mode,
     paths,
     isDev,
     port,
-    apiUrl
+    apiUrl,
+    executionEnvironment
   }
 
   // remove svg from existing rule
@@ -59,7 +62,8 @@ export const buildStorybookWebpackConfig = async (config: Configuration) => {
   config.plugins?.push(
     new DefinePlugin({
       IS_DEV: buildOptions.isDev,
-      API_URL: JSON.stringify(buildOptions.apiUrl)
+      API_URL: JSON.stringify(buildOptions.apiUrl),
+      EXECUTION_ENVIRONMENT: JSON.stringify(buildOptions.executionEnvironment)
     })
   )
 

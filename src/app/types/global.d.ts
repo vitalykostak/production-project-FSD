@@ -1,3 +1,5 @@
+import { type ExecutionEnvironment } from '../../../config/build/types/config'
+
 declare module '*.scss' {
   type IClassNames = Record<string, string>
   const classNames: IClassNames
@@ -14,9 +16,12 @@ declare module '*.svg' {
   export default SVG
 }
 
-declare type DeepPartial<T> = T extends object ? {
-  [P in keyof T]?: DeepPartial<T[P]>;
-} : T
+declare global {
+  const IS_DEV: boolean
+  const API_URL: string
+  const EXECUTION_ENVIRONMENT: ExecutionEnvironment
 
-declare const IS_DEV: boolean
-declare const API_URL: string
+  type DeepPartial<T> = T extends object ? {
+    [P in keyof T]?: DeepPartial<T[P]>;
+  } : T
+}

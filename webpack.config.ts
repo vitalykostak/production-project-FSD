@@ -4,6 +4,7 @@ import { type Configuration } from 'webpack'
 import buildWebpackConfig from './config/build/buildWebpackConfig'
 import {
   BuildMode,
+  type ExecutionEnvironment,
   type BuildOptions,
   type BuildPaths,
   type Env
@@ -14,6 +15,7 @@ export default (env: Env) => {
   const isDev: boolean = mode === BuildMode.DEVELOPMENT
   const apiUrl: string = env.apiUrl
   const port: number = Number(env.port) || 3000
+  const executionEnvironment: ExecutionEnvironment = 'app'
 
   console.log({ env })
 
@@ -29,7 +31,8 @@ export default (env: Env) => {
     paths,
     isDev,
     port,
-    apiUrl
+    apiUrl,
+    executionEnvironment
   }
 
   const config: Configuration = buildWebpackConfig(buildOptions)

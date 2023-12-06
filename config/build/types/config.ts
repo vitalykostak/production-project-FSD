@@ -4,6 +4,7 @@ export interface BuildOptions {
   port: number
   isDev: boolean
   apiUrl: string
+  executionEnvironment: ExecutionEnvironment
 }
 
 export enum BuildMode {
@@ -23,3 +24,5 @@ export interface Env {
   mode: BuildMode
   apiUrl: string
 }
+
+export type ExecutionEnvironment = 'storybook' | 'app' | 'jest'

@@ -36,7 +36,7 @@ module.exports = {
     "@typescript-eslint/no-floating-promises": "warn",
     "i18next/no-literal-string": [
       "error",
-      { markupOnly: true, "jsx-attributes": { exclude: ["data-testid"] } },
+      { "markupOnly": true, "jsx-attributes": { exclude: ["data-testid"] } },
     ],
     "@typescript-eslint/no-confusing-void-expression": [
       "error",
@@ -45,10 +45,15 @@ module.exports = {
     "@typescript-eslint/prefer-includes": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
-    "@typescript-eslint/prefer-nullish-coalescing": 'off',
+    "@typescript-eslint/prefer-nullish-coalescing": "off",
     "react/display-name": "off",
-    "react/prop-types": 'off',
+    "react/prop-types": "off",
     "@typescript-eslint/no-dynamic-delete": "off",
+  },
+  globals: {
+    IS_DEV: true,
+    API_URL: true,
+    EXECUTION_ENVIRONMENT: true,
   },
   overrides: [
     {
