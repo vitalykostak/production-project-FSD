@@ -62,5 +62,13 @@ module.exports = {
         "i18next/no-literal-string": "off",
       },
     },
+    {
+      files: ["*.test.tsx", "*.test.ts"],
+      rules: {
+        // you should turn the original rule off *only* for test files
+        "@typescript-eslint/unbound-method": "off",
+        "jest/unbound-method": "off",
+      },
+    },
   ],
 };
