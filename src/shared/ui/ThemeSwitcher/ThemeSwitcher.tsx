@@ -16,7 +16,8 @@ const ThemeSwitcher: FC<ThemeSwitcherProps> = memo((props) => {
 
   const iconsThemeMap: Record<Theme, React.ReactNode> = {
     [Theme.DARK]: <DarkIcon color="#0115C6" />,
-    [Theme.LIGHT]: <LightIcon color="#FFC700" />
+    [Theme.LIGHT]: <LightIcon color="#FFC700" />,
+    [Theme.ORANGE]: <LightIcon color="#FFC700" />
   }
 
   return (
