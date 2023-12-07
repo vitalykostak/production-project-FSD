@@ -1,5 +1,3 @@
-import { type ExecutionEnvironment } from '../../../config/build/types/config'
-
 declare module '*.scss' {
   type IClassNames = Record<string, string>
   const classNames: IClassNames
@@ -16,12 +14,11 @@ declare module '*.svg' {
   export default SVG
 }
 
-declare global {
-  const IS_DEV: boolean
-  const API_URL: string
-  const EXECUTION_ENVIRONMENT: ExecutionEnvironment
+declare const IS_DEV: boolean
+declare const API_URL: string
+// TODO figure out how to import  ExecutionEnvironment type
+declare const EXECUTION_ENVIRONMENT: 'storybook' | 'app' | 'jest'
 
-  type DeepPartial<T> = T extends object ? {
+  declare type DeepPartial<T> = T extends object ? {
     [P in keyof T]?: DeepPartial<T[P]>;
   } : T
-}
