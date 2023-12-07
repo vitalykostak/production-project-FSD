@@ -7,6 +7,7 @@ import {
 import { type BuildOptions } from './types/config'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 
 export default (options: BuildOptions): WebpackPluginInstance[] => {
   const { paths, isDev, apiUrl, executionEnvironment } = options
@@ -27,6 +28,8 @@ export default (options: BuildOptions): WebpackPluginInstance[] => {
   if (isDev) {
     // NOTE when the plugin is included in build, BundleAnalyzerPlugin runs server and npm script can't get finished
     plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }))
+
+    plugins.push(new ReactRefreshWebpackPlugin())
   }
 
   return plugins
