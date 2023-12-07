@@ -1,29 +1,90 @@
 import { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import profileCardStyles from './ProfileCard.module.scss'
-import { useSelector } from 'react-redux'
-import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'
-// import { getProfileLoading } from '../../model/selectors/getProfileLoading/getProfileLoading'
-// import { getProfileError } from '../../model/selectors/getProfileError/getProfileError'
-import { Button, ButtonTheme, Input, Text } from 'shared/ui'
+import {
+  EllipsesLoader,
+  Input,
+  Text,
+  TextAlign,
+  TextTheme,
+  Avatar
+} from 'shared/ui'
 import { useTranslation } from 'react-i18next'
+import { type Profile } from '../../model/types/profile'
+import { type CURRENCY, CurrencySelect } from 'entities/Currency'
+import { CountrySelect, type COUNTRY } from 'entities/Country'
 
 interface ProfileCardProps {
   className?: string
+  data?: Profile
+  isLoading?: boolean
+  error?: string
+  readonly?: boolean
+  onChangeFirstName?: (value: string) => void
+  onChangeLastName?: (value: string) => void
+  onChangeCity?: (value: string) => void
+  onChangeAge?: (value: string) => void
+  onChangeUsername?: (value: string) => void
+  onChangeAvatar?: (value: string) => void
+  onChangeCurrency?: (value: CURRENCY) => void
+  onChangeCountry?: (value: COUNTRY) => void
 }
 
 const ProfileCard: FC<ProfileCardProps> = memo((props) => {
-  const { className } = props
+  const {
+    className,
+    data,
+    isLoading,
+    error,
+    readonly,
+    onChangeFirstName,
+    onChangeLastName,
+    onChangeCity,
+    onChangeAge,
+    onChangeUsername,
+    onChangeAvatar,
+    onChangeCurrency,
+    onChangeCountry
+  } = props
 
   const { t } = useTranslation(['translation', 'profile'])
 
-  const data = useSelector(getProfileData)
-  // const isLoading = useSelector(getProfileLoading)
-  // const error = useSelector(getProfileError)
-
-  const mods = {}
+  const mods = {
+    [profileCardStyles.editing]: readonly
+  }
 
   const additionsClasses = [className]
+
+  if (isLoading) {
+    return (
+      <div
+        className={classNames(profileCardStyles.ProfileCard, mods, [
+          ...additionsClasses,
+          profileCardStyles.loading
+        ])}
+      >
+        <EllipsesLoader />
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div
+        className={classNames(profileCardStyles.ProfileCard, mods, [
+          ...additionsClasses,
+          profileCardStyles.error
+        ])}
+      >
+        <Text
+          theme={TextTheme.ERROR}
+          title={t('profile:error_during_fetching_profile')}
+          text={t('translation:try_to_reload_page')}
+          align={TextAlign.CENTER}
+        />
+      </div>
+    )
+  }
 
   return (
     <div
@@ -33,20 +94,64 @@ const ProfileCard: FC<ProfileCardProps> = memo((props) => {
         additionsClasses
       )}
     >
-      <div className={profileCardStyles.header}>
-        <Text title={t('profile:profile')}></Text>
-        <Button theme={ButtonTheme.OUTLINE} className={profileCardStyles.editBtn}>{t('translation:edit')}</Button>
-      </div>
-      <div className={profileCardStyles.data}>
+      <div>
+        <div className={profileCardStyles.avatarWrapper}>
+          {' '}
+          {data?.avatar && <Avatar src={data.avatar} />}
+        </div>
         <Input
           value={data?.first}
           placeholder={t('profile:firstName')}
           className={profileCardStyles.input}
+          onChange={onChangeFirstName}
+          readonly={readonly}
         />
         <Input
           value={data?.lastName}
           placeholder={t('profile:lastName')}
           className={profileCardStyles.input}
+          onChange={onChangeLastName}
+          readonly={readonly}
+        />
+        <Input
+          value={data?.city}
+          placeholder={t('profile:city')}
+          className={profileCardStyles.input}
+          onChange={onChangeCity}
+          readonly={readonly}
+        />
+        <Input
+          value={String(data?.age)}
+          placeholder={t('profile:age')}
+          className={profileCardStyles.input}
+          onChange={onChangeAge}
+          readonly={readonly}
+        />
+        <Input
+          value={data?.username}
+          placeholder={t('profile:username')}
+          className={profileCardStyles.input}
+          onChange={onChangeUsername}
+          readonly={readonly}
+        />
+        <Input
+          value={String(data?.avatar)}
+          placeholder={t('profile:avatar')}
+          className={profileCardStyles.input}
+          onChange={onChangeAvatar}
+          readonly={readonly}
+        />
+        <CurrencySelect
+          className={profileCardStyles.input}
+          value={data?.currency}
+          onChange={onChangeCurrency}
+          readonly={readonly}
+        />
+        <CountrySelect
+          className={profileCardStyles.input}
+          value={data?.country}
+          onChange={onChangeCountry}
+          readonly={readonly}
         />
       </div>
     </div>

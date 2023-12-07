@@ -11,5 +11,9 @@
   "authorization_form": "Форма авторизації",
   "incorrect_login_credentials": "Неправильний username або пароль",
   "sign_out": "Вийти",
-  "edit": "Редагувати"
+  "edit": "Редагувати",
+  "cancel": "Відмінити",
+  "try_to_reload_page": "Спробуйте перезагрузити сторінку",
+  "choose_currency": "Виберіть валюту",
+  "choose_country": "Виберіть країну"
 }

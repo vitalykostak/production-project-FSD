@@ -11,5 +11,9 @@
   "authorization_form": "Authorization form",
   "incorrect_login_credentials": "Incorrect password or username",
   "sign_out": "Logout",
-  "edit": "Edit"
+  "edit": "Edit",
+  "cancel": "Cancel",
+  "try_to_reload_page": "Try to reload page",
+  "choose_currency": "Choose currency",
+  "choose_country": "Choose country"
 }

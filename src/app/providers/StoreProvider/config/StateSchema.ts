@@ -42,4 +42,5 @@ export interface OverriddenThunkConfig<RejectValueType> {
   dispatch: AppDispatch
   rejectValue: RejectValueType
   extra: ThunkExtraArg
+  state: StateSchema
 }

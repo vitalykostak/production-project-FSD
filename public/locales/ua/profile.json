@@ -1,4 +1,9 @@
 {
   "profile_page": "Сторінка профіля",
-  "profile": "Профіль"
+  "profile": "Профіль",
+  "error_during_fetching_profile": "Помилка при загрузці профіля",
+  "firstName": "Ім'я",
+  "lastName": "Прізвище",
+  "city": "Місто",
+  "age": "Вік"
 }

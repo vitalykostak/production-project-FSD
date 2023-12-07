@@ -1,4 +1,9 @@
 {
   "profile_page": "Profile page",
-  "profile": "Profile"
+  "profile": "Profile",
+  "error_during_fetching_profile": "Error during fetching profile",
+  "firstName": "First name",
+  "lastName": "Last name",
+  "city": "City",
+  "age": "Age"
 }
