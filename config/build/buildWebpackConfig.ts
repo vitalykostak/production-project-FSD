@@ -14,7 +14,8 @@ export default (options: BuildOptions): Configuration => {
     output: {
       path: options.paths.build,
       filename: '[name].[contenthash].js',
-      clean: true
+      clean: true,
+      publicPath: '/'
     },
     plugins: buildPlugins(options),
     module: {
