@@ -1,3 +1,5 @@
 {
-  "articles": "Articles"
+  "articles": "Articles",
+  "article_was_not_found": "Article was not found",
+  "error_while_loading": "Error while loading"
 }

@@ -12,12 +12,16 @@ import { type UserSchema } from 'entities/User'
 import { type LoginSchema } from 'features/AuthByUsername'
 import { type NavigateFunction } from 'react-router-dom'
 import { type AppDispatch } from './store'
+import { type ArticleDetailsSchema } from 'entities/Articles'
 
 export interface StateSchema {
   counter: CounterSchema
   user: UserSchema
+
+  // Async reducers
   loginForm?: LoginSchema
   profile?: ProfileSchema
+  articleDetails?: ArticleDetailsSchema
 }
 
 export type StateSchemaKeys = keyof StateSchema

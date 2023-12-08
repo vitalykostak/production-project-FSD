@@ -1,3 +1,5 @@
 {
-  "articles": "Статті"
+  "articles": "Статті",
+  "article_was_not_found": "  Статья не знайдена",
+  "error_while_loading": "Помилка під час загрузки"
 }
