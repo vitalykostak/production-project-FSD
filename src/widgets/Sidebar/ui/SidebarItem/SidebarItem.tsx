@@ -18,7 +18,7 @@ interface SidebarItemProps {
 const SidebarItem: FC<SidebarItemProps> = (props) => {
   const { item, collapsed } = props
 
-  const { t } = useTranslation(['main', 'about', 'profile'])
+  const { t } = useTranslation(['main', 'about', 'profile', 'article'])
   const isAuth = useSelector(getUserAuthData)
 
   if (!isAuth && item.authOnly) {
