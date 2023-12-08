@@ -43,13 +43,13 @@ export default Code
 
 export const Normal: Story = {
   args: {
-    children: code
+    text: code
   }
 }
 
 export const Dark: Story = {
   args: {
-    children: code
+    text: code
   },
   decorators: [ThemeDecorator(Theme.DARK)]
 }
