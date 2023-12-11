@@ -24,7 +24,7 @@ describe('updateProfileData.test', () => {
       }
     })
     thunk.api.put.mockReturnValue(Promise.resolve({ data: profile }))
-    const result = await thunk.callThunk(undefined)
+    const result = await thunk.callThunk('1')
 
     expect(thunk.api.put).toHaveBeenCalledTimes(1)
 
@@ -41,7 +41,7 @@ describe('updateProfileData.test', () => {
       }
     })
     thunk.api.put.mockReturnValue(Promise.resolve({ data: profile }))
-    const result = await thunk.callThunk(undefined)
+    const result = await thunk.callThunk('1')
 
     expect(thunk.api.put).not.toHaveBeenCalled()
 
@@ -58,7 +58,7 @@ describe('updateProfileData.test', () => {
       }
     })
     thunk.api.put.mockReturnValue(Promise.resolve({ data: profile }))
-    const result = await thunk.callThunk(undefined)
+    const result = await thunk.callThunk('1')
 
     expect(thunk.api.put).not.toHaveBeenCalled()
 
@@ -78,7 +78,7 @@ describe('updateProfileData.test', () => {
       }
     })
     thunk.api.put.mockReturnValue(Promise.resolve({ status: 404 }))
-    const result = await thunk.callThunk(undefined)
+    const result = await thunk.callThunk('1')
 
     expect(thunk.api.put).toHaveBeenCalledTimes(1)
 

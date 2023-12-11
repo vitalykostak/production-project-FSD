@@ -9,7 +9,7 @@ import {
   profileActions,
   profileReducer
 } from 'entities/Profile'
-import { useEffect, useCallback } from 'react'
+import { useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
@@ -17,6 +17,8 @@ import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader'
 import { type CURRENCY } from 'entities/Currency'
 import { type COUNTRY } from 'entities/Country'
 import { Text, TextTheme } from 'shared/ui'
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { useParams } from 'react-router-dom'
 
 const reducers: ReducersList = {
   profile: profileReducer
@@ -31,12 +33,13 @@ const Profile = () => {
   const profileReadonly = useSelector(getProfileReadonly)
   const profileValidationErrors = useSelector(getProfileValidationErrors)
 
-  useEffect(() => {
-    if (EXECUTION_ENVIRONMENT === 'storybook') {
-      return
+  const { id } = useParams<{ id: string }>()
+
+  useInitialEffect(() => {
+    if (id) {
+      void dispatch(fetchProfileData(id))
     }
-    void dispatch(fetchProfileData())
-  }, [dispatch])
+  })
 
   const onChangeFirstName = useCallback((value: string) => {
     dispatch(profileActions.updateProfile({ first: value }))

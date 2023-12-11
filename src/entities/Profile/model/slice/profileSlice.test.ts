@@ -151,7 +151,7 @@ describe('profileSlice', () => {
     expect(
       profileReducer(
         state as ProfileSchema,
-        fetchProfileData.fulfilled(profile, '', undefined)
+        fetchProfileData.fulfilled(profile, '', '1')
       )
     ).toEqual(expected)
   })

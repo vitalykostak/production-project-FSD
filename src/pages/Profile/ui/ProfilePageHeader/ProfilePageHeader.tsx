@@ -6,7 +6,13 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { getProfileReadonly } from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { profileActions, updateProfileData } from 'entities/Profile'
+import {
+  getProfileData,
+  profileActions,
+  updateProfileData
+} from 'entities/Profile'
+import { useParams } from 'react-router-dom'
+import { getUserAuthData } from 'entities/User'
 
 interface ProfilePageHeaderProps {
   className?: string
@@ -18,7 +24,13 @@ const ProfilePageHeader: FC<ProfilePageHeaderProps> = memo((props) => {
   const { t } = useTranslation(['translation', 'profile'])
   const dispatch = useAppDispatch()
 
+  const authData = useSelector(getUserAuthData)
   const profileReadonly = useSelector(getProfileReadonly)
+  const profileData = useSelector(getProfileData)
+
+  const canEdit = authData?.id === profileData?.id
+
+  const { id } = useParams<{ id: 'string' }>()
 
   const mods = {}
 
@@ -34,10 +46,11 @@ const ProfilePageHeader: FC<ProfilePageHeaderProps> = memo((props) => {
     [dispatch]
   )
 
-  const onSave = useCallback(
-    async () => dispatch(updateProfileData()),
-    [dispatch]
-  )
+  const onSave = useCallback(async () => {
+    if (id) {
+      void dispatch(updateProfileData(id))
+    }
+  }, [dispatch, id])
 
   return (
     <div
@@ -48,34 +61,38 @@ const ProfilePageHeader: FC<ProfilePageHeaderProps> = memo((props) => {
       )}
     >
       <Text title={t('profile:profile')}></Text>
-      {profileReadonly
-        ? (
-        <Button
-          theme={ButtonTheme.OUTLINE}
-          className={profilePageHeaderStyles.editBtn}
-          onClick={onEdit}
-        >
-          {t('translation:edit')}
-        </Button>
-          )
-        : (
+      {canEdit && (
         <>
-          <Button
-            theme={ButtonTheme.OUTLINE_RED}
-            className={profilePageHeaderStyles.editBtn}
-            onClick={onCancelEdit}
-          >
-            {t('translation:cancel')}
-          </Button>
-          <Button
-            theme={ButtonTheme.OUTLINE}
-            className={profilePageHeaderStyles.saveBtn}
-            onClick={onSave}
-          >
-            {t('translation:save')}
-          </Button>
+          {profileReadonly
+            ? (
+            <Button
+              theme={ButtonTheme.OUTLINE}
+              className={profilePageHeaderStyles.editBtn}
+              onClick={onEdit}
+            >
+              {t('translation:edit')}
+            </Button>
+              )
+            : (
+            <>
+              <Button
+                theme={ButtonTheme.OUTLINE_RED}
+                className={profilePageHeaderStyles.editBtn}
+                onClick={onCancelEdit}
+              >
+                {t('translation:cancel')}
+              </Button>
+              <Button
+                theme={ButtonTheme.OUTLINE}
+                className={profilePageHeaderStyles.saveBtn}
+                onClick={onSave}
+              >
+                {t('translation:save')}
+              </Button>
+            </>
+              )}
         </>
-          )}
+      )}
     </div>
   )
 })
