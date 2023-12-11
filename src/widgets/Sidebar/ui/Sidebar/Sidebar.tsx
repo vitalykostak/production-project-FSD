@@ -8,8 +8,9 @@ import {
   ButtonTheme
 } from 'shared/ui'
 import { ButtonSize } from 'shared/ui/Button/Button'
-import { SidebarItems } from '../../model/items'
 import SidebarItem from '../SidebarItem/SidebarItem'
+import { useSelector } from 'react-redux'
+import { getSidebarItems } from '../../model/selectors/getSidebarItems/getSidebarItems'
 
 interface SidebarProps {
   className?: string
@@ -17,6 +18,9 @@ interface SidebarProps {
 
 const Sidebar: FC<SidebarProps> = memo(({ className }) => {
   const [collapsed, setCollapsed] = useState<boolean>(false)
+
+  const SidebarItems = useSelector(getSidebarItems)
+
   const toggleSidebar = () => setCollapsed((prev) => !prev)
 
   return (

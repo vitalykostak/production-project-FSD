@@ -6,9 +6,9 @@ import {
   AppLinkTheme
 } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
-import { type SidebarItemType } from '../../model/items'
 import { useSelector } from 'react-redux'
 import { getUserAuthData } from 'entities/User'
+import { type SidebarItemType } from 'widgets/Sidebar/model/types/sidebar'
 
 interface SidebarItemProps {
   item: SidebarItemType
