@@ -23,9 +23,100 @@
   ],
   "comments": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": "1",
+      "text": "some comment",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "text": "some comment 2",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "3",
+      "text": "some comment 3",
+      "articleId": "1",
+      "userId": "2"
+    },
+    {
+      "text": "New from vi",
+      "articleId": "1",
+      "userId": "1",
+      "id": "pJoSJic"
+    },
+    {
+      "text": "new one",
+      "articleId": "1",
+      "userId": "2",
+      "id": "rDm10Ss"
+    },
+    {
+      "text": "new one else",
+      "articleId": "1",
+      "userId": "2",
+      "id": "wW-LuiX"
+    },
+    {
+      "text": "jj",
+      "articleId": "1",
+      "userId": "2",
+      "id": "7xzE0zg"
+    },
+    {
+      "text": "jjsdf",
+      "articleId": "1",
+      "userId": "2",
+      "id": "zVY6An0"
+    },
+    {
+      "text": "sdf",
+      "articleId": "1",
+      "userId": "2",
+      "id": "z4TE3nh"
+    },
+    {
+      "text": "sdf",
+      "articleId": "1",
+      "userId": "2",
+      "id": "EKRO-AW"
+    },
+    {
+      "text": "sdf",
+      "articleId": "1",
+      "userId": "2",
+      "id": "IvbGfMR"
+    },
+    {
+      "text": "sdf",
+      "articleId": "1",
+      "userId": "2",
+      "id": "W8xTE2Z"
+    },
+    {
+      "text": "sdf",
+      "articleId": "1",
+      "userId": "2",
+      "id": "xUnqKlF"
+    },
+    {
+      "text": "sdf",
+      "articleId": "1",
+      "userId": "2",
+      "id": "AUrl2-K"
+    },
+    {
+      "text": "sdfsdf",
+      "articleId": "1",
+      "userId": "2",
+      "id": "AMTCqf5"
+    },
+    {
+      "text": "sdfsdf",
+      "articleId": "1",
+      "userId": "2",
+      "id": "xTfoDvd"
     }
   ],
   "articles": [
@@ -36,7 +127,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -95,48 +188,44 @@
       ]
     }
   ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "some comment",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "id": "2",
-      "text": "some comment 2",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "id": "3",
-      "text": "some comment 3",
-      "articleId": "1",
-      "userId": "1"
-    }
-  ],
   "users": [
     {
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.YiaRzLjKeita5FGhjVu5ZQHaHa%26pid%3DApi&f=1&ipt=94b07cb95209f68ee67c1876517815ad54c69e96abdddd78766316ff4cccdd9d&ipo=images"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.YiaRzLjKeita5FGhjVu5ZQHaHa%26pid%3DApi&f=1&ipt=94b07cb95209f68ee67c1876517815ad54c69e96abdddd78766316ff4cccdd9d&ipo=images"
     }
   ],
-  "profile": {
-    "first": "Johnny",
-    "lastName": "Silverhand",
-    "age": 30,
-    "country": "UKRAINE",
-    "currency": "EUR",
-    "city": "NightCity",
-    "username": "admin",
-    "avatar": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.YiaRzLjKeita5FGhjVu5ZQHaHa%26pid%3DApi&f=1&ipt=94b07cb95209f68ee67c1876517815ad54c69e96abdddd78766316ff4cccdd9d&ipo=images"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Johnny",
+      "lastName": "Silverhand",
+      "age": 30,
+      "country": "UKRAINE",
+      "currency": "EUR",
+      "city": "NightCity",
+      "username": "admin",
+      "avatar": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.YiaRzLjKeita5FGhjVu5ZQHaHa%26pid%3DApi&f=1&ipt=94b07cb95209f68ee67c1876517815ad54c69e96abdddd78766316ff4cccdd9d&ipo=images"
+    },
+    {
+      "id": "2",
+      "first": "Johnny_changed",
+      "lastName": "Silverhand234",
+      "age": 30,
+      "country": "UKRAINE",
+      "currency": "EUR",
+      "city": "NightCity",
+      "username": "admin",
+      "avatar": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.YiaRzLjKeita5FGhjVu5ZQHaHa%26pid%3DApi&f=1&ipt=94b07cb95209f68ee67c1876517815ad54c69e96abdddd78766316ff4cccdd9d&ipo=images"
+    }
+  ]
 }

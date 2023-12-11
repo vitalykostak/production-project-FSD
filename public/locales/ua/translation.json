@@ -15,5 +15,9 @@
   "cancel": "Відмінити",
   "try_to_reload_page": "Спробуйте перезагрузити сторінку",
   "choose_currency": "Виберіть валюту",
-  "choose_country": "Виберіть країну"
+  "choose_country": "Виберіть країну",
+  "comments": "Коментарі",
+  "comments_do_not_exist": "Коментарі відсутні",
+  "input_comment": "Введіть коментар",
+  "send": "Відправити"
 }

@@ -15,5 +15,9 @@
   "cancel": "Cancel",
   "try_to_reload_page": "Try to reload page",
   "choose_currency": "Choose currency",
-  "choose_country": "Choose country"
+  "choose_country": "Choose country",
+  "comments": "Comments",
+  "comments_do_not_exist": "Comments don't exist",
+  "input_comment": "Type comment",
+  "send": "Send"
 }
