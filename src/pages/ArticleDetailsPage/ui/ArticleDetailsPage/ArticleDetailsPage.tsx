@@ -1,9 +1,9 @@
 import { memo, type FC, useCallback } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Text } from 'shared/ui'
+import { Button, Text } from 'shared/ui'
 import styles from './ArticleDetailsPage.module.scss'
 import { ArticleDetails } from 'entities/Articles'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { CommentList } from 'entities/Comment'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib'
@@ -12,15 +12,15 @@ import {
   getArticleDetailsCommentsSelectors
 } from '../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice'
 import { useSelector } from 'react-redux'
-import {
-  getArticleDetailsCommentsLoading
-} from '../../model/selectors/articleDetailsComments'
+import { getArticleDetailsCommentsLoading } from '../../model/selectors/articleDetailsComments'
 import { fetchArticleCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchArticleCommentsByArticleId/fetchArticleCommentsByArticleId'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { AddCommentForm } from 'features/AddCommentForm'
 import { getAddCommentFormText } from 'features/AddCommentForm/model/selectors/getAddCommentForm/getAddCommentForm'
 import { sendComment } from '../../model/services/sendComment/sendComment'
+import { routePaths } from 'shared/config/routeConfig/routeConfig'
+import { ButtonTheme } from 'shared/ui/Button/Button'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -36,6 +36,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
   const { t } = useTranslation(['article', 'translation'])
   const dispatch = useAppDispatch()
   const { id } = useParams<{ id: string }>()
+  const navigate = useNavigate()
 
   const articleDetailsComments = useSelector(
     getArticleDetailsCommentsSelectors.selectAll
@@ -50,9 +51,17 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
 
   const addCommentFormText = useSelector(getAddCommentFormText)
 
-  const sendCommentHandler = useCallback((text: string) => {
-    void dispatch(sendComment(text))
-  }, [dispatch])
+  const sendCommentHandler = useCallback(
+    (text: string) => {
+      void dispatch(sendComment(text))
+    },
+    [dispatch]
+  )
+
+  const onBackToList = useCallback(
+    () => navigate(routePaths.articles),
+    [navigate]
+  )
 
   useInitialEffect(async () => dispatch(fetchArticleCommentsByArticleId(id)))
 
@@ -83,12 +92,16 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
           additionsClasses
         )}
       >
+        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>{t('translation:back')}</Button>
         <ArticleDetails id={id} />
         <Text
           title={t('translation:comments')}
           className={styles.commentsTitle}
         />
-        <AddCommentForm onSendComment={sendCommentHandler} text={addCommentFormText}/>
+        <AddCommentForm
+          onSendComment={sendCommentHandler}
+          text={addCommentFormText}
+        />
         <CommentList
           isLoading={articleDetailsCommentsLoading}
           comments={articleDetailsComments}

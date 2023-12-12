@@ -6,6 +6,7 @@ describe('get articlesDetails fields', () => {
   test('Should return value "data"', () => {
     const article: Article = {
       id: '1',
+      user: { id: '1', username: 'User' },
       title: 'Javascript news',
       subtitle: 'Javascript news subitle subtile',
       img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',

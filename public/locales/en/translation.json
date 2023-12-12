@@ -19,5 +19,7 @@
   "comments": "Comments",
   "comments_do_not_exist": "Comments don't exist",
   "input_comment": "Type comment",
-  "send": "Send"
+  "send": "Send",
+  "back": "Back",
+  "read_more": "Read more"
 }
