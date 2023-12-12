@@ -3,7 +3,7 @@ import { type ArticleDetailsSchema } from '../types/articleDetailsSchema'
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById'
 import { type Article, ArticleBlockType, ArticleType } from '../types/articles'
 
-describe('profileSlice', () => {
+describe('articleDetailsSlice', () => {
   const article: Article = {
     id: '1',
     user: { id: '1', username: 'User' },

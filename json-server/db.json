@@ -121,13 +121,485 @@
   ],
   "articles": [
     {
-      "id": "1",
+      "id": "article_renewable_energy_1",
+      "title": "Harvesting the Future: A Comprehensive Guide to Renewable Energy",
+      "subtitle": "Navigating the landscape of sustainable solutions for a greener tomorrow.",
+      "userId": "1",
+      "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Q-cLlukhWB7ytgeCgUoZggHaEo%26pid%3DApi&f=1&ipt=dbc73a80a1586280e112a348291bc3ac8da790117db21d733c29abc6ac25889c&ipo=images",
+      "views": 12000,
+      "createdAt": "2023-05-10T14:30:00Z",
+      "type": ["SUSTAINABILITY", "RENEWABLE_ENERGY"],
+      "blocks": [
+        {
+          "id": "block_intro",
+          "type": "TEXT",
+          "title": "Embracing a Sustainable Future",
+          "paragraphs": [
+            "As the world grapples with environmental challenges, renewable energy emerges as a beacon of hope.",
+            "This comprehensive guide explores the diverse realms of renewable energy and its pivotal role in shaping a sustainable future."
+          ]
+        },
+        {
+          "id": "block_types",
+          "type": "TEXT",
+          "title": "Diverse Types of Renewable Energy",
+          "paragraphs": [
+            "From solar and wind to hydropower and geothermal, we delve into the various forms of renewable energy, shedding light on their mechanisms and applications."
+          ]
+        },
+        {
+          "id": "block_advancements",
+          "type": "TEXT",
+          "title": "Technological Advancements in the Renewable Sector",
+          "paragraphs": [
+            "Cutting-edge technologies are driving innovation in the renewable energy sector.",
+            "We explore breakthroughs in energy storage, smart grids, and the integration of artificial intelligence for optimal energy utilization."
+          ]
+        },
+        {
+          "id": "block_global_impact",
+          "type": "TEXT",
+          "title": "Global Impact and Initiatives",
+          "paragraphs": [
+            "Renewable energy is not just a local solution but a global necessity.",
+            "We examine international collaborations, initiatives, and the transformative impact of renewable energy on mitigating climate change."
+          ]
+        },
+        {
+          "id": "block_challenges",
+          "type": "TEXT",
+          "title": "Challenges and Future Prospects",
+          "paragraphs": [
+            "Despite its promise, the renewable energy sector faces challenges.",
+            "We explore issues such as intermittency, storage limitations, and the ongoing efforts to overcome these hurdles for a sustainable tomorrow."
+          ]
+        },
+        {
+          "id": "block_image",
+          "type": "IMAGE",
+          "src": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.4_LWjd035R9nq7xCzWDpnwHaE8%26pid%3DApi&f=1&ipt=5bce738361a9f275f96988ae68512ee31238f6a7cc23fdbef033cacffa6519bc&ipo=images",
+          "title": "Visualizing Renewable Solutions"
+        }
+      ]
+    },
+    {
+      "id": "article_complex_in_depth_2",
+      "title": "Unveiling the Enigma: A Comprehensive Exploration of Quantum Computing",
+      "subtitle": "Diving deep into the complexities and possibilities of quantum computing.",
+      "userId": "2",
+      "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.6SsI0Z9mOLi8r5wk8CiDCAHaGb%26pid%3DApi&f=1&ipt=4a7e8e41528ceab94da1b8073e038e927b3b39194107f85b720a78fcb0ecaa1b&ipo=images",
+      "views": 15000,
+      "createdAt": "2023-04-15T08:45:00Z",
+      "type": ["TECHNOLOGY", "QUANTUM_COMPUTING"],
+      "blocks": [
+        {
+          "id": "block_intro",
+          "type": "TEXT",
+          "title": "Embarking on the Quantum Journey",
+          "paragraphs": [
+            "Quantum computing, with its promise of unparalleled computational power, is reshaping the landscape of technology.",
+            "In this in-depth exploration, we unravel the complexities that lie beneath the surface of this revolutionary field."
+          ]
+        },
+        {
+          "id": "block_foundations",
+          "type": "TEXT",
+          "title": "Foundations of Quantum Mechanics",
+          "paragraphs": [
+            "Understanding quantum computing requires delving into the principles of quantum mechanics.",
+            "We explore concepts such as superposition, entanglement, and quantum bits (qubits), laying the groundwork for a deeper comprehension."
+          ]
+        },
+        {
+          "id": "block_algorithms",
+          "type": "TEXT",
+          "title": "Quantum Algorithms: Beyond Classical Limits",
+          "paragraphs": [
+            "Quantum algorithms, such as Shor's and Grover's algorithms, showcase the superiority of quantum computation over classical methods.",
+            "We dissect these algorithms, examining their applications and the challenges they pose to traditional computing paradigms."
+          ]
+        },
+        {
+          "id": "block_intro",
+          "type": "TEXT",
+          "title": "A Heath Ledger Masterpiece",
+          "paragraphs": [
+            "At the heart of Nolan's Joker is Heath Ledger's unparalleled performance.",
+            "Ledger's portrayal of the Joker is hauntingly captivating, earning him a posthumous Academy Award for Best Supporting Actor.",
+            "The late actor delves deep into the psyche of the character, creating a Joker that is both enigmatic and terrifying."
+          ]
+        },
+        {
+          "id": "block_force_of_chaos",
+          "type": "TEXT",
+          "title": "A Force of Chaos",
+          "paragraphs": [
+            "Unlike traditional villains, the Joker is not driven by a desire for power or wealth.",
+            "Instead, he thrives on chaos and anarchy. His motives are unpredictable, and his actions are driven by a desire to disrupt the established order, challenging the very fabric of society."
+          ]
+        },
+        {
+          "id": "block_ledger_performance",
+          "type": "IMAGE",
+          "src": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.loEl0linPPKrH_amFeV_wgHaJW%26pid%3DApi&f=1&ipt=8d59f28e000a422114f9e25992097904fc7aee5c31d3e1a383af137afc565ce9&ipo=images",
+          "title": "Heath Ledger's Captivating Performance"
+        },
+        {
+          "id": "block_nolan_vision",
+          "type": "TEXT",
+          "title": "Nolan's Unique Vision",
+          "paragraphs": [
+            "Nolan, known for his penchant for realism, brings a gritty and grounded approach to Gotham City.",
+            "The Joker, however, stands out as a surreal force within this realistic backdrop. The juxtaposition of Nolan's realism with the Joker's chaotic nature creates a tension that keeps audiences on the edge of their seats."
+          ]
+        },
+        {
+          "id": "block_challenges",
+          "type": "TEXT",
+          "title": "Navigating Challenges on the Quantum Frontier",
+          "paragraphs": [
+            "While the potential of quantum computing is immense, it comes with its set of challenges.",
+            "From mitigating decoherence to building fault-tolerant quantum systems, we explore the hurdles researchers face on this groundbreaking journey."
+          ]
+        },
+        {
+          "id": "block_image",
+          "type": "IMAGE",
+          "src": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.MrgO3P_uifgmJAT1qMo51wHaGL%26pid%3DApi&f=1&ipt=9c7dee100fbc0aeb5b1ab7b43f2d983fb17e65d60d58761c3d04b5dff504d49d&ipo=images",
+          "title": "Visualizing Quantum Concepts"
+        }
+      ]
+    },
+    {
+      "id": "nolan_joker_article_123_234234234",
+      "title": "Exploring the Cinematic Genius: The Joker in Christopher Nolan's Masterpiece",
+      "subtitle": "Unraveling the Complexity of Heath Ledger's Performance",
+      "userId": "1",
+      "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.PxhHX_yp7gKOsnX1KSw6kwHaFj%26pid%3DApi&f=1&ipt=5005a5e83cbcc02fcd9f0d4a3fc398710adcbe26c692b33dbf040f54f60d5eb2&ipo=images",
+      "views": 5000,
+      "createdAt": "2023-03-15T18:30:00Z",
+      "type": ["FILM", "CHARACTER_STUDY"],
+      "blocks": [
+        {
+          "id": "block_intro",
+          "type": "TEXT",
+          "title": "A Heath Ledger Masterpiece",
+          "paragraphs": [
+            "At the heart of Nolan's Joker is Heath Ledger's unparalleled performance.",
+            "Ledger's portrayal of the Joker is hauntingly captivating, earning him a posthumous Academy Award for Best Supporting Actor.",
+            "The late actor delves deep into the psyche of the character, creating a Joker that is both enigmatic and terrifying."
+          ]
+        },
+        {
+          "id": "block_force_of_chaos",
+          "type": "TEXT",
+          "title": "A Force of Chaos",
+          "paragraphs": [
+            "Unlike traditional villains, the Joker is not driven by a desire for power or wealth.",
+            "Instead, he thrives on chaos and anarchy. His motives are unpredictable, and his actions are driven by a desire to disrupt the established order, challenging the very fabric of society."
+          ]
+        },
+        {
+          "id": "block_ledger_performance",
+          "type": "IMAGE",
+          "src": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.loEl0linPPKrH_amFeV_wgHaJW%26pid%3DApi&f=1&ipt=8d59f28e000a422114f9e25992097904fc7aee5c31d3e1a383af137afc565ce9&ipo=images",
+          "title": "Heath Ledger's Captivating Performance"
+        },
+        {
+          "id": "block_nolan_vision",
+          "type": "TEXT",
+          "title": "Nolan's Unique Vision",
+          "paragraphs": [
+            "Nolan, known for his penchant for realism, brings a gritty and grounded approach to Gotham City.",
+            "The Joker, however, stands out as a surreal force within this realistic backdrop. The juxtaposition of Nolan's realism with the Joker's chaotic nature creates a tension that keeps audiences on the edge of their seats."
+          ]
+        },
+        {
+          "id": "block_moral_ambiguity",
+          "type": "IMAGE",
+          "src": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.d0XPFKwQow1NEUQrm3O9sgHaEK%26pid%3DApi&f=1&ipt=a4c46f55194ffe0b15671b8c9707f261fce082e1ec7b6a7a5cf68968e441c5ce&ipo=images",
+          "title": "Moral Ambiguity in Nolan's Gotham"
+        },
+        {
+          "id": "block_legacy",
+          "type": "TEXT",
+          "title": "A Lasting Legacy",
+          "paragraphs": [
+            "The Dark Knight's portrayal of the Joker has left an indelible mark on popular culture.",
+            "Heath Ledger's performance is often cited as one of the greatest in cinematic history, and the character's complexity continues to be a subject of analysis and admiration."
+          ]
+        },
+        {
+          "id": "block_influence",
+          "type": "TEXT",
+          "title": "Influence on Subsequent Adaptations",
+          "paragraphs": [
+            "Subsequent portrayals of the Joker in various media have been influenced by Ledger's interpretation.",
+            "The legacy of Nolan's Joker lives on, shaping how audiences perceive and appreciate one of the most iconic villains in the comic book and film world."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1_2",
       "title": "Javascript news",
       "subtitle": "Javascript news subitle subtile",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "user": "1",
+      "userId": "1",
+      "type": ["IT"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Блок 1",
+          "paragraphs": [
+            "Lorem LoremLoremLoremLoremLoremLorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem"
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
+        },
+        {
+          "id": "5",
+          "type": "TEXT",
+          "title": "Блок 1",
+          "paragraphs": [
+            "Lorem LoremLoremLoremLoremLoremLorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem"
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+          "title": "Image 1"
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+        },
+        {
+          "id": "7",
+          "type": "TEXT",
+          "title": "Title",
+          "paragraphs": [
+            "Lorem LoremLoremLoremLoremLoremLorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem"
+          ]
+        },
+        {
+          "id": "8",
+          "type": "IMAGE",
+          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+          "title": "Title"
+        },
+        {
+          "id": "9",
+          "type": "TEXT",
+          "title": "Title",
+          "paragraphs": [
+            "Lorem LoremLoremLoremLoremLoremLorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article_renewable_energy",
+      "title": "Harvesting the Future: A Comprehensive Guide to Renewable Energy",
+      "subtitle": "Navigating the landscape of sustainable solutions for a greener tomorrow.",
+      "userId": "1",
+      "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.ePY5UvLuEiXUEpT3YuiUggHaEK%26pid%3DApi&f=1&ipt=5493c669437f2d18c83e8bb37b73925036d49d934631d8c2fedf5467f6fb09d3&ipo=images",
+      "views": 12000,
+      "createdAt": "2023-05-10T14:30:00Z",
+      "type": ["SUSTAINABILITY", "RENEWABLE_ENERGY"],
+      "blocks": [
+        {
+          "id": "block_intro",
+          "type": "TEXT",
+          "title": "Embracing a Sustainable Future",
+          "paragraphs": [
+            "As the world grapples with environmental challenges, renewable energy emerges as a beacon of hope.",
+            "This comprehensive guide explores the diverse realms of renewable energy and its pivotal role in shaping a sustainable future."
+          ]
+        },
+        {
+          "id": "block_types",
+          "type": "TEXT",
+          "title": "Diverse Types of Renewable Energy",
+          "paragraphs": [
+            "From solar and wind to hydropower and geothermal, we delve into the various forms of renewable energy, shedding light on their mechanisms and applications."
+          ]
+        },
+        {
+          "id": "block_advancements",
+          "type": "TEXT",
+          "title": "Technological Advancements in the Renewable Sector",
+          "paragraphs": [
+            "Cutting-edge technologies are driving innovation in the renewable energy sector.",
+            "We explore breakthroughs in energy storage, smart grids, and the integration of artificial intelligence for optimal energy utilization."
+          ]
+        },
+        {
+          "id": "block_global_impact",
+          "type": "TEXT",
+          "title": "Global Impact and Initiatives",
+          "paragraphs": [
+            "Renewable energy is not just a local solution but a global necessity.",
+            "We examine international collaborations, initiatives, and the transformative impact of renewable energy on mitigating climate change."
+          ]
+        },
+        {
+          "id": "block_challenges",
+          "type": "TEXT",
+          "title": "Challenges and Future Prospects",
+          "paragraphs": [
+            "Despite its promise, the renewable energy sector faces challenges.",
+            "We explore issues such as intermittency, storage limitations, and the ongoing efforts to overcome these hurdles for a sustainable tomorrow."
+          ]
+        },
+        {
+          "id": "block_image",
+          "type": "IMAGE",
+          "src": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.4_LWjd035R9nq7xCzWDpnwHaE8%26pid%3DApi&f=1&ipt=5bce738361a9f275f96988ae68512ee31238f6a7cc23fdbef033cacffa6519bc&ipo=images",
+          "title": "Visualizing Renewable Solutions"
+        }
+      ]
+    },
+    {
+      "id": "article_complex_in_depth",
+      "title": "Unveiling the Enigma: A Comprehensive Exploration of Quantum Computing",
+      "subtitle": "Diving deep into the complexities and possibilities of quantum computing.",
+      "userId": "2",
+      "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.KC0HhY9Rphws3IuG8l_6mAHaE8%26pid%3DApi&f=1&ipt=cd1ba0978d71c5028440d519903c018f0693774d6afec01c7d28929bfa43228c&ipo=images",
+      "views": 15000,
+      "createdAt": "2023-04-15T08:45:00Z",
+      "type": ["TECHNOLOGY", "QUANTUM_COMPUTING"],
+      "blocks": [
+        {
+          "id": "block_intro",
+          "type": "TEXT",
+          "title": "Embarking on the Quantum Journey",
+          "paragraphs": [
+            "Quantum computing, with its promise of unparalleled computational power, is reshaping the landscape of technology.",
+            "In this in-depth exploration, we unravel the complexities that lie beneath the surface of this revolutionary field."
+          ]
+        },
+        {
+          "id": "block_foundations",
+          "type": "TEXT",
+          "title": "Foundations of Quantum Mechanics",
+          "paragraphs": [
+            "Understanding quantum computing requires delving into the principles of quantum mechanics.",
+            "We explore concepts such as superposition, entanglement, and quantum bits (qubits), laying the groundwork for a deeper comprehension."
+          ]
+        },
+        {
+          "id": "block_algorithms",
+          "type": "TEXT",
+          "title": "Quantum Algorithms: Beyond Classical Limits",
+          "paragraphs": [
+            "Quantum algorithms, such as Shor's and Grover's algorithms, showcase the superiority of quantum computation over classical methods.",
+            "We dissect these algorithms, examining their applications and the challenges they pose to traditional computing paradigms."
+          ]
+        },
+        {
+          "id": "block_challenges",
+          "type": "TEXT",
+          "title": "Navigating Challenges on the Quantum Frontier",
+          "paragraphs": [
+            "While the potential of quantum computing is immense, it comes with its set of challenges.",
+            "From mitigating decoherence to building fault-tolerant quantum systems, we explore the hurdles researchers face on this groundbreaking journey."
+          ]
+        },
+        {
+          "id": "block_image",
+          "type": "IMAGE",
+          "src": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.MrgO3P_uifgmJAT1qMo51wHaGL%26pid%3DApi&f=1&ipt=9c7dee100fbc0aeb5b1ab7b43f2d983fb17e65d60d58761c3d04b5dff504d49d&ipo=images",
+          "title": "Visualizing Quantum Concepts"
+        }
+      ]
+    },
+    {
+      "id": "nolan_joker_article_123_сываждд",
+      "title": "Exploring the Cinematic Genius: The Joker in Christopher Nolan's Masterpiece",
+      "subtitle": "Unraveling the Complexity of Heath Ledger's Performance",
+      "userId": "1",
+      "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EfNpLXTywwTAErkTnBJkkgHaEK%26pid%3DApi&f=1&ipt=5f03fc29441274f75c64be71b99f6c9a69865e4b85def3e321bfe5d7dfe57926&ipo=images",
+      "views": 5000,
+      "createdAt": "2023-03-15T18:30:00Z",
+      "type": ["FILM", "CHARACTER_STUDY"],
+      "blocks": [
+        {
+          "id": "block_intro",
+          "type": "TEXT",
+          "title": "A Heath Ledger Masterpiece",
+          "paragraphs": [
+            "At the heart of Nolan's Joker is Heath Ledger's unparalleled performance.",
+            "Ledger's portrayal of the Joker is hauntingly captivating, earning him a posthumous Academy Award for Best Supporting Actor.",
+            "The late actor delves deep into the psyche of the character, creating a Joker that is both enigmatic and terrifying."
+          ]
+        },
+        {
+          "id": "block_force_of_chaos",
+          "type": "TEXT",
+          "title": "A Force of Chaos",
+          "paragraphs": [
+            "Unlike traditional villains, the Joker is not driven by a desire for power or wealth.",
+            "Instead, he thrives on chaos and anarchy. His motives are unpredictable, and his actions are driven by a desire to disrupt the established order, challenging the very fabric of society."
+          ]
+        },
+        {
+          "id": "block_ledger_performance",
+          "type": "IMAGE",
+          "src": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.loEl0linPPKrH_amFeV_wgHaJW%26pid%3DApi&f=1&ipt=8d59f28e000a422114f9e25992097904fc7aee5c31d3e1a383af137afc565ce9&ipo=images",
+          "title": "Heath Ledger's Captivating Performance"
+        },
+        {
+          "id": "block_nolan_vision",
+          "type": "TEXT",
+          "title": "Nolan's Unique Vision",
+          "paragraphs": [
+            "Nolan, known for his penchant for realism, brings a gritty and grounded approach to Gotham City.",
+            "The Joker, however, stands out as a surreal force within this realistic backdrop. The juxtaposition of Nolan's realism with the Joker's chaotic nature creates a tension that keeps audiences on the edge of their seats."
+          ]
+        },
+        {
+          "id": "block_moral_ambiguity",
+          "type": "IMAGE",
+          "src": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.d0XPFKwQow1NEUQrm3O9sgHaEK%26pid%3DApi&f=1&ipt=a4c46f55194ffe0b15671b8c9707f261fce082e1ec7b6a7a5cf68968e441c5ce&ipo=images",
+          "title": "Moral Ambiguity in Nolan's Gotham"
+        },
+        {
+          "id": "block_legacy",
+          "type": "TEXT",
+          "title": "A Lasting Legacy",
+          "paragraphs": [
+            "The Dark Knight's portrayal of the Joker has left an indelible mark on popular culture.",
+            "Heath Ledger's performance is often cited as one of the greatest in cinematic history, and the character's complexity continues to be a subject of analysis and admiration."
+          ]
+        },
+        {
+          "id": "block_influence",
+          "type": "TEXT",
+          "title": "Influence on Subsequent Adaptations",
+          "paragraphs": [
+            "Subsequent portrayals of the Joker in various media have been influenced by Ledger's interpretation.",
+            "The legacy of Nolan's Joker lives on, shaping how audiences perceive and appreciate one of the most iconic villains in the comic book and film world."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1sdfsdfsd",
+      "title": "Javascript news",
+      "subtitle": "Javascript news subitle subtile",
+      "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.19OInvxHEa9PJEI6XJqINgHaEo%26pid%3DApi&f=1&ipt=8fe23578edeccbf0b599dad3dc0fd63cd8862bf68dee74739becda03d009666c&ipo=images",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
       "type": ["IT"],
       "blocks": [
         {

@@ -15,6 +15,7 @@ import { type AppDispatch } from './store'
 import { type ArticleDetailsSchema } from 'entities/Articles'
 import { type ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
 import { type AddCommentFormSchema } from 'features/AddCommentForm'
+import { type ArticlesPageSchema } from 'pages/ArticlesPage'
 
 export interface StateSchema {
   counter: CounterSchema
@@ -26,6 +27,7 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema
   articleDetailsComments?: ArticleDetailsCommentsSchema
   addCommentForm?: AddCommentFormSchema
+  articlesPage?: ArticlesPageSchema
 }
 
 export type StateSchemaKeys = keyof StateSchema
