@@ -8,7 +8,7 @@ import { CURRENCY } from 'entities/Currency'
 import { COUNTRY } from 'entities/Country'
 
 const meta = {
-  title: 'entities/ProfileCard',
+  title: 'entities/Profile/ProfileCard',
   component: ProfileCard,
   tags: ['autodocs']
 } satisfies Meta<typeof ProfileCard>

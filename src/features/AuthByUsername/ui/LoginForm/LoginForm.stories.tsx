@@ -7,7 +7,7 @@ import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
 import { type LoginSchema } from '../../model/types/loginSchema'
 
 const meta = {
-  title: 'features/LoginForm',
+  title: 'features/AuthByUsername/LoginForm',
   component: LoginForm,
   tags: ['autodocs']
 } satisfies Meta<typeof LoginForm>

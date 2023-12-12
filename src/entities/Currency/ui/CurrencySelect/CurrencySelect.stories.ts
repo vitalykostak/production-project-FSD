@@ -5,7 +5,7 @@ import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 
 const meta = {
-  title: 'entities/CurrencySelect',
+  title: 'entities/Currency/CurrencySelect',
   component: CurrencySelect,
 
   tags: ['autodocs']

@@ -5,7 +5,7 @@ import { Theme } from 'app/providers/ThemeProvider'
 import { COUNTRY } from 'entities/Country'
 
 const meta = {
-  title: 'entities/CountrySelect',
+  title: 'entities/Country/CountrySelect',
   component: CountrySelect,
   tags: ['autodocs']
 } satisfies Meta<typeof CountrySelect>

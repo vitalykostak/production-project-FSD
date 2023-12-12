@@ -7,7 +7,7 @@ import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
 import AvatarTestImg from 'shared/assets/tests/avatar-test-img.png'
 
 const meta = {
-  title: 'entities/CommentList',
+  title: 'entities/Comment/CommentList',
   component: CommentList,
   tags: ['autodocs']
 } satisfies Meta<typeof CommentList>

@@ -6,7 +6,7 @@ import { Theme } from 'app/providers/ThemeProvider'
 import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
 
 const meta = {
-  title: 'features/AddCommentForm',
+  title: 'features/AddCommentForm/AddCommentForm',
   component: AddCommentForm,
   tags: ['autodocs']
 } satisfies Meta<typeof AddCommentForm>

@@ -9,7 +9,7 @@ import {
 import AvatarTestImg from 'shared/assets/tests/avatar-test-img.png'
 
 const meta = {
-  title: 'entities/ArticleListItem',
+  title: 'entities/Article/ArticleListItem',
   component: ArticleListItem,
   tags: ['autodocs']
 } satisfies Meta<typeof ArticleListItem>

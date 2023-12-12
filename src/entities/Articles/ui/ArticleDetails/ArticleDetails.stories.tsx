@@ -10,7 +10,7 @@ import {
 import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
 
 const meta = {
-  title: 'entities/ArticleDetails',
+  title: 'entities/Article/ArticleDetails',
   component: ArticleDetails,
   tags: ['autodocs']
 } satisfies Meta<typeof ArticleDetails>
