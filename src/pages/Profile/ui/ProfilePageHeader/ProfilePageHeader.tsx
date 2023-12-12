@@ -5,7 +5,7 @@ import { Button, ButtonTheme, Text } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { getProfileReadonly } from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks'
 import {
   getProfileData,
   profileActions,

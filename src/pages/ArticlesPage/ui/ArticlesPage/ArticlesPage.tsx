@@ -1,6 +1,5 @@
 import { memo, type FC, useCallback } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import styles from './ArticlesPage.module.scss'
 import {
   ArticleList,
   type ArticleListView,
@@ -12,15 +11,15 @@ import {
   articlesPageReducer,
   getArticlesPageSelectors
 } from '../../model/slices/articlesSlice/articlesPageSlice'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
 import { useSelector } from 'react-redux'
 import {
-  // getArticlesPageError,
   getArticlesPageLoading,
   getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors/articlesPageSelectors'
+import { Page } from 'shared/ui'
+import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 
 interface ArticlesPageProps {
   className?: string
@@ -38,7 +37,6 @@ const ArticlesPage: FC<ArticlesPageProps> = memo((props) => {
   const articles = useSelector(getArticlesPageSelectors.selectAll)
   const view = useSelector(getArticlesPageView)
   const isLoading = useSelector(getArticlesPageLoading)
-  // const error = useSelector(getArticlesPageError)
 
   const onToggleArticleItemsView = useCallback(
     (newView: ArticleListView) =>
@@ -46,21 +44,31 @@ const ArticlesPage: FC<ArticlesPageProps> = memo((props) => {
     [dispatch]
   )
 
+  const onLoadNextPart = useCallback(() => {
+    if (EXECUTION_ENVIRONMENT !== 'app') {
+      return
+    }
+    void dispatch(fetchNextArticlesPage())
+  }, [dispatch])
+
   const mods = {}
 
   const additionsClasses = [className]
 
   useInitialEffect(async () => {
-    void dispatch(fetchArticlesList())
     void dispatch(articlesPageActions.initState())
+    void dispatch(fetchArticlesList({ page: 1 }))
   })
 
   return (
     <DynamicModuleLoader reducers={reducers} shouldRemoveOnUnmout>
-      <div className={classNames(styles.ArticlesPage, mods, additionsClasses)}>
+      <Page
+        onScrollEnd={onLoadNextPart}
+        className={classNames('', mods, additionsClasses)}
+      >
         <ToggleItemsView view={view} onViewClick={onToggleArticleItemsView} />
         <ArticleList view={view} articles={articles} isLoading={isLoading} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 })

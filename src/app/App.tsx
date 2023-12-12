@@ -3,7 +3,7 @@ import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
 import { AppRouter } from './providers/router'
 import { Suspense, type FC, useEffect } from 'react'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks'
 import { getUserInitialized, userActions } from 'entities/User'
 import { useSelector } from 'react-redux'
 

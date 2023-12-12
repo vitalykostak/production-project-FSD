@@ -44,19 +44,16 @@ const ArticleList: FC<ArticleListProps> = memo((props) => {
 
   const additionsClasses = [className, styles[view]]
 
-  if (isLoading) {
-    return (
-      <div className={classNames('', mods, additionsClasses)}>
-        {getSkeletons(view)}
-      </div>
-    )
-  }
-
   return (
     <div className={classNames('', mods, additionsClasses)}>
       {articles.length
         ? articles.map((article) => renderArticle(article))
         : null}
+      {isLoading && (
+        <div className={classNames('', mods, additionsClasses)}>
+          {getSkeletons(view)}
+        </div>
+      )}
     </div>
   )
 })

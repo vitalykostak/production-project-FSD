@@ -8,6 +8,8 @@ import { ARTICLES_PAGE_ARTICLES_VIEW } from 'shared/consts/localStorageKeys'
 const initialState: ArticlesPageSchema = {
   view: ArticleListView.SMALL,
   isLoading: false,
+  page: 1,
+  hasMore: true,
   ids: [],
   entities: {}
 }
@@ -29,10 +31,14 @@ export const articlesPageSlice = createSlice({
       state.view = action.payload
       localStorage.setItem(ARTICLES_PAGE_ARTICLES_VIEW, action.payload)
     },
+    setPage: (state, action: PayloadAction<number>) => {
+      state.page = action.payload
+    },
     initState: state => {
       const storedView = localStorage.getItem(ARTICLES_PAGE_ARTICLES_VIEW) as ArticleListView
       const selectedView = Object.values(ArticleListView).some(v => v === storedView) ? storedView : ArticleListView.SMALL
       state.view = selectedView
+      state.limit = selectedView === ArticleListView.SMALL ? 9 : 4
     }
   },
   extraReducers: (builder) => {
@@ -45,7 +51,8 @@ export const articlesPageSlice = createSlice({
       (state, action: PayloadAction<Article[]>) => {
         state.isLoading = false
         state.error = undefined
-        articlesPageAdapter.setAll(state, action.payload)
+        articlesPageAdapter.addMany(state, action.payload)
+        state.hasMore = action.payload?.length > 0
       }
     )
     builder.addCase(

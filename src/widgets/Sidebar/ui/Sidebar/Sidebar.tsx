@@ -24,7 +24,7 @@ const Sidebar: FC<SidebarProps> = memo(({ className }) => {
   const toggleSidebar = () => setCollapsed((prev) => !prev)
 
   return (
-    <div
+    <menu
       data-testid={'sidebar'}
       className={classNames(
         sidebarStyles.Sidebar,
@@ -56,7 +56,7 @@ const Sidebar: FC<SidebarProps> = memo(({ className }) => {
           short={collapsed}
         />
       </div>
-    </div>
+    </menu>
   )
 })
 

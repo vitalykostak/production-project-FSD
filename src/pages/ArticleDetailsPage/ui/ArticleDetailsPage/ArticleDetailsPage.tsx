@@ -1,6 +1,6 @@
 import { memo, type FC, useCallback } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Button, Text } from 'shared/ui'
+import { Button, Page, Text } from 'shared/ui'
 import styles from './ArticleDetailsPage.module.scss'
 import { ArticleDetails } from 'entities/Articles'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -14,8 +14,7 @@ import {
 import { useSelector } from 'react-redux'
 import { getArticleDetailsCommentsLoading } from '../../model/selectors/articleDetailsComments'
 import { fetchArticleCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchArticleCommentsByArticleId/fetchArticleCommentsByArticleId'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { useInitialEffect, useAppDispatch } from 'shared/lib/hooks'
 import { AddCommentForm } from 'features/AddCommentForm'
 import { getAddCommentFormText } from 'features/AddCommentForm/model/selectors/getAddCommentForm/getAddCommentForm'
 import { sendComment } from '../../model/services/sendComment/sendComment'
@@ -45,9 +44,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
   const articleDetailsCommentsLoading = useSelector(
     getArticleDetailsCommentsLoading
   )
-  // const articleDetailsCommentsError = useSelector(
-  //   getArticleDetailsCommentsError
-  // )
 
   const addCommentFormText = useSelector(getAddCommentFormText)
 
@@ -71,23 +67,23 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
 
   if (!id) {
     return (
-      <div
+      <Page
         className={classNames(
-          styles.ArticleDetailsPage,
+          '',
           mods,
           additionsClasses
         )}
       >
         {t('article:article_was_not_found')}
-      </div>
+      </Page>
     )
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} shouldRemoveOnUnmout>
-      <div
+      <Page
         className={classNames(
-          styles.ArticleDetailsPage,
+          '',
           mods,
           additionsClasses
         )}
@@ -106,7 +102,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
           isLoading={articleDetailsCommentsLoading}
           comments={articleDetailsComments}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 })

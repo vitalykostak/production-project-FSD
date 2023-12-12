@@ -1,9 +1,10 @@
 import { useTranslation } from 'react-i18next'
+import { Page } from 'shared/ui'
 
 const Main = () => {
   const { t } = useTranslation('main')
 
-  return <div>{t('main_page')}</div>
+  return <Page>{t('main_page')}</Page>
 }
 
 export default Main

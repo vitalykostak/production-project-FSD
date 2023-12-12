@@ -11,7 +11,7 @@ import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLogi
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
 import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks'
 
 const dynamicReducers: ReducersList = {
   loginForm: loginReducer

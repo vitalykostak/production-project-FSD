@@ -4,7 +4,7 @@ import styles from './ArticleDetails.module.scss'
 import { useTranslation } from 'react-i18next'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks'
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { useSelector } from 'react-redux'
 import {

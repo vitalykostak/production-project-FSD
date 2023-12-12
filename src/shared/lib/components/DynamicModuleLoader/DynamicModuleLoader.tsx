@@ -5,7 +5,7 @@ import {
 } from 'app/providers/StoreProvider/config/StateSchema'
 import { useEffect, type FC, type ReactNode } from 'react'
 import { useStore } from 'react-redux'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks'
 
 export type ReducersList = {
   [reducerName in StateSchemaKeys]?: Reducer;

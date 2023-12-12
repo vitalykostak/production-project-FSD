@@ -1,6 +1,6 @@
 import { type FC } from 'react'
 import { useSelector } from 'react-redux'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks'
 import { counterActions } from '../model/slice/counterSlice'
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue'
 import { Button } from 'shared/ui'

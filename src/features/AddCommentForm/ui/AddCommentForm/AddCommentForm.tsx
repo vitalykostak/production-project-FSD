@@ -7,7 +7,7 @@ import {
   addCommentFormActions,
   addCommentFormReducer
 } from '../../model/slice/addCommentFormSlice'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib'
 
 export interface AddCommentFormProps {

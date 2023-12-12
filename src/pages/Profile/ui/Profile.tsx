@@ -12,7 +12,7 @@ import {
 import { useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks'
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader'
 import { type CURRENCY } from 'entities/Currency'
 import { type COUNTRY } from 'entities/Country'

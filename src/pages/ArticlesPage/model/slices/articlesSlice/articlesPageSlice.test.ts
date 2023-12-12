@@ -112,7 +112,7 @@ describe('articlesPageSlice', () => {
     expect(
       articlesPageReducer(
         state as ArticlesPageSchema,
-        fetchArticlesList.fulfilled([article], '', undefined)
+        fetchArticlesList.fulfilled([article], '', { page: 1 })
       )
     ).toEqual(expected)
   })
@@ -135,7 +135,7 @@ describe('articlesPageSlice', () => {
     expect(
       articlesPageReducer(
         state as ArticlesPageSchema,
-        fetchArticlesList.rejected(new Error(), '', undefined, expectedError)
+        fetchArticlesList.rejected(new Error(), '', { page: 1 }, expectedError)
       )
     ).toEqual(expected)
   })

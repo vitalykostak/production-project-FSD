@@ -80,7 +80,7 @@ describe('fetchArticlesList', () => {
     const res = [article]
 
     thunk.api.get.mockReturnValue(Promise.resolve({ data: res }))
-    const result = await thunk.callThunk(undefined)
+    const result = await thunk.callThunk({ page: 1 })
 
     expect(thunk.api.get).toHaveBeenCalledTimes(1)
     expect(thunk.dispatch).toHaveBeenCalledTimes(2)
@@ -93,7 +93,7 @@ describe('fetchArticlesList', () => {
     const thunk = new TestAsyncThunk(fetchArticlesList)
 
     thunk.api.get.mockReturnValue(Promise.resolve({ status: 404 }))
-    const result = await thunk.callThunk(undefined)
+    const result = await thunk.callThunk({ page: 1 })
 
     expect(thunk.api.get).toHaveBeenCalledTimes(1)
     expect(thunk.dispatch).toHaveBeenCalledTimes(2)
