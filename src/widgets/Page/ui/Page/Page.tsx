@@ -7,7 +7,12 @@ import {
 } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './Page.module.scss'
-import { useAppDispatch, useInfiniteScroll, useInitialEffect, useThrottle } from 'shared/lib/hooks'
+import {
+  useAppDispatch,
+  useInfiniteScroll,
+  useInitialEffect,
+  useThrottle
+} from 'shared/lib/hooks'
 import { saveScrollPositionActions } from 'features/SaveScrollPosition'
 import { useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -23,12 +28,20 @@ interface PageProps {
 }
 
 const Page: FC<PageProps> = (props) => {
-  const { className, children, onScrollEnd, shouldSaveScrollPosition, saveScrollPositionThrottleDelay = 500 } = props
+  const {
+    className,
+    children,
+    onScrollEnd,
+    shouldSaveScrollPosition,
+    saveScrollPositionThrottleDelay = 500
+  } = props
 
   const dispatch = useAppDispatch()
   const location = useLocation()
 
-  const scrollPosition = useSelector((state: StateSchema) => getSavedScrollPositionByPath(state, location.pathname))
+  const scrollPosition = useSelector((state: StateSchema) =>
+    getSavedScrollPositionByPath(state, location.pathname)
+  )
 
   const containerRef = useRef() as MutableRefObject<HTMLDivElement>
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>
@@ -65,7 +78,8 @@ const Page: FC<PageProps> = (props) => {
       onScroll={shouldSaveScrollPosition ? onScroll : undefined}
     >
       {children}
-      <div ref={triggerRef} />
+      {/* not sure if it's needed */}
+      {onScrollEnd && <div className={styles.scroll} ref={triggerRef} />}
     </main>
   )
 }

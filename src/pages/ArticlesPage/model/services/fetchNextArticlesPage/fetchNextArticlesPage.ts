@@ -22,7 +22,6 @@ OverriddenThunkConfig<unknown>
   const isLoading = getArticlesPageLoading(state)
 
   if (!hasMore || isLoading) {
-    console.log('return')
     return
   }
   dispatch(articlesPageActions.setPage(page + 1))
