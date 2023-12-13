@@ -1,6 +1,6 @@
 import { memo, type FC, useCallback } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Button, Page, Text } from 'shared/ui'
+import { Button, Text } from 'shared/ui'
 import styles from './ArticleDetailsPage.module.scss'
 import { ArticleDetails } from 'entities/Articles'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -20,6 +20,7 @@ import { getAddCommentFormText } from 'features/AddCommentForm/model/selectors/g
 import { sendComment } from '../../model/services/sendComment/sendComment'
 import { routePaths } from 'shared/config/routeConfig/routeConfig'
 import { ButtonTheme } from 'shared/ui/Button/Button'
+import { Page } from 'widgets/Page'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -67,13 +68,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
 
   if (!id) {
     return (
-      <Page
-        className={classNames(
-          '',
-          mods,
-          additionsClasses
-        )}
-      >
+      <Page className={classNames('', mods, additionsClasses)}>
         {t('article:article_was_not_found')}
       </Page>
     )
@@ -82,13 +77,11 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
   return (
     <DynamicModuleLoader reducers={reducers} shouldRemoveOnUnmout>
       <Page
-        className={classNames(
-          '',
-          mods,
-          additionsClasses
-        )}
+        className={classNames('', mods, additionsClasses)}
       >
-        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>{t('translation:back')}</Button>
+        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+          {t('translation:back')}
+        </Button>
         <ArticleDetails id={id} />
         <Text
           title={t('translation:comments')}

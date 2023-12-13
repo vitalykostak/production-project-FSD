@@ -17,9 +17,9 @@ import {
   getArticlesPageLoading,
   getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors/articlesPageSelectors'
-import { Page } from 'shared/ui'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
+import { Page } from 'widgets/Page'
 
 interface ArticlesPageProps {
   className?: string
@@ -62,6 +62,7 @@ const ArticlesPage: FC<ArticlesPageProps> = memo((props) => {
   return (
     <DynamicModuleLoader reducers={reducers} shouldRemoveOnUnmout={false}>
       <Page
+        shouldSaveScrollPosition
         onScrollEnd={onLoadNextPart}
         className={classNames('', mods, additionsClasses)}
       >

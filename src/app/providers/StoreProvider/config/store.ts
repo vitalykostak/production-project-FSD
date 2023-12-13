@@ -4,6 +4,7 @@ import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
 import { createReducerManager } from './createReducerManager'
 import { $api } from 'shared/api/api'
+import { saveScrollPositionReducer } from 'features/SaveScrollPosition'
 
 export const configureReduxStore = (
   initialState?: StateSchema,
@@ -12,7 +13,8 @@ export const configureReduxStore = (
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: counterReducer,
-    user: userReducer
+    user: userReducer,
+    saveScrollPosition: saveScrollPositionReducer
   }
 
   const reducerManager = createReducerManager(rootReducers)

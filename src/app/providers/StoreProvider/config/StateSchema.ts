@@ -15,10 +15,12 @@ import { type ArticleDetailsSchema } from 'entities/Articles'
 import { type ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
 import { type AddCommentFormSchema } from 'features/AddCommentForm'
 import { type ArticlesPageSchema } from 'pages/ArticlesPage'
+import { type SaveScrollPositionSchema } from 'features/SaveScrollPosition'
 
 export interface StateSchema {
   counter: CounterSchema
   user: UserSchema
+  saveScrollPosition: SaveScrollPositionSchema
 
   // Async reducers
   loginForm?: LoginSchema
