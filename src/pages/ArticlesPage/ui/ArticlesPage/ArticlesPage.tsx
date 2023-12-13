@@ -12,14 +12,14 @@ import {
   getArticlesPageSelectors
 } from '../../model/slices/articlesSlice/articlesPageSlice'
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
 import { useSelector } from 'react-redux'
 import {
   getArticlesPageLoading,
   getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors/articlesPageSelectors'
 import { Page } from 'shared/ui'
-import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage'
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 
 interface ArticlesPageProps {
   className?: string
@@ -56,12 +56,11 @@ const ArticlesPage: FC<ArticlesPageProps> = memo((props) => {
   const additionsClasses = [className]
 
   useInitialEffect(async () => {
-    void dispatch(articlesPageActions.initState())
-    void dispatch(fetchArticlesList({ page: 1 }))
+    void dispatch(initArticlesPage())
   })
 
   return (
-    <DynamicModuleLoader reducers={reducers} shouldRemoveOnUnmout>
+    <DynamicModuleLoader reducers={reducers} shouldRemoveOnUnmout={false}>
       <Page
         onScrollEnd={onLoadNextPart}
         className={classNames('', mods, additionsClasses)}

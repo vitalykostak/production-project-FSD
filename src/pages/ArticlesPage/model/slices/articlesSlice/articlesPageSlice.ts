@@ -11,7 +11,8 @@ const initialState: ArticlesPageSchema = {
   page: 1,
   hasMore: true,
   ids: [],
-  entities: {}
+  entities: {},
+  _initialized: false
 }
 
 const articlesPageAdapter = createEntityAdapter<Article>({
@@ -30,6 +31,7 @@ export const articlesPageSlice = createSlice({
     setView: (state, action: PayloadAction<ArticleListView>) => {
       state.view = action.payload
       localStorage.setItem(ARTICLES_PAGE_ARTICLES_VIEW, action.payload)
+      state.limit = action.payload === ArticleListView.SMALL ? 9 : 4
     },
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload
@@ -39,6 +41,7 @@ export const articlesPageSlice = createSlice({
       const selectedView = Object.values(ArticleListView).some(v => v === storedView) ? storedView : ArticleListView.SMALL
       state.view = selectedView
       state.limit = selectedView === ArticleListView.SMALL ? 9 : 4
+      state._initialized = true
     }
   },
   extraReducers: (builder) => {

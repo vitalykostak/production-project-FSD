@@ -10,7 +10,6 @@ import { type CounterSchema } from 'entities/Counter'
 import { type ProfileSchema } from 'entities/Profile'
 import { type UserSchema } from 'entities/User'
 import { type LoginSchema } from 'features/AuthByUsername'
-import { type NavigateFunction } from 'react-router-dom'
 import { type AppDispatch } from './store'
 import { type ArticleDetailsSchema } from 'entities/Articles'
 import { type ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
@@ -45,7 +44,6 @@ export interface StoreWithReducerManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
   api: AxiosInstance
-  navigate: NavigateFunction
 }
 
 export interface OverriddenThunkConfig<RejectValueType> {
