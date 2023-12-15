@@ -21,5 +21,17 @@
   "input_comment": "Введіть коментар",
   "send": "Відправити",
   "back": "Назад",
-  "read_more": "Читати більше"
+  "read_more": "Читати більше",
+  "sorted_by": "Сортувати за",
+  "ordered_by": "Упорядкувати за",
+  "search": "Пошук",
+  "orderedByOptions":{
+    "ascending":"Зростання",
+    "descending":"Вибування"
+  },
+  "sortedByOptions":{
+    "creation_date":"Дата створення",
+    "title":"Заголовок",
+    "views":"Перегляди"
+  }
 }

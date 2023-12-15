@@ -1,18 +1,14 @@
 import { memo, type FC, useCallback } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import {
-  ArticleList,
-  type ArticleListView,
-  ToggleItemsView
-} from 'entities/Articles'
+import { ArticleList } from 'entities/Articles'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib'
 import {
-  articlesPageActions,
   articlesPageReducer,
   getArticlesPageSelectors
 } from '../../model/slices/articlesSlice/articlesPageSlice'
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
 import { useSelector } from 'react-redux'
+import styles from './ArticlesPage.module.scss'
 import {
   getArticlesPageLoading,
   getArticlesPageView
@@ -20,6 +16,8 @@ import {
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 import { Page } from 'widgets/Page'
+import ArticlesPageFilters from '../ArticlesPageFilters/ArticlesPageFilters'
+import { useSearchParams } from 'react-router-dom'
 
 interface ArticlesPageProps {
   className?: string
@@ -33,16 +31,11 @@ const ArticlesPage: FC<ArticlesPageProps> = memo((props) => {
   const { className } = props
 
   const dispatch = useAppDispatch()
+  const [searchParams] = useSearchParams()
 
   const articles = useSelector(getArticlesPageSelectors.selectAll)
   const view = useSelector(getArticlesPageView)
   const isLoading = useSelector(getArticlesPageLoading)
-
-  const onToggleArticleItemsView = useCallback(
-    (newView: ArticleListView) =>
-      dispatch(articlesPageActions.setView(newView)),
-    [dispatch]
-  )
 
   const onLoadNextPart = useCallback(() => {
     if (EXECUTION_ENVIRONMENT !== 'app') {
@@ -56,7 +49,7 @@ const ArticlesPage: FC<ArticlesPageProps> = memo((props) => {
   const additionsClasses = [className]
 
   useInitialEffect(async () => {
-    void dispatch(initArticlesPage())
+    void dispatch(initArticlesPage(searchParams))
   })
 
   return (
@@ -66,8 +59,8 @@ const ArticlesPage: FC<ArticlesPageProps> = memo((props) => {
         onScrollEnd={onLoadNextPart}
         className={classNames('', mods, additionsClasses)}
       >
-        <ToggleItemsView view={view} onViewClick={onToggleArticleItemsView} />
-        <ArticleList view={view} articles={articles} isLoading={isLoading} />
+        <ArticlesPageFilters />
+        <ArticleList view={view} articles={articles} isLoading={isLoading} className={styles.list}/>
       </Page>
     </DynamicModuleLoader>
   )

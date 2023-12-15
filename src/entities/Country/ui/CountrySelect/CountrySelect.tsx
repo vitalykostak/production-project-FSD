@@ -1,4 +1,4 @@
-import { memo, type FC, useCallback } from 'react'
+import { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Select, type SelectOption } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
@@ -11,7 +11,7 @@ interface CountrySelectProps {
   readonly?: boolean
 }
 
-const options = Object.values<COUNTRY>(COUNTRY).map<SelectOption>((opt) => ({
+const options = Object.values<COUNTRY>(COUNTRY).map<SelectOption<COUNTRY>>((opt) => ({
   value: opt,
   content: opt
 }))
@@ -21,20 +21,15 @@ const CurrencySelect: FC<CountrySelectProps> = memo((props) => {
 
   const { t } = useTranslation('translation')
 
-  const changeHandler = useCallback(
-    (value: string) => onChange?.(value as COUNTRY),
-    [onChange]
-  )
-
   const mods = {}
 
   const additionsClasses = [className]
 
   return (
-    <Select
+    <Select<COUNTRY>
       label={t('choose_country')}
       value={value}
-      onChange={changeHandler}
+      onChange={onChange}
       options={options}
       className={classNames('', mods, additionsClasses)}
       readonly={readonly}

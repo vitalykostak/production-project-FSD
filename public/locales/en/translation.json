@@ -21,5 +21,17 @@
   "input_comment": "Type comment",
   "send": "Send",
   "back": "Back",
-  "read_more": "Read more"
+  "read_more": "Read more",
+  "sorted_by": "Sorted by",
+  "ordered_by": "Ordered by",
+  "search": "Search",
+  "orderedByOptions":{
+    "ascending":"Ascending",
+    "descending":"Descending"
+  },
+  "sortedByOptions":{
+    "creation_date":"Creation date",
+    "title":"Title",
+    "views":"Views"
+  }
 }

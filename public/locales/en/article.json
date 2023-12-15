@@ -1,5 +1,11 @@
 {
   "articles": "Articles",
   "article_was_not_found": "Article was not found",
-  "error_while_loading": "Error while loading"
+  "error_while_loading": "Error while loading",
+  "articles_types":{
+    "ALL":"All types",
+    "IT":"It",
+    "SCIENCE":"Science",
+    "ECONOMICS":"Economics"
+  }
 }

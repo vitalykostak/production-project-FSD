@@ -25,7 +25,7 @@ describe('fetchNextArticlesPage', () => {
     expect(thunk.dispatch).toHaveBeenCalledTimes(4)
 
     expect(result.meta.requestStatus).toBe('fulfilled')
-    expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 })
+    expect(fetchArticlesList).toHaveBeenCalledWith({})
   })
 
   test('should not fetch if hasMore === false', async () => {

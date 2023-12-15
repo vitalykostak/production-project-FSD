@@ -5,6 +5,7 @@ import { articleDetailsReducer } from 'entities/Articles/model/slice/articleDeta
 import { profileReducer } from 'entities/Profile'
 import { addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCommentFormSlice'
 import { loginReducer } from 'features/AuthByUsername'
+import { saveScrollPositionReducer } from 'features/SaveScrollPosition'
 import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice'
 import { type ReducersList } from 'shared/lib'
 
@@ -13,7 +14,8 @@ const defaultAsyncReducers: ReducersList = {
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
   addCommentForm: addCommentFormReducer,
-  articleDetailsComments: articleDetailsCommentsReducer
+  articleDetailsComments: articleDetailsCommentsReducer,
+  saveScrollPosition: saveScrollPositionReducer
 }
 
 const ReduxStoreDecorator =

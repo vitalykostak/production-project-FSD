@@ -1,5 +1,11 @@
 {
   "articles": "Статті",
   "article_was_not_found": "  Статья не знайдена",
-  "error_while_loading": "Помилка під час загрузки"
+  "error_while_loading": "Помилка під час загрузки",
+  "articles_types": {
+    "ALL": "Всі типи",
+    "IT": "It",
+    "SCIENCE": "Наука",
+    "ECONOMICS": "Економіка"
+  }
 }

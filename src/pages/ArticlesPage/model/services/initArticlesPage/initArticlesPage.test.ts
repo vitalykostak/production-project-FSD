@@ -15,12 +15,12 @@ describe('initArticlesPage', () => {
 
     const thunk = new TestAsyncThunk(initArticlesPage, state)
 
-    const result = await thunk.callThunk(undefined)
+    const result = await thunk.callThunk(jest.fn() as unknown as URLSearchParams)
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(4)
 
     expect(result.meta.requestStatus).toBe('fulfilled')
-    expect(fetchArticlesList).toHaveBeenCalledWith({ page: 1 })
+    expect(fetchArticlesList).toHaveBeenCalledWith({ })
   })
 
   test('should not fetch if _initialized === true', async () => {
@@ -32,7 +32,7 @@ describe('initArticlesPage', () => {
 
     const thunk = new TestAsyncThunk(initArticlesPage, state)
 
-    await thunk.callThunk(undefined)
+    await thunk.callThunk(jest.fn() as unknown as URLSearchParams)
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2)
 

@@ -25,6 +25,6 @@ OverriddenThunkConfig<unknown>
     return
   }
   dispatch(articlesPageActions.setPage(page + 1))
-  void dispatch(fetchArticlesList({ page: page + 1 }))
+  void dispatch(fetchArticlesList({}))
   return undefined
 })
