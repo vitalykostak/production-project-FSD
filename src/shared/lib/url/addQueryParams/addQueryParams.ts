@@ -1,4 +1,4 @@
-export const getQueryParamsAndMergeNew = (params: Partial<Record<string, string>>) => {
+export const getQueryParamsAndMergeNew = (params: Partial<Record<string, string | undefined>>) => {
   const searchParams = new URLSearchParams(window.location.search)
 
   Object.entries(params).forEach(([key, value]) => {
@@ -12,7 +12,7 @@ export const getQueryParamsAndMergeNew = (params: Partial<Record<string, string>
   return '?' + searchParams.toString()
 }
 
-export const addQueryParams = (params: Record<string, string>) => {
+export const addQueryParams = (params: Record<string, string | undefined>) => {
   const updatedQueryString = getQueryParamsAndMergeNew(params)
   window.history.pushState('', '', updatedQueryString)
 }

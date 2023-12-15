@@ -32,7 +32,12 @@ OverriddenThunkConfig<string>
   const type = getArticlesPageType(state)
 
   try {
-    addQueryParams?.({ sort, order, search, type })
+    addQueryParams?.({
+      sort,
+      order,
+      search,
+      type: type === ArticleType.ALL ? undefined : type
+    })
 
     const result = await extra.api.get<Article[]>('/articles/', {
       params: {
