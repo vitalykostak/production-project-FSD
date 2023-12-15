@@ -6,16 +6,16 @@ import { profileReducer } from 'entities/Profile'
 import { addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCommentFormSlice'
 import { loginReducer } from 'features/AuthByUsername'
 import { saveScrollPositionReducer } from 'features/SaveScrollPosition'
-import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice'
 import { type ReducersList } from 'shared/lib'
+import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
   addCommentForm: addCommentFormReducer,
-  articleDetailsComments: articleDetailsCommentsReducer,
-  saveScrollPosition: saveScrollPositionReducer
+  saveScrollPosition: saveScrollPositionReducer,
+  articleDetailsPage: articleDetailsPageReducer
 }
 
 const ReduxStoreDecorator =

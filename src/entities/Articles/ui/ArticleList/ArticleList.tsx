@@ -1,4 +1,4 @@
-import { memo, type FC } from 'react'
+import { memo, type FC, type HTMLAttributeAnchorTarget } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './ArticleList.module.scss'
 import { ArticleListView, type Article } from '../../model/types/articles'
@@ -10,6 +10,7 @@ interface ArticleListProps {
   articles: Article[]
   isLoading?: boolean
   view?: ArticleListView
+  target?: HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (view: ArticleListView) =>
@@ -28,7 +29,8 @@ const ArticleList: FC<ArticleListProps> = memo((props) => {
     className,
     articles,
     isLoading,
-    view = ArticleListView.SMALL
+    view = ArticleListView.SMALL,
+    target
   } = props
 
   const renderArticle = (article: Article) => (
@@ -37,6 +39,7 @@ const ArticleList: FC<ArticleListProps> = memo((props) => {
       key={article.id}
       view={view}
       className={styles.card}
+      target={target}
     />
   )
 

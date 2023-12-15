@@ -25,6 +25,7 @@
   "sorted_by": "Sorted by",
   "ordered_by": "Ordered by",
   "search": "Search",
+  "recommend":"Recommend",
   "orderedByOptions":{
     "ascending":"Ascending",
     "descending":"Descending"

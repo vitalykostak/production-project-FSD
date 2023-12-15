@@ -1,18 +1,17 @@
 import { memo, type FC, useCallback } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Button, Text } from 'shared/ui'
+import { Button, Text, TextSize } from 'shared/ui'
 import styles from './ArticleDetailsPage.module.scss'
-import { ArticleDetails } from 'entities/Articles'
+import { ArticleDetails, ArticleList } from 'entities/Articles'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { CommentList } from 'entities/Comment'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib'
 import {
-  articleDetailsCommentsReducer,
   getArticleDetailsCommentsSelectors
 } from '../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice'
 import { useSelector } from 'react-redux'
-import { getArticleDetailsCommentsLoading } from '../../model/selectors/articleDetailsComments'
+import { getArticleDetailsCommentsLoading } from '../../model/selectors/articleDetailsComments/articleDetailsComments'
 import { fetchArticleCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchArticleCommentsByArticleId/fetchArticleCommentsByArticleId'
 import { useInitialEffect, useAppDispatch } from 'shared/lib/hooks'
 import { AddCommentForm } from 'features/AddCommentForm'
@@ -21,13 +20,19 @@ import { sendComment } from '../../model/services/sendComment/sendComment'
 import { routePaths } from 'shared/config/routeConfig/routeConfig'
 import { ButtonTheme } from 'shared/ui/Button/Button'
 import { Page } from 'widgets/Page'
+import {
+  getArticleDetailsRecommendationsSelectors
+} from '../../model/slices/articleDetailsRecommendationsSlice/articleDetailsRecommendationsSlice'
+import { getArticleDetailsRecommendationsLoading } from '../../model/selectors/articleDetailsRecommendations/articleDetailsRecommendations'
+import { fetchRecommendationsList } from '../../model/services/fetchRecommendationsList/fetchRecommendationsList'
+import { articleDetailsPageReducer } from '../../model/slices'
 
 interface ArticleDetailsPageProps {
   className?: string
 }
 
 const reducers: ReducersList = {
-  articleDetailsComments: articleDetailsCommentsReducer
+  articleDetailsPage: articleDetailsPageReducer
 }
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
@@ -46,6 +51,14 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
     getArticleDetailsCommentsLoading
   )
 
+  const articleDetailsRecommendations = useSelector(
+    getArticleDetailsRecommendationsSelectors.selectAll
+  )
+
+  const articleDetailsRecommendationsLoading = useSelector(
+    getArticleDetailsRecommendationsLoading
+  )
+
   const addCommentFormText = useSelector(getAddCommentFormText)
 
   const sendCommentHandler = useCallback(
@@ -62,6 +75,8 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
 
   useInitialEffect(async () => dispatch(fetchArticleCommentsByArticleId(id)))
 
+  useInitialEffect(async () => dispatch(fetchRecommendationsList()))
+
   const mods = {}
 
   const additionsClasses = [className]
@@ -76,14 +91,20 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} shouldRemoveOnUnmout>
-      <Page
-        className={classNames('', mods, additionsClasses)}
-      >
+      <Page className={classNames('', mods, additionsClasses)}>
         <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
           {t('translation:back')}
         </Button>
         <ArticleDetails id={id} />
+        <Text size={TextSize.L} title={t('translation:recommend')} />
+        <ArticleList
+          isLoading={articleDetailsRecommendationsLoading}
+          articles={articleDetailsRecommendations}
+          target='_blank'
+          className={styles.recommendationsList}
+        />
         <Text
+          size={TextSize.L}
           title={t('translation:comments')}
           className={styles.commentsTitle}
         />
