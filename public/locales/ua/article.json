@@ -2,6 +2,8 @@
   "articles": "Статті",
   "article_was_not_found": "  Статья не знайдена",
   "error_while_loading": "Помилка під час загрузки",
+  "create_article":"Створити статтю",
+  "edit_article_with_id": "Редагуваня статті з id = {{id}}",
   "articles_types": {
     "ALL": "Всі типи",
     "IT": "It",

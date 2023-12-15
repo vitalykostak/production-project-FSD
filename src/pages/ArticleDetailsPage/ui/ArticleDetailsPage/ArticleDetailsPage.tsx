@@ -1,9 +1,9 @@
 import { memo, type FC, useCallback } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Button, Text, TextSize } from 'shared/ui'
+import { Text, TextSize } from 'shared/ui'
 import styles from './ArticleDetailsPage.module.scss'
 import { ArticleDetails, ArticleList } from 'entities/Articles'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { CommentList } from 'entities/Comment'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib'
@@ -17,8 +17,6 @@ import { useInitialEffect, useAppDispatch } from 'shared/lib/hooks'
 import { AddCommentForm } from 'features/AddCommentForm'
 import { getAddCommentFormText } from 'features/AddCommentForm/model/selectors/getAddCommentForm/getAddCommentForm'
 import { sendComment } from '../../model/services/sendComment/sendComment'
-import { routePaths } from 'shared/config/routeConfig/routeConfig'
-import { ButtonTheme } from 'shared/ui/Button/Button'
 import { Page } from 'widgets/Page'
 import {
   getArticleDetailsRecommendationsSelectors
@@ -26,6 +24,7 @@ import {
 import { getArticleDetailsRecommendationsLoading } from '../../model/selectors/articleDetailsRecommendations/articleDetailsRecommendations'
 import { fetchRecommendationsList } from '../../model/services/fetchRecommendationsList/fetchRecommendationsList'
 import { articleDetailsPageReducer } from '../../model/slices'
+import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -41,7 +40,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
   const { t } = useTranslation(['article', 'translation'])
   const dispatch = useAppDispatch()
   const { id } = useParams<{ id: string }>()
-  const navigate = useNavigate()
 
   const articleDetailsComments = useSelector(
     getArticleDetailsCommentsSelectors.selectAll
@@ -68,11 +66,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
     [dispatch]
   )
 
-  const onBackToList = useCallback(
-    () => navigate(routePaths.articles),
-    [navigate]
-  )
-
   useInitialEffect(async () => dispatch(fetchArticleCommentsByArticleId(id)))
 
   useInitialEffect(async () => dispatch(fetchRecommendationsList()))
@@ -92,9 +85,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
   return (
     <DynamicModuleLoader reducers={reducers} shouldRemoveOnUnmout>
       <Page className={classNames('', mods, additionsClasses)}>
-        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-          {t('translation:back')}
-        </Button>
+        <ArticleDetailsPageHeader/>
         <ArticleDetails id={id} />
         <Text size={TextSize.L} title={t('translation:recommend')} />
         <ArticleList
