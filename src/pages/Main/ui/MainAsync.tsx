@@ -1,3 +1,3 @@
 import { lazy } from 'react'
 
-export default lazy(async () => await import('./Main'))
+export default lazy(async () => import('./Main'))
