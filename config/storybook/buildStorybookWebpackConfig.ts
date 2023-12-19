@@ -17,7 +17,9 @@ export const buildStorybookWebpackConfig = async (config: Configuration) => {
     entry: '',
     build: '',
     html: '',
-    src: path.resolve(__dirname, '..', '..', 'src')
+    src: path.resolve(__dirname, '..', '..', 'src'),
+    locales: '',
+    buildLocales: ''
   }
 
   const isDev: boolean = mode === BuildMode.DEVELOPMENT
