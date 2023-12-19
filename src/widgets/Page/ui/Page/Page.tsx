@@ -19,6 +19,8 @@ import { useSelector } from 'react-redux'
 import { getSavedScrollPositionByPath } from 'features/SaveScrollPosition/model/selectors/getSaveScrollPositionSelectors/getSaveScrollPositionSelectors'
 import { type StateSchema } from 'app/providers/StoreProvider'
 
+export const wrapperId = 'PAGE_WRAPPER_ID@'
+
 interface PageProps {
   className?: string
   children?: ReactNode
@@ -76,6 +78,7 @@ const Page: FC<PageProps> = (props) => {
       className={classNames(styles.Page, mods, additionsClasses)}
       ref={containerRef}
       onScroll={shouldSaveScrollPosition ? onScroll : undefined}
+      id={wrapperId}
     >
       {children}
       {/* not sure if it's needed */}

@@ -4,6 +4,8 @@ import styles from './ArticleList.module.scss'
 import { ArticleListView, type Article } from '../../model/types/articles'
 import ArticleListItem from '../ArticleListItem/ArticleListItem'
 import ArticleListItemSkeleton from '../ArticleListItem/ArticleListItemSkeleton'
+// import { Virtuoso } from 'react-virtuoso'
+// import { wrapperId } from 'widgets/Page/ui/Page/Page'
 
 interface ArticleListProps {
   className?: string
@@ -46,6 +48,19 @@ const ArticleList: FC<ArticleListProps> = memo((props) => {
   const mods = {}
 
   const additionsClasses = [className, styles[view]]
+
+  // return (
+  //   <Virtuoso<Article>
+  //   className={classNames('', mods, additionsClasses)}
+  //     data={articles}
+  //     itemContent={(_, article, context) => {
+  //       console.log({ context })
+  //       return renderArticle(article)
+  //     }}
+
+  //     customScrollParent={document.getElementById(wrapperId) as HTMLElement}
+  //   />
+  // )
 
   return (
     <div className={classNames('', mods, additionsClasses)}>
