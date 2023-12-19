@@ -7,7 +7,7 @@
     "start": "npx webpack serve --env port=3001 --env mode=development apiUrl=http://localhost:8000",
     "start:dev-server": "node ./json-server/index.js",
     "start:dev": "concurrently \"npm run start:dev-server\" \"npm run start\"",
-    "build:prod": "npx webpack  --env mode=production apiUrl=https://production-project-fake-server-4r8p6hlte-vitalykostak.vercel.app/",
+    "build:prod": "npx webpack  --env mode=production apiUrl=https://production-project-fake-server-cnnwlvb4q-vitalykostak.vercel.app",
     "build:dev": "npx webpack  --env mode=development apiUrl=http://localhost:8000",
     "lint:ts": "./node_modules/eslint/bin/eslint.js '**/*.{ts,tsx}'",
     "lint:ts:fix": "./node_modules/eslint/bin/eslint.js --fix '**/*.{ts,tsx}'",
