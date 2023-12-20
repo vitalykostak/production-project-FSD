@@ -6,7 +6,7 @@ import {
 } from 'app/providers/StoreProvider/config/StateSchema'
 import { useEffect, type FC, type ReactNode } from 'react'
 import { useStore } from 'react-redux'
-import { useAppDispatch } from 'shared/lib/hooks'
+import { useAppDispatch } from '../../hooks/useAppDispatch/useAppDispatch'
 
 export type ReducersList = {
   [reducerName in StateSchemaKeys]?: Reducer<NonNullable<StateSchema[reducerName]>>;

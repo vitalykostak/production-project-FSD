@@ -5,7 +5,7 @@ import { Theme } from 'app/providers/ThemeProvider'
 import {
   type Article,
   ArticleListView
-} from 'entities/Articles/model/types/articles'
+} from '../../model/types/articles'
 import AvatarTestImg from 'shared/assets/tests/avatar-test-img.png'
 
 const meta = {

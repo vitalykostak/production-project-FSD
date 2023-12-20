@@ -12,7 +12,7 @@ import {
 } from '../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice'
 import { useSelector } from 'react-redux'
 import { getArticleDetailsCommentsLoading } from '../../model/selectors/articleDetailsComments/articleDetailsComments'
-import { fetchArticleCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchArticleCommentsByArticleId/fetchArticleCommentsByArticleId'
+import { fetchArticleCommentsByArticleId } from '../../model/services/fetchArticleCommentsByArticleId/fetchArticleCommentsByArticleId'
 import { useInitialEffect, useAppDispatch } from 'shared/lib/hooks'
 import { AddCommentForm } from 'features/AddCommentForm'
 import { getAddCommentFormText } from 'features/AddCommentForm/model/selectors/getAddCommentForm/getAddCommentForm'

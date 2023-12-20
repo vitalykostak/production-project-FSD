@@ -1,7 +1,7 @@
 import { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Select, type SelectOption } from 'shared/ui'
-import { CURRENCY } from 'entities/Currency/model/types/currency'
+import { CURRENCY } from '../../model/types/currency'
 import { useTranslation } from 'react-i18next'
 
 interface CurrencySelectProps {

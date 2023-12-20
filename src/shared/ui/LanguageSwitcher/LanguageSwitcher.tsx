@@ -1,8 +1,8 @@
 import { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Button, ButtonTheme } from 'shared/ui/'
 import languageSwitcherStyle from './LanguageSwitcher.module.scss'
 import { useTranslation } from 'react-i18next'
+import Button, { ButtonTheme } from '../Button/Button'
 
 export enum Language {
   EN = 'en',
@@ -22,7 +22,7 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = memo((props) => {
   const toggleLanguage = () => {
     const newOne = getFollowingLanguage()
 
-    changeLanguage(newOne)
+    void changeLanguage(newOne)
   }
 
   const getFollowingLanguage = () =>
