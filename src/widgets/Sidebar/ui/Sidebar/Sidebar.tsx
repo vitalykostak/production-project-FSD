@@ -25,7 +25,7 @@ const Sidebar: FC<SidebarProps> = memo(({ className }) => {
   const toggleSidebar = () => setCollapsed((prev) => !prev)
 
   return (
-    <menu
+    <aside
       data-testid={'sidebar'}
       className={classNames(
         sidebarStyles.Sidebar,
@@ -45,7 +45,7 @@ const Sidebar: FC<SidebarProps> = memo(({ className }) => {
       >
         {collapsed ? '>' : '<'}
       </Button>
-      <VStack gap={'8'} className={sidebarStyles.items}>
+      <VStack role='navigation' gap={'8'} className={sidebarStyles.items}>
         {SidebarItems.map((item) => (
           <SidebarItem key={item.path} item={item} collapsed={collapsed} />
         ))}
@@ -57,7 +57,7 @@ const Sidebar: FC<SidebarProps> = memo(({ className }) => {
           short={collapsed}
         />
       </div>
-    </menu>
+    </aside>
   )
 })
 

@@ -47,14 +47,14 @@ const Navbar: FC<NavbarProps> = memo(({ className }) => {
   }
 
   return (
-    <nav className={classNames(navbarStyles.Navbar, {}, [className])}>
+    <header className={classNames(navbarStyles.Navbar, {}, [className])}>
       <div className={navbarStyles.links}>
         <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
           {t('translation:sign_in')}
         </Button>
         {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onClose} />}
       </div>
-    </nav>
+    </header>
   )
 })
 

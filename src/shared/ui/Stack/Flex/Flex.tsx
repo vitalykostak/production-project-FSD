@@ -1,8 +1,8 @@
-import { type FC, type ReactNode } from 'react'
+import { type HTMLAttributes, type FC, type ReactNode } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './Flex.module.scss'
 
-export interface FlexProps {
+export interface FlexProps extends HTMLAttributes<HTMLDivElement> {
   className?: string
   children: ReactNode
   justify?: FlexJustify

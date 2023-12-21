@@ -24,8 +24,17 @@ export enum TextAlign {
 }
 
 export enum TextSize {
+  S = 'sizeS',
   M = 'sizeM',
   L = 'sizeL',
+}
+
+type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+
+const headerSizeMapping: Record<TextSize, HeadingTag> = {
+  [TextSize.L]: 'h1',
+  [TextSize.M]: 'h2',
+  [TextSize.S]: 'h3'
 }
 
 const Text: FC<TextProps> = memo((props) => {
@@ -38,11 +47,13 @@ const Text: FC<TextProps> = memo((props) => {
     size = TextSize.M
   } = props
 
+  const HeaderTag = headerSizeMapping[size]
+
   const additionsClasses = [className, textStyles[theme], textStyles[align], textStyles[size]]
 
   return (
     <div className={classNames(textStyles.Text, {}, additionsClasses)}>
-      {title && <p className={textStyles.title}>{title}</p>}
+      {title && <HeaderTag className={textStyles.title}>{title}</HeaderTag>}
       {text && <p className={textStyles.text}>{text}</p>}
     </div>
   )
