@@ -9,9 +9,6 @@ import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
 const meta = {
   title: 'widgets/Sidebar',
   component: Sidebar,
-  // parameters: {
-  //   layout: 'fullscreen'
-  // },
   tags: ['autodocs']
 } satisfies Meta<typeof Sidebar>
 

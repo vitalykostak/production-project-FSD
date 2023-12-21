@@ -5,7 +5,8 @@ import {
   ThemeSwitcher,
   LanguageSwitcher,
   Button,
-  ButtonTheme
+  ButtonTheme,
+  VStack
 } from 'shared/ui'
 import { ButtonSize } from 'shared/ui/Button/Button'
 import SidebarItem from '../SidebarItem/SidebarItem'
@@ -44,11 +45,11 @@ const Sidebar: FC<SidebarProps> = memo(({ className }) => {
       >
         {collapsed ? '>' : '<'}
       </Button>
-      <div className={sidebarStyles.items}>
+      <VStack gap={'8'} className={sidebarStyles.items}>
         {SidebarItems.map((item) => (
           <SidebarItem key={item.path} item={item} collapsed={collapsed} />
         ))}
-      </div>
+      </VStack>
       <div className={sidebarStyles.switchers}>
         <ThemeSwitcher />
         <LanguageSwitcher

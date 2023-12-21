@@ -1,7 +1,7 @@
 import { memo, type FC, useCallback } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import profilePageHeaderStyles from './ProfilePageHeader.module.scss'
-import { Button, ButtonTheme, Text } from 'shared/ui'
+import { Button, ButtonTheme, HStack, Text } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { getProfileReadonly } from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly'
@@ -53,7 +53,8 @@ const ProfilePageHeader: FC<ProfilePageHeaderProps> = memo((props) => {
   }, [dispatch, id])
 
   return (
-    <div
+    <HStack
+      justify="between"
       className={classNames(
         profilePageHeaderStyles.ProfilePageHeader,
         mods,
@@ -74,12 +75,8 @@ const ProfilePageHeader: FC<ProfilePageHeaderProps> = memo((props) => {
             </Button>
               )
             : (
-            <>
-              <Button
-                theme={ButtonTheme.OUTLINE_RED}
-                className={profilePageHeaderStyles.editBtn}
-                onClick={onCancelEdit}
-              >
+            <HStack align="end" gap="12">
+              <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit}>
                 {t('translation:cancel')}
               </Button>
               <Button
@@ -89,11 +86,11 @@ const ProfilePageHeader: FC<ProfilePageHeaderProps> = memo((props) => {
               >
                 {t('translation:save')}
               </Button>
-            </>
+            </HStack>
               )}
         </>
       )}
-    </div>
+    </HStack>
   )
 })
 
