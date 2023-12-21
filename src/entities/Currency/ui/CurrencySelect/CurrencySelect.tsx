@@ -1,6 +1,6 @@
 import { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Select, type SelectOption } from 'shared/ui'
+import { ListBox, type SelectOption } from 'shared/ui'
 import { CURRENCY } from '../../model/types/currency'
 import { useTranslation } from 'react-i18next'
 
@@ -11,10 +11,12 @@ interface CurrencySelectProps {
   readonly?: boolean
 }
 
-const options = Object.values<CURRENCY>(CURRENCY).map<SelectOption<CURRENCY>>((opt) => ({
-  value: opt,
-  content: opt
-}))
+const options = Object.values<CURRENCY>(CURRENCY).map<SelectOption<CURRENCY>>(
+  (opt) => ({
+    value: opt,
+    content: opt
+  })
+)
 
 const CurrencySelect: FC<CurrencySelectProps> = memo((props) => {
   const { className, value, onChange, readonly } = props
@@ -26,13 +28,14 @@ const CurrencySelect: FC<CurrencySelectProps> = memo((props) => {
   const additionsClasses = [className]
 
   return (
-    <Select<CURRENCY>
-      label={t('choose_currency')}
+    <ListBox<CURRENCY>
+      items={options}
       value={value}
       onChange={onChange}
-      options={options}
-      className={classNames('', mods, additionsClasses)}
       readonly={readonly}
+      label={t('choose_currency')}
+      className={classNames('', mods, additionsClasses)}
+      direction='up'
     />
   )
 })

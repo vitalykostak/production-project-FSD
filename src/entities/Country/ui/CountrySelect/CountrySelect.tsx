@@ -1,6 +1,6 @@
 import { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Select, type SelectOption } from 'shared/ui'
+import { ListBox, type SelectOption } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
 import { COUNTRY } from '../../model/types/country'
 
@@ -26,13 +26,14 @@ const CurrencySelect: FC<CountrySelectProps> = memo((props) => {
   const additionsClasses = [className]
 
   return (
-    <Select<COUNTRY>
+    <ListBox<COUNTRY>
       label={t('choose_country')}
       value={value}
       onChange={onChange}
-      options={options}
+      items={options}
       className={classNames('', mods, additionsClasses)}
       readonly={readonly}
+      direction='up'
     />
   )
 })
