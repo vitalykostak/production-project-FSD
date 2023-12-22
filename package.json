@@ -24,7 +24,8 @@
     "test:ui:generate_html": "rm ./.loki/report.html & ./node_modules/reg-cli/dist/cli.js --from .loki/report.json --report .loki/report.html",
     "storybook": "./node_modules/storybook/index.js dev -p 6006 -c config/storybook",
     "storybook:build": "./node_modules/storybook/index.js build -c config/storybook",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate_feature_slice":"node ./scripts/generate-feature-slice/index.mjs"
   },
   "author": "",
   "license": "ISC",
