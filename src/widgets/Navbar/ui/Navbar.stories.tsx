@@ -3,6 +3,7 @@ import Navbar from './Navbar'
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
+import AvatarTestImg from 'shared/assets/tests/avatar-test-img.png'
 
 const meta = {
   title: 'widgets/Navbar',
@@ -13,7 +14,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-const userAuthTestData = { id: '1', username: 'username' }
+const userAuthTestData = { id: '1', username: 'username', avatar: AvatarTestImg }
 
 export const NotAuthorzied: Story = {
   args: {},

@@ -1,0 +1,75 @@
+.Dropdown {
+  position: relative;
+}
+
+.trigger {
+  border: none;
+  outline: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  padding-block: 0;
+  padding-inline: 0;
+}
+
+.items {
+  position: absolute;
+  border: 1px solid var(--primary-color);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  div,
+  a {
+    border-bottom: 1px solid var(--secondary-color);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.item {
+  display: flex;
+  color: var(--primary-color);
+  padding: 20px;
+}
+
+.active {
+  &:not(.disabled) {
+    background: var(--inverted-primary-color);
+  }
+}
+
+.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.link {
+  padding: 0;
+}
+
+.bottomLeft {
+  top: 100%;
+  right: 0%;
+}
+
+.bottomRight {
+  top: 100%;
+  left: 0%;
+}
+
+.topLeft {
+  bottom: 100%;
+  right: 0%;
+}
+
+.topRight {
+  bottom: 100%;
+  left: 0%;
+}

@@ -33,7 +33,7 @@ const CurrencySelect: FC<CountrySelectProps> = memo((props) => {
       items={options}
       className={classNames('', mods, additionsClasses)}
       readonly={readonly}
-      direction='up'
+      direction='topRight'
     />
   )
 })

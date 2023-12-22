@@ -4,6 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './ListBox.module.scss'
 import Button, { ButtonTheme } from '../Button/Button'
 import HStack from '../Stack/HStack/HStack'
+import { type DirectionType } from 'shared/types'
 
 interface ListBoxProps<T extends string> {
   value?: T
@@ -22,10 +23,8 @@ interface ListBoxItem {
   disabled?: boolean
 }
 
-type DirectionType = 'down' | 'up'
-
 const ListBox = <T extends string>(props: ListBoxProps<T>) => {
-  const { className, value, defaultValue, onChange, items, readonly, label, direction } =
+  const { className, value, defaultValue, onChange, items, readonly, label, direction = 'bottomRight' } =
     props
 
   const inferredValue = value ?? defaultValue
@@ -54,7 +53,7 @@ const ListBox = <T extends string>(props: ListBoxProps<T>) => {
           </Button>
         </HListBox.Button>
 
-        <HListBox.Options className={classNames(styles.options, {}, [direction === 'up' ? styles.directionUp : undefined])}>
+        <HListBox.Options className={classNames(styles.options, {}, [styles[direction]])}>
           {items?.map((item) => (
             <HListBox.Option
               as={Fragment}
