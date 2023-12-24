@@ -5,6 +5,7 @@ import { userReducer } from 'entities/User'
 import { createReducerManager } from './createReducerManager'
 import { $api } from 'shared/api/api'
 import { saveScrollPositionReducer } from 'features/SaveScrollPosition'
+import { rtkApi } from 'shared/api/rtkApi'
 
 export const configureReduxStore = (
   initialState?: StateSchema,
@@ -14,7 +15,8 @@ export const configureReduxStore = (
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
-    saveScrollPosition: saveScrollPositionReducer
+    saveScrollPosition: saveScrollPositionReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer
   }
 
   const reducerManager = createReducerManager(rootReducers)
@@ -29,7 +31,7 @@ export const configureReduxStore = (
           api: $api
         }
       }
-    })
+    }).concat(rtkApi.middleware)
   })
 
   // @ts-expect-error this type will be fixed in future
