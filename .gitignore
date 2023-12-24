@@ -5,3 +5,4 @@ node_modules
 .DS_Store
 /.loki/report.html
 /.loki/report.json
+/reports

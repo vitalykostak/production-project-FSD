@@ -25,7 +25,7 @@
     "storybook": "./node_modules/storybook/index.js dev -p 6006 -c config/storybook",
     "storybook:build": "./node_modules/storybook/index.js build -c config/storybook",
     "prepare": "husky install",
-    "generate_feature_slice":"node ./scripts/generate-feature-slice/index.mjs"
+    "generate_feature_slice": "node ./scripts/generate-feature-slice/index.mjs"
   },
   "author": "",
   "license": "ISC",
@@ -74,6 +74,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "jest-html-reporters": "^3.1.6",
     "json-server": "^0.17.4",
     "loki": "^0.33.1",
     "mini-css-extract-plugin": "^2.7.6",

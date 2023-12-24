@@ -43,7 +43,17 @@ const config: Config = {
     IS_DEV: true,
     API_URL: '',
     EXECUTION_ENVIRONMENT: 'jest'
-  }
+  },
+
+  reporters: [
+    'default',
+    ['jest-html-reporters', {
+      publicPath: '<rootDir>/reports/unit',
+      inlineSource: true,
+      filename: 'unit-report.html',
+      openReport: true
+    }]
+  ]
 
   // A map from regular expressions to paths to transformers
   // transform: undefined
