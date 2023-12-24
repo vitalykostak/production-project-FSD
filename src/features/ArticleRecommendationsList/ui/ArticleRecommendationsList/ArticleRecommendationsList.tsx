@@ -18,7 +18,7 @@ const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> = memo(
 
     const { isLoading, data: articles, error } = useGetArticleRecommendationListQuery(3)
 
-    if (isLoading || error) {
+    if (isLoading || error || !articles) {
       return null
     }
 
