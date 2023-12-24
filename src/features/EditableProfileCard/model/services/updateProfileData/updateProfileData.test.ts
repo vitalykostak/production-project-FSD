@@ -1,9 +1,10 @@
 import { updateProfileData } from './updateProfileData'
 
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
-import { ValidateProfileError, type Profile } from '../../types/profile'
+import { ValidateProfileError } from '../../types/profile'
 import { CURRENCY } from 'entities/Currency'
 import { COUNTRY } from 'entities/Country'
+import { type Profile } from 'entities/Profile'
 
 describe('updateProfileData.test', () => {
   const profile: Profile = {

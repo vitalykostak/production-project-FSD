@@ -8,7 +8,7 @@ import { COUNTRY } from 'entities/Country'
 import { type StateSchema } from 'app/providers/StoreProvider'
 import AvatarTestImg from 'shared/assets/tests/avatar-test-img.png'
 import { type Profile } from 'entities/Profile'
-import { ValidateProfileError } from 'entities/Profile/model/types/profile'
+import { ValidateProfileError } from 'features/EditableProfileCard/model/types/profile'
 
 const meta = {
   title: 'pages/Profile',

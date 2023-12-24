@@ -12,9 +12,9 @@ import {
   HStack
 } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
-import { type Profile } from '../../model/types/profile'
 import { type CURRENCY, CurrencySelect } from 'entities/Currency'
 import { CountrySelect, type COUNTRY } from 'entities/Country'
+import { type Profile } from '../../model/types/profile'
 
 interface ProfileCardProps {
   className?: string
