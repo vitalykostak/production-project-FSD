@@ -41,7 +41,7 @@ const config: Config = {
   // A set of global variables that need to be available in all test environments
   globals: {
     IS_DEV: true,
-    API_URL: '',
+    API_URL: 'http://localhost:8000',
     EXECUTION_ENVIRONMENT: 'jest'
   },
 
@@ -51,7 +51,7 @@ const config: Config = {
       publicPath: '<rootDir>/reports/unit',
       inlineSource: true,
       filename: 'unit-report.html',
-      openReport: true
+      openReport: false
     }]
   ]
 
