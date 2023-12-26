@@ -3,12 +3,13 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import textStyles from './Text.module.scss'
 
 interface TextProps {
-  className?: string
-  title?: string
-  text?: string
-  theme?: TextTheme
-  align?: TextAlign
-  size?: TextSize
+  'className'?: string
+  'title'?: string
+  'text'?: string
+  'theme'?: TextTheme
+  'align'?: TextAlign
+  'size'?: TextSize
+  'data-testid'?: string
 }
 
 export enum TextTheme {
@@ -44,17 +45,34 @@ const Text: FC<TextProps> = memo((props) => {
     text,
     theme = TextTheme.PRIMARY,
     align = TextAlign.LEFT,
-    size = TextSize.M
+    size = TextSize.M,
+    'data-testid': dataTestId = 'Text'
   } = props
 
   const HeaderTag = headerSizeMapping[size]
 
-  const additionsClasses = [className, textStyles[theme], textStyles[align], textStyles[size]]
+  const additionsClasses = [
+    className,
+    textStyles[theme],
+    textStyles[align],
+    textStyles[size]
+  ]
 
   return (
     <div className={classNames(textStyles.Text, {}, additionsClasses)}>
-      {title && <HeaderTag className={textStyles.title}>{title}</HeaderTag>}
-      {text && <p className={textStyles.text}>{text}</p>}
+      {title && (
+        <HeaderTag
+          className={textStyles.title}
+          data-testid={`${dataTestId}.Title`}
+        >
+          {title}
+        </HeaderTag>
+      )}
+      {text && (
+        <p className={textStyles.text} data-testid={`${dataTestId}.Text`}>
+          {text}
+        </p>
+      )}
     </div>
   )
 })

@@ -7,7 +7,7 @@ const Profile = () => {
 
   return (
     <Page>
-      <EditableProfileCard id={id} />
+      {id ? <EditableProfileCard id={id} /> : 'No id'}
     </Page>
   )
 }

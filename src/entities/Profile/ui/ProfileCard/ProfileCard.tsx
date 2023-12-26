@@ -105,6 +105,7 @@ const ProfileCard: FC<ProfileCardProps> = memo((props) => {
       <Input
         value={data?.first}
         placeholder={t('profile:firstName')}
+        data-testid='ProfileCard.firstNameInput'
         className={profileCardStyles.input}
         onChange={onChangeFirstName}
         readonly={readonly}
@@ -112,6 +113,7 @@ const ProfileCard: FC<ProfileCardProps> = memo((props) => {
       <Input
         value={data?.lastName}
         placeholder={t('profile:lastName')}
+        data-testid='ProfileCard.lastNameInput'
         className={profileCardStyles.input}
         onChange={onChangeLastName}
         readonly={readonly}

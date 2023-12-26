@@ -18,7 +18,7 @@ import EditableProfileCardHeader from '../EditableProfileCardHeader/EditableProf
 
 interface EditableProfileCardProps {
   className?: string
-  id?: string
+  id: string
 }
 
 const reducers: ReducersList = {
@@ -106,9 +106,14 @@ const EditableProfileCard: FC<EditableProfileCardProps> = memo((props) => {
   return (
     <DynamicModuleLoader reducers={reducers} shouldRemoveOnUnmout>
       <div className={classNames('', mods, additionsClasses)}>
-        <EditableProfileCardHeader />
+        <EditableProfileCardHeader id={id} />
         {profileValidationErrors?.map((e) => (
-          <Text key={e} theme={TextTheme.ERROR} text={e} />
+          <Text
+            key={e}
+            theme={TextTheme.ERROR}
+            text={e}
+            data-testid="EditableProfileCard.ValidationError"
+          />
         ))}
         <ProfileCard
           data={profileForm}

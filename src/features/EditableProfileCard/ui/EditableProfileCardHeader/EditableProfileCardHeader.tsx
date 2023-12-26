@@ -1,3 +1,4 @@
+'use strict'
 import { memo, type FC, useCallback } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './EditableProfileCardHeader.module.scss'
@@ -5,7 +6,6 @@ import { Button, ButtonTheme, HStack, Text } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'shared/lib/hooks'
-import { useParams } from 'react-router-dom'
 import { getUserAuthData } from 'entities/User'
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly'
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'
@@ -14,11 +14,12 @@ import { updateProfileData } from '../../model/services/updateProfileData/update
 
 interface EditableProfileCardHeaderProps {
   className?: string
+  id: string
 }
 
 const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> = memo(
   (props) => {
-    const { className } = props
+    const { className, id } = props
 
     const { t } = useTranslation(['translation', 'profile'])
     const dispatch = useAppDispatch()
@@ -27,9 +28,7 @@ const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> = memo(
     const profileReadonly = useSelector(getProfileReadonly)
     const profileData = useSelector(getProfileData)
 
-    const canEdit = authData?.id === profileData?.id
-
-    const { id } = useParams<{ id: 'string' }>()
+    const canEdit = authData?.id && profileData?.id && authData?.id === profileData?.id
 
     const mods = {}
 
@@ -69,19 +68,25 @@ const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> = memo(
                 theme={ButtonTheme.OUTLINE}
                 className={styles.editBtn}
                 onClick={onEdit}
+                data-testid="EditableProfileCardHeader.EditButton"
               >
                 {t('translation:edit')}
               </Button>
                 )
               : (
               <HStack align="end" gap="12">
-                <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit}>
+                <Button
+                  theme={ButtonTheme.OUTLINE_RED}
+                  onClick={onCancelEdit}
+                  data-testid="EditableProfileCardHeader.CancelButton"
+                >
                   {t('translation:cancel')}
                 </Button>
                 <Button
                   theme={ButtonTheme.OUTLINE}
                   className={styles.saveBtn}
                   onClick={onSave}
+                  data-testid="EditableProfileCardHeader.SaveButton"
                 >
                   {t('translation:save')}
                 </Button>
