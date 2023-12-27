@@ -6,13 +6,8 @@ import buildFileLoader from './loaders/buildFileLoader'
 import buildBabelLoader from './loaders/buildBabelLoader'
 
 export default (options: BuildOptions): RuleSetRule[] => {
-  const babelLoader = buildBabelLoader(options)
-
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/
-  }
+  const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false })
+  const typescriptBabelLoader = buildBabelLoader({ ...options, isTsx: true })
 
   const sassLoader = buildSassLoader(options)
 
@@ -20,5 +15,5 @@ export default (options: BuildOptions): RuleSetRule[] => {
 
   const fileLoader = buildFileLoader()
 
-  return [babelLoader, typescriptLoader, sassLoader, svgrLoader, fileLoader]
+  return [codeBabelLoader, typescriptBabelLoader, sassLoader, svgrLoader, fileLoader]
 }

@@ -10,6 +10,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
 import CircularDependencyPlugin from 'circular-dependency-plugin'
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 
 export default (options: BuildOptions): WebpackPluginInstance[] => {
   const { paths, isDev, apiUrl, executionEnvironment } = options
@@ -34,7 +35,8 @@ export default (options: BuildOptions): WebpackPluginInstance[] => {
 
       // add errors to webpack instead of warnings
       failOnError: true
-    })
+    }),
+    new ForkTsCheckerWebpackPlugin()
   ]
 
   if (isDev) {
