@@ -5,6 +5,7 @@ import { Theme } from '../../src/app/providers/ThemeProvider'
 
 // include global styles
 import '../../src/app/styles/index.scss'
+import SuspenseDecorator from '../../src/shared/config/storybook/SuspenseDecorator'
 
 const preview: Preview = {
   parameters: {
@@ -18,7 +19,8 @@ const preview: Preview = {
   },
   decorators: [
     BrowserRouterDecorator,
-    ThemeDecorator(Theme.LIGHT)
+    ThemeDecorator(Theme.LIGHT),
+    SuspenseDecorator
   ]
 }
 
