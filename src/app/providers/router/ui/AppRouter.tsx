@@ -6,21 +6,32 @@ import {
 } from 'shared/config/routeConfig/routeConfig'
 import { PageLoader } from 'widgets/PageLoader'
 import RequireAuth from './RequireAuth'
+import RequireRoles from './RequireRoles'
 
 const AppRouter = () => {
   const renderRoute = (route: AppRouteProps) => {
-    const { path, element, authOnly } = route
+    const { path, element, authOnly, roles } = route
 
     const renderedElement = (
-      <Suspense fallback={<PageLoader />}>
-        {element}
-      </Suspense>
+      <Suspense fallback={<PageLoader />}>{element}</Suspense>
     )
 
     return (
       <Route
         path={path}
-        element={authOnly ? <RequireAuth>{renderedElement}</RequireAuth> : renderedElement}
+        element={
+          authOnly
+            ? (
+            <RequireAuth>
+              <RequireRoles requiredRoles={roles}>
+                {renderedElement}
+              </RequireRoles>
+            </RequireAuth>
+              )
+            : (
+                renderedElement
+              )
+        }
         key={path}
       />
     )
