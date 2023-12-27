@@ -9,6 +9,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
+import CircularDependencyPlugin from 'circular-dependency-plugin'
 
 export default (options: BuildOptions): WebpackPluginInstance[] => {
   const { paths, isDev, apiUrl, executionEnvironment } = options
@@ -25,9 +26,14 @@ export default (options: BuildOptions): WebpackPluginInstance[] => {
       EXECUTION_ENVIRONMENT: JSON.stringify(executionEnvironment)
     }),
     new CopyPlugin({
-      patterns: [
-        { from: paths.locales, to: paths.buildLocales }
-      ]
+      patterns: [{ from: paths.locales, to: paths.buildLocales }]
+    }),
+    new CircularDependencyPlugin({
+      // exclude detection of files based on a RegExp
+      exclude: /node_modules/,
+
+      // add errors to webpack instead of warnings
+      failOnError: true
     })
   ]
 
