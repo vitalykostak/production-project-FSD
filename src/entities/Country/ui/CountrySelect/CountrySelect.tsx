@@ -2,7 +2,7 @@ import { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { ListBox, type SelectOption } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
-import { COUNTRY } from '../../model/types/country'
+import { COUNTRY } from '../../model/consts/country'
 
 interface CountrySelectProps {
   className?: string
@@ -16,7 +16,7 @@ const options = Object.values<COUNTRY>(COUNTRY).map<SelectOption<COUNTRY>>((opt)
   content: opt
 }))
 
-const CurrencySelect: FC<CountrySelectProps> = memo((props) => {
+const CountrySelect: FC<CountrySelectProps> = memo((props) => {
   const { className, value, onChange, readonly } = props
 
   const { t } = useTranslation('translation')
@@ -38,4 +38,4 @@ const CurrencySelect: FC<CountrySelectProps> = memo((props) => {
   )
 })
 
-export default CurrencySelect
+export default CountrySelect

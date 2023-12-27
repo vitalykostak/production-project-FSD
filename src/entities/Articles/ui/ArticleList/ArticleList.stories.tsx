@@ -3,10 +3,10 @@ import ArticleList from './ArticleList'
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import {
-  type Article,
-  ArticleListView
+  type Article
 } from '../../model/types/articles'
 import AvatarTestImg from 'shared/assets/tests/avatar-test-img.png'
+import { ArticleListView } from '../../model/consts/consts'
 
 const meta = {
   title: 'entities/Article/ArticleList',

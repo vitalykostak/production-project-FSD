@@ -3,11 +3,10 @@ import ArticleDetails from './ArticleDetails'
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import {
-  ArticleType,
-  type Article,
-  ArticleBlockType
+  type Article
 } from '../../model/types/articles'
 import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
+import { ArticleBlockType, ArticleType } from '../../model/consts/consts'
 
 const meta = {
   title: 'entities/Article/ArticleDetails',

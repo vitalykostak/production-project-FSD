@@ -4,10 +4,9 @@ import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
 import { type StateSchema } from 'app/providers/StoreProvider'
-import { ArticleType } from 'entities/Articles'
+import { ArticleBlockType, ArticleType } from 'entities/Articles'
 import {
-  type Article,
-  ArticleBlockType
+  type Article
 } from 'entities/Articles/model/types/articles'
 import { type Comment } from 'entities/Comment'
 

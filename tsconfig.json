@@ -14,7 +14,8 @@
     "paths": {
       "*": ["./src/*"]
     },
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "isolatedModules": true
   },
   "ts-node": {
     "compilerOptions": {

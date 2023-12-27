@@ -1,5 +1,6 @@
-export { type Article, ArticleListView, ArticleType } from './model/types/articles'
-export { ArticlesSortField } from './model/types/articlesSortField'
+export { type Article } from './model/types/articles'
+export { ArticleListView, ArticleType, ArticleBlockType } from './model/consts/consts'
+export { ArticlesSortField } from './model/consts/articlesSortField'
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema'
 export { default as ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
 export { default as ArticleList } from './ui/ArticleList/ArticleList'

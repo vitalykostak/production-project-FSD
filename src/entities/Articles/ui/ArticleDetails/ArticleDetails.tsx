@@ -24,12 +24,12 @@ import {
 import EyeIcon from 'shared/assets/icons/eye-icon.svg'
 import CalendarIcon from 'shared/assets/icons/calendar.svg'
 import {
-  type ArticleBlock,
-  ArticleBlockType
+  type ArticleBlock
 } from '../../model/types/articles'
 import ArticleCodeBlockComponent from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import ArticleImageBlockComponent from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
+import { ArticleBlockType } from '../../model/consts/consts'
 
 interface ArticleDetailsProps {
   className?: string

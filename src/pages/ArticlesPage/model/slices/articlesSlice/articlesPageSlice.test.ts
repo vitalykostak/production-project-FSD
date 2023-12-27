@@ -2,10 +2,10 @@ import { articlesPageReducer } from './articlesPageSlice'
 import { fetchArticlesList } from '../../services/fetchArticlesList/fetchArticlesList'
 import { type ArticlesPageSchema } from '../../types/articlesPageSchema'
 import {
-  type Article,
-  ArticleBlockType,
-  ArticleType
+  type Article
 } from 'entities/Articles/model/types/articles'
+import { ArticleType } from 'entities/Articles'
+import { ArticleBlockType } from 'entities/Articles/model/consts/consts'
 
 describe('articlesPageSlice', () => {
   test('fetchArticlesList.pending without replace,should not effect entities', () => {

@@ -1,6 +1,5 @@
 import path from 'path'
 import {
-  BuildMode,
   type ExecutionEnvironment,
   type BuildOptions,
   type BuildPaths
@@ -9,6 +8,7 @@ import { type RuleSetRule, type Configuration, DefinePlugin } from 'webpack'
 import buildSvgLoader from '../build/loaders/buildSvgLoader'
 import buildSassLoader from '../build/loaders/buildSassLoader'
 import buildFileLoader from '../build/loaders/buildFileLoader'
+import { BuildMode } from '..//build/consts'
 
 export const buildStorybookWebpackConfig = async (config: Configuration) => {
   const mode: BuildMode = BuildMode.DEVELOPMENT

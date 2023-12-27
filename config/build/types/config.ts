@@ -1,3 +1,5 @@
+import { type BuildMode } from '../consts'
+
 export interface BuildOptions {
   mode: BuildMode
   paths: BuildPaths
@@ -5,11 +7,6 @@ export interface BuildOptions {
   isDev: boolean
   apiUrl: string
   executionEnvironment: ExecutionEnvironment
-}
-
-export enum BuildMode {
-  PRODUCTION = 'production',
-  DEVELOPMENT = 'development',
 }
 
 export interface BuildPaths {

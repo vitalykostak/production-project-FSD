@@ -1,7 +1,7 @@
 import { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './ToggleItemsView.module.scss'
-import { ArticleListView } from '../../model/types/articles'
+import { ArticleListView } from '../../model/consts/consts'
 import ListIcon from 'shared/assets/icons/list.svg'
 import TileIcon from 'shared/assets/icons/tile.svg'
 import { Button, ButtonTheme, Icon } from 'shared/ui'

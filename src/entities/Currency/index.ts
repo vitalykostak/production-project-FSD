@@ -1,2 +1,2 @@
-export { CURRENCY } from './model/types/currency'
+export { CURRENCY } from './model/consts/currency'
 export { default as CurrencySelect } from './ui/CurrencySelect/CurrencySelect'
