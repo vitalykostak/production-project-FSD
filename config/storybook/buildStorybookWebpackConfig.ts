@@ -24,7 +24,7 @@ export const buildStorybookWebpackConfig = async (config: Configuration) => {
 
   const isDev: boolean = mode === BuildMode.DEVELOPMENT
   const port: number = 3000
-  const apiUrl: string = ''
+  const apiUrl: string = 'https://localhost:3001'
   const executionEnvironment: ExecutionEnvironment = 'storybook'
 
   const buildOptions: BuildOptions = {
