@@ -2,8 +2,9 @@ import { Fragment } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './ListBox.module.scss'
-import Button, { ButtonTheme } from '../Button/Button'
-import HStack from '../Stack/HStack/HStack'
+import popupStyles from '../../styles/Popup.module.scss'
+import Button, { ButtonTheme } from '../../../Button/Button'
+import HStack from '../../../Stack/HStack/HStack'
 import { type DirectionType } from 'shared/types'
 
 interface ListBoxProps<T extends string> {
@@ -34,7 +35,7 @@ const ListBox = <T extends string>(props: ListBoxProps<T>) => {
   const additionsClasses = [className]
 
   return (
-    <HStack gap='4' align='center' className={classNames(styles.ListBox, {}, additionsClasses)}>
+    <HStack gap='4' align='center' className={classNames(popupStyles.Popup, {}, additionsClasses)}>
       {label && (
         <span>
           {label} {'>'}
@@ -53,7 +54,7 @@ const ListBox = <T extends string>(props: ListBoxProps<T>) => {
           </Button>
         </HListBox.Button>
 
-        <HListBox.Options className={classNames(styles.options, {}, [styles[direction]])}>
+        <HListBox.Options className={classNames(styles.options, {}, [popupStyles[direction]])}>
           {items?.map((item) => (
             <HListBox.Option
               as={Fragment}

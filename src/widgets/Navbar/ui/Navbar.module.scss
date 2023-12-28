@@ -11,8 +11,20 @@
   width: calc(var(--sidebar-width) - 16px - 20px);
 }
 
-.dropdown,
+.actions,
 .links {
   margin-left: auto;
+}
+
+.notificationIcon {
+  cursor: pointer;
+}
+
+.notifications {
+  padding: 20px;
+  width: 500px;
+  min-height: 150px;
+  max-height: 300px;
+  overflow-y: auto;
 }
 

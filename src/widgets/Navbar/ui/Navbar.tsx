@@ -7,15 +7,22 @@ import {
   Button,
   ButtonTheme,
   Dropdown,
+  HStack,
   Text,
   TextTheme
 } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
 import { LoginModal } from 'features/AuthByUsername'
 import { useSelector } from 'react-redux'
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User'
+import {
+  getUserAuthData,
+  isUserAdmin,
+  isUserManager,
+  userActions
+} from 'entities/User'
 import { useAppDispatch } from 'shared/lib/hooks'
 import { routePaths } from 'shared/config/routeConfig/routeConfig'
+import { NotificationButton } from 'features/notificationButton'
 
 interface NavbarProps {
   className?: string
@@ -52,24 +59,28 @@ const Navbar: FC<NavbarProps> = memo(({ className }) => {
         <AppLink to={routePaths.article_create}>
           {t('article:create_article')}
         </AppLink>
-        <Dropdown
-          direction="bottomLeft"
-          className={navbarStyles.dropdown}
-          trigger={<Avatar src={userAuthData.avatar} size={30} />}
-          items={[
-            ...(isAdminPanelAvailable
-              ? [{
-                  content: 'Admin panel',
-                  href: routePaths.admin_panel
-                }]
-              : []),
-            {
-              content: t('profile:profile'),
-              href: routePaths.profile + userAuthData.id
-            },
-            { content: t('translation:sign_out'), onClick: onLogout }
-          ]}
-        />
+        <HStack className={navbarStyles.actions} gap="16" align="center">
+          <NotificationButton />
+          <Dropdown
+            direction="bottomLeft"
+            trigger={<Avatar src={userAuthData.avatar} size={30} />}
+            items={[
+              ...(isAdminPanelAvailable
+                ? [
+                    {
+                      content: 'Admin panel',
+                      href: routePaths.admin_panel
+                    }
+                  ]
+                : []),
+              {
+                content: t('profile:profile'),
+                href: routePaths.profile + userAuthData.id
+              },
+              { content: t('translation:sign_out'), onClick: onLogout }
+            ]}
+          />
+        </HStack>
       </nav>
     )
   }

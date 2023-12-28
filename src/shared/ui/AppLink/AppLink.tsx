@@ -29,8 +29,8 @@ const AppLink: FC<AppLinkProps> = memo((props) => {
       to={to}
       {...otherLinkProps}
       className={classNames(appLinkStyle.AppLink, {}, [
-        className,
-        appLinkStyle[theme]
+        appLinkStyle[theme],
+        className
       ])}
     >
       {children}

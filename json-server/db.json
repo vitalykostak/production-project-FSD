@@ -1,4 +1,38 @@
 {
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Notification 1",
+      "description": "Event 1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Notification 2",
+      "description": "Event 2",
+      "userId": "1",
+      "href": "http://localhost:3001/admin"
+    },
+    {
+      "id": "3",
+      "title": "Notification 3",
+      "description": "Event 3",
+      "userId": "1",
+      "href": "http://localhost:3001/admin"
+    },
+    {
+      "id": "4",
+      "title": "Notification 4",
+      "description": "Event 4",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Notification 5",
+      "description": "Event 5",
+      "userId": "2"
+    }
+  ],
   "posts": [
     {
       "id": 1,

@@ -1,7 +1,3 @@
-.Dropdown {
-  position: relative;
-}
-
 .trigger {
   border: none;
   outline: none;
@@ -11,6 +7,7 @@
   display: flex;
   padding-block: 0;
   padding-inline: 0;
+  cursor: pointer;
 }
 
 .items {
@@ -54,22 +51,3 @@
   padding: 0;
 }
 
-.bottomLeft {
-  top: 100%;
-  right: 0%;
-}
-
-.bottomRight {
-  top: 100%;
-  left: 0%;
-}
-
-.topLeft {
-  bottom: 100%;
-  right: 0%;
-}
-
-.topRight {
-  bottom: 100%;
-  left: 0%;
-}

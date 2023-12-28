@@ -2,8 +2,9 @@ import { Menu } from '@headlessui/react'
 import { memo, type FC, type ReactNode } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './Dropdown.module.scss'
+import popupStyles from '../../styles/Popup.module.scss'
 import { type DirectionType } from 'shared/types'
-import AppLink from '../AppLink/AppLink'
+import AppLink from '../../../AppLink/AppLink'
 
 interface DropdownProps {
   className?: string
@@ -25,12 +26,12 @@ const Dropdown: FC<DropdownProps> = memo((props) => {
   const mods = {}
 
   const additionsClasses = [className]
-  const itemsAdditionsClasses = [styles[direction]]
+  const itemsAdditionsClasses = [popupStyles[direction]]
 
   return (
     <Menu
       as="div"
-      className={classNames(styles.Dropdown, mods, additionsClasses)}
+      className={classNames(popupStyles.Popup, mods, additionsClasses)}
     >
       <Menu.Button className={styles.trigger}>{trigger}</Menu.Button>
       <Menu.Items

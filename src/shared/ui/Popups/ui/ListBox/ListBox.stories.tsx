@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import ListBox from './ListBox'
 
 const meta = {
-  title: 'shared/ListBox',
+  title: 'shared/Popups/ListBox',
   component: ListBox,
   tags: ['autodocs'],
   decorators: [
