@@ -3,7 +3,6 @@ import modalStyles from './Modal.module.scss'
 import {
   type ReactNode,
   type FC,
-  type MouseEvent,
   useRef,
   useEffect,
   useState,
@@ -11,6 +10,7 @@ import {
 } from 'react'
 import { useTheme } from 'app/providers/ThemeProvider'
 import Portal from '../Portal/Portal'
+import Overlay from '../Overlay/Overlay'
 
 interface ModalProps {
   className?: string
@@ -31,7 +31,6 @@ const Modal: FC<ModalProps> = (props) => {
   const [isClosing, setIsClosing] = useState<boolean>(false)
   const timerRef = useRef<ReturnType<typeof setTimeout>>()
 
-  const onContentClickHandler = (e: MouseEvent) => e.stopPropagation()
   const closeHandler = useCallback(() => {
     if (onClose) {
       setIsClosing(true)
@@ -73,7 +72,7 @@ const Modal: FC<ModalProps> = (props) => {
   }
 
   // class of theme is needed for including current theme variables
-  const additionalsClasses = [className, theme]
+  const additionsClasses = [className, theme]
 
   if (lazy && !isMounted) {
     return null
@@ -81,12 +80,9 @@ const Modal: FC<ModalProps> = (props) => {
 
   return (
     <Portal>
-      <div className={classNames(modalStyles.Modal, mods, additionalsClasses)}>
-        <div className={modalStyles.overlay} onClick={closeHandler}>
-          <div className={modalStyles.content} onClick={onContentClickHandler}>
-            {children}
-          </div>
-        </div>
+      <div className={classNames(modalStyles.Modal, mods, additionsClasses)}>
+        <Overlay onClick={closeHandler} />
+        <div className={modalStyles.content}>{children}</div>
       </div>
     </Portal>
   )
