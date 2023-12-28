@@ -1,0 +1,39 @@
+.Drawer {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.content {
+  padding: 20px;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  background: var(--bg-color);
+  transition: 0.3s transform;
+  transform: translateY(100%);
+  min-height: 100px;
+  height: 70%;
+  width: 100%;
+  overflow: hidden auto;
+}
+
+.opened {
+  pointer-events: auto;
+  opacity: 1;
+  z-index: var(--modal-z-index);
+
+  .content {
+    transform: translateY(0%);
+  }
+}
+
+.closing {
+  .content {
+    transform: translateY(100%);
+  }
+}
