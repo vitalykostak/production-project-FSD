@@ -3,10 +3,8 @@ import navbarStyles from './Navbar.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import {
   AppLink,
-  Avatar,
   Button,
   ButtonTheme,
-  Dropdown,
   HStack,
   Text,
   TextTheme
@@ -15,38 +13,26 @@ import { useTranslation } from 'react-i18next'
 import { LoginModal } from 'features/AuthByUsername'
 import { useSelector } from 'react-redux'
 import {
-  getUserAuthData,
-  isUserAdmin,
-  isUserManager,
-  userActions
+  getUserAuthData
 } from 'entities/User'
-import { useAppDispatch } from 'shared/lib/hooks'
+
 import { routePaths } from 'shared/config/routeConfig/routeConfig'
 import { NotificationButton } from 'features/notificationButton'
+import { AvatarButton } from 'features/avatarButton'
 
 interface NavbarProps {
   className?: string
 }
 
 const Navbar: FC<NavbarProps> = memo(({ className }) => {
-  const { t } = useTranslation(['translation', 'article', 'profile'])
-
-  const dispatch = useAppDispatch()
+  const { t } = useTranslation(['translation', 'article'])
 
   const userAuthData = useSelector(getUserAuthData)
-  const isAdmin = useSelector(isUserAdmin)
-  const isManager = useSelector(isUserManager)
 
   const [isAuthModal, setisAuthModal] = useState<boolean>(false)
   const onShowModal = useCallback(() => setisAuthModal(true), [])
 
   const onClose = useCallback(() => setisAuthModal(false), [])
-
-  const onLogout = useCallback(() => {
-    dispatch(userActions.logout())
-  }, [dispatch])
-
-  const isAdminPanelAvailable = isAdmin || isManager
 
   if (userAuthData) {
     return (
@@ -61,25 +47,7 @@ const Navbar: FC<NavbarProps> = memo(({ className }) => {
         </AppLink>
         <HStack className={navbarStyles.actions} gap="16" align="center">
           <NotificationButton />
-          <Dropdown
-            direction="bottomLeft"
-            trigger={<Avatar src={userAuthData.avatar} size={30} />}
-            items={[
-              ...(isAdminPanelAvailable
-                ? [
-                    {
-                      content: 'Admin panel',
-                      href: routePaths.admin_panel
-                    }
-                  ]
-                : []),
-              {
-                content: t('profile:profile'),
-                href: routePaths.profile + userAuthData.id
-              },
-              { content: t('translation:sign_out'), onClick: onLogout }
-            ]}
-          />
+          <AvatarButton />
         </HStack>
       </nav>
     )
