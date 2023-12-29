@@ -5,6 +5,7 @@ import { Popover, Icon, Drawer, Button, ButtonTheme } from 'shared/ui'
 import NotificationIcon from 'shared/assets/icons/notification.svg'
 import { NotificationList } from 'entities/Notification'
 import { BrowserView, MobileView } from 'react-device-detect'
+import { AnimationProvider } from 'shared/lib/components/AnimationProvider'
 
 interface NotificationButtonProps {
   className?: string
@@ -19,7 +20,11 @@ const NotificationButton: FC<NotificationButtonProps> = memo((props) => {
   const hideDrawer = useCallback(() => setDrawer(false), [])
 
   const trigger = (
-    <Button theme={ButtonTheme.CLEAR} onClick={showDrawer} className={styles.trigger}>
+    <Button
+      theme={ButtonTheme.CLEAR}
+      onClick={showDrawer}
+      className={styles.trigger}
+    >
       <Icon Svg={NotificationIcon} inverted />
     </Button>
   )
@@ -41,9 +46,11 @@ const NotificationButton: FC<NotificationButtonProps> = memo((props) => {
       </BrowserView>
       <MobileView>
         {trigger}
-        <Drawer isOpen={isDrawerOpen} onClose={hideDrawer}>
-          <NotificationList />
-        </Drawer>
+        <AnimationProvider>
+          <Drawer isOpen={isDrawerOpen} onClose={hideDrawer}>
+            <NotificationList />
+          </Drawer>
+        </AnimationProvider>
       </MobileView>
     </>
   )

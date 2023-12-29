@@ -2,11 +2,19 @@ import type { Meta, StoryObj } from '@storybook/react'
 import Drawer from './Drawer'
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
+import { AnimationProvider } from 'shared/lib/components/AnimationProvider'
 
 const meta = {
   title: 'shared/Drawer',
   component: Drawer,
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  decorators: [
+    (Story) => (
+      <AnimationProvider>
+        <Story />
+      </AnimationProvider>
+    )
+  ]
 } satisfies Meta<typeof Drawer>
 
 export default meta
