@@ -1,15 +1,15 @@
 import { memo, type FC, useCallback } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { DynamicModuleLoader, type ReducersList } from 'shared/lib'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { DynamicModuleLoader, type ReducersList } from '@/shared/lib'
 import { articlesPageReducer } from '../../model/slices/articlesSlice/articlesPageSlice'
-import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
+import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
-import { Page } from 'widgets/Page'
+import { Page } from '@/widgets/Page'
 import ArticlesPageFilters from '../ArticlesPageFilters/ArticlesPageFilters'
 import { useSearchParams } from 'react-router-dom'
 import ArticleInfiniteList from '../ArticleInfiniteList/ArticleInfiniteList'
-import { VStack } from 'shared/ui'
+import { VStack } from '@/shared/ui'
 
 interface ArticlesPageProps {
   className?: string

@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { type OverriddenThunkConfig } from 'app/providers/StoreProvider'
+import { type OverriddenThunkConfig } from '@/app/providers/StoreProvider'
 import { type Article } from '../../types/articles'
 
 type FetchArticleByIdProps = string

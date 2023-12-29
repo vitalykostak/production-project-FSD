@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import ArticleDetails from './ArticleDetails'
-import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
+import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
 import {
   type Article
 } from '../../model/types/articles'
-import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
+import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
 import { ArticleBlockType, ArticleType } from '../../model/consts/consts'
 
 const meta = {

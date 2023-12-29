@@ -1,6 +1,6 @@
 import { useCallback, type FC, useState, memo } from 'react'
 import navbarStyles from './Navbar.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import {
   AppLink,
   Button,
@@ -8,17 +8,17 @@ import {
   HStack,
   Text,
   TextTheme
-} from 'shared/ui'
+} from '@/shared/ui'
 import { useTranslation } from 'react-i18next'
-import { LoginModal } from 'features/AuthByUsername'
+import { LoginModal } from '@/features/AuthByUsername'
 import { useSelector } from 'react-redux'
 import {
   getUserAuthData
-} from 'entities/User'
+} from '@/entities/User'
 
-import { routePaths } from 'shared/config/routeConfig/routeConfig'
-import { NotificationButton } from 'features/notificationButton'
-import { AvatarButton } from 'features/avatarButton'
+import { routePaths } from '@/shared/config/routeConfig/routeConfig'
+import { NotificationButton } from '@/features/notificationButton'
+import { AvatarButton } from '@/features/avatarButton'
 
 interface NavbarProps {
   className?: string

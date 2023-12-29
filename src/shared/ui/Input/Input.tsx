@@ -9,7 +9,7 @@ import {
   useEffect
 } from 'react'
 import inputStyles from './Input.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 type HtmlInputProps = Omit<
 InputHTMLAttributes<HTMLInputElement>,

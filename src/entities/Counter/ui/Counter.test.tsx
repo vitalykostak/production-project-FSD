@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react'
-import renderComponent from 'shared/lib/tests/renderComponent/renderComponent'
+import renderComponent from '@/shared/lib/tests/renderComponent/renderComponent'
 import Counter from './Counter'
-import { type StateSchema } from 'app/providers/StoreProvider'
+import { type StateSchema } from '@/app/providers/StoreProvider'
 
 describe('Counter', () => {
   let state: DeepPartial<StateSchema> = {}

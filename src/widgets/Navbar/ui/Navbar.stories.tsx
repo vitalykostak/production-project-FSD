@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import Navbar from './Navbar'
-import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
-import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
-import AvatarTestImg from 'shared/assets/tests/avatar-test-img.png'
-import { type Notification } from 'entities/Notification/types/notification'
+import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
+import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
+import AvatarTestImg from '@/shared/assets/tests/avatar-test-img.png'
+import { type Notification } from '@/entities/Notification/types/notification'
 
 const meta = {
   title: 'widgets/Navbar',

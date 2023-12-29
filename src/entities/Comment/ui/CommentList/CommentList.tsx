@@ -1,5 +1,5 @@
 import { memo, type FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import styles from './CommentList.module.scss'
 import { type Comment } from '../../model/types/comment'
 import { useTranslation } from 'react-i18next'

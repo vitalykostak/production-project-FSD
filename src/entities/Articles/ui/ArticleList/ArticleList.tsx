@@ -1,5 +1,5 @@
 import { memo, type FC, type HTMLAttributeAnchorTarget } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import styles from './ArticleList.module.scss'
 import { type Article } from '../../model/types/articles'
 import ArticleListItem from '../ArticleListItem/ArticleListItem'

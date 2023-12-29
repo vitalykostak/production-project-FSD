@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import ToggleItemsView from './ToggleItemsView'
-import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
+import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
 import { ArticleListView } from '../../model/consts/consts'
 
 const meta = {

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import NotificationItem from './NotificationItem'
-import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
-import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
+import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
+import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
 import { type Notification } from '../../types/notification'
 
 const meta = {

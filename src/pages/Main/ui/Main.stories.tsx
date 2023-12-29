@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import Main from './Main'
-import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
-import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
+import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
+import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
 
 const meta = {
   title: 'pages/Main',

@@ -3,9 +3,9 @@ import { fetchArticlesList } from '../../services/fetchArticlesList/fetchArticle
 import { type ArticlesPageSchema } from '../../types/articlesPageSchema'
 import {
   type Article
-} from 'entities/Articles/model/types/articles'
-import { ArticleType } from 'entities/Articles'
-import { ArticleBlockType } from 'entities/Articles/model/consts/consts'
+} from '@/entities/Articles/model/types/articles'
+import { ArticleType } from '@/entities/Articles'
+import { ArticleBlockType } from '@/entities/Articles/model/consts/consts'
 
 describe('articlesPageSlice', () => {
   test('fetchArticlesList.pending without replace,should not effect entities', () => {

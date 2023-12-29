@@ -1,14 +1,14 @@
 import { type FC, useState, memo } from 'react'
 import sidebarStyles from './Sidebar.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import {
   ThemeSwitcher,
   LanguageSwitcher,
   Button,
   ButtonTheme,
   VStack
-} from 'shared/ui'
-import { ButtonSize } from 'shared/ui/Button/Button'
+} from '@/shared/ui'
+import { ButtonSize } from '@/shared/ui/Button/Button'
 import SidebarItem from '../SidebarItem/SidebarItem'
 import { useSelector } from 'react-redux'
 import { getSidebarItems } from '../../model/selectors/getSidebarItems/getSidebarItems'

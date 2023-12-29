@@ -1,7 +1,7 @@
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
 import { type ArticleDetailsRecommendationsSchema } from '../../types/articleDetailsRecommendationsSchema'
-import { type Article } from 'entities/Articles'
-import { type StateSchema } from 'app/providers/StoreProvider'
+import { type Article } from '@/entities/Articles'
+import { type StateSchema } from '@/app/providers/StoreProvider'
 import { fetchRecommendationsList } from '../../services/fetchRecommendationsList/fetchRecommendationsList'
 
 const initialState: ArticleDetailsRecommendationsSchema = {

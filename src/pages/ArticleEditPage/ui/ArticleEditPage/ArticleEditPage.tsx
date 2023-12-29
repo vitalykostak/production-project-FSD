@@ -1,7 +1,7 @@
 import { memo, type FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import styles from './ArticleEditPage.module.scss'
-import { Page } from 'widgets/Page'
+import { Page } from '@/widgets/Page'
 import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 

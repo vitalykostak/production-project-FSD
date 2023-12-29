@@ -1,15 +1,15 @@
 import { memo, type FC, useCallback } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Avatar, Dropdown } from 'shared/ui'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { Avatar, Dropdown } from '@/shared/ui'
 import { useSelector } from 'react-redux'
 import {
   getUserAuthData,
   isUserAdmin,
   isUserManager,
   userActions
-} from 'entities/User'
-import { useAppDispatch } from 'shared/lib/hooks'
-import { routePaths } from 'shared/config/routeConfig/routeConfig'
+} from '@/entities/User'
+import { useAppDispatch } from '@/shared/lib/hooks'
+import { routePaths } from '@/shared/config/routeConfig/routeConfig'
 import { useTranslation } from 'react-i18next'
 
 interface AvatarButtonProps {

@@ -1,9 +1,9 @@
 import { memo, type FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import styles from './CommentCard.module.scss'
 import { type Comment } from '../../model/types/comment'
-import { AppLink, Avatar, Skeleton, Text } from 'shared/ui'
-import { routePaths } from 'shared/config/routeConfig/routeConfig'
+import { AppLink, Avatar, Skeleton, Text } from '@/shared/ui'
+import { routePaths } from '@/shared/config/routeConfig/routeConfig'
 
 interface CommentCardProps {
   className?: string

@@ -1,5 +1,5 @@
 import { memo, type FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import profileCardStyles from './ProfileCard.module.scss'
 import {
   EllipsesLoader,
@@ -10,10 +10,10 @@ import {
   Avatar,
   VStack,
   HStack
-} from 'shared/ui'
+} from '@/shared/ui'
 import { useTranslation } from 'react-i18next'
-import { type CURRENCY, CurrencySelect } from 'entities/Currency'
-import { CountrySelect, type COUNTRY } from 'entities/Country'
+import { type CURRENCY, CurrencySelect } from '@/entities/Currency'
+import { CountrySelect, type COUNTRY } from '@/entities/Country'
 import { type Profile } from '../../model/types/profile'
 
 interface ProfileCardProps {

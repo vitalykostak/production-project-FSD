@@ -1,5 +1,5 @@
 import { memo, type FC, useCallback, useMemo } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import styles from './ArticlesPageFilters.module.scss'
 import { useSelector } from 'react-redux'
 import {
@@ -9,20 +9,20 @@ import {
   getArticlesPageType,
   getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors/articlesPageSelectors'
-import { useAppDispatch, useDebounce } from 'shared/lib/hooks'
+import { useAppDispatch, useDebounce } from '@/shared/lib/hooks'
 import {
   type ArticleListView,
   ToggleItemsView,
   ArticleSortSelector,
   type ArticlesSortField
-} from 'entities/Articles'
+} from '@/entities/Articles'
 import { articlesPageActions } from '../../model/slices/articlesSlice/articlesPageSlice'
-import { Card, Input } from 'shared/ui'
+import { Card, Input } from '@/shared/ui'
 import { useTranslation } from 'react-i18next'
-import { type SortOrder } from 'shared/types'
+import { type SortOrder } from '@/shared/types'
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
-import Tabs, { type TabItem } from 'shared/ui/Tabs/Tabs'
-import { ArticleType } from 'entities/Articles'
+import Tabs, { type TabItem } from '@/shared/ui/Tabs/Tabs'
+import { ArticleType } from '@/entities/Articles'
 
 interface ArticlesPageFiltersProps {
   className?: string

@@ -1,9 +1,9 @@
-import 'app/styles/index.scss'
+import '@/app/styles/index.scss'
 import type { Meta, StoryObj } from '@storybook/react'
 import AddCommentForm from './AddCommentForm'
-import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
-import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
+import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
+import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
 
 const meta = {
   title: 'features/AddCommentForm/AddCommentForm',

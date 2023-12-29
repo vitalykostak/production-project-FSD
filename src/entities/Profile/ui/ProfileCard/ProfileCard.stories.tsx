@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import ProfileCard from './ProfileCard'
-import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
-import AvatarTestImg from 'shared/assets/tests/avatar-test-img.png'
-import { CURRENCY } from 'entities/Currency'
-import { COUNTRY } from 'entities/Country'
+import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
+import AvatarTestImg from '@/shared/assets/tests/avatar-test-img.png'
+import { CURRENCY } from '@/entities/Currency'
+import { COUNTRY } from '@/entities/Country'
 import { type Profile } from '../../model/types/profile'
 
 const meta = {

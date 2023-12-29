@@ -1,10 +1,10 @@
-import 'app/styles/index.scss'
+import '@/app/styles/index.scss'
 import type { Meta, StoryObj } from '@storybook/react'
 import CommentList, { type CommentListProps } from './CommentList'
-import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
-import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
-import AvatarTestImg from 'shared/assets/tests/avatar-test-img.png'
+import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
+import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
+import AvatarTestImg from '@/shared/assets/tests/avatar-test-img.png'
 
 const meta = {
   title: 'entities/Comment/CommentList',

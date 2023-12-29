@@ -1,14 +1,14 @@
 import { memo, type FC, useCallback } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import styles from './AddCommentForm.module.scss'
-import { Button, ButtonTheme, Input } from 'shared/ui'
+import { Button, ButtonTheme, Input } from '@/shared/ui'
 import { useTranslation } from 'react-i18next'
 import {
   addCommentFormActions,
   addCommentFormReducer
 } from '../../model/slice/addCommentFormSlice'
-import { useAppDispatch } from 'shared/lib/hooks'
-import { DynamicModuleLoader, type ReducersList } from 'shared/lib'
+import { useAppDispatch } from '@/shared/lib/hooks'
+import { DynamicModuleLoader, type ReducersList } from '@/shared/lib'
 
 export interface AddCommentFormProps {
   className?: string

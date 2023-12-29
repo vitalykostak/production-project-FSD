@@ -1,8 +1,8 @@
 import { useCallback, type FC, memo } from 'react'
 import loginFormStyles from './LoginForm.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
-import { Button, ButtonTheme, Input, Text, TextTheme } from 'shared/ui'
+import { Button, ButtonTheme, Input, Text, TextTheme } from '@/shared/ui'
 import { useSelector } from 'react-redux'
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
@@ -10,8 +10,8 @@ import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLogi
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
 import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading'
-import { DynamicModuleLoader, type ReducersList } from 'shared/lib'
-import { useAppDispatch } from 'shared/lib/hooks'
+import { DynamicModuleLoader, type ReducersList } from '@/shared/lib'
+import { useAppDispatch } from '@/shared/lib/hooks'
 
 const dynamicReducers: ReducersList = {
   loginForm: loginReducer

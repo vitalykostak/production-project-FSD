@@ -1,8 +1,8 @@
 import { type ReactNode, type FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import styles from './Popover.module.scss'
 import popupStyles from '../../styles/Popup.module.scss'
-import { type DirectionType } from 'shared/types'
+import { type DirectionType } from '@/shared/types'
 import { Popover as HPopover } from '@headlessui/react'
 
 interface PopoverProps {

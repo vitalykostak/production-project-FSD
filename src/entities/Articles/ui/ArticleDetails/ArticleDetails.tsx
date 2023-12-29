@@ -1,10 +1,10 @@
 import { memo, type FC, useEffect, useCallback } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import styles from './ArticleDetails.module.scss'
 import { useTranslation } from 'react-i18next'
-import { DynamicModuleLoader, type ReducersList } from 'shared/lib'
+import { DynamicModuleLoader, type ReducersList } from '@/shared/lib'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
-import { useAppDispatch } from 'shared/lib/hooks'
+import { useAppDispatch } from '@/shared/lib/hooks'
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { useSelector } from 'react-redux'
 import {
@@ -20,9 +20,9 @@ import {
   Avatar,
   TextSize,
   Icon
-} from 'shared/ui'
-import EyeIcon from 'shared/assets/icons/eye-icon.svg'
-import CalendarIcon from 'shared/assets/icons/calendar.svg'
+} from '@/shared/ui'
+import EyeIcon from '@/shared/assets/icons/eye-icon.svg'
+import CalendarIcon from '@/shared/assets/icons/calendar.svg'
 import {
   type ArticleBlock
 } from '../../model/types/articles'

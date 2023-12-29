@@ -5,19 +5,19 @@ import {
   type MutableRefObject,
   type UIEventHandler
 } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import styles from './Page.module.scss'
 import {
   useAppDispatch,
   useInfiniteScroll,
   useInitialEffect,
   useThrottle
-} from 'shared/lib/hooks'
-import { saveScrollPositionActions } from 'features/SaveScrollPosition'
+} from '@/shared/lib/hooks'
+import { saveScrollPositionActions } from '@/features/SaveScrollPosition'
 import { useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { getSavedScrollPositionByPath } from 'features/SaveScrollPosition/model/selectors/getSaveScrollPositionSelectors/getSaveScrollPositionSelectors'
-import { type StateSchema } from 'app/providers/StoreProvider'
+import { getSavedScrollPositionByPath } from '@/features/SaveScrollPosition/model/selectors/getSaveScrollPositionSelectors/getSaveScrollPositionSelectors'
+import { type StateSchema } from '@/app/providers/StoreProvider'
 
 export const wrapperId = 'PAGE_WRAPPER_ID@'
 

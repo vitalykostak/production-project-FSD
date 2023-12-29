@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import ProfilePage from './Profile'
-import ThemeDecorator from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
-import ReduxStoreDecorator from 'shared/config/storybook/ReduxStoreDecorator'
-import { CURRENCY } from 'entities/Currency'
-import { COUNTRY } from 'entities/Country'
-import { type StateSchema } from 'app/providers/StoreProvider'
-import AvatarTestImg from 'shared/assets/tests/avatar-test-img.png'
-import { type Profile } from 'entities/Profile'
-import { ValidateProfileError } from 'features/EditableProfileCard/model/types/profile'
+import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
+import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
+import { CURRENCY } from '@/entities/Currency'
+import { COUNTRY } from '@/entities/Country'
+import { type StateSchema } from '@/app/providers/StoreProvider'
+import AvatarTestImg from '@/shared/assets/tests/avatar-test-img.png'
+import { type Profile } from '@/entities/Profile'
+import { ValidateProfileError } from '@/features/EditableProfileCard/model/types/profile'
 
 const meta = {
   title: 'pages/Profile',

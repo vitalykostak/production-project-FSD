@@ -1,9 +1,9 @@
 import { Menu } from '@headlessui/react'
 import { memo, type FC, type ReactNode } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import styles from './Dropdown.module.scss'
 import popupStyles from '../../styles/Popup.module.scss'
-import { type DirectionType } from 'shared/types'
+import { type DirectionType } from '@/shared/types'
 import AppLink from '../../../AppLink/AppLink'
 
 interface DropdownProps {
