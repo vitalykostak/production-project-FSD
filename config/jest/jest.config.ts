@@ -35,7 +35,8 @@ const config: Config = {
   setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.js'],
   moduleNameMapper: {
     '\\.(s?css)$': 'identity-obj-proxy',
-    '\\.svg$': '<rootDir>/config/jest/__mocks__/svg.js'
+    '\\.svg$': '<rootDir>/config/jest/__mocks__/svg.js',
+    '@/(.*)$': '<rootDir>/src/$1'
   },
 
   // A set of global variables that need to be available in all test environments

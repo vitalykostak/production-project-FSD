@@ -54,6 +54,9 @@ export const buildStorybookWebpackConfig = async (config: Configuration) => {
 
   // add custom
   config.resolve?.extensions?.push('.ts', '.tsx')
+  if (config.resolve?.alias) {
+    config.resolve.alias = { ...config.resolve.alias, '@': buildOptions.paths.src }
+  }
   config.resolve?.modules?.push(buildOptions.paths.src, 'node_modules')
   config.module?.rules?.push(
     buildSvgLoader(),

@@ -6,5 +6,7 @@ export default (options: BuildOptions): ResolveOptions => ({
   preferAbsolute: true,
   modules: [options.paths.src, 'node_modules'],
   mainFiles: ['index.ts'],
-  alias: {}
+  alias: {
+    '@': options.paths.src
+  }
 })
