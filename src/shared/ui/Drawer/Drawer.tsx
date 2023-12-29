@@ -4,7 +4,7 @@ import { type ReactNode, type FC, useEffect, useCallback } from 'react'
 import { useTheme } from '@/app/providers/ThemeProvider'
 import Portal from '../Portal/Portal'
 import Overlay from '../Overlay/Overlay'
-import { useAnimationContext } from '@/shared/lib/components/AnimationProvider'
+import { AnimationProvider, useAnimationContext } from '../../lib/components/AnimationProvider'
 
 interface DrawerProps {
   className?: string
@@ -99,7 +99,7 @@ const DrawerContent: FC<DrawerProps> = (props) => {
   )
 }
 
-const Drawer: FC<DrawerProps> = (props) => {
+const DrawerAsync: FC<DrawerProps> = (props) => {
   const { isLoaded } = useAnimationContext()
 
   if (!isLoaded) {
@@ -108,8 +108,16 @@ const Drawer: FC<DrawerProps> = (props) => {
 
   return (
     <Portal>
-      <DrawerContent {...props} />{' '}
+      <DrawerContent {...props} />
     </Portal>
+  )
+}
+
+const Drawer: FC<DrawerProps> = (props) => {
+  return (
+    <AnimationProvider>
+      <DrawerAsync {...props} />
+    </AnimationProvider>
   )
 }
 
