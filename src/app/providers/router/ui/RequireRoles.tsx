@@ -28,6 +28,10 @@ const RequireRoles: FC<RequireRolesProps> = (props) => {
     return hasRoleIntersection
   }, [requiredRoles, userRoles])
 
+  if (!requiredRoles) {
+    return children
+  }
+
   if (!hasRequiredRoles) {
     return <Navigate to={routePaths.forbidden} state={{ from: location }} replace />
   }
