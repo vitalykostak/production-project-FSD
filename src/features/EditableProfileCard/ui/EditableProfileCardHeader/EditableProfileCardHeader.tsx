@@ -58,6 +58,7 @@ const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> = memo(
           mods,
           additionsClasses
         )}
+        max
       >
         <Text title={t('profile:profile')}></Text>
         {canEdit && (

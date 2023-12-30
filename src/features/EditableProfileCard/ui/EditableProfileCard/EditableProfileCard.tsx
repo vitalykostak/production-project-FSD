@@ -6,7 +6,7 @@ import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib'
 import { type CURRENCY } from '@/entities/Currency'
 import { type COUNTRY } from '@/entities/Country'
-import { Text, TextTheme } from '@/shared/ui'
+import { Text, TextTheme, VStack } from '@/shared/ui'
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError'
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm'
 import { getProfileLoading } from '../../model/selectors/getProfileLoading/getProfileLoading'
@@ -105,7 +105,7 @@ const EditableProfileCard: FC<EditableProfileCardProps> = memo((props) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} shouldRemoveOnUnmout>
-      <div className={classNames('', mods, additionsClasses)}>
+      <VStack className={classNames('', mods, additionsClasses)} max>
         <EditableProfileCardHeader id={id} />
         {profileValidationErrors?.map((e) => (
           <Text
@@ -129,7 +129,7 @@ const EditableProfileCard: FC<EditableProfileCardProps> = memo((props) => {
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
-      </div>
+      </VStack>
     </DynamicModuleLoader>
   )
 })

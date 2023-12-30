@@ -81,6 +81,7 @@ const ProfileCard: FC<ProfileCardProps> = memo((props) => {
         ])}
         justify="center"
         align="center"
+        max
       >
         <Text
           theme={TextTheme.ERROR}
@@ -100,6 +101,7 @@ const ProfileCard: FC<ProfileCardProps> = memo((props) => {
         additionsClasses
       )}
       gap="12"
+      max
     >
       <HStack>{data?.avatar && <Avatar src={data.avatar} />}</HStack>
       <Input
