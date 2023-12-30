@@ -89,7 +89,7 @@ const DrawerContent: FC<DrawerProps> = (props) => {
     <div className={classNames(styles.Drawer, mods, additionsClasses)}>
       <Overlay onClick={overlayClickHandler} />
       <Spring.a.div
-        className={styles.sheet}
+        className={classNames(styles.sheet, {}, [className])}
         style={{ display, bottom: `calc(-100vh + ${height - 100}px)`, y }}
         {...bind()}
       >

@@ -146,3 +146,11 @@ export const SquareXL: Story = {
     square: true
   }
 }
+
+export const Max: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+    max: true
+  }
+}

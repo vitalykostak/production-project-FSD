@@ -7,6 +7,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: ButtonTheme
   size?: ButtonSize
   square?: boolean
+  max?: boolean
 }
 
 export enum ButtonTheme {
@@ -33,12 +34,15 @@ const Button: FC<ButtonProps> = memo((props) => {
     size = ButtonSize.M,
     square = false,
     disabled,
+    max,
     ...otherButtonProps
   } = props
 
   const mods = {
     [buttonStyle.square]: square,
-    [buttonStyle.disabled]: disabled
+    [buttonStyle.disabled]: disabled,
+    [buttonStyle.max]: max
+
   }
 
   const additionsClasses = [className, buttonStyle[theme], buttonStyle[size]]
