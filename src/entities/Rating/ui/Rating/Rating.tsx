@@ -23,15 +23,23 @@ interface RatingProps {
   className?: string
   onAccept?: (starNumber: number, feedback?: string) => void
   onCancel?: (starNumber: number) => void
+  rate?: number
 }
 
 const Rating: FC<RatingProps> = memo((props) => {
-  const { className, title, hasFeedback, onAccept, onCancel, feedbackTitle } =
-    props
+  const {
+    className,
+    title,
+    hasFeedback,
+    onAccept,
+    onCancel,
+    feedbackTitle,
+    rate
+  } = props
 
   const { t } = useTranslation(['translation'])
 
-  const [selectedStars, setSelectedStars] = useState<number>(0)
+  const [selectedStars, setSelectedStars] = useState<number>(rate || 0)
   const [feedback, setFeedback] = useState<string>('')
   const [isOpenModal, setOpenModal] = useState<boolean>(false)
 
@@ -70,10 +78,10 @@ const Rating: FC<RatingProps> = memo((props) => {
   const additionsClasses = [className]
 
   return (
-    <Card className={classNames(styles.Rating, mods, additionsClasses)}>
+    <Card className={classNames(styles.Rating, mods, additionsClasses)} max>
       <VStack gap="16" align="center">
         <Text title={title} />
-        <StarRating onSelect={starSelectHandler} />
+        <StarRating onSelect={starSelectHandler} selected={selectedStars} />
         <BrowserView>
           <Modal lazy isOpen={isOpenModal}>
             <VStack gap="16" max>

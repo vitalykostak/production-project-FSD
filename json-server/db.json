@@ -162,7 +162,10 @@
       "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Q-cLlukhWB7ytgeCgUoZggHaEo%26pid%3DApi&f=1&ipt=dbc73a80a1586280e112a348291bc3ac8da790117db21d733c29abc6ac25889c&ipo=images",
       "views": 12000,
       "createdAt": "2023-05-10T14:30:00Z",
-      "type": ["SUSTAINABILITY", "RENEWABLE_ENERGY"],
+      "type": [
+        "SUSTAINABILITY",
+        "RENEWABLE_ENERGY"
+      ],
       "blocks": [
         {
           "id": "block_intro",
@@ -224,7 +227,10 @@
       "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.6SsI0Z9mOLi8r5wk8CiDCAHaGb%26pid%3DApi&f=1&ipt=4a7e8e41528ceab94da1b8073e038e927b3b39194107f85b720a78fcb0ecaa1b&ipo=images",
       "views": 15000,
       "createdAt": "2023-04-15T08:45:00Z",
-      "type": ["TECHNOLOGY", "QUANTUM_COMPUTING"],
+      "type": [
+        "TECHNOLOGY",
+        "QUANTUM_COMPUTING"
+      ],
       "blocks": [
         {
           "id": "block_intro",
@@ -312,7 +318,10 @@
       "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.PxhHX_yp7gKOsnX1KSw6kwHaFj%26pid%3DApi&f=1&ipt=5005a5e83cbcc02fcd9f0d4a3fc398710adcbe26c692b33dbf040f54f60d5eb2&ipo=images",
       "views": 5000,
       "createdAt": "2023-03-15T18:30:00Z",
-      "type": ["FILM", "CHARACTER_STUDY"],
+      "type": [
+        "FILM",
+        "CHARACTER_STUDY"
+      ],
       "blocks": [
         {
           "id": "block_intro",
@@ -382,7 +391,9 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -448,7 +459,10 @@
       "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.ePY5UvLuEiXUEpT3YuiUggHaEK%26pid%3DApi&f=1&ipt=5493c669437f2d18c83e8bb37b73925036d49d934631d8c2fedf5467f6fb09d3&ipo=images",
       "views": 12000,
       "createdAt": "2023-05-10T14:30:00Z",
-      "type": ["SUSTAINABILITY", "RENEWABLE_ENERGY"],
+      "type": [
+        "SUSTAINABILITY",
+        "RENEWABLE_ENERGY"
+      ],
       "blocks": [
         {
           "id": "block_intro",
@@ -510,7 +524,10 @@
       "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.KC0HhY9Rphws3IuG8l_6mAHaE8%26pid%3DApi&f=1&ipt=cd1ba0978d71c5028440d519903c018f0693774d6afec01c7d28929bfa43228c&ipo=images",
       "views": 15000,
       "createdAt": "2023-04-15T08:45:00Z",
-      "type": ["TECHNOLOGY", "QUANTUM_COMPUTING"],
+      "type": [
+        "TECHNOLOGY",
+        "QUANTUM_COMPUTING"
+      ],
       "blocks": [
         {
           "id": "block_intro",
@@ -564,7 +581,10 @@
       "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EfNpLXTywwTAErkTnBJkkgHaEK%26pid%3DApi&f=1&ipt=5f03fc29441274f75c64be71b99f6c9a69865e4b85def3e321bfe5d7dfe57926&ipo=images",
       "views": 5000,
       "createdAt": "2023-03-15T18:30:00Z",
-      "type": ["FILM", "CHARACTER_STUDY"],
+      "type": [
+        "FILM",
+        "CHARACTER_STUDY"
+      ],
       "blocks": [
         {
           "id": "block_intro",
@@ -634,7 +654,9 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -700,7 +722,10 @@
       "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Q-cLlukhWB7ytgeCgUoZggHaEo%26pid%3DApi&f=1&ipt=dbc73a80a1586280e112a348291bc3ac8da790117db21d733c29abc6ac25889c&ipo=images",
       "views": 12000,
       "createdAt": "2023-05-10T14:30:00Z",
-      "type": ["SUSTAINABILITY", "RENEWABLE_ENERGY"],
+      "type": [
+        "SUSTAINABILITY",
+        "RENEWABLE_ENERGY"
+      ],
       "blocks": [
         {
           "id": "block_intro",
@@ -762,7 +787,10 @@
       "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.6SsI0Z9mOLi8r5wk8CiDCAHaGb%26pid%3DApi&f=1&ipt=4a7e8e41528ceab94da1b8073e038e927b3b39194107f85b720a78fcb0ecaa1b&ipo=images",
       "views": 15000,
       "createdAt": "2023-04-15T08:45:00Z",
-      "type": ["TECHNOLOGY", "QUANTUM_COMPUTING"],
+      "type": [
+        "TECHNOLOGY",
+        "QUANTUM_COMPUTING"
+      ],
       "blocks": [
         {
           "id": "block_intro",
@@ -850,7 +878,10 @@
       "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.PxhHX_yp7gKOsnX1KSw6kwHaFj%26pid%3DApi&f=1&ipt=5005a5e83cbcc02fcd9f0d4a3fc398710adcbe26c692b33dbf040f54f60d5eb2&ipo=images",
       "views": 5000,
       "createdAt": "2023-03-15T18:30:00Z",
-      "type": ["FILM", "CHARACTER_STUDY"],
+      "type": [
+        "FILM",
+        "CHARACTER_STUDY"
+      ],
       "blocks": [
         {
           "id": "block_intro",
@@ -920,7 +951,9 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -986,7 +1019,10 @@
       "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.ePY5UvLuEiXUEpT3YuiUggHaEK%26pid%3DApi&f=1&ipt=5493c669437f2d18c83e8bb37b73925036d49d934631d8c2fedf5467f6fb09d3&ipo=images",
       "views": 12000,
       "createdAt": "2023-05-10T14:30:00Z",
-      "type": ["SUSTAINABILITY", "RENEWABLE_ENERGY"],
+      "type": [
+        "SUSTAINABILITY",
+        "RENEWABLE_ENERGY"
+      ],
       "blocks": [
         {
           "id": "block_intro",
@@ -1048,7 +1084,10 @@
       "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.KC0HhY9Rphws3IuG8l_6mAHaE8%26pid%3DApi&f=1&ipt=cd1ba0978d71c5028440d519903c018f0693774d6afec01c7d28929bfa43228c&ipo=images",
       "views": 15000,
       "createdAt": "2023-04-15T08:45:00Z",
-      "type": ["TECHNOLOGY", "QUANTUM_COMPUTING"],
+      "type": [
+        "TECHNOLOGY",
+        "QUANTUM_COMPUTING"
+      ],
       "blocks": [
         {
           "id": "block_intro",
@@ -1102,7 +1141,10 @@
       "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EfNpLXTywwTAErkTnBJkkgHaEK%26pid%3DApi&f=1&ipt=5f03fc29441274f75c64be71b99f6c9a69865e4b85def3e321bfe5d7dfe57926&ipo=images",
       "views": 5000,
       "createdAt": "2023-03-15T18:30:00Z",
-      "type": ["FILM", "CHARACTER_STUDY"],
+      "type": [
+        "FILM",
+        "CHARACTER_STUDY"
+      ],
       "blocks": [
         {
           "id": "block_intro",
@@ -1172,7 +1214,9 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -1236,21 +1280,28 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.YiaRzLjKeita5FGhjVu5ZQHaHa%26pid%3DApi&f=1&ipt=94b07cb95209f68ee67c1876517815ad54c69e96abdddd78766316ff4cccdd9d&ipo=images"
     },
     {
-      "id": "1",
+      "id": "2",
       "username": "manager",
       "password": "123",
-      "roles": ["USER", "MANAGER"],
+      "roles": [
+        "USER",
+        "MANAGER"
+      ],
       "avatar": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.YiaRzLjKeita5FGhjVu5ZQHaHa%26pid%3DApi&f=1&ipt=94b07cb95209f68ee67c1876517815ad54c69e96abdddd78766316ff4cccdd9d&ipo=images"
     },
     {
       "id": "3",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.YiaRzLjKeita5FGhjVu5ZQHaHa%26pid%3DApi&f=1&ipt=94b07cb95209f68ee67c1876517815ad54c69e96abdddd78766316ff4cccdd9d&ipo=images"
     }
   ],
@@ -1276,6 +1327,20 @@
       "city": "NightCity",
       "username": "admin",
       "avatar": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.YiaRzLjKeita5FGhjVu5ZQHaHa%26pid%3DApi&f=1&ipt=94b07cb95209f68ee67c1876517815ad54c69e96abdddd78766316ff4cccdd9d&ipo=images"
+    },
+    {
+      "id": "3",
+      "first": "Johnny_changed",
+      "lastName": "Silverhand234",
+      "age": 30,
+      "country": "UKRAINE",
+      "currency": "EUR",
+      "city": "NightCity",
+      "username": "admin",
+      "avatar": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.YiaRzLjKeita5FGhjVu5ZQHaHa%26pid%3DApi&f=1&ipt=94b07cb95209f68ee67c1876517815ad54c69e96abdddd78766316ff4cccdd9d&ipo=images"
     }
+  ],
+  "article-rating": [
+    
   ]
 }

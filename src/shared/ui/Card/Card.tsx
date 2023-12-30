@@ -6,22 +6,32 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string
   children?: ReactNode
   theme?: CardTheme
+  max?: boolean
 }
 
 export enum CardTheme {
   NORMAL = 'normal',
-  OUTLINE = 'outline'
+  OUTLINE = 'outline',
 }
 
 const Card: FC<CardProps> = (props) => {
-  const { className, children, theme = CardTheme.NORMAL, ...otherDivProps } = props
+  const {
+    className,
+    children,
+    max,
+    theme = CardTheme.NORMAL,
+    ...otherDivProps
+  } = props
 
-  const mods = {}
+  const mods = { [styles.max]: max }
 
   const additionsClasses = [className, styles[theme]]
 
   return (
-    <div className={classNames(styles.Card, mods, additionsClasses)} {...otherDivProps}>
+    <div
+      className={classNames(styles.Card, mods, additionsClasses)}
+      {...otherDivProps}
+    >
       {children}
     </div>
   )
