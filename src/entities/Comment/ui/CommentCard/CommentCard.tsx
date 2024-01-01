@@ -3,7 +3,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import styles from './CommentCard.module.scss'
 import { type Comment } from '../../model/types/comment'
 import { AppLink, Avatar, Skeleton, Text } from '@/shared/ui'
-import { routePaths } from '@/shared/config/routeConfig/routeConfig'
+import { routePaths } from '@/shared/consts/router'
 
 interface CommentCardProps {
   className?: string

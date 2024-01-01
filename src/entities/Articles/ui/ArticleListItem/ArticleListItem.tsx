@@ -10,8 +10,8 @@ import EyeIcon from '@/shared/assets/icons/eye-icon.svg'
 import { useTranslation } from 'react-i18next'
 import { ButtonTheme } from '@/shared/ui/Button/Button'
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
-import { routePaths } from '@/shared/config/routeConfig/routeConfig'
 import { ArticleBlockType, ArticleListView } from '../../model/consts/consts'
+import { routePaths } from '@/shared/consts/router'
 
 interface ArticleListItemProps {
   className?: string

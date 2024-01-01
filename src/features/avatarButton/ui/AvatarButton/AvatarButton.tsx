@@ -9,8 +9,8 @@ import {
   userActions
 } from '@/entities/User'
 import { useAppDispatch } from '@/shared/lib/hooks'
-import { routePaths } from '@/shared/config/routeConfig/routeConfig'
 import { useTranslation } from 'react-i18next'
+import { routePaths } from '@/shared/consts/router'
 
 interface AvatarButtonProps {
   className?: string

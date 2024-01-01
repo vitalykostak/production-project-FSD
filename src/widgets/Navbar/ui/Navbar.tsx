@@ -16,9 +16,9 @@ import {
   getUserAuthData
 } from '@/entities/User'
 
-import { routePaths } from '@/shared/config/routeConfig/routeConfig'
 import { NotificationButton } from '@/features/notificationButton'
 import { AvatarButton } from '@/features/avatarButton'
+import { routePaths } from '@/shared/consts/router'
 
 interface NavbarProps {
   className?: string
