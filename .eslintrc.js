@@ -59,6 +59,7 @@ module.exports = {
       "error",
       {
         alias: "@",
+        testFilesPatterns:['**/*.(stories|test).@(js|jsx|mjs|ts|tsx)']
       },
     ],
   },

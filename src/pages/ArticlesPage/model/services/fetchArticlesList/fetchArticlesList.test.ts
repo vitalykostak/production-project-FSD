@@ -1,10 +1,10 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
-import { fetchRecommendationsList } from './fetchRecommendationsList'
-import { type Article } from '@/entities/Articles/testing'
-import { ArticleBlockType, ArticleType } from '@/entities/Articles/testing'
+import { fetchArticlesList } from './fetchArticlesList'
+import { ArticleType, ArticleBlockType } from '@/entities/Articles/testing'
+import type { Article } from '@/entities/Articles/testing'
 
-describe('fetchRecommendationsList', () => {
-  test('fetchRecommendationsList success', async () => {
+describe('fetchArticlesList', () => {
+  test('fetchArticlesList success', async () => {
     const article: Article = {
       id: '1',
       user: { id: '1', username: 'User' },
@@ -72,12 +72,12 @@ describe('fetchRecommendationsList', () => {
       ]
     }
 
-    const thunk = new TestAsyncThunk(fetchRecommendationsList, {})
+    const thunk = new TestAsyncThunk(fetchArticlesList, {})
 
     const res = [article]
 
     thunk.api.get.mockReturnValue(Promise.resolve({ data: res }))
-    const result = await thunk.callThunk(undefined)
+    const result = await thunk.callThunk({})
 
     expect(thunk.api.get).toHaveBeenCalledTimes(1)
     expect(thunk.dispatch).toHaveBeenCalledTimes(2)
@@ -86,11 +86,11 @@ describe('fetchRecommendationsList', () => {
     expect(result.payload).toEqual(res)
   })
 
-  test('fetchRecommendationsList error', async () => {
-    const thunk = new TestAsyncThunk(fetchRecommendationsList, {})
+  test('fetchArticlesList error', async () => {
+    const thunk = new TestAsyncThunk(fetchArticlesList, {})
 
     thunk.api.get.mockReturnValue(Promise.resolve({ status: 404 }))
-    const result = await thunk.callThunk(undefined)
+    const result = await thunk.callThunk({})
 
     expect(thunk.api.get).toHaveBeenCalledTimes(1)
     expect(thunk.dispatch).toHaveBeenCalledTimes(2)

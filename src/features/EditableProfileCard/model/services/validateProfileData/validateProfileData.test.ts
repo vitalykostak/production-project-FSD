@@ -1,8 +1,8 @@
 import { validateProfileData } from './validateProfileData'
 import { ValidateProfileError } from '../../types/profile'
-import { CURRENCY } from '@/entities/Currency'
-import { COUNTRY } from '@/entities/Country'
-import { type Profile } from '@/entities/Profile'
+import { CURRENCY } from '@/entities/Currency/testing'
+import { COUNTRY } from '@/entities/Country/testing'
+import { type Profile } from '@/entities/Profile/testing'
 
 describe('validateProfileData', () => {
   test("incorrect 'first'", async () => {

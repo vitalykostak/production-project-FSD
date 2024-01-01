@@ -4,7 +4,7 @@ import {
   getArticlesPageLoading,
   getArticlesPageView
 } from './articlesPageSelectors'
-import { ArticleListView } from '@/entities/Articles'
+import { ArticleListView } from '@/entities/Articles/testing'
 
 describe('articlesPageSelectors', () => {
   test('should return "isLoading"', () => {

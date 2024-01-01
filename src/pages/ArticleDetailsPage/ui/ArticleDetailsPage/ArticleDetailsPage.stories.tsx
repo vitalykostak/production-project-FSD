@@ -4,12 +4,8 @@ import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/app/providers/ThemeProvider'
 import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
 import { type StateSchema } from '@/app/providers/StoreProvider'
-import { ArticleBlockType, ArticleType } from '@/entities/Articles'
-// TODO
-// import {
-//   type Article
-// } from '@/entities/Articles/model/types/articles'
-import { type Comment } from '@/entities/Comment'
+import { ArticleBlockType, ArticleType, type Article } from '@/entities/Articles/testing'
+import { type Comment } from '@/entities/Comment/testing'
 
 const meta = {
   title: 'pages/ArticleDetailsPage',
