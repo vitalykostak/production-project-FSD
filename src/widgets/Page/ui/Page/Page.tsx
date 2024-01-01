@@ -13,10 +13,9 @@ import {
   useInitialEffect,
   useThrottle
 } from '@/shared/lib/hooks'
-import { saveScrollPositionActions } from '@/features/SaveScrollPosition'
+import { saveScrollPositionActions, getSavedScrollPositionByPath } from '@/features/SaveScrollPosition'
 import { useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { getSavedScrollPositionByPath } from '@/features/SaveScrollPosition/model/selectors/getSaveScrollPositionSelectors/getSaveScrollPositionSelectors'
 import { type StateSchema } from '@/app/providers/StoreProvider'
 
 export const wrapperId = 'PAGE_WRAPPER_ID@'

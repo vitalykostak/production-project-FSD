@@ -1,13 +1,14 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
 import { fetchRecommendationsList } from './fetchRecommendationsList'
-import {
-  type Article
-} from '@/entities/Articles/model/types/articles'
+// TODO
+// import {
+//   type Article
+// } from '@/entities/Articles/model/types/articles'
 import { ArticleBlockType, ArticleType } from '@/entities/Articles'
 
 describe('fetchRecommendationsList', () => {
   test('fetchRecommendationsList success', async () => {
-    const article: Article = {
+    const article = {
       id: '1',
       user: { id: '1', username: 'User' },
       title: 'Javascript news',

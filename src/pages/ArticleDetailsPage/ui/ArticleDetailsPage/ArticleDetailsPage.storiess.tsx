@@ -5,9 +5,10 @@ import { Theme } from '@/app/providers/ThemeProvider'
 import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
 import { type StateSchema } from '@/app/providers/StoreProvider'
 import { ArticleBlockType, ArticleType } from '@/entities/Articles'
-import {
-  type Article
-} from '@/entities/Articles/model/types/articles'
+// TODO
+// import {
+//   type Article
+// } from '@/entities/Articles/model/types/articles'
 import { type Comment } from '@/entities/Comment'
 
 const meta = {

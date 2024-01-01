@@ -7,7 +7,7 @@ import { routePaths } from '@/shared/config/routeConfig/routeConfig'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { getCanUserEditArticle } from '../../model/selectors/articleDetailsPage/articleDetailsPage'
-import { getArticleDetailsData } from '@/entities/Articles/model/selectors/articleDetails'
+import { getArticleDetailsData } from '@/entities/Articles'
 
 interface ArticleDetailsPageHeaderProps {
   className?: string

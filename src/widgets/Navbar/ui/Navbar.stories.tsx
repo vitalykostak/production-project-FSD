@@ -4,7 +4,7 @@ import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/app/providers/ThemeProvider'
 import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
 import AvatarTestImg from '@/shared/assets/tests/avatar-test-img.png'
-import { type Notification } from '@/entities/Notification/types/notification'
+// import { type Notification } from '@/entities/Notification/types/notification'
 
 const meta = {
   title: 'widgets/Navbar',
@@ -17,7 +17,7 @@ type Story = StoryObj<typeof meta>
 
 const userAuthTestData = { id: '1', username: 'username', avatar: AvatarTestImg }
 
-const notification: Notification = {
+const notification = {
   id: '1',
   userId: '1',
   title: 'Notification',
@@ -74,3 +74,5 @@ export const AuthorizedDark: Story = {
     ThemeDecorator(Theme.DARK)
   ]
 }
+
+// TODO

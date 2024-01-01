@@ -3,7 +3,9 @@ import NotificationButton from './NotificationButton'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/app/providers/ThemeProvider'
 import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
-import { type Notification } from '@/entities/Notification/types/notification'
+
+// TODO
+// import { type Notification } from '@/entities/Notification/types/notification'
 
 const meta = {
   title: 'features/notificationButton/NotificationButton',
@@ -14,7 +16,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-const notification: Notification = {
+const notification = {
   id: '1',
   userId: '1',
   title: 'Notification',

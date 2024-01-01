@@ -55,6 +55,12 @@ module.exports = {
         alias: "@",
       },
     ],
+    "feature-sliced-plugin-custom/public-api-imports-checker": [
+      "error",
+      {
+        alias: "@",
+      },
+    ],
   },
   globals: {
     IS_DEV: true,
