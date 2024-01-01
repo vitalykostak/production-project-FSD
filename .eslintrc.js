@@ -49,7 +49,12 @@ module.exports = {
     "react/display-name": "off",
     "react/prop-types": "off",
     "@typescript-eslint/no-dynamic-delete": "off",
-    "feature-sliced-plugin-custom/path-checker": 'error'
+    "feature-sliced-plugin-custom/path-checker": [
+      "error",
+      {
+        alias: "@",
+      },
+    ],
   },
   globals: {
     IS_DEV: true,
