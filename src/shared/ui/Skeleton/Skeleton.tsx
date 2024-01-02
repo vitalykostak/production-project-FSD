@@ -1,5 +1,7 @@
 import { memo, type FC, type CSSProperties } from 'react'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
+
 import styles from './Skeleton.module.scss'
 
 export interface SkeletonProps {

@@ -1,4 +1,5 @@
 import { type StateSchema } from '@/app/providers/StoreProvider'
+
 import { getLoginLoading } from './getLoginLoading'
 
 describe('getLoginLoading', () => {

@@ -1,6 +1,8 @@
 import { type FC, Suspense, lazy } from 'react'
-import { type ProfileRatingProps } from './ProfileRating'
+
 import { Skeleton } from '@/shared/ui'
+
+import { type ProfileRatingProps } from './ProfileRating'
 
 const ProfileRatingLazy = lazy(async () => import('./ProfileRating'))
 

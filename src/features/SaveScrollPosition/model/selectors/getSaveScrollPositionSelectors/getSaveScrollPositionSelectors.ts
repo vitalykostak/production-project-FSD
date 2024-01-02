@@ -1,4 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit'
+
 import { type StateSchema } from '@/app/providers/StoreProvider'
 
 export const getSavedScrollPositions = (state: StateSchema) =>

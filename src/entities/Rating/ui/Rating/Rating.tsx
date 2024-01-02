@@ -1,6 +1,8 @@
 import { memo, type FC, useState, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
+import { BrowserView, MobileView } from 'react-device-detect'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
-import styles from './Rating.module.scss'
 import {
   Modal,
   StarRating,
@@ -13,8 +15,8 @@ import {
   ButtonTheme,
   Drawer
 } from '@/shared/ui'
-import { useTranslation } from 'react-i18next'
-import { BrowserView, MobileView } from 'react-device-detect'
+
+import styles from './Rating.module.scss'
 
 interface RatingProps {
   title: string

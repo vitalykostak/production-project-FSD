@@ -1,8 +1,10 @@
 import { memo, type FC } from 'react'
+import { useSelector } from 'react-redux'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { ArticleList } from '@/entities/Articles'
+
 import { getArticlesPageSelectors } from '../../model/slices/articlesSlice/articlesPageSlice'
-import { useSelector } from 'react-redux'
 import {
   getArticlesPageLoading,
   getArticlesPageView

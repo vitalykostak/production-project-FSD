@@ -1,4 +1,5 @@
 import { type FC, lazy } from 'react'
+
 import { type LoginFormProps } from './LoginForm'
 
 export default lazy<FC<LoginFormProps>>(

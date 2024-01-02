@@ -1,7 +1,9 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
-import { initArticlesPage } from './initArticlesPage'
 import { type StateSchema } from '@/app/providers/StoreProvider'
+
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
+
+import { initArticlesPage } from './initArticlesPage'
 
 jest.mock('../fetchArticlesList/fetchArticlesList')
 

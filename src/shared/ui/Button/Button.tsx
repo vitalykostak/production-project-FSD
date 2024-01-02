@@ -1,5 +1,7 @@
 import { memo, type ButtonHTMLAttributes, type FC } from 'react'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
+
 import buttonStyle from './Button.module.scss'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

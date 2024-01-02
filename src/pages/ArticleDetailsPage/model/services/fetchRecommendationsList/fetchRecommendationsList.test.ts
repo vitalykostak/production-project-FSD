@@ -1,7 +1,8 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
-import { fetchRecommendationsList } from './fetchRecommendationsList'
 import { type Article } from '@/entities/Articles/testing'
 import { ArticleBlockType, ArticleType } from '@/entities/Articles/testing'
+
+import { fetchRecommendationsList } from './fetchRecommendationsList'
 
 describe('fetchRecommendationsList', () => {
   test('fetchRecommendationsList success', async () => {

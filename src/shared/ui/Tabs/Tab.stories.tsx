@@ -1,7 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import Tabs, { type TabItem } from './Tabs'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/consts/theme'
+
+import Tabs, { type TabItem } from './Tabs'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'shared/Tabs',

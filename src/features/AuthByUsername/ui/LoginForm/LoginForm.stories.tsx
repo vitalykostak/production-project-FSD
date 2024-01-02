@@ -1,9 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import LoginForm from './LoginForm'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/consts/theme'
 import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
+
 import { type LoginSchema } from '../../model/types/loginSchema'
+
+import LoginForm from './LoginForm'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'features/AuthByUsername/LoginForm',

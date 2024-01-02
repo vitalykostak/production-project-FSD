@@ -1,5 +1,3 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import ProfilePage from './Profile'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/consts/theme'
 import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
@@ -9,6 +7,10 @@ import { type StateSchema } from '@/app/providers/StoreProvider'
 import AvatarTestImg from '@/shared/assets/tests/avatar-test-img.png'
 import { type Profile } from '@/entities/Profile/testing'
 import { ValidateProfileError } from '@/features/EditableProfileCard/testing'
+
+import ProfilePage from './Profile'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'pages/Profile',

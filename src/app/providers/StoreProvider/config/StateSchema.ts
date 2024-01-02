@@ -6,17 +6,19 @@ import {
   type Reducer
 } from '@reduxjs/toolkit'
 import { type AxiosInstance } from 'axios'
+
 import { type CounterSchema } from '@/entities/Counter'
 import { type ProfileSchema } from '@/features/EditableProfileCard'
 import { type UserSchema } from '@/entities/User'
 import { type LoginSchema } from '@/features/AuthByUsername'
-import { type AppDispatch } from './store'
 import { type ArticleDetailsSchema } from '@/entities/Articles'
 import { type ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage'
 import { type AddCommentFormSchema } from '@/features/AddCommentForm'
 import { type ArticlesPageSchema } from '@/pages/ArticlesPage'
 import { type SaveScrollPositionSchema } from '@/features/SaveScrollPosition'
 import { type rtkApi } from '@/shared/api/rtkApi'
+
+import { type AppDispatch } from './store'
 
 export interface StateSchema {
   counter: CounterSchema

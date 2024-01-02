@@ -1,7 +1,9 @@
 import { memo, type FC } from 'react'
+import { useTranslation } from 'react-i18next'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { ListBox, type SelectOption } from '@/shared/ui'
-import { useTranslation } from 'react-i18next'
+
 import { COUNTRY } from '../../model/consts/country'
 
 interface CountrySelectProps {

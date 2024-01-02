@@ -1,8 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
+
 import { type OverriddenThunkConfig } from '@/app/providers/StoreProvider'
 import { getArticleDetailsData } from '@/entities/Articles'
 import { type Comment } from '@/entities/Comment'
 import { getUserAuthData } from '@/entities/User'
+
 import { fetchArticleCommentsByArticleId } from '../fetchArticleCommentsByArticleId/fetchArticleCommentsByArticleId'
 
 export const sendComment = createAsyncThunk<Comment, string, OverriddenThunkConfig<string>>(

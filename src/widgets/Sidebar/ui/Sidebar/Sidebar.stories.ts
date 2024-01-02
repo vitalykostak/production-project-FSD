@@ -1,9 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import Sidebar from './Sidebar'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/consts/theme'
 import { type StateSchema } from '@/app/providers/StoreProvider'
 import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
+
+import Sidebar from './Sidebar'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {

@@ -1,7 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import EllipsisLoader from './EllipsisLoader'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/consts/theme'
+
+import EllipsisLoader from './EllipsisLoader'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'shared/EllipsisLoader',

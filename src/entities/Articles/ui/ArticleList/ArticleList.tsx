@@ -1,10 +1,13 @@
 import { memo, type FC, type HTMLAttributeAnchorTarget } from 'react'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
-import styles from './ArticleList.module.scss'
+
 import { type Article } from '../../model/types/articles'
 import ArticleListItem from '../ArticleListItem/ArticleListItem'
 import ArticleListItemSkeleton from '../ArticleListItem/ArticleListItemSkeleton'
 import { ArticleListView } from '../../model/consts/consts'
+
+import styles from './ArticleList.module.scss'
 // import { Virtuoso } from 'react-virtuoso'
 // import { wrapperId } from 'widgets/Page/ui/Page/Page'
 

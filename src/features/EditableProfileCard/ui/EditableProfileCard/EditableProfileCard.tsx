@@ -1,12 +1,14 @@
 import { memo, type FC, useCallback } from 'react'
+import { useSelector } from 'react-redux'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { ProfileCard } from '@/entities/Profile'
-import { useSelector } from 'react-redux'
 import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib'
 import { type CURRENCY } from '@/entities/Currency'
 import { type COUNTRY } from '@/entities/Country'
 import { Text, TextTheme, VStack } from '@/shared/ui'
+
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError'
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm'
 import { getProfileLoading } from '../../model/selectors/getProfileLoading/getProfileLoading'

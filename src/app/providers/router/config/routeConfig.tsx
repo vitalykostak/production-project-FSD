@@ -9,6 +9,7 @@ import { AdminPanelPage } from '@/pages/AdminPanel'
 import { UserRole } from '@/entities/User'
 import { ForbiddenPage } from '@/pages/Forbidden'
 import { AppRoutes, routePaths } from '@/shared/consts/router'
+
 import { type AppRouteProps } from '../types/router'
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {

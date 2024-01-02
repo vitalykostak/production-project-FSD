@@ -31,9 +31,32 @@ module.exports = {
     "react-hooks",
     "feature-sliced-plugin-custom",
     "unused-imports",
+    "import",
   ],
   rules: {
     "unused-imports/no-unused-imports": "error",
+    "import/order": [
+      "error",
+      {
+        groups: [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type",
+        ],
+        pathGroups: [
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          }
+        ],
+        "newlines-between": "always",
+      },
+    ],
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",

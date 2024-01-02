@@ -1,11 +1,13 @@
-import { articlesPageReducer } from './articlesPageSlice'
-import { fetchArticlesList } from '../../services/fetchArticlesList/fetchArticlesList'
-import { type ArticlesPageSchema } from '../../types/articlesPageSchema'
 import {
   ArticleType,
   ArticleBlockType,
   type Article
 } from '@/entities/Articles/testing'
+
+import { fetchArticlesList } from '../../services/fetchArticlesList/fetchArticlesList'
+import { type ArticlesPageSchema } from '../../types/articlesPageSchema'
+
+import { articlesPageReducer } from './articlesPageSlice'
 
 describe('articlesPageSlice', () => {
   test('fetchArticlesList.pending without replace,should not effect entities', () => {

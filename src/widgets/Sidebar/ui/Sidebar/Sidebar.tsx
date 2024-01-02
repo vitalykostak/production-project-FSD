@@ -1,5 +1,6 @@
 import { type FC, useState, memo } from 'react'
-import sidebarStyles from './Sidebar.module.scss'
+import { useSelector } from 'react-redux'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
 import {
   Button,
@@ -7,11 +8,13 @@ import {
   VStack
 } from '@/shared/ui'
 import { ButtonSize } from '@/shared/ui/Button/Button'
-import SidebarItem from '../SidebarItem/SidebarItem'
-import { useSelector } from 'react-redux'
-import { getSidebarItems } from '../../model/selectors/getSidebarItems/getSidebarItems'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { LanguageSwitcher } from '@/features/LanguageSwitcher'
+
+import SidebarItem from '../SidebarItem/SidebarItem'
+import { getSidebarItems } from '../../model/selectors/getSidebarItems/getSidebarItems'
+
+import sidebarStyles from './Sidebar.module.scss'
 
 interface SidebarProps {
   className?: string

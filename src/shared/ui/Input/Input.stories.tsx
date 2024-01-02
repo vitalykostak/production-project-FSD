@@ -1,7 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import Input from './Input'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/consts/theme'
+
+import Input from './Input'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'shared/Input',

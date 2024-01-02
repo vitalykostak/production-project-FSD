@@ -1,4 +1,5 @@
 import { type FC, lazy } from 'react'
+
 import { type AddCommentFormProps } from './AddCommentForm'
 
 export default lazy<FC<AddCommentFormProps>>(async () =>

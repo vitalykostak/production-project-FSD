@@ -1,9 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import CommentList, { type CommentListProps } from './CommentList'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/consts/theme'
 import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
 import AvatarTestImg from '@/shared/assets/tests/avatar-test-img.png'
+
+import CommentList, { type CommentListProps } from './CommentList'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'entities/Comment/CommentList',

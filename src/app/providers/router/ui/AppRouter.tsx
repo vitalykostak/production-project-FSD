@@ -1,12 +1,15 @@
 import { Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
+
+import { PageLoader } from '@/widgets/PageLoader'
+
 import {
   routeConfig
 } from '../config/routeConfig'
-import { PageLoader } from '@/widgets/PageLoader'
+import { type AppRouteProps } from '../types/router'
+
 import RequireAuth from './RequireAuth'
 import RequireRoles from './RequireRoles'
-import { type AppRouteProps } from '../types/router'
 
 const AppRouter = () => {
   const renderRoute = (route: AppRouteProps) => {

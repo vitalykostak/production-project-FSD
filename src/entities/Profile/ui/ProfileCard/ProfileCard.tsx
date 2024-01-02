@@ -1,6 +1,6 @@
 import { memo, type FC } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import profileCardStyles from './ProfileCard.module.scss'
+import { useTranslation } from 'react-i18next'
+
 import {
   EllipsesLoader,
   Input,
@@ -11,10 +11,13 @@ import {
   VStack,
   HStack
 } from '@/shared/ui'
-import { useTranslation } from 'react-i18next'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { type CURRENCY, CurrencySelect } from '@/entities/Currency'
 import { CountrySelect, type COUNTRY } from '@/entities/Country'
+
 import { type Profile } from '../../model/types/profile'
+
+import profileCardStyles from './ProfileCard.module.scss'
 
 interface ProfileCardProps {
   className?: string

@@ -1,6 +1,8 @@
 import { Suspense, type FC } from 'react'
-import LoginFormAsync from '../LoginForm/LoginFormAsync'
+
 import { EllipsesLoader, Modal } from '@/shared/ui'
+
+import LoginFormAsync from '../LoginForm/LoginFormAsync'
 
 interface LoginModalProps {
   className?: string

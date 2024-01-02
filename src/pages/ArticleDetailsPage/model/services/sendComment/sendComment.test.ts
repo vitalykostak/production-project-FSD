@@ -1,7 +1,9 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
-import { sendComment } from './sendComment'
 import { type StateSchema } from '@/app/providers/StoreProvider'
+
 import { fetchArticleCommentsByArticleId } from '../fetchArticleCommentsByArticleId/fetchArticleCommentsByArticleId'
+
+import { sendComment } from './sendComment'
 
 jest.mock('../fetchArticleCommentsByArticleId/fetchArticleCommentsByArticleId')
 const mockedFetchArticleCommentsByArticleId = jest.mocked(fetchArticleCommentsByArticleId)

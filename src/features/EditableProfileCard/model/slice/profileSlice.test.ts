@@ -1,9 +1,11 @@
 import { CURRENCY } from '@/entities/Currency/testing'
-import { type ProfileSchema, ValidateProfileError } from '../types/profile'
-import { profileActions, profileReducer } from './profileSlice'
 import { COUNTRY } from '@/entities/Country/testing'
-import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData'
 import { type Profile } from '@/entities/Profile/testing'
+
+import { type ProfileSchema, ValidateProfileError } from '../types/profile'
+import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData'
+
+import { profileActions, profileReducer } from './profileSlice'
 
 describe('profileSlice', () => {
   test('setReadonly', () => {

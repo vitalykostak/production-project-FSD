@@ -1,7 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import Rating from './Rating'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/consts/theme'
+
+import Rating from './Rating'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'entities/Rating/Rating',

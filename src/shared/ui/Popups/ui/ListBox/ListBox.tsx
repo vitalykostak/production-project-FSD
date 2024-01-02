@@ -1,11 +1,14 @@
 import { Fragment } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
-import styles from './ListBox.module.scss'
+import { type DirectionType } from '@/shared/types'
+
 import popupStyles from '../../styles/Popup.module.scss'
 import Button, { ButtonTheme } from '../../../Button/Button'
 import HStack from '../../../Stack/HStack/HStack'
-import { type DirectionType } from '@/shared/types'
+
+import styles from './ListBox.module.scss'
 
 interface ListBoxProps<T extends string> {
   value?: T

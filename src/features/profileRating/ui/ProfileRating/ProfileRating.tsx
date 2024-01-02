@@ -1,13 +1,15 @@
 import { memo, type FC, useCallback } from 'react'
+import { useSelector } from 'react-redux'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Rating } from '@/entities/Rating'
-import { useSelector } from 'react-redux'
 import { getUserAuthData } from '@/entities/User'
+import { Skeleton } from '@/shared/ui'
+
 import {
   useGetProfileRatingQuery,
   useRateProfileMutation
 } from '../../api/profileRatingApi/profileRatingApi'
-import { Skeleton } from '@/shared/ui'
 
 export interface ProfileRatingProps {
   className?: string

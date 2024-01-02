@@ -5,10 +5,13 @@ import {
   useState,
   useEffect
 } from 'react'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
-import styles from './StarRating.module.scss'
-import HStack from '../Stack/HStack/HStack'
 import StarIcon from '@/shared/assets/icons/star.svg'
+
+import HStack from '../Stack/HStack/HStack'
+
+import styles from './StarRating.module.scss'
 
 interface StarRatingProps {
   className?: string

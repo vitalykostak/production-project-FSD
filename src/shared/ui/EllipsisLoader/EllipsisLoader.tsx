@@ -1,6 +1,8 @@
 import { type FC } from 'react'
-import loaderStyle from './Ellipsis.module.scss'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
+
+import loaderStyle from './Ellipsis.module.scss'
 
 interface EllipsisLoaderProps {
   className?: string

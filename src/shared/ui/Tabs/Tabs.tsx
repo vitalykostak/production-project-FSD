@@ -1,7 +1,10 @@
 import { memo, type FC, type ReactNode } from 'react'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
-import styles from './Tabs.module.scss'
+
 import Card, { CardTheme } from '../Card/Card'
+
+import styles from './Tabs.module.scss'
 
 interface TabsProps {
   className?: string

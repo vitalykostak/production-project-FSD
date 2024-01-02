@@ -1,5 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
+
 import { type OverriddenThunkConfig } from '@/app/providers/StoreProvider'
+
 import {
   getArticlesPageHasMore,
   getArticlesPageLoading,

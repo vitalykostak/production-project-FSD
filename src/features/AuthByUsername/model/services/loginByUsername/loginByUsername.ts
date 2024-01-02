@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
+
 import { type OverriddenThunkConfig } from '@/app/providers/StoreProvider'
 import { userActions, type User } from '@/entities/User'
 import { USER_LOCAL_STORAGE_KEY } from '@/shared/consts/localStorageKeys'

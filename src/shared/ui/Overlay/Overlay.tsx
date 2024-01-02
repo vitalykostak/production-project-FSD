@@ -1,5 +1,7 @@
 import { type HTMLAttributes, type FC, type ReactNode } from 'react'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
+
 import styles from './Overlay.module.scss'
 
 interface OverlayProps extends HTMLAttributes<HTMLDivElement> {

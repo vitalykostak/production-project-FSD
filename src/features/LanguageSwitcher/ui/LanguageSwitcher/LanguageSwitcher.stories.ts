@@ -1,7 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import LanguageSwitcher from './LanguageSwitcher'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/consts/theme'
+
+import LanguageSwitcher from './LanguageSwitcher'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 // TODO theme is not accessible in stories
 

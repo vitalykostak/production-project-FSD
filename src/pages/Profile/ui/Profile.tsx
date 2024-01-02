@@ -1,8 +1,9 @@
-import { EditableProfileCard } from '@/features/EditableProfileCard'
 import { useParams } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+
+import { EditableProfileCard } from '@/features/EditableProfileCard'
 import { Page } from '@/widgets/Page'
 import { ProfileRating } from '@/features/profileRating'
-import { useTranslation } from 'react-i18next'
 import { VStack } from '@/shared/ui'
 
 const Profile = () => {

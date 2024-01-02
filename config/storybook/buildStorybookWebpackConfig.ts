@@ -1,10 +1,12 @@
 import path from 'path'
+
+import { type RuleSetRule, type Configuration, DefinePlugin } from 'webpack'
+
 import {
   type ExecutionEnvironment,
   type BuildOptions,
   type BuildPaths
 } from '../build/types/config'
-import { type RuleSetRule, type Configuration, DefinePlugin } from 'webpack'
 import buildSvgLoader from '../build/loaders/buildSvgLoader'
 import buildSassLoader from '../build/loaders/buildSassLoader'
 import buildFileLoader from '../build/loaders/buildFileLoader'

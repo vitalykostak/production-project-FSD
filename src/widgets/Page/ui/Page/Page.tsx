@@ -5,8 +5,9 @@ import {
   type MutableRefObject,
   type UIEventHandler
 } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import styles from './Page.module.scss'
+import { useLocation } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+
 import {
   useAppDispatch,
   useInfiniteScroll,
@@ -14,9 +15,10 @@ import {
   useThrottle
 } from '@/shared/lib/hooks'
 import { saveScrollPositionActions, getSavedScrollPositionByPath } from '@/features/SaveScrollPosition'
-import { useLocation } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { type StateSchema } from '@/app/providers/StoreProvider'
+
+import styles from './Page.module.scss'
 
 export const wrapperId = 'PAGE_WRAPPER_ID@'
 

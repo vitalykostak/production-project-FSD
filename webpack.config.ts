@@ -1,6 +1,7 @@
 import path from 'path'
 
 import { type Configuration } from 'webpack'
+
 import buildWebpackConfig from './config/build/buildWebpackConfig'
 import {
   type ExecutionEnvironment,

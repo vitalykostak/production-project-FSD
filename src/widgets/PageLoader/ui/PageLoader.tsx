@@ -1,7 +1,9 @@
 import { type FC } from 'react'
-import loaderStyle from './PageLoader.module.scss'
+
 import EllipsisLoader from '@/shared/ui/EllipsisLoader/EllipsisLoader'
 import { classNames } from '@/shared/lib/classNames/classNames'
+
+import loaderStyle from './PageLoader.module.scss'
 
 interface PageLoaderProps {
   className?: string

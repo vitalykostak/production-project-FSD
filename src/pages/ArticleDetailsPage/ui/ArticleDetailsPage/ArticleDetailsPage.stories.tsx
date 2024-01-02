@@ -1,11 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import ArticleDetailsPage from './ArticleDetailsPage'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/consts/theme'
 import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
 import { type StateSchema } from '@/app/providers/StoreProvider'
 import { ArticleBlockType, ArticleType, type Article } from '@/entities/Articles/testing'
 import { type Comment } from '@/entities/Comment/testing'
+
+import ArticleDetailsPage from './ArticleDetailsPage'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'pages/ArticleDetailsPage',

@@ -1,10 +1,12 @@
 import { type FC } from 'react'
 import { useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
+
 import { useAppDispatch } from '@/shared/lib/hooks'
+import { Button } from '@/shared/ui'
+
 import { counterActions } from '../model/slice/counterSlice'
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue'
-import { Button } from '@/shared/ui'
-import { useTranslation } from 'react-i18next'
 
 const Counter: FC = () => {
   const { t } = useTranslation()

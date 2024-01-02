@@ -1,17 +1,10 @@
 import { memo, type FC, useEffect, useCallback } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import styles from './ArticleDetails.module.scss'
 import { useTranslation } from 'react-i18next'
-import { DynamicModuleLoader, type ReducersList } from '@/shared/lib'
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
-import { useAppDispatch } from '@/shared/lib/hooks'
-import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { useSelector } from 'react-redux'
-import {
-  getArticleDetailsData,
-  getArticleDetailsError,
-  getArticleDetailsLoading
-} from '../../model/selectors/articleDetails'
+
+import { useAppDispatch } from '@/shared/lib/hooks'
+import { DynamicModuleLoader, type ReducersList } from '@/shared/lib'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import {
   TextTheme,
   Text,
@@ -23,6 +16,14 @@ import {
 } from '@/shared/ui'
 import EyeIcon from '@/shared/assets/icons/eye-icon.svg'
 import CalendarIcon from '@/shared/assets/icons/calendar.svg'
+
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
+import {
+  getArticleDetailsData,
+  getArticleDetailsError,
+  getArticleDetailsLoading
+} from '../../model/selectors/articleDetails'
 import {
   type ArticleBlock
 } from '../../model/types/articles'
@@ -30,6 +31,8 @@ import ArticleCodeBlockComponent from '../ArticleCodeBlockComponent/ArticleCodeB
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import ArticleImageBlockComponent from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleBlockType } from '../../model/consts/consts'
+
+import styles from './ArticleDetails.module.scss'
 
 interface ArticleDetailsProps {
   className?: string

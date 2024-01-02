@@ -1,8 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import About from './About'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/consts/theme'
 import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
+
+import About from './About'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'pages/About',

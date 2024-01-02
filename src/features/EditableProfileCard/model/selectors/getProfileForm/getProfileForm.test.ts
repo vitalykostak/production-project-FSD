@@ -1,8 +1,9 @@
 import { type StateSchema } from '@/app/providers/StoreProvider'
-import { getProfileForm } from './getProfileForm'
 import { CURRENCY } from '@/entities/Currency/testing'
 import { COUNTRY } from '@/entities/Country/testing'
 import { type Profile } from '@/entities/Profile/testing'
+
+import { getProfileForm } from './getProfileForm'
 
 describe('getProfileForm', () => {
   test('Should return value', () => {
