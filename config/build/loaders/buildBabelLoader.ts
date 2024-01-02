@@ -11,12 +11,13 @@ export default (options: BuildBabelLoaderProps) => ({
   use: {
     loader: 'babel-loader',
     options: {
+      cacheDirectory: true,
       presets: ['@babel/preset-env'],
       plugins: [
         options.isDev && require.resolve('react-refresh/babel'),
         ['@babel/plugin-transform-typescript', { isTsx: options.isTsx }],
         '@babel/plugin-transform-runtime',
-        options.isTsx && [
+        options.isTsx && !options.isDev && [
           babelRemovePropsPlugin,
           {
             props: ['data-testid']

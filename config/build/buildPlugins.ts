@@ -16,19 +16,17 @@ import { type BuildOptions } from './types/config'
 export default (options: BuildOptions): WebpackPluginInstance[] => {
   const { paths, isDev, apiUrl, executionEnvironment } = options
 
+  const isProd = !isDev
+
   const plugins = [
     new HtmlWebpackPlugin({
       template: paths.html
     }),
     new ProgressPlugin(),
-    new MiniCssExtractPlugin({ filename: '[name].[contenthash:8].css' }),
     new DefinePlugin({
       IS_DEV: isDev,
       API_URL: JSON.stringify(apiUrl),
       EXECUTION_ENVIRONMENT: JSON.stringify(executionEnvironment)
-    }),
-    new CopyPlugin({
-      patterns: [{ from: paths.locales, to: paths.buildLocales }]
     }),
     new CircularDependencyPlugin({
       // exclude detection of files based on a RegExp
@@ -45,6 +43,20 @@ export default (options: BuildOptions): WebpackPluginInstance[] => {
     plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }))
 
     plugins.push(new ReactRefreshWebpackPlugin())
+  }
+
+  if (isProd) {
+    plugins.push(
+      new MiniCssExtractPlugin({
+        filename: '[name].[contenthash:8].css',
+        chunkFilename: '[name].[contenthash:8].css'
+      })
+    )
+    plugins.push(
+      new CopyPlugin({
+        patterns: [{ from: paths.locales, to: paths.buildLocales }]
+      })
+    )
   }
 
   return plugins

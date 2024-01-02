@@ -1,7 +1,9 @@
-import { generateModel } from './generateModel.mjs'
 import * as fs from 'fs'
-import { rootDirectory } from '../rootDirectory.mjs'
 import path from 'path'
+
+import { rootDirectory } from '../rootDirectory.mjs'
+
+import { generateModel } from './generateModel.mjs'
 
 export const generateFeatureSlice = async (layer, slice) => {
   const slicePath = path.resolve(rootDirectory, 'src', layer, slice)
