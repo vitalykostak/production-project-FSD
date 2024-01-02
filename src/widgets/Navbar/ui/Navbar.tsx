@@ -12,12 +12,10 @@ import {
   TextTheme
 } from '@/shared/ui'
 import { LoginModal } from '@/features/AuthByUsername'
-import {
-  getUserAuthData
-} from '@/entities/User'
+import { getUserAuthData } from '@/entities/User'
 import { NotificationButton } from '@/features/notificationButton'
 import { AvatarButton } from '@/features/avatarButton'
-import { routePaths } from '@/shared/consts/router'
+import { getArticleCreateRoute } from '@/shared/consts/router'
 
 import navbarStyles from './Navbar.module.scss'
 
@@ -43,7 +41,7 @@ const Navbar: FC<NavbarProps> = memo(({ className }) => {
           theme={TextTheme.INVERTED}
           className={navbarStyles.appName}
         />
-        <AppLink to={routePaths.article_create}>
+        <AppLink to={getArticleCreateRoute()}>
           {t('article:create_article')}
         </AppLink>
         <HStack className={navbarStyles.actions} gap="16" align="center">

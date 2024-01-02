@@ -5,28 +5,33 @@ import AboutIcon from '@/shared/assets/icons/about.svg'
 import ProfileIcon from '@/shared/assets/icons/profile.svg'
 import ArticlesIcon from '@/shared/assets/icons/articles.svg'
 import { getUserAuthData } from '@/entities/User'
-import { routePaths } from '@/shared/consts/router'
+import {
+  getAboutRoute,
+  getArticlesRoute,
+  getMainRoute,
+  getProfileRoute
+} from '@/shared/consts/router'
 
 export const getSidebarItems = createSelector(getUserAuthData, (authData) => {
   return [
     {
-      path: routePaths.main,
+      path: getMainRoute(),
       Icon: MainIcon,
       text: 'main:main'
     },
     {
-      path: routePaths.about,
+      path: getAboutRoute(),
       Icon: AboutIcon,
       text: 'about:about'
     },
     {
-      path: routePaths.profile + authData?.id || '',
+      path: getProfileRoute(authData?.id || ''),
       Icon: ProfileIcon,
       text: 'profile:profile',
       authOnly: true
     },
     {
-      path: routePaths.articles,
+      path: getArticlesRoute(),
       Icon: ArticlesIcon,
       text: 'article:articles',
       authOnly: true

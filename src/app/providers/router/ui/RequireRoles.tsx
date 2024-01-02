@@ -2,7 +2,7 @@ import { type ReactNode, type FC, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate, useLocation } from 'react-router-dom'
 
-import { routePaths } from '@/shared/consts/router'
+import { getForbiddenRoute } from '@/shared/consts/router'
 import { getUserRoles, type UserRole } from '@/entities/User'
 
 interface RequireRolesProps {
@@ -34,7 +34,9 @@ const RequireRoles: FC<RequireRolesProps> = (props) => {
   }
 
   if (!hasRequiredRoles) {
-    return <Navigate to={routePaths.forbidden} state={{ from: location }} replace />
+    return (
+      <Navigate to={getForbiddenRoute()} state={{ from: location }} replace />
+    )
   }
 
   return children

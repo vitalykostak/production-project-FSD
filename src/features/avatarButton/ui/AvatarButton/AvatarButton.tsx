@@ -11,7 +11,7 @@ import {
   userActions
 } from '@/entities/User'
 import { useAppDispatch } from '@/shared/lib/hooks'
-import { routePaths } from '@/shared/consts/router'
+import { getAdminPanelRoute, getProfileRoute } from '@/shared/consts/router'
 
 interface AvatarButtonProps {
   className?: string
@@ -51,13 +51,13 @@ const AvatarButton: FC<AvatarButtonProps> = memo((props) => {
           ? [
               {
                 content: 'Admin panel',
-                href: routePaths.admin_panel
+                href: getAdminPanelRoute()
               }
             ]
           : []),
         {
           content: t('profile:profile'),
-          href: routePaths.profile + userAuthData.id
+          href: getProfileRoute(userAuthData.id)
         },
         { content: t('translation:sign_out'), onClick: onLogout }
       ]}

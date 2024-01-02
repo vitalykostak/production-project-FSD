@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink, Avatar, Button, Card, Icon, Text } from '@/shared/ui'
 import EyeIcon from '@/shared/assets/icons/eye-icon.svg'
 import { ButtonTheme } from '@/shared/ui/Button/Button'
-import { routePaths } from '@/shared/consts/router'
+import { getArticleDetailsRoute } from '@/shared/consts/router'
 
 import {
   type Article,
@@ -69,7 +69,7 @@ const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
           />
           <div className={styles.footer}>
             <AppLink
-              to={routePaths.articles_details + article.id}
+              to={getArticleDetailsRoute(article.id)}
               target={target}
               className={styles.appLink}
             >
@@ -86,7 +86,7 @@ const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
   return (
     <div className={classNames('', mods, [...additionsClasses, styles[view]])}>
       <AppLink
-        to={routePaths.articles_details + article.id}
+        to={getArticleDetailsRoute(article.id)}
         target={target}
         className={styles.appLink}
       >

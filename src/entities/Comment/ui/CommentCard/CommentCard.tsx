@@ -2,7 +2,7 @@ import { memo, type FC } from 'react'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink, Avatar, Skeleton, Text } from '@/shared/ui'
-import { routePaths } from '@/shared/consts/router'
+import { getProfileRoute } from '@/shared/consts/router'
 
 import { type Comment } from '../../model/types/comment'
 
@@ -41,7 +41,7 @@ const CommentCard: FC<CommentCardProps> = memo((props) => {
 
   return (
     <div className={classNames(styles.CommentCard, mods, additionsClasses)}>
-      <AppLink to={routePaths.profile + comment.user?.id} className={styles.header}>
+      <AppLink to={getProfileRoute(comment.user?.id)} className={styles.header}>
        {comment.user?.avatar && <Avatar size={30} src={comment.user?.avatar}/>}
         <Text title={comment.user?.username} className={styles.username}/>
       </AppLink>
