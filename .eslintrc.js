@@ -25,8 +25,15 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "i18next", "react-hooks", "feature-sliced-plugin-custom"],
+  plugins: [
+    "react",
+    "i18next",
+    "react-hooks",
+    "feature-sliced-plugin-custom",
+    "unused-imports",
+  ],
   rules: {
+    "unused-imports/no-unused-imports": "error",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
@@ -59,14 +66,17 @@ module.exports = {
       "error",
       {
         alias: "@",
-        testFilesPatterns:['**/*.(stories|test).@(js|jsx|mjs|ts|tsx)','**/storybook/**Decorator.tsx']
+        testFilesPatterns: [
+          "**/*.(stories|test).@(js|jsx|mjs|ts|tsx)",
+          "**/storybook/**Decorator.tsx",
+        ],
       },
     ],
     "feature-sliced-plugin-custom/layer-imports": [
       "error",
       {
         alias: "@",
-        ignoreImportPatterns:['**/StoreProvider', '**/testing']
+        ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
       },
     ],
   },
