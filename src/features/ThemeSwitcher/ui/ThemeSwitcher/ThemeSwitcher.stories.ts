@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import ThemeSwitcher from './ThemeSwitcher'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/consts/theme'
 
 // TODO Theme is not accessible in stories
 

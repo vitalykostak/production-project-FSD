@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import About from './About'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/consts/theme'
 import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
 
 const meta = {

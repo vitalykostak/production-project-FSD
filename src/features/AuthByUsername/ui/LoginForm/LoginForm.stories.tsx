@@ -1,8 +1,7 @@
-import '@/app/styles/index.scss'
 import type { Meta, StoryObj } from '@storybook/react'
 import LoginForm from './LoginForm'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/consts/theme'
 import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
 import { type LoginSchema } from '../../model/types/loginSchema'
 

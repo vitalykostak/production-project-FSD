@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import ProfilePage from './Profile'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/consts/theme'
 import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
 import { CURRENCY } from '@/entities/Currency/testing'
 import { COUNTRY } from '@/entities/Country/testing'

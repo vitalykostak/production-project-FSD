@@ -59,7 +59,14 @@ module.exports = {
       "error",
       {
         alias: "@",
-        testFilesPatterns:['**/*.(stories|test).@(js|jsx|mjs|ts|tsx)']
+        testFilesPatterns:['**/*.(stories|test).@(js|jsx|mjs|ts|tsx)','**/storybook/**Decorator.tsx']
+      },
+    ],
+    "feature-sliced-plugin-custom/layer-imports": [
+      "error",
+      {
+        alias: "@",
+        ignoreImportPatterns:['**/StoreProvider', '**/testing']
       },
     ],
   },

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import CurrencySelect from './CurrencySelect'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/consts/theme'
 import { CURRENCY } from '../../model/consts/currency'
 
 const meta = {

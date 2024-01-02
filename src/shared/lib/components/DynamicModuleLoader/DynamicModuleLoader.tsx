@@ -3,7 +3,7 @@ import {
   type StoreWithReducerManager,
   type StateSchemaKeys,
   type StateSchema
-} from '@/app/providers/StoreProvider/config/StateSchema'
+} from '@/app/providers/StoreProvider'
 import { useEffect, type FC, type ReactNode } from 'react'
 import { useStore } from 'react-redux'
 import { useAppDispatch } from '../../hooks/useAppDispatch/useAppDispatch'

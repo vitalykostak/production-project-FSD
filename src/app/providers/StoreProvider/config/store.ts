@@ -4,8 +4,8 @@ import { counterReducer } from '@/entities/Counter'
 import { userReducer } from '@/entities/User'
 import { createReducerManager } from './createReducerManager'
 import { $api } from '@/shared/api/api'
-import { saveScrollPositionReducer } from '@/features/SaveScrollPosition'
 import { rtkApi } from '@/shared/api/rtkApi'
+import { saveScrollPositionReducer } from '@/features/SaveScrollPosition'
 
 export const configureReduxStore = (
   initialState?: StateSchema,

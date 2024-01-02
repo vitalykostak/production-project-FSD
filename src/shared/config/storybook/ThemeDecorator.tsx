@@ -1,5 +1,7 @@
 import { type StoryFn } from '@storybook/react'
-import { ThemeProvider, type Theme } from '@/app/providers/ThemeProvider'
+// eslint-disable-next-line feature-sliced-plugin-custom/layer-imports
+import { ThemeProvider } from '@/app/providers/ThemeProvider'
+import { type Theme } from '../../consts/theme'
 
 const ThemeDecorator = (theme: Theme) => {
   const Decorator = (Story: StoryFn) => (

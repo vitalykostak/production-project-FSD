@@ -1,9 +1,9 @@
 import { type FC, useMemo, useState } from 'react'
 import {
-  LOCAL_STORAGE_UI_THEME_KEY,
-  Theme,
   ThemeContext
-} from '../lib/ThemeContext'
+} from '@/shared/lib/context/ThemeContext'
+import { LOCAL_STORAGE_UI_THEME_KEY } from '@/shared/consts/localStorageKeys'
+import { Theme } from '@/shared/consts/theme'
 
 interface Props {
   children: React.ReactNode

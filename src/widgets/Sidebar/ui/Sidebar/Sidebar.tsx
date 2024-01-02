@@ -2,8 +2,6 @@ import { type FC, useState, memo } from 'react'
 import sidebarStyles from './Sidebar.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import {
-  ThemeSwitcher,
-  LanguageSwitcher,
   Button,
   ButtonTheme,
   VStack
@@ -12,6 +10,8 @@ import { ButtonSize } from '@/shared/ui/Button/Button'
 import SidebarItem from '../SidebarItem/SidebarItem'
 import { useSelector } from 'react-redux'
 import { getSidebarItems } from '../../model/selectors/getSidebarItems/getSidebarItems'
+import { ThemeSwitcher } from '@/features/ThemeSwitcher'
+import { LanguageSwitcher } from '@/features/LanguageSwitcher'
 
 interface SidebarProps {
   className?: string

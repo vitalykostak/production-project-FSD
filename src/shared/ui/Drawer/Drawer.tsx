@@ -1,10 +1,10 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import styles from './Drawer.module.scss'
 import { type ReactNode, type FC, useEffect, useCallback } from 'react'
-import { useTheme } from '@/app/providers/ThemeProvider'
 import Portal from '../Portal/Portal'
 import Overlay from '../Overlay/Overlay'
 import { AnimationProvider, useAnimationContext } from '../../lib/components/AnimationProvider'
+import { useTheme } from '@/shared/lib/hooks'
 
 interface DrawerProps {
   className?: string

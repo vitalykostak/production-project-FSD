@@ -1,8 +1,7 @@
-import '@/app/styles/index.scss'
 import type { Meta, StoryObj } from '@storybook/react'
 import CommentCard from './CommentCard'
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/consts/theme'
 import ReduxStoreDecorator from '@/shared/config/storybook/ReduxStoreDecorator'
 import AvatarTestImg from '@/shared/assets/tests/avatar-test-img.png'
 
