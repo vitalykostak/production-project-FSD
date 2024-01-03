@@ -35,15 +35,15 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
 
   if (!id) {
     return (
-      <Page className={classNames('', mods, additionsClasses)}>
+      <Page data-testid='ArticleDetailsPage' className={classNames('', mods, additionsClasses)}>
         {t('article:article_was_not_found')}
       </Page>
     )
   }
 
   return (
-    <DynamicModuleLoader reducers={reducers} shouldRemoveOnUnmout>
-      <Page className={classNames('', mods, additionsClasses)}>
+  <DynamicModuleLoader reducers={reducers} shouldRemoveOnUnmout>
+      <Page data-testid='ArticleDetailsPage' className={classNames('', mods, additionsClasses)}>
         <VStack gap="16">
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
@@ -52,7 +52,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = memo((props) => {
           <ArticleDetailsComments id={id} />
         </VStack>
       </Page>
-    </DynamicModuleLoader>
+  </DynamicModuleLoader>
   )
 })
 

@@ -5,11 +5,10 @@ import { PageLoader } from '@/widgets/PageLoader'
 
 import {
   routeConfig
-} from '../config/routeConfig'
-import { type AppRouteProps } from '../types/router'
-
-import RequireAuth from './RequireAuth'
-import RequireRoles from './RequireRoles'
+} from '../../config/routeConfig'
+import { type AppRouteProps } from '../../types/router'
+import RequireAuth from '../RequireAuth'
+import RequireRoles from '../RequireRoles'
 
 const AppRouter = () => {
   const renderRoute = (route: AppRouteProps) => {

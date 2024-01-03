@@ -17,12 +17,13 @@ import {
 import { saveScrollPositionActions, getSavedScrollPositionByPath } from '@/features/SaveScrollPosition'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { type StateSchema } from '@/app/providers/StoreProvider'
+import { type TestProps } from '@/shared/types'
 
 import styles from './Page.module.scss'
 
 export const wrapperId = 'PAGE_WRAPPER_ID@'
 
-interface PageProps {
+interface PageProps extends TestProps {
   className?: string
   children?: ReactNode
   onScrollEnd?: () => void
@@ -36,7 +37,8 @@ const Page: FC<PageProps> = (props) => {
     children,
     onScrollEnd,
     shouldSaveScrollPosition,
-    saveScrollPositionThrottleDelay = 500
+    saveScrollPositionThrottleDelay = 500,
+    'data-testid': dataTestId = 'Page'
   } = props
 
   const dispatch = useAppDispatch()
@@ -80,6 +82,7 @@ const Page: FC<PageProps> = (props) => {
       ref={containerRef}
       onScroll={shouldSaveScrollPosition ? onScroll : undefined}
       id={wrapperId}
+      data-testid={dataTestId}
     >
       {children}
       {/* not sure if it's needed */}

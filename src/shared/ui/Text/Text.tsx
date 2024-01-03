@@ -2,16 +2,17 @@ import { memo, type FC } from 'react'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 
+import { type TestProps } from '../../types'
+
 import textStyles from './Text.module.scss'
 
-interface TextProps {
+interface TextProps extends TestProps {
   'className'?: string
   'title'?: string
   'text'?: string
   'theme'?: TextTheme
   'align'?: TextAlign
   'size'?: TextSize
-  'data-testid'?: string
 }
 
 export enum TextTheme {

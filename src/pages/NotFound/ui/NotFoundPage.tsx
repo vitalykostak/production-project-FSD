@@ -6,7 +6,7 @@ import { Page } from '@/widgets/Page'
 const NotFound: FC = () => {
   const { t } = useTranslation('not_found')
 
-  return <Page>{t('not_found')}</Page>
+  return <Page data-testid='NotFoundPage'>{t('not_found')}</Page>
 }
 
 export default NotFound
