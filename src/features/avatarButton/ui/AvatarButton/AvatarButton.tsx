@@ -14,10 +14,11 @@ import { getAdminPanelRoute, getProfileRoute } from '@/shared/consts/router'
 
 interface AvatarButtonProps {
   className?: string
+  invertedAvatarErrorFallbackColor?: boolean
 }
 
 const AvatarButton: FC<AvatarButtonProps> = memo((props) => {
-  const { className } = props
+  const { className, invertedAvatarErrorFallbackColor } = props
 
   const { t } = useTranslation(['translation', 'profile'])
   const { logout } = useUserActions()
@@ -44,7 +45,13 @@ const AvatarButton: FC<AvatarButtonProps> = memo((props) => {
     <Dropdown
       className={classNames('', mods, additionsClasses)}
       direction="bottomLeft"
-      trigger={<Avatar src={userAuthData.avatar} size={30} />}
+      trigger={
+        <Avatar
+          src={userAuthData.avatar}
+          size={30}
+          invertedErrorFallbackColor={invertedAvatarErrorFallbackColor}
+        />
+      }
       items={[
         ...(isAdminPanelAvailable
           ? [

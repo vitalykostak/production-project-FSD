@@ -46,7 +46,7 @@ const Navbar: FC<NavbarProps> = memo(({ className }) => {
         </AppLink>
         <HStack className={navbarStyles.actions} gap="16" align="center">
           <NotificationButton />
-          <AvatarButton />
+          <AvatarButton invertedAvatarErrorFallbackColor/>
         </HStack>
       </nav>
     )
