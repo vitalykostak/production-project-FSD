@@ -151,6 +151,12 @@
       "articleId": "1",
       "userId": "2",
       "id": "xTfoDvd"
+    },
+    {
+      "text": "new Comment",
+      "articleId": "nolan_joker_article_123_234234234",
+      "userId": "1",
+      "id": "Gk2hIrx"
     }
   ],
   "articles": [
@@ -1340,8 +1346,14 @@
       "avatar": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.YiaRzLjKeita5FGhjVu5ZQHaHa%26pid%3DApi&f=1&ipt=94b07cb95209f68ee67c1876517815ad54c69e96abdddd78766316ff4cccdd9d&ipo=images"
     }
   ],
-  "article-rating": [],
-  "profile-rating": [
-    
-  ]
+  "article-rating": [
+    {
+      "articleId": "nolan_joker_article_123_234234234",
+      "userId": "1",
+      "rate": 2,
+      "feedback": "adfadf",
+      "id": 1
+    }
+  ],
+  "profile-rating": []
 }

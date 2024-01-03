@@ -3,12 +3,11 @@ import { useTranslation } from 'react-i18next'
 
 import { Button, ButtonTheme, Input } from '@/shared/ui'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { useAppDispatch } from '@/shared/lib/hooks'
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib'
 
 import {
-  addCommentFormActions,
-  addCommentFormReducer
+  addCommentFormReducer,
+  useAddCommentFormActions
 } from '../../model/slice/addCommentFormSlice'
 
 import styles from './AddCommentForm.module.scss'
@@ -27,13 +26,12 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props) => {
   const { className, text, onSendComment } = props
 
   const { t } = useTranslation()
-  const dispatch = useAppDispatch()
 
-  // const error = useSelector(getAddCommentFormError)
+  const { setText } = useAddCommentFormActions()
 
   const changeHandler = useCallback(
-    (value: string) => dispatch(addCommentFormActions.setText(value)),
-    [dispatch]
+    (value: string) => setText(value),
+    [setText]
   )
 
   const sendCommentHandler = useCallback(() => {

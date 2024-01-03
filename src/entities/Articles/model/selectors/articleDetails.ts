@@ -1,7 +1,7 @@
-import { type StateSchema } from '@/app/providers/StoreProvider'
+import { buildSelector } from '@/shared/lib/store'
 
-export const getArticleDetailsLoading = (state: StateSchema) => state.articleDetails?.isLoading
+export const [useArticleDetailsLoading, getArticleDetailsLoading] = buildSelector((state) => state.articleDetails?.isLoading)
 
-export const getArticleDetailsData = (state: StateSchema) => state.articleDetails?.data
+export const [useArticleDetailsData, getArticleDetailsData] = buildSelector((state) => state.articleDetails?.data)
 
-export const getArticleDetailsError = (state: StateSchema) => state.articleDetails?.error
+export const [useArticleDetailsError, getArticleDetailsError] = buildSelector((state) => state.articleDetails?.error)

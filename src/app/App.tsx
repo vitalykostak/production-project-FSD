@@ -4,20 +4,18 @@ import { useSelector } from 'react-redux'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Navbar } from '@/widgets/Navbar'
 import { Sidebar } from '@/widgets/Sidebar'
-import { useAppDispatch } from '@/shared/lib/hooks'
-import { getUserInitialized, userActions } from '@/entities/User'
+import { getUserInitialized, useUserActions } from '@/entities/User'
 
 import { AppRouter } from './providers/router'
 
 const App: FC = () => {
-  const dispatch = useAppDispatch()
-
   // True after checking if user is authorized
   const isUserInitialized = useSelector(getUserInitialized)
+  const { initAuthData } = useUserActions()
 
   useEffect(() => {
-    dispatch(userActions.initAuthData())
-  }, [dispatch])
+    initAuthData()
+  }, [initAuthData])
 
   return (
     <div className={classNames('app', {})}>

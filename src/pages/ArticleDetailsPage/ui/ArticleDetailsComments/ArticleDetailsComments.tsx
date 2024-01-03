@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Text, TextSize } from '@/shared/ui'
-import { AddCommentForm, getAddCommentFormText } from '@/features/AddCommentForm'
+import { AddCommentForm, useAddCommentFormText } from '@/features/AddCommentForm'
 import { CommentList } from '@/entities/Comment'
 import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
 
@@ -35,7 +35,7 @@ const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo(
       getArticleDetailsCommentsLoading
     )
 
-    const addCommentFormText = useSelector(getAddCommentFormText)
+    const addCommentFormText = useAddCommentFormText()
 
     const sendCommentHandler = useCallback(
       (text: string) => {

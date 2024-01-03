@@ -8,9 +8,8 @@ import {
   getUserAuthData,
   isUserAdmin,
   isUserManager,
-  userActions
+  useUserActions
 } from '@/entities/User'
-import { useAppDispatch } from '@/shared/lib/hooks'
 import { getAdminPanelRoute, getProfileRoute } from '@/shared/consts/router'
 
 interface AvatarButtonProps {
@@ -21,15 +20,15 @@ const AvatarButton: FC<AvatarButtonProps> = memo((props) => {
   const { className } = props
 
   const { t } = useTranslation(['translation', 'profile'])
-  const dispatch = useAppDispatch()
+  const { logout } = useUserActions()
 
   const userAuthData = useSelector(getUserAuthData)
   const isAdmin = useSelector(isUserAdmin)
   const isManager = useSelector(isUserManager)
 
   const onLogout = useCallback(() => {
-    dispatch(userActions.logout())
-  }, [dispatch])
+    logout()
+  }, [logout])
 
   const isAdminPanelAvailable = isAdmin || isManager
 

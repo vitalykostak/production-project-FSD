@@ -1,6 +1,5 @@
 import { memo, type FC, useEffect, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useSelector } from 'react-redux'
 
 import { useAppDispatch } from '@/shared/lib/hooks'
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib'
@@ -20,9 +19,9 @@ import CalendarIcon from '@/shared/assets/icons/calendar.svg'
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import {
-  getArticleDetailsData,
-  getArticleDetailsError,
-  getArticleDetailsLoading
+  useArticleDetailsData,
+  useArticleDetailsError,
+  useArticleDetailsLoading
 } from '../../model/selectors/articleDetails'
 import {
   type ArticleBlock
@@ -49,9 +48,9 @@ const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
   const { t } = useTranslation('article')
   const dispatch = useAppDispatch()
 
-  const isArticleDetailsLoading = useSelector(getArticleDetailsLoading)
-  const articleDetailsData = useSelector(getArticleDetailsData)
-  const articleDetailsError = useSelector(getArticleDetailsError)
+  const isArticleDetailsLoading = useArticleDetailsLoading()
+  const articleDetailsData = useArticleDetailsData()
+  const articleDetailsError = useArticleDetailsError()
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
