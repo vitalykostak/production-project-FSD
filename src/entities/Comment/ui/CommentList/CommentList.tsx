@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 
-import { type Comment } from '../../model/types/comment'
 import CommentCard from '../CommentCard/CommentCard'
+import { type Comment } from '../../model/types/comment'
 
 import styles from './CommentList.module.scss'
 
