@@ -126,6 +126,7 @@ const ProfileCard: FC<ProfileCardProps> = memo((props) => {
       <Input
         value={data?.city}
         placeholder={t('profile:city')}
+        data-testid='ProfileCard.cityInput'
         className={profileCardStyles.input}
         onChange={onChangeCity}
         readonly={readonly}
@@ -133,6 +134,7 @@ const ProfileCard: FC<ProfileCardProps> = memo((props) => {
       <Input
         value={String(data?.age)}
         placeholder={t('profile:age')}
+        data-testid='ProfileCard.ageInput'
         className={profileCardStyles.input}
         onChange={onChangeAge}
         readonly={readonly}

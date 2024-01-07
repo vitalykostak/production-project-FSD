@@ -48,7 +48,7 @@ const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
     ) as ArticleTextBlock
     return (
       <div
-        className={classNames('', mods, [...additionsClasses, styles[view]])}
+        className={classNames('', mods, [...additionsClasses, styles[view]])} data-testid='ArticleListItem'
       >
         <Card>
           <div className={styles.header}>
@@ -84,7 +84,7 @@ const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
   }
 
   return (
-    <div className={classNames('', mods, [...additionsClasses, styles[view]])}>
+    <div className={classNames('', mods, [...additionsClasses, styles[view]])} data-testid='ArticleListItem'>
       <AppLink
         to={getArticleDetailsRoute(article.id)}
         target={target}

@@ -1,10 +1,11 @@
 import { type HTMLAttributes, type FC, type ReactNode } from 'react'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { type TestProps } from '@/shared/types'
 
 import styles from './Flex.module.scss'
 
-export interface FlexProps extends HTMLAttributes<HTMLDivElement> {
+export interface FlexProps extends HTMLAttributes<HTMLDivElement>, TestProps {
   className?: string
   children: ReactNode
   justify?: FlexJustify
@@ -52,7 +53,8 @@ const Flex: FC<FlexProps> = (props) => {
     align = 'start',
     direction = 'row',
     gap,
-    max = false
+    max = false,
+    'data-testid': dataTestId = 'Flex'
   } = props
 
   const mods = {
@@ -68,7 +70,7 @@ const Flex: FC<FlexProps> = (props) => {
   ]
 
   return (
-    <div className={classNames(styles.Flex, mods, additionsClasses)}>
+    <div className={classNames(styles.Flex, mods, additionsClasses)} data-testid={dataTestId}>
       {children}
     </div>
   )

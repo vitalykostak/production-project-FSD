@@ -99,21 +99,22 @@ const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
   } else {
     content = (
       <>
-        <div className={styles.avatarWrapper}>
+        <div className={styles.avatarWrapper} data-testid='ArticleDetailsAvatar'>
           <Avatar size={200} src={articleDetailsData?.img} />
         </div>
         <Text
           title={articleDetailsData?.title}
           text={articleDetailsData?.subtitle}
           size={TextSize.L}
+          data-testid='ArticleDetailsHeaders'
         />
-        <div className={styles.articleInfo}>
+        <div className={styles.articleInfo} >
           <Icon className={styles.articleInfoIcon} Svg={EyeIcon} />
-          <Text text={String(articleDetailsData?.views)} />
+          <Text text={String(articleDetailsData?.views)} data-testid='ArticleDetailsViews'/>
         </div>
         <div className={styles.articleInfo}>
           <Icon className={styles.articleInfoIcon} Svg={CalendarIcon} />
-          <Text text={String(articleDetailsData?.createdAt)} />
+          <Text text={String(articleDetailsData?.createdAt)} data-testid='ArticleDetailsCreatedAt'/>
         </div>
         {articleDetailsData?.blocks?.map(renderBlock)}
       </>

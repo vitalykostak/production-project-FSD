@@ -57,18 +57,22 @@ const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo(
           mods,
           additionsClasses
         )}
+        data-testid='ArticleDetailsComments'
       >
         <Text
           size={TextSize.L}
           title={t('translation:comments')}
+          data-testid='ArticleDetailsComments'
         />
         <AddCommentForm
           onSendComment={sendCommentHandler}
           text={addCommentFormText}
+          data-testid='ArticleDetailsAddCommentForm'
         />
         <CommentList
           isLoading={articleDetailsCommentsLoading}
           comments={articleDetailsComments}
+          data-testid='ArticleDetailsAddCommentsList'
         />
       </div>
     )

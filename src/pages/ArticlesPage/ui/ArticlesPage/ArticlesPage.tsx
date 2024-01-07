@@ -48,6 +48,7 @@ const ArticlesPage: FC<ArticlesPageProps> = memo((props) => {
         shouldSaveScrollPosition
         onScrollEnd={onLoadNextPart}
         className={classNames('', mods, additionsClasses)}
+        data-testid='ArticlesPage'
       >
         <VStack gap="16">
           <ArticlesPageFilters />

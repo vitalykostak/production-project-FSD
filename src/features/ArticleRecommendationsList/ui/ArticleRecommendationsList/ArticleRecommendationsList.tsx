@@ -30,7 +30,7 @@ const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> = memo(
     const additionsClasses = [className]
 
     return (
-      <VStack gap="8" className={classNames('', mods, additionsClasses)}>
+      <VStack gap="8" className={classNames('', mods, additionsClasses)} data-testid='ArticleRecommendationsList'>
         <Text size={TextSize.L} title={t('translation:recommend')} />
         <ArticleList
           articles={articles}
