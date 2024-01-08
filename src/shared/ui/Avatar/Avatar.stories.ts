@@ -5,30 +5,30 @@ import Avatar from './Avatar'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'shared/Avatar',
-  component: Avatar,
+    title: 'shared/Avatar',
+    component: Avatar,
 
-  tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof Avatar>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
-  args: {
-    src: AvatarTestImg
-  }
+    args: {
+        src: AvatarTestImg,
+    },
 }
 export const PrimarySize200: Story = {
-  args: {
-    src: AvatarTestImg,
-    size: 200
-  }
+    args: {
+        src: AvatarTestImg,
+        size: 200,
+    },
 }
 
 export const PrimarySize100: Story = {
-  args: {
-    src: AvatarTestImg,
-    size: 100
-  }
+    args: {
+        src: AvatarTestImg,
+        size: 100,
+    },
 }

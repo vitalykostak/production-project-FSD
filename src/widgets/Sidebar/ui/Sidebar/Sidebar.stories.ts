@@ -9,42 +9,39 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'widgets/Sidebar',
-  component: Sidebar,
-  tags: ['autodocs']
+    title: 'widgets/Sidebar',
+    component: Sidebar,
+    tags: ['autodocs'],
 } satisfies Meta<typeof Sidebar>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 const authState: DeepPartial<StateSchema> = {
-  user: {
-    authData: {}
-  }
+    user: {
+        authData: {},
+    },
 }
 
-const notAuthState: DeepPartial<StateSchema> = {
-}
+const notAuthState: DeepPartial<StateSchema> = {}
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const LightWithAuth: Story = {
-  args: {},
-  decorators: [ReduxStoreDecorator(authState)]
+    args: {},
+    decorators: [ReduxStoreDecorator(authState)],
 }
 
 export const DarkWithAuth: Story = {
-  args: {
-  },
-  decorators: [ThemeDecorator(Theme.DARK), ReduxStoreDecorator(authState)]
+    args: {},
+    decorators: [ThemeDecorator(Theme.DARK), ReduxStoreDecorator(authState)],
 }
 
 export const LightWithNoAuth: Story = {
-  args: {},
-  decorators: [ReduxStoreDecorator(notAuthState)]
+    args: {},
+    decorators: [ReduxStoreDecorator(notAuthState)],
 }
 
 export const DarkWithNoAuth: Story = {
-  args: {
-  },
-  decorators: [ThemeDecorator(Theme.DARK), ReduxStoreDecorator(notAuthState)]
+    args: {},
+    decorators: [ThemeDecorator(Theme.DARK), ReduxStoreDecorator(notAuthState)],
 }

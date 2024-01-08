@@ -6,20 +6,20 @@ import EllipsisLoader from './EllipsisLoader'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'shared/EllipsisLoader',
-  component: EllipsisLoader,
+    title: 'shared/EllipsisLoader',
+    component: EllipsisLoader,
 
-  tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof EllipsisLoader>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Light: Story = {
-  args: {}
+    args: {},
 }
 
 export const Dark: Story = {
-  args: {},
-  decorators: [ThemeDecorator(Theme.DARK)]
+    args: {},
+    decorators: [ThemeDecorator(Theme.DARK)],
 }

@@ -8,67 +8,67 @@ import { fetchNextArticlesPage } from './fetchNextArticlesPage'
 jest.mock('../fetchArticlesList/fetchArticlesList')
 
 describe('fetchNextArticlesPage', () => {
-  test('fetchNextArticlesPage success', async () => {
-    const state: DeepPartial<StateSchema> = {
-      articlesPage: {
-        isLoading: false,
-        ids: [],
-        entities: {},
-        page: 2,
-        limit: 5,
-        hasMore: true
-      }
-    }
+    test('fetchNextArticlesPage success', async () => {
+        const state: DeepPartial<StateSchema> = {
+            articlesPage: {
+                isLoading: false,
+                ids: [],
+                entities: {},
+                page: 2,
+                limit: 5,
+                hasMore: true,
+            },
+        }
 
-    const thunk = new TestAsyncThunk(fetchNextArticlesPage, state)
+        const thunk = new TestAsyncThunk(fetchNextArticlesPage, state)
 
-    const result = await thunk.callThunk(undefined)
+        const result = await thunk.callThunk(undefined)
 
-    expect(thunk.dispatch).toHaveBeenCalledTimes(4)
+        expect(thunk.dispatch).toHaveBeenCalledTimes(4)
 
-    expect(result.meta.requestStatus).toBe('fulfilled')
-    expect(fetchArticlesList).toHaveBeenCalledWith({})
-  })
+        expect(result.meta.requestStatus).toBe('fulfilled')
+        expect(fetchArticlesList).toHaveBeenCalledWith({})
+    })
 
-  test('should not fetch if hasMore === false', async () => {
-    const state: DeepPartial<StateSchema> = {
-      articlesPage: {
-        isLoading: false,
-        ids: [],
-        entities: {},
-        page: 2,
-        limit: 5,
-        hasMore: false
-      }
-    }
+    test('should not fetch if hasMore === false', async () => {
+        const state: DeepPartial<StateSchema> = {
+            articlesPage: {
+                isLoading: false,
+                ids: [],
+                entities: {},
+                page: 2,
+                limit: 5,
+                hasMore: false,
+            },
+        }
 
-    const thunk = new TestAsyncThunk(fetchNextArticlesPage, state)
+        const thunk = new TestAsyncThunk(fetchNextArticlesPage, state)
 
-    await thunk.callThunk(undefined)
+        await thunk.callThunk(undefined)
 
-    expect(thunk.dispatch).toHaveBeenCalledTimes(2)
+        expect(thunk.dispatch).toHaveBeenCalledTimes(2)
 
-    expect(fetchArticlesList).not.toHaveBeenCalled()
-  })
+        expect(fetchArticlesList).not.toHaveBeenCalled()
+    })
 
-  test('should not fetch if isLoading === true', async () => {
-    const state: DeepPartial<StateSchema> = {
-      articlesPage: {
-        isLoading: true,
-        ids: [],
-        entities: {},
-        page: 2,
-        limit: 5,
-        hasMore: false
-      }
-    }
+    test('should not fetch if isLoading === true', async () => {
+        const state: DeepPartial<StateSchema> = {
+            articlesPage: {
+                isLoading: true,
+                ids: [],
+                entities: {},
+                page: 2,
+                limit: 5,
+                hasMore: false,
+            },
+        }
 
-    const thunk = new TestAsyncThunk(fetchNextArticlesPage, state)
+        const thunk = new TestAsyncThunk(fetchNextArticlesPage, state)
 
-    await thunk.callThunk(undefined)
+        await thunk.callThunk(undefined)
 
-    expect(thunk.dispatch).toHaveBeenCalledTimes(2)
+        expect(thunk.dispatch).toHaveBeenCalledTimes(2)
 
-    expect(fetchArticlesList).not.toHaveBeenCalled()
-  })
+        expect(fetchArticlesList).not.toHaveBeenCalled()
+    })
 })

@@ -8,36 +8,36 @@ import { initArticlesPage } from './initArticlesPage'
 jest.mock('../fetchArticlesList/fetchArticlesList')
 
 describe('initArticlesPage', () => {
-  test('initArticlesPage success', async () => {
-    const state: DeepPartial<StateSchema> = {
-      articlesPage: {
-        _initialized: false
-      }
-    }
+    test('initArticlesPage success', async () => {
+        const state: DeepPartial<StateSchema> = {
+            articlesPage: {
+                _initialized: false,
+            },
+        }
 
-    const thunk = new TestAsyncThunk(initArticlesPage, state)
+        const thunk = new TestAsyncThunk(initArticlesPage, state)
 
-    const result = await thunk.callThunk(jest.fn() as unknown as URLSearchParams)
+        const result = await thunk.callThunk(jest.fn() as unknown as URLSearchParams)
 
-    expect(thunk.dispatch).toHaveBeenCalledTimes(4)
+        expect(thunk.dispatch).toHaveBeenCalledTimes(4)
 
-    expect(result.meta.requestStatus).toBe('fulfilled')
-    expect(fetchArticlesList).toHaveBeenCalledWith({ })
-  })
+        expect(result.meta.requestStatus).toBe('fulfilled')
+        expect(fetchArticlesList).toHaveBeenCalledWith({})
+    })
 
-  test('should not fetch if _initialized === true', async () => {
-    const state: DeepPartial<StateSchema> = {
-      articlesPage: {
-        _initialized: true
-      }
-    }
+    test('should not fetch if _initialized === true', async () => {
+        const state: DeepPartial<StateSchema> = {
+            articlesPage: {
+                _initialized: true,
+            },
+        }
 
-    const thunk = new TestAsyncThunk(initArticlesPage, state)
+        const thunk = new TestAsyncThunk(initArticlesPage, state)
 
-    await thunk.callThunk(jest.fn() as unknown as URLSearchParams)
+        await thunk.callThunk(jest.fn() as unknown as URLSearchParams)
 
-    expect(thunk.dispatch).toHaveBeenCalledTimes(2)
+        expect(thunk.dispatch).toHaveBeenCalledTimes(2)
 
-    expect(fetchArticlesList).not.toHaveBeenCalled()
-  })
+        expect(fetchArticlesList).not.toHaveBeenCalled()
+    })
 })

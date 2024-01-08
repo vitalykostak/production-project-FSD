@@ -4,15 +4,15 @@ import { type ArticleListView, type Article, type ArticlesSortField, type Articl
 import { type SortOrder } from '@/shared/types'
 
 export interface ArticlesPageSchema extends EntityState<Article> {
-  isLoading: boolean
-  view: ArticleListView
-  limit: number
-  page: number
-  hasMore: boolean
-  order: SortOrder
-  sort: ArticlesSortField
-  type: ArticleType
-  search: string
-  error?: string
-  _initialized: boolean
+    isLoading: boolean
+    view: ArticleListView
+    limit: number
+    page: number
+    hasMore: boolean
+    order: SortOrder
+    sort: ArticlesSortField
+    type: ArticleType
+    search: string
+    error?: string
+    _initialized: boolean
 }

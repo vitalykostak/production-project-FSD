@@ -4,19 +4,19 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 
 void i18n
-  .use(Backend)
-  .use(LanguageDetector)
-  .use(initReactI18next) // bind react-i18next to the instance
-  .init({
-    fallbackLng: 'en',
-    debug: IS_DEV,
+    .use(Backend)
+    .use(LanguageDetector)
+    .use(initReactI18next) // bind react-i18next to the instance
+    .init({
+        fallbackLng: 'en',
+        debug: IS_DEV,
 
-    interpolation: {
-      escapeValue: false // not needed for react!!
-    },
-    backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json'
-    }
-  })
+        interpolation: {
+            escapeValue: false, // not needed for react!!
+        },
+        backend: {
+            loadPath: '/locales/{{lng}}/{{ns}}.json',
+        },
+    })
 
 export default i18n

@@ -5,31 +5,28 @@ import { userActions, type User } from '@/entities/User'
 import { USER_LOCAL_STORAGE_KEY } from '@/shared/consts/localStorageKeys'
 
 interface LoginByUsernameProps {
-  username: string
-  password: string
+    username: string
+    password: string
 }
 
 export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, OverriddenThunkConfig<string>>(
-  'login/loginByUserName',
-  async (authData, thunkApi) => {
-    const { extra, dispatch, rejectWithValue } = thunkApi
+    'login/loginByUserName',
+    async (authData, thunkApi) => {
+        const { extra, dispatch, rejectWithValue } = thunkApi
 
-    try {
-      const result = await extra.api.post<User>(
-        '/login',
-        authData
-      )
+        try {
+            const result = await extra.api.post<User>('/login', authData)
 
-      if (!result.data) {
-        throw new Error()
-      }
+            if (!result.data) {
+                throw new Error()
+            }
 
-      localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(result.data))
-      dispatch(userActions.setAuthData(result.data))
+            localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(result.data))
+            dispatch(userActions.setAuthData(result.data))
 
-      return result.data
-    } catch (e) {
-      return rejectWithValue('error')
-    }
-  }
+            return result.data
+        } catch (e) {
+            return rejectWithValue('error')
+        }
+    },
 )

@@ -3,22 +3,22 @@ import { buildStorybookWebpackConfig } from './buildStorybookWebpackConfig'
 import type { StorybookConfig } from '@storybook/react-webpack5'
 
 const config: StorybookConfig = {
-  stories: ['../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-onboarding',
-    '@storybook/addon-interactions',
-    'storybook-addon-mock'
-  ],
-  framework: {
-    name: '@storybook/react-webpack5',
-    options: {}
-  },
-  docs: {
-    autodocs: 'tag'
-  },
-  // staticDirs: ['../../public', '../../src/shared/assets'],
-  webpackFinal: buildStorybookWebpackConfig
+    stories: ['../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+    addons: [
+        '@storybook/addon-links',
+        '@storybook/addon-essentials',
+        '@storybook/addon-onboarding',
+        '@storybook/addon-interactions',
+        'storybook-addon-mock',
+    ],
+    framework: {
+        name: '@storybook/react-webpack5',
+        options: {},
+    },
+    docs: {
+        autodocs: 'tag',
+    },
+    // staticDirs: ['../../public', '../../src/shared/assets'],
+    webpackFinal: buildStorybookWebpackConfig,
 }
 export default config

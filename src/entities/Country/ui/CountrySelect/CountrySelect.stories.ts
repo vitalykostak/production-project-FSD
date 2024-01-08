@@ -8,22 +8,22 @@ import CountrySelect from './CountrySelect'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'entities/Country/CountrySelect',
-  component: CountrySelect,
-  tags: ['autodocs']
+    title: 'entities/Country/CountrySelect',
+    component: CountrySelect,
+    tags: ['autodocs'],
 } satisfies Meta<typeof CountrySelect>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
-  args: {
-    value: COUNTRY.UKRAINE
-  }
+    args: {
+        value: COUNTRY.UKRAINE,
+    },
 }
 export const PrimaryDark: Story = {
-  args: {
-    value: COUNTRY.UKRAINE
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
+    args: {
+        value: COUNTRY.UKRAINE,
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
 }

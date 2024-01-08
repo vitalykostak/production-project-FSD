@@ -8,20 +8,16 @@ import { Theme } from '../../src/shared/consts/theme'
 import '../../src/app/styles/index.scss'
 
 const preview: Preview = {
-  parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i
-      }
-    }
-  },
-  decorators: [
-    BrowserRouterDecorator,
-    ThemeDecorator(Theme.LIGHT),
-    SuspenseDecorator
-  ]
+    parameters: {
+        actions: { argTypesRegex: '^on[A-Z].*' },
+        controls: {
+            matchers: {
+                color: /(background|color)$/i,
+                date: /Date$/i,
+            },
+        },
+    },
+    decorators: [BrowserRouterDecorator, ThemeDecorator(Theme.LIGHT), SuspenseDecorator],
 }
 
 export default preview

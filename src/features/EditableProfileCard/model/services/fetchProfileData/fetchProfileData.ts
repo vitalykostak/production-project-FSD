@@ -4,20 +4,20 @@ import { type OverriddenThunkConfig } from '@/app/providers/StoreProvider'
 import { type Profile } from '@/entities/Profile'
 
 export const fetchProfileData = createAsyncThunk<Profile, string, OverriddenThunkConfig<string>>(
-  'profile/fetchProfileData',
-  async (profileId, thunkApi) => {
-    const { extra, rejectWithValue } = thunkApi
+    'profile/fetchProfileData',
+    async (profileId, thunkApi) => {
+        const { extra, rejectWithValue } = thunkApi
 
-    try {
-      const result = await extra.api.get<Profile>('/profile/' + profileId)
+        try {
+            const result = await extra.api.get<Profile>('/profile/' + profileId)
 
-      if (!result.data) {
-        throw new Error()
-      }
+            if (!result.data) {
+                throw new Error()
+            }
 
-      return result.data
-    } catch (e) {
-      return rejectWithValue('error')
-    }
-  }
+            return result.data
+        } catch (e) {
+            return rejectWithValue('error')
+        }
+    },
 )

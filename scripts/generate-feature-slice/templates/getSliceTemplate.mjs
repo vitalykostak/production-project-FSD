@@ -1,7 +1,7 @@
 import { getSliceName } from '../utils/getSliceName.mjs'
 import { getSliceSchemaName } from '../utils/getSliceSchemaName.mjs'
 
-export const getSliceTemplate = (sliceName) => `import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
+export const getSliceTemplate = sliceName => `import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
 import { type ${getSliceSchemaName(sliceName)} } from '../../types/${getSliceSchemaName(sliceName)}'
 
 const initialState: ${getSliceSchemaName(sliceName)} = {

@@ -1,4 +1,4 @@
 export enum COUNTRY {
-  UKRAINE = 'UKRAINE',
-  USA = 'USA',
+    UKRAINE = 'UKRAINE',
+    USA = 'USA',
 }

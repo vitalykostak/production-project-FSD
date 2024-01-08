@@ -8,21 +8,20 @@ import type { Meta, StoryObj } from '@storybook/react'
 // TODO theme is not accessible in stories
 
 const meta = {
-  title: 'shared/LanguageSwitcher',
-  component: LanguageSwitcher,
+    title: 'shared/LanguageSwitcher',
+    component: LanguageSwitcher,
 
-  tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof LanguageSwitcher>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Light: Story = {
-  args: {}
+    args: {},
 }
 
 export const Dark: Story = {
-  args: {
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
+    args: {},
+    decorators: [ThemeDecorator(Theme.DARK)],
 }

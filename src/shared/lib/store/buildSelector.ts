@@ -6,7 +6,7 @@ type Selector<T> = (state: StateSchema) => T
 type BuildSelectorResult<T> = [() => T, Selector<T>]
 
 export const buildSelector = <T>(selector: Selector<T>): BuildSelectorResult<T> => {
-  const useCustomSelector = () => useSelector(selector)
+    const useCustomSelector = () => useSelector(selector)
 
-  return [useCustomSelector, selector]
+    return [useCustomSelector, selector]
 }

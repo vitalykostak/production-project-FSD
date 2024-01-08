@@ -1,9 +1,9 @@
 import {
-  type ReducersMapObject,
-  type AnyAction,
-  type CombinedState,
-  type EnhancedStore,
-  type Reducer
+    type ReducersMapObject,
+    type AnyAction,
+    type CombinedState,
+    type EnhancedStore,
+    type Reducer,
 } from '@reduxjs/toolkit'
 import { type AxiosInstance } from 'axios'
 
@@ -21,40 +21,40 @@ import { type rtkApi } from '@/shared/api/rtkApi'
 import { type AppDispatch } from './store'
 
 export interface StateSchema {
-  counter: CounterSchema
-  user: UserSchema
-  saveScrollPosition: SaveScrollPositionSchema
-  [rtkApi.reducerPath]: ReturnType< typeof rtkApi.reducer>
+    counter: CounterSchema
+    user: UserSchema
+    saveScrollPosition: SaveScrollPositionSchema
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
-  // Async reducers
-  loginForm?: LoginSchema
-  profile?: ProfileSchema
-  articleDetails?: ArticleDetailsSchema
-  articleDetailsPage?: ArticleDetailsPageSchema
-  addCommentForm?: AddCommentFormSchema
-  articlesPage?: ArticlesPageSchema
+    // Async reducers
+    loginForm?: LoginSchema
+    profile?: ProfileSchema
+    articleDetails?: ArticleDetailsSchema
+    articleDetailsPage?: ArticleDetailsPageSchema
+    addCommentForm?: AddCommentFormSchema
+    articlesPage?: ArticlesPageSchema
 }
 
 export type StateSchemaKeys = keyof StateSchema
 
 export interface ReducerManager {
-  getReducerMap: () => ReducersMapObject<StateSchema>
-  reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>
-  add: (key: StateSchemaKeys, reduce: Reducer) => void
-  remove: (key: StateSchemaKeys) => void
+    getReducerMap: () => ReducersMapObject<StateSchema>
+    reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>
+    add: (key: StateSchemaKeys, reduce: Reducer) => void
+    remove: (key: StateSchemaKeys) => void
 }
 
 export interface StoreWithReducerManager extends EnhancedStore<StateSchema> {
-  reducerManager: ReducerManager
+    reducerManager: ReducerManager
 }
 
 export interface ThunkExtraArg {
-  api: AxiosInstance
+    api: AxiosInstance
 }
 
 export interface OverriddenThunkConfig<RejectValueType> {
-  dispatch: AppDispatch
-  rejectValue: RejectValueType
-  extra: ThunkExtraArg
-  state: StateSchema
+    dispatch: AppDispatch
+    rejectValue: RejectValueType
+    extra: ThunkExtraArg
+    state: StateSchema
 }

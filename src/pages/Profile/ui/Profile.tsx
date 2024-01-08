@@ -7,22 +7,22 @@ import { ProfileRating } from '@/features/profileRating'
 import { VStack } from '@/shared/ui'
 
 const Profile = () => {
-  const { id } = useParams<{ id: string }>()
+    const { id } = useParams<{ id: string }>()
 
-  const { t } = useTranslation(['profile'])
+    const { t } = useTranslation(['profile'])
 
-  if (!id) {
-    return <Page>{t('profile:no_id')}</Page>
-  }
+    if (!id) {
+        return <Page>{t('profile:no_id')}</Page>
+    }
 
-  return (
-    <Page data-testid='ProfilePage'>
-      <VStack gap="16" max>
-        <EditableProfileCard id={id} />
-        <ProfileRating profileId={id} />
-      </VStack>
-    </Page>
-  )
+    return (
+        <Page data-testid="ProfilePage">
+            <VStack gap="16" max>
+                <EditableProfileCard id={id} />
+                <ProfileRating profileId={id} />
+            </VStack>
+        </Page>
+    )
 }
 
 export default Profile

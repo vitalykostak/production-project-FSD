@@ -8,37 +8,34 @@ import { getUserAuthData } from '@/entities/User'
 import { fetchArticleCommentsByArticleId } from '../fetchArticleCommentsByArticleId/fetchArticleCommentsByArticleId'
 
 export const sendComment = createAsyncThunk<Comment, string, OverriddenThunkConfig<string>>(
-  'articleDetailsPage/sendComment',
-  async (addCommentFormText, thunkApi) => {
-    const { extra, dispatch, rejectWithValue, getState } = thunkApi
+    'articleDetailsPage/sendComment',
+    async (addCommentFormText, thunkApi) => {
+        const { extra, dispatch, rejectWithValue, getState } = thunkApi
 
-    const userData = getUserAuthData(getState())
+        const userData = getUserAuthData(getState())
 
-    const article = getArticleDetailsData(getState())
+        const article = getArticleDetailsData(getState())
 
-    if (!userData?.id || !addCommentFormText || !article?.id) {
-      return rejectWithValue('no data')
-    }
-
-    try {
-      const result = await extra.api.post<Comment>(
-        '/comments',
-        {
-          text: addCommentFormText,
-          articleId: article?.id,
-          userId: userData.id
+        if (!userData?.id || !addCommentFormText || !article?.id) {
+            return rejectWithValue('no data')
         }
-      )
 
-      if (!result.data) {
-        throw new Error()
-      }
+        try {
+            const result = await extra.api.post<Comment>('/comments', {
+                text: addCommentFormText,
+                articleId: article?.id,
+                userId: userData.id,
+            })
 
-      void dispatch(fetchArticleCommentsByArticleId(article?.id))
+            if (!result.data) {
+                throw new Error()
+            }
 
-      return result.data
-    } catch (e) {
-      return rejectWithValue('error')
-    }
-  }
+            void dispatch(fetchArticleCommentsByArticleId(article?.id))
+
+            return result.data
+        } catch (e) {
+            return rejectWithValue('error')
+        }
+    },
 )

@@ -6,30 +6,29 @@ import { type Profile } from '@/entities/Profile'
 import { ValidateProfileError } from '../../types/profile'
 import { validateProfileData } from '../validateProfileData/validateProfileData'
 
-export const updateProfileData = createAsyncThunk<
-Profile,
-string,
-OverriddenThunkConfig<ValidateProfileError[]>
->('profile/updateProfileData', async (profileId, thunkApi) => {
-  const { extra, rejectWithValue, getState } = thunkApi
+export const updateProfileData = createAsyncThunk<Profile, string, OverriddenThunkConfig<ValidateProfileError[]>>(
+    'profile/updateProfileData',
+    async (profileId, thunkApi) => {
+        const { extra, rejectWithValue, getState } = thunkApi
 
-  const formData = getState().profile?.form
+        const formData = getState().profile?.form
 
-  const validationErrors = validateProfileData(formData)
+        const validationErrors = validateProfileData(formData)
 
-  if (validationErrors.length) {
-    return rejectWithValue(validationErrors)
-  }
+        if (validationErrors.length) {
+            return rejectWithValue(validationErrors)
+        }
 
-  try {
-    const result = await extra.api.put<Profile>('/profile/' + profileId, formData)
+        try {
+            const result = await extra.api.put<Profile>('/profile/' + profileId, formData)
 
-    if (!result.data) {
-      throw new Error()
-    }
+            if (!result.data) {
+                throw new Error()
+            }
 
-    return result.data
-  } catch (e) {
-    return rejectWithValue([ValidateProfileError.SERVER_ERROR])
-  }
-})
+            return result.data
+        } catch (e) {
+            return rejectWithValue([ValidateProfileError.SERVER_ERROR])
+        }
+    },
+)

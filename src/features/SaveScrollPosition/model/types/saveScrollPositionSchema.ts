@@ -1,3 +1,3 @@
 export interface SaveScrollPositionSchema {
-  scroll: Record<string, number>
+    scroll: Record<string, number>
 }

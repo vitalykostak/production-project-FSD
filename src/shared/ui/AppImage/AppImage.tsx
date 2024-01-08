@@ -1,61 +1,45 @@
-import {
-  memo,
-  type FC,
-  type ImgHTMLAttributes,
-  type ReactNode,
-  useState,
-  useLayoutEffect
-} from 'react'
+import { memo, type FC, type ImgHTMLAttributes, type ReactNode, useState, useLayoutEffect } from 'react'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
-  className?: string
-  fallback?: ReactNode
-  errorFallback?: ReactNode
+    className?: string
+    fallback?: ReactNode
+    errorFallback?: ReactNode
 }
 
-const AppImage: FC<AppImageProps> = memo((props) => {
-  const {
-    className,
-    fallback,
-    errorFallback,
-    title = 'app_image',
-    src,
-    ...otherImgProps
-  } = props
+const AppImage: FC<AppImageProps> = memo(props => {
+    const { className, fallback, errorFallback, title = 'app_image', src, ...otherImgProps } = props
 
-  const [isLoading, setLoading] = useState<boolean>(true)
-  const [error, setError] = useState<boolean>(false)
+    const [isLoading, setLoading] = useState<boolean>(true)
+    const [error, setError] = useState<boolean>(false)
 
-  useLayoutEffect(() => {
-    const img = new Image()
+    useLayoutEffect(() => {
+        const img = new Image()
 
-    img.src = src ?? ''
-    img.onload = () => {
-      setLoading(false)
+        img.src = src ?? ''
+        img.onload = () => {
+            setLoading(false)
+        }
+        img.onerror = () => {
+            setLoading(false)
+            setError(true)
+        }
+    }, [src])
+
+    if (isLoading && fallback) {
+        return fallback
     }
-    img.onerror = () => {
-      setLoading(false)
-      setError(true)
+
+    if (error) {
+        return errorFallback
     }
-  }, [src])
 
-  if (isLoading && fallback) {
-    return fallback
-  }
+    const mods = {}
 
-  if (error) {
-    return errorFallback
-  }
+    const additionsClasses = [className]
 
-  const mods = {}
-
-  const additionsClasses = [className]
-
-  return (
-    <img className={classNames('', mods, additionsClasses)} title={title} src={src} {...otherImgProps}/>
-  )
+    return <img {...otherImgProps} className={classNames('', mods, additionsClasses)} title={title} src={src} />
 })
 
 export default AppImage
