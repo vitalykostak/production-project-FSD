@@ -17,7 +17,9 @@ describe('articleDetailsCommentsSlice', () => {
             entities: {},
         }
 
-        expect(articleDetailsCommentsReducer(state, fetchArticleCommentsByArticleId.pending)).toEqual(expected)
+        expect(
+            articleDetailsCommentsReducer(state, fetchArticleCommentsByArticleId.pending),
+        ).toEqual(expected)
     })
 
     test('fetchArticleCommentsByArticleId.fulfilled', () => {
@@ -44,7 +46,10 @@ describe('articleDetailsCommentsSlice', () => {
         }
 
         expect(
-            articleDetailsCommentsReducer(state, fetchArticleCommentsByArticleId.fulfilled([comment], '', '')),
+            articleDetailsCommentsReducer(
+                state,
+                fetchArticleCommentsByArticleId.fulfilled([comment], '', ''),
+            ),
         ).toEqual(expected)
     })
 

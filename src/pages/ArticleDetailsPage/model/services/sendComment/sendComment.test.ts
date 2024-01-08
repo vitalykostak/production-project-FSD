@@ -32,7 +32,9 @@ describe('sendComment', () => {
         const result = await thunk.callThunk(actionProp)
 
         expect(thunk.dispatch).toHaveBeenCalledTimes(3)
-        expect(mockedFetchArticleCommentsByArticleId).toHaveBeenCalledWith(state.articleDetails?.data?.id)
+        expect(mockedFetchArticleCommentsByArticleId).toHaveBeenCalledWith(
+            state.articleDetails?.data?.id,
+        )
 
         expect(result.meta.requestStatus).toBe('fulfilled')
         expect(result.payload).toEqual(comment)

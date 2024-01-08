@@ -96,7 +96,10 @@ describe('validateProfileData', () => {
 
         const result = validateProfileData(profileIncorrectCityUndefined)
 
-        const expected = [ValidateProfileError.INCORRECT_USER_DATA, ValidateProfileError.INCORRECT_USER_CITY]
+        const expected = [
+            ValidateProfileError.INCORRECT_USER_DATA,
+            ValidateProfileError.INCORRECT_USER_CITY,
+        ]
 
         expect(result).toEqual(expected)
     })

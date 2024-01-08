@@ -10,22 +10,23 @@ import {
 import { articlesPageActions } from '../../slices/articlesSlice/articlesPageSlice'
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
 
-export const fetchNextArticlesPage = createAsyncThunk<undefined, undefined, OverriddenThunkConfig<unknown>>(
-    'articlesPage/fetchNextArticlesPage',
-    (_, thunkApi) => {
-        const { getState, dispatch } = thunkApi
+export const fetchNextArticlesPage = createAsyncThunk<
+    undefined,
+    undefined,
+    OverriddenThunkConfig<unknown>
+>('articlesPage/fetchNextArticlesPage', (_, thunkApi) => {
+    const { getState, dispatch } = thunkApi
 
-        const state = getState()
+    const state = getState()
 
-        const hasMore = getArticlesPageHasMore(state)
-        const page = getArticlesPagePage(state)
-        const isLoading = getArticlesPageLoading(state)
+    const hasMore = getArticlesPageHasMore(state)
+    const page = getArticlesPagePage(state)
+    const isLoading = getArticlesPageLoading(state)
 
-        if (!hasMore || isLoading) {
-            return
-        }
-        dispatch(articlesPageActions.setPage(page + 1))
-        void dispatch(fetchArticlesList({}))
-        return undefined
-    },
-)
+    if (!hasMore || isLoading) {
+        return
+    }
+    dispatch(articlesPageActions.setPage(page + 1))
+    void dispatch(fetchArticlesList({}))
+    return undefined
+})

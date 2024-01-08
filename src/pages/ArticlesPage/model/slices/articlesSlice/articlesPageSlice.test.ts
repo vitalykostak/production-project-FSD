@@ -89,7 +89,10 @@ describe('articlesPageSlice', () => {
         }
 
         expect(
-            articlesPageReducer(state as ArticlesPageSchema, fetchArticlesList.pending('', { replace: false })),
+            articlesPageReducer(
+                state as ArticlesPageSchema,
+                fetchArticlesList.pending('', { replace: false }),
+            ),
         ).toEqual(expected)
     })
 
@@ -176,7 +179,10 @@ describe('articlesPageSlice', () => {
         }
 
         expect(
-            articlesPageReducer(state as ArticlesPageSchema, fetchArticlesList.pending('', { replace: true })),
+            articlesPageReducer(
+                state as ArticlesPageSchema,
+                fetchArticlesList.pending('', { replace: true }),
+            ),
         ).toEqual(expected)
     })
 
@@ -264,7 +270,10 @@ describe('articlesPageSlice', () => {
         }
 
         expect(
-            articlesPageReducer(state as ArticlesPageSchema, fetchArticlesList.fulfilled([article], '', {})),
+            articlesPageReducer(
+                state as ArticlesPageSchema,
+                fetchArticlesList.fulfilled([article], '', {}),
+            ),
         ).toEqual(expected)
     })
 

@@ -5,7 +5,8 @@ export const getArticlesPageLoading = (state: StateSchema) => state.articlesPage
 
 export const getArticlesPageError = (state: StateSchema) => state.articlesPage?.error
 
-export const getArticlesPageView = (state: StateSchema) => state.articlesPage?.view || ArticleListView.SMALL
+export const getArticlesPageView = (state: StateSchema) =>
+    state.articlesPage?.view || ArticleListView.SMALL
 
 export const getArticlesPagePage = (state: StateSchema) => state.articlesPage?.page || 1
 
@@ -13,12 +14,14 @@ export const getArticlesPageLimit = (state: StateSchema) => state.articlesPage?.
 
 export const getArticlesPageHasMore = (state: StateSchema) => state.articlesPage?.hasMore
 
-export const getArticlesPageSort = (state: StateSchema) => state.articlesPage?.sort || ArticlesSortField.CREATED
+export const getArticlesPageSort = (state: StateSchema) =>
+    state.articlesPage?.sort || ArticlesSortField.CREATED
 
 export const getArticlesPageOrder = (state: StateSchema) => state.articlesPage?.order || 'asc'
 
 export const getArticlesPageSearch = (state: StateSchema) => state.articlesPage?.search ?? ''
 
-export const getArticlesPageType = (state: StateSchema) => state.articlesPage?.type || ArticleType.ALL
+export const getArticlesPageType = (state: StateSchema) =>
+    state.articlesPage?.type || ArticleType.ALL
 
 export const getArticlesPageInitialized = (state: StateSchema) => state.articlesPage?._initialized

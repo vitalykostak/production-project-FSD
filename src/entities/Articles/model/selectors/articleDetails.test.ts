@@ -3,7 +3,11 @@ import { type StateSchema } from '@/app/providers/StoreProvider'
 import { type Article } from '../types/articles'
 import { ArticleBlockType, ArticleType } from '../consts/consts'
 
-import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsLoading } from './articleDetails'
+import {
+    getArticleDetailsData,
+    getArticleDetailsError,
+    getArticleDetailsLoading,
+} from './articleDetails'
 
 describe('get articlesDetails fields', () => {
     test('Should return value "data"', () => {

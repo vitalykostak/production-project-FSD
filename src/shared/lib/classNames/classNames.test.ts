@@ -12,16 +12,22 @@ describe('classNames', () => {
 
     test('test with mods', () => {
         const expected = 'someClass additional hovered selected'
-        expect(classNames('someClass', { hovered: true, selected: true }, ['additional'])).toBe(expected)
+        expect(classNames('someClass', { hovered: true, selected: true }, ['additional'])).toBe(
+            expected,
+        )
     })
 
     test('test with mods false', () => {
         const expected = 'someClass additional hovered'
-        expect(classNames('someClass', { hovered: true, selected: false }, ['additional'])).toBe(expected)
+        expect(classNames('someClass', { hovered: true, selected: false }, ['additional'])).toBe(
+            expected,
+        )
     })
 
     test('test with mods undefined', () => {
         const expected = 'someClass additional hovered'
-        expect(classNames('someClass', { hovered: true, selected: undefined }, ['additional'])).toBe(expected)
+        expect(
+            classNames('someClass', { hovered: true, selected: undefined }, ['additional']),
+        ).toBe(expected)
     })
 })

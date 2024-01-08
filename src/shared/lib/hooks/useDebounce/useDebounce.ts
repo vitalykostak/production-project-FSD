@@ -5,7 +5,10 @@ type DebounceCallback<T extends (...args: any[]) => void> = (
     delay: number,
 ) => (...args: Parameters<T>) => void
 
-export const useDebounce: DebounceCallback<(...args: any[]) => void> = (originalCallback, delay) => {
+export const useDebounce: DebounceCallback<(...args: any[]) => void> = (
+    originalCallback,
+    delay,
+) => {
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
     return useCallback(

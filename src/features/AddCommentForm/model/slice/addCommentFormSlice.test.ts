@@ -11,7 +11,9 @@ describe('addCommentFormSlice', () => {
             text: 'Example text',
         }
 
-        expect(addCommentFormReducer(state, addCommentFormActions.setText('Example text'))).toEqual(expected)
+        expect(addCommentFormReducer(state, addCommentFormActions.setText('Example text'))).toEqual(
+            expected,
+        )
     })
 
     test('setError', () => {
@@ -22,6 +24,8 @@ describe('addCommentFormSlice', () => {
             error: 'error',
         }
 
-        expect(addCommentFormReducer(state, addCommentFormActions.setError('error'))).toEqual(expected)
+        expect(addCommentFormReducer(state, addCommentFormActions.setError('error'))).toEqual(
+            expected,
+        )
     })
 })

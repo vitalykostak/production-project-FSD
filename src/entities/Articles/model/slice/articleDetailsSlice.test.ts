@@ -86,7 +86,9 @@ describe('articleDetailsSlice', () => {
             error: undefined,
         }
 
-        expect(articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.pending)).toEqual(expected)
+        expect(
+            articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.pending),
+        ).toEqual(expected)
     })
 
     test('fetchArticleById.fulfilled', () => {
@@ -103,7 +105,10 @@ describe('articleDetailsSlice', () => {
         }
 
         expect(
-            articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.fulfilled(article, '', '')),
+            articleDetailsReducer(
+                state as ArticleDetailsSchema,
+                fetchArticleById.fulfilled(article, '', ''),
+            ),
         ).toEqual(expected)
     })
 

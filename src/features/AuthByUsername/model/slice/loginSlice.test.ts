@@ -12,7 +12,9 @@ describe('loginSlice', () => {
             username: 'username',
         }
 
-        expect(loginReducer(state as LoginSchema, loginActions.setUsername('username'))).toEqual(expected)
+        expect(loginReducer(state as LoginSchema, loginActions.setUsername('username'))).toEqual(
+            expected,
+        )
     })
 
     test('setPassword', () => {
@@ -24,7 +26,9 @@ describe('loginSlice', () => {
             password: '123',
         }
 
-        expect(loginReducer(state as LoginSchema, loginActions.setPassword('123'))).toEqual(expected)
+        expect(loginReducer(state as LoginSchema, loginActions.setPassword('123'))).toEqual(
+            expected,
+        )
     })
 
     test('Should work with empty state', () => {
@@ -33,7 +37,11 @@ describe('loginSlice', () => {
         const expectedUsername: DeepPartial<LoginSchema> = { username: 'username' }
         const expectedPassword: DeepPartial<LoginSchema> = { password: '123' }
 
-        expect(loginReducer(state as LoginSchema, loginActions.setUsername('username'))).toEqual(expectedUsername)
-        expect(loginReducer(state as LoginSchema, loginActions.setPassword('123'))).toEqual(expectedPassword)
+        expect(loginReducer(state as LoginSchema, loginActions.setUsername('username'))).toEqual(
+            expectedUsername,
+        )
+        expect(loginReducer(state as LoginSchema, loginActions.setPassword('123'))).toEqual(
+            expectedPassword,
+        )
     })
 })

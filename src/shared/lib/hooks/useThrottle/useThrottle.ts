@@ -5,7 +5,10 @@ type ThrottleCallback<T extends (...args: any[]) => void> = (
     delay: number,
 ) => (...args: Parameters<T>) => void
 // TODO better types for it
-export const useThrottle: ThrottleCallback<(...args: any[]) => void> = (originalCallback, delay) => {
+export const useThrottle: ThrottleCallback<(...args: any[]) => void> = (
+    originalCallback,
+    delay,
+) => {
     const isThrottledRef = useRef<boolean>(false)
 
     return useCallback(

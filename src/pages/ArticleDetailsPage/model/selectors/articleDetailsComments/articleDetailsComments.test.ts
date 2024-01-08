@@ -1,6 +1,9 @@
 import { type StateSchema } from '@/app/providers/StoreProvider'
 
-import { getArticleDetailsCommentsError, getArticleDetailsCommentsLoading } from './articleDetailsComments'
+import {
+    getArticleDetailsCommentsError,
+    getArticleDetailsCommentsLoading,
+} from './articleDetailsComments'
 
 describe('articleDetailsComments', () => {
     test('Should return value "isLoading"', () => {

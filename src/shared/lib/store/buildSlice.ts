@@ -10,7 +10,11 @@ import { useMemo } from 'react'
 
 import { useAppDispatch } from '../hooks'
 
-export const buildSlice = <State, CaseReducers extends SliceCaseReducers<State>, Name extends string = string>(
+export const buildSlice = <
+    State,
+    CaseReducers extends SliceCaseReducers<State>,
+    Name extends string = string,
+>(
     options: CreateSliceOptions<State, CaseReducers, Name>,
 ) => {
     const slice = createSlice(options)

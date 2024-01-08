@@ -17,14 +17,19 @@ const articleDetailsRecommendationsAdapter = createEntityAdapter<Article>({
     selectId: article => article.id,
 })
 
-export const getArticleDetailsRecommendationsSelectors = articleDetailsRecommendationsAdapter.getSelectors<StateSchema>(
-    state => state?.articleDetailsPage?.recommendations || articleDetailsRecommendationsAdapter.getInitialState(),
-)
+export const getArticleDetailsRecommendationsSelectors =
+    articleDetailsRecommendationsAdapter.getSelectors<StateSchema>(
+        state =>
+            state?.articleDetailsPage?.recommendations ||
+            articleDetailsRecommendationsAdapter.getInitialState(),
+    )
 
 export const articleDetailsRecommendationsSlice = createSlice({
     name: 'articleDetailsRecommendations',
     initialState:
-        articleDetailsRecommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>(initialState),
+        articleDetailsRecommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>(
+            initialState,
+        ),
     reducers: {},
     extraReducers: builder => {
         builder.addCase(fetchRecommendationsList.pending, state => {

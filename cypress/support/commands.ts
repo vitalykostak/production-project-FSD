@@ -13,9 +13,15 @@ declare global {
             resetProfile: (profileId: string) => Chainable<void>
             login: (username?: string, password?: string) => Chainable<User>
             getByTestId: (testId: string) => Cypress.Chainable<JQuery<HTMLElement>>
-            createArticle: (userId: string, article?: Omit<Article, 'id'>) => Cypress.Chainable<Article>
+            createArticle: (
+                userId: string,
+                article?: Omit<Article, 'id'>,
+            ) => Cypress.Chainable<Article>
             resetArticle: (articleId: string) => Cypress.Chainable<void>
-            setValueInAddCommentForm: (inputId: string, value: string) => Cypress.Chainable<JQuery<HTMLElement>>
+            setValueInAddCommentForm: (
+                inputId: string,
+                value: string,
+            ) => Cypress.Chainable<JQuery<HTMLElement>>
         }
     }
 }

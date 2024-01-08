@@ -17,7 +17,9 @@ describe('profileSlice', () => {
             readonly: false,
         }
 
-        expect(profileReducer(state as ProfileSchema, profileActions.setReadonly(false))).toEqual(expected)
+        expect(profileReducer(state as ProfileSchema, profileActions.setReadonly(false))).toEqual(
+            expected,
+        )
     })
 
     test('updateProfile', () => {
@@ -55,7 +57,9 @@ describe('profileSlice', () => {
             },
         }
 
-        expect(profileReducer(state as ProfileSchema, profileActions.updateProfile(changedProfile))).toEqual(expected)
+        expect(
+            profileReducer(state as ProfileSchema, profileActions.updateProfile(changedProfile)),
+        ).toEqual(expected)
     })
 
     test('cancelUpdate', () => {
@@ -97,7 +101,9 @@ describe('profileSlice', () => {
             validateError: undefined,
         }
 
-        expect(profileReducer(state as ProfileSchema, profileActions.cancelUpdate())).toEqual(expected)
+        expect(profileReducer(state as ProfileSchema, profileActions.cancelUpdate())).toEqual(
+            expected,
+        )
     })
 
     test('fetchProfileData.pending', () => {
@@ -140,6 +146,8 @@ describe('profileSlice', () => {
             form: profile,
         }
 
-        expect(profileReducer(state as ProfileSchema, fetchProfileData.fulfilled(profile, '', '1'))).toEqual(expected)
+        expect(
+            profileReducer(state as ProfileSchema, fetchProfileData.fulfilled(profile, '', '1')),
+        ).toEqual(expected)
     })
 })

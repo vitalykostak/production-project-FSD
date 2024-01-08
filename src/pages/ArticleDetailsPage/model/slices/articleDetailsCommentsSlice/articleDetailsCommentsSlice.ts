@@ -30,11 +30,14 @@ const articleDetailsCommentsSlice = createSlice({
             state.isLoading = true
             state.error = undefined
         })
-        builder.addCase(fetchArticleCommentsByArticleId.fulfilled, (state, action: PayloadAction<Comment[]>) => {
-            state.isLoading = false
-            state.error = undefined
-            commentsAdapter.setAll(state, action.payload)
-        })
+        builder.addCase(
+            fetchArticleCommentsByArticleId.fulfilled,
+            (state, action: PayloadAction<Comment[]>) => {
+                state.isLoading = false
+                state.error = undefined
+                commentsAdapter.setAll(state, action.payload)
+            },
+        )
         builder.addCase(fetchArticleCommentsByArticleId.rejected, (state, action) => {
             state.isLoading = false
             state.error = action.payload

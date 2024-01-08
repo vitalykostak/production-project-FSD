@@ -4,6 +4,10 @@ export const [useArticleDetailsLoading, getArticleDetailsLoading] = buildSelecto
     state => state.articleDetails?.isLoading,
 )
 
-export const [useArticleDetailsData, getArticleDetailsData] = buildSelector(state => state.articleDetails?.data)
+export const [useArticleDetailsData, getArticleDetailsData] = buildSelector(
+    state => state.articleDetails?.data,
+)
 
-export const [useArticleDetailsError, getArticleDetailsError] = buildSelector(state => state.articleDetails?.error)
+export const [useArticleDetailsError, getArticleDetailsError] = buildSelector(
+    state => state.articleDetails?.error,
+)

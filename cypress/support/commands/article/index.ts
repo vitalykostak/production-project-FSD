@@ -10,9 +10,13 @@ const testArticle: Omit<Article, 'id' | 'user'> = {
     blocks: [],
 }
 
-export const setValueInAddCommentForm = (inputId: string, value: string) => cy.getByTestId(inputId).type(value)
+export const setValueInAddCommentForm = (inputId: string, value: string) =>
+    cy.getByTestId(inputId).type(value)
 
-export const createArticle = (userId: string, article?: Omit<Article, 'id'>): Cypress.Chainable<Article> => {
+export const createArticle = (
+    userId: string,
+    article?: Omit<Article, 'id'>,
+): Cypress.Chainable<Article> => {
     return cy
         .request({
             url: 'http://localhost:8000/articles',

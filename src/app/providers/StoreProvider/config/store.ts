@@ -1,4 +1,9 @@
-import { type ReducersMapObject, configureStore, type Reducer, type CombinedState } from '@reduxjs/toolkit'
+import {
+    type ReducersMapObject,
+    configureStore,
+    type Reducer,
+    type CombinedState,
+} from '@reduxjs/toolkit'
 
 import { counterReducer } from '@/entities/Counter'
 import { userReducer } from '@/entities/User'
@@ -9,7 +14,10 @@ import { saveScrollPositionReducer } from '@/features/SaveScrollPosition'
 import { createReducerManager } from './createReducerManager'
 import { type StateSchema } from './StateSchema'
 
-export const configureReduxStore = (initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) => {
+export const configureReduxStore = (
+    initialState?: StateSchema,
+    asyncReducers?: ReducersMapObject<StateSchema>,
+) => {
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         counter: counterReducer,

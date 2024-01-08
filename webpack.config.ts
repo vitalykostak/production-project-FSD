@@ -3,7 +3,12 @@ import path from 'path'
 import { type Configuration } from 'webpack'
 
 import buildWebpackConfig from './config/build/buildWebpackConfig'
-import { type ExecutionEnvironment, type BuildOptions, type BuildPaths, type Env } from './config/build/types/config'
+import {
+    type ExecutionEnvironment,
+    type BuildOptions,
+    type BuildPaths,
+    type Env,
+} from './config/build/types/config'
 import { BuildMode } from './config/build/consts'
 
 export default (env: Env) => {
