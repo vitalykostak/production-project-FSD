@@ -1143,6 +1143,8 @@
     ],
     "users": [
         {
+            "0": "{",
+            "1": "}",
             "id": "1",
             "username": "admin",
             "password": "123",
@@ -1153,7 +1155,41 @@
                 "isCounterEnabled": true
             },
             "jsonSettings": {
-                "uiTheme": "app_dark_ui_theme"
+                "0": "{",
+                "1": "\"",
+                "2": "u",
+                "3": "i",
+                "4": "T",
+                "5": "h",
+                "6": "e",
+                "7": "m",
+                "8": "e",
+                "9": "\"",
+                "10": ":",
+                "11": "\"",
+                "12": "a",
+                "13": "p",
+                "14": "p",
+                "15": "_",
+                "16": "o",
+                "17": "r",
+                "18": "a",
+                "19": "n",
+                "20": "g",
+                "21": "e",
+                "22": "_",
+                "23": "u",
+                "24": "i",
+                "25": "_",
+                "26": "t",
+                "27": "h",
+                "28": "e",
+                "29": "m",
+                "30": "e",
+                "31": "\"",
+                "32": "}",
+                "uiTheme": "app_dark_ui_theme",
+                "hasArticlesPageBeenOpened": true
             }
         },
         {
@@ -1166,7 +1202,9 @@
                 "isArticleRatingEnabled": false,
                 "isCounterEnabled": true
             },
-            "jsonSettings": {}
+            "jsonSettings": {
+                "hasArticlesPageBeenOpened": true
+            }
         },
         {
             "id": "3",
@@ -1178,7 +1216,9 @@
                 "isArticleRatingEnabled": false,
                 "isCounterEnabled": false
             },
-            "jsonSettings": {}
+            "jsonSettings": {
+                "hasArticlesPageBeenOpened": true
+            }
         }
     ],
     "profile": [

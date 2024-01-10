@@ -6,6 +6,7 @@ import { DynamicModuleLoader, type ReducersList } from '@/shared/lib'
 import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
 import { Page } from '@/widgets/Page'
 import { VStack } from '@/shared/ui'
+import { ArticlesPageFirstVisitGreetingModal } from '@/features/articlesPageFirstVisitGreeting'
 
 import { articlesPageReducer } from '../../model/slices/articlesSlice/articlesPageSlice'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
@@ -14,49 +15,50 @@ import ArticlesPageFilters from '../ArticlesPageFilters/ArticlesPageFilters'
 import ArticleInfiniteList from '../ArticleInfiniteList/ArticleInfiniteList'
 
 interface ArticlesPageProps {
-  className?: string
+    className?: string
 }
 
 const reducers: ReducersList = {
-  articlesPage: articlesPageReducer
+    articlesPage: articlesPageReducer,
 }
 
-const ArticlesPage: FC<ArticlesPageProps> = memo((props) => {
-  const { className } = props
+const ArticlesPage: FC<ArticlesPageProps> = memo(props => {
+    const { className } = props
 
-  const dispatch = useAppDispatch()
-  const [searchParams] = useSearchParams()
+    const dispatch = useAppDispatch()
+    const [searchParams] = useSearchParams()
 
-  const onLoadNextPart = useCallback(() => {
-    if (EXECUTION_ENVIRONMENT !== 'app') {
-      return
-    }
-    void dispatch(fetchNextArticlesPage())
-  }, [dispatch])
+    const onLoadNextPart = useCallback(() => {
+        if (EXECUTION_ENVIRONMENT !== 'app') {
+            return
+        }
+        void dispatch(fetchNextArticlesPage())
+    }, [dispatch])
 
-  const mods = {}
+    const mods = {}
 
-  const additionsClasses = [className]
+    const additionsClasses = [className]
 
-  useInitialEffect(async () => {
-    void dispatch(initArticlesPage(searchParams))
-  })
+    useInitialEffect(async () => {
+        void dispatch(initArticlesPage(searchParams))
+    })
 
-  return (
-    <DynamicModuleLoader reducers={reducers} shouldRemoveOnUnmout={false}>
-      <Page
-        shouldSaveScrollPosition
-        onScrollEnd={onLoadNextPart}
-        className={classNames('', mods, additionsClasses)}
-        data-testid='ArticlesPage'
-      >
-        <VStack gap="16">
-          <ArticlesPageFilters />
-          <ArticleInfiniteList />
-        </VStack>
-      </Page>
-    </DynamicModuleLoader>
-  )
+    return (
+        <DynamicModuleLoader reducers={reducers} shouldRemoveOnUnmout={false}>
+            <Page
+                shouldSaveScrollPosition
+                onScrollEnd={onLoadNextPart}
+                className={classNames('', mods, additionsClasses)}
+                data-testid="ArticlesPage"
+            >
+                <VStack gap="16">
+                    <ArticlesPageFilters />
+                    <ArticleInfiniteList />
+                </VStack>
+                <ArticlesPageFirstVisitGreetingModal />
+            </Page>
+        </DynamicModuleLoader>
+    )
 })
 
 export default ArticlesPage
