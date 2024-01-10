@@ -1,33 +1,39 @@
 import { Suspense, type FC, useEffect } from 'react'
-import { useSelector } from 'react-redux'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Navbar } from '@/widgets/Navbar'
 import { Sidebar } from '@/widgets/Sidebar'
-import { getUserInitialized, useUserActions } from '@/entities/User'
+import { initAuthData, useUserInitialized } from '@/entities/User'
+import { PageLoader } from '@/widgets/PageLoader'
+import { useAppDispatch } from '@/shared/lib/hooks'
 
 import { AppRouter } from './providers/router'
 
 const App: FC = () => {
-  // True after checking if user is authorized
-  const isUserInitialized = useSelector(getUserInitialized)
-  const { initAuthData } = useUserActions()
+    const dispatch = useAppDispatch()
 
-  useEffect(() => {
-    initAuthData()
-  }, [initAuthData])
+    // True after checking if user is authorized
+    const isUserInitialized = useUserInitialized()
 
-  return (
-    <div className={classNames('app', {})}>
-      <Suspense fallback="">
-        <Navbar />
-        <div className="content-page">
-          <Sidebar />
-          {isUserInitialized && <AppRouter />}
+    useEffect(() => {
+        void dispatch(initAuthData())
+    }, [dispatch])
+
+    if (!isUserInitialized) {
+        return <PageLoader />
+    }
+
+    return (
+        <div className={classNames('app', {})}>
+            <Suspense fallback="">
+                <Navbar />
+                <div className="content-page">
+                    <Sidebar />
+                    {isUserInitialized && <AppRouter />}
+                </div>
+            </Suspense>
         </div>
-      </Suspense>
-    </div>
-  )
+    )
 }
 
 export default App

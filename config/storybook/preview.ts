@@ -6,6 +6,7 @@ import SuspenseDecorator from '../../src/shared/config/storybook/SuspenseDecorat
 import { Theme } from '../../src/shared/consts/theme'
 // include global styles
 import '../../src/app/styles/index.scss'
+import ReduxStoreDecorator from '../../src/shared/config/storybook/ReduxStoreDecorator'
 
 const preview: Preview = {
     parameters: {
@@ -17,7 +18,12 @@ const preview: Preview = {
             },
         },
     },
-    decorators: [BrowserRouterDecorator, ThemeDecorator(Theme.LIGHT), SuspenseDecorator],
+    decorators: [
+        BrowserRouterDecorator,
+        ThemeDecorator(Theme.LIGHT),
+        SuspenseDecorator,
+        ReduxStoreDecorator({}),
+    ],
 }
 
 export default preview

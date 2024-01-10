@@ -1,5 +1,5 @@
 {
     "**/*.{ts,tsx}": ["prettier --check", "eslint"],
-    "**/*.{json}": ["prettier --check"],
+    "**/*.json": ["prettier --check"],
     "**/*.scss": "stylelint"
 }

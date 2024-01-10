@@ -1151,6 +1151,9 @@
             "features": {
                 "isArticleRatingEnabled": true,
                 "isCounterEnabled": true
+            },
+            "jsonSettings": {
+                "uiTheme": "app_dark_ui_theme"
             }
         },
         {
@@ -1162,7 +1165,8 @@
             "features": {
                 "isArticleRatingEnabled": false,
                 "isCounterEnabled": true
-            }
+            },
+            "jsonSettings": {}
         },
         {
             "id": "3",
@@ -1173,7 +1177,8 @@
             "features": {
                 "isArticleRatingEnabled": false,
                 "isCounterEnabled": false
-            }
+            },
+            "jsonSettings": {}
         }
     ],
     "profile": [
