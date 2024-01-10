@@ -29,7 +29,8 @@
         "storybook": "./node_modules/storybook/index.js dev -p 6006 -c config/storybook",
         "storybook:build": "./node_modules/storybook/index.js build -c config/storybook",
         "prepare": "husky install",
-        "generate_feature_slice": "node ./scripts/generate-feature-slice/index.mjs",
+        "generate-feature-slice": "node ./scripts/generate-feature-slice/index.mjs",
+        "remove-feature-flag": "node ./scripts/removeToggleFeature/removeToggleFeature.mjs",
         "cy:run": "cypress run",
         "cy:open": "cypress open",
         "postinstall": "node ./scripts/clear-babel-cache/clear-babel-cache.mjs"
