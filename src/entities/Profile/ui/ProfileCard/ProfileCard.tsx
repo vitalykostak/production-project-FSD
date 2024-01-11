@@ -10,7 +10,7 @@ import {
     Avatar,
     VStack,
     HStack,
-} from '@/shared/ui'
+} from '@/shared/ui/deprecated'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { type CURRENCY, CurrencySelect } from '@/entities/Currency'
 import { CountrySelect, type COUNTRY } from '@/entities/Country'

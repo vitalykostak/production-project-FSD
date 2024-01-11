@@ -19,5 +19,5 @@ export interface User {
 
 export interface UserJsonSettings {
     uiTheme?: Theme
-    hasArticlesPageBeenOpened: boolean
+    hasArticlesPageBeenOpened?: boolean
 }

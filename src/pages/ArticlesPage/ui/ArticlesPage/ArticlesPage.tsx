@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib'
 import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
 import { Page } from '@/widgets/Page'
-import { VStack } from '@/shared/ui'
+import { VStack } from '@/shared/ui/deprecated'
 import { ArticlesPageFirstVisitGreetingModal } from '@/features/articlesPageFirstVisitGreeting'
 
 import { articlesPageReducer } from '../../model/slices/articlesSlice/articlesPageSlice'

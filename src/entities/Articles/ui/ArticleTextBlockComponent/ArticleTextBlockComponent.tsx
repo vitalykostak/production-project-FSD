@@ -1,19 +1,18 @@
 import { memo, type FC } from 'react'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Text } from '@/shared/ui'
+import { Text } from '@/shared/ui/deprecated'
 
 import { type ArticleTextBlock } from '../../model/types/articles'
 
 import styles from './ArticleTextBlockComponent.module.scss'
 
 interface ArticleTextBlockComponentProps {
-  className?: string
-  block: ArticleTextBlock
+    className?: string
+    block: ArticleTextBlock
 }
 
-const ArticleTextBlockComponent: FC<ArticleTextBlockComponentProps> = memo(
-  (props) => {
+const ArticleTextBlockComponent: FC<ArticleTextBlockComponentProps> = memo(props => {
     const { className, block } = props
 
     const mods = {}
@@ -21,20 +20,13 @@ const ArticleTextBlockComponent: FC<ArticleTextBlockComponentProps> = memo(
     const additionsClasses = [className]
 
     return (
-      <div
-        className={classNames(
-          '',
-          mods,
-          additionsClasses
-        )}
-      >
-        {block.title && <Text title={block.title} className={styles.title} />}
-        {block.paragraphs?.map((paragraph, index) => (
-          <Text text={paragraph} key={index} className={styles.paragraph} />
-        ))}
-      </div>
+        <div className={classNames('', mods, additionsClasses)}>
+            {block.title && <Text title={block.title} className={styles.title} />}
+            {block.paragraphs?.map((paragraph, index) => (
+                <Text text={paragraph} key={index} className={styles.paragraph} />
+            ))}
+        </div>
     )
-  }
-)
+})
 
 export default ArticleTextBlockComponent

@@ -105,14 +105,14 @@ const replaceToggleFunctionComponent = node => {
     const onEnabled = node
         .getAttribute('onEnabled')
         .getFirstChildByKind(SyntaxKind.JsxExpression)
-        .getExpression()?.getText()
-
+        .getExpression()
+        ?.getText()
 
     const onDisabled = node
         .getAttribute('onDisabled')
         .getFirstChildByKind(SyntaxKind.JsxExpression)
-        .getExpression()?.getText()
-
+        .getExpression()
+        ?.getText()
 
     if (featureFlagState === ENABLE_STATE) {
         node.replaceWithText(removeBracketsIfExist(onEnabled))
@@ -129,7 +129,7 @@ sourceFiles.forEach(file => {
     file.forEachDescendant(node => {
         if (node.isKind(SyntaxKind.CallExpression) && isToggleFunction(node)) {
             replaceToggleFunction(node)
-            return 
+            return
         }
 
         if (node.isKind(SyntaxKind.JsxSelfClosingElement) && isToggleFunctionComponent(node)) {

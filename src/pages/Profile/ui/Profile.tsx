@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { EditableProfileCard } from '@/features/EditableProfileCard'
 import { Page } from '@/widgets/Page'
 import { ProfileRating } from '@/features/profileRating'
-import { VStack } from '@/shared/ui'
+import { VStack } from '@/shared/ui/deprecated'
 
 const Profile = () => {
     const { id } = useParams<{ id: string }>()

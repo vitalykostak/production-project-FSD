@@ -6,10 +6,10 @@ import styles from './MainLayout.module.scss'
 
 interface MainLayoutProps {
     className?: string
-    header?: ReactNode
-    sidebar?: ReactNode
-    content?: ReactNode
-    toolbar: ReactNode
+    header: ReactNode
+    sidebar: ReactNode
+    content: ReactNode
+    toolbar?: ReactNode
 }
 
 const MainLayout: FC<MainLayoutProps> = memo(props => {

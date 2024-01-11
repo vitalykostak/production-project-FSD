@@ -1,7 +1,7 @@
 import { memo, type FC, useState, useCallback, useEffect } from 'react'
 import { isMobile } from 'react-device-detect'
 
-import { Drawer, Modal, Text } from '@/shared/ui'
+import { Drawer, Modal, Text } from '@/shared/ui/deprecated'
 import { updateUserJsonSetting, useUserJsonSettings } from '@/entities/User'
 import { useAppDispatch } from '@/shared/lib/hooks'
 

@@ -2,44 +2,42 @@ import { memo, type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { ListBox, type SelectOption } from '@/shared/ui'
+import { ListBox, type SelectOption } from '@/shared/ui/deprecated'
 
 import { CURRENCY } from '../../model/consts/currency'
 
 interface CurrencySelectProps {
-  className?: string
-  value?: CURRENCY
-  onChange?: (value: CURRENCY) => void
-  readonly?: boolean
+    className?: string
+    value?: CURRENCY
+    onChange?: (value: CURRENCY) => void
+    readonly?: boolean
 }
 
-const options = Object.values<CURRENCY>(CURRENCY).map<SelectOption<CURRENCY>>(
-  (opt) => ({
+const options = Object.values<CURRENCY>(CURRENCY).map<SelectOption<CURRENCY>>(opt => ({
     value: opt,
-    content: opt
-  })
-)
+    content: opt,
+}))
 
-const CurrencySelect: FC<CurrencySelectProps> = memo((props) => {
-  const { className, value, onChange, readonly } = props
+const CurrencySelect: FC<CurrencySelectProps> = memo(props => {
+    const { className, value, onChange, readonly } = props
 
-  const { t } = useTranslation('translation')
+    const { t } = useTranslation('translation')
 
-  const mods = {}
+    const mods = {}
 
-  const additionsClasses = [className]
+    const additionsClasses = [className]
 
-  return (
-    <ListBox<CURRENCY>
-      items={options}
-      value={value}
-      onChange={onChange}
-      readonly={readonly}
-      label={t('choose_currency')}
-      className={classNames('', mods, additionsClasses)}
-      direction='topRight'
-    />
-  )
+    return (
+        <ListBox<CURRENCY>
+            items={options}
+            value={value}
+            onChange={onChange}
+            readonly={readonly}
+            label={t('choose_currency')}
+            className={classNames('', mods, additionsClasses)}
+            direction="topRight"
+        />
+    )
 })
 
 export default CurrencySelect

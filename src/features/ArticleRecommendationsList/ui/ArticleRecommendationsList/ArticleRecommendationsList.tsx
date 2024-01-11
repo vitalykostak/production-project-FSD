@@ -3,18 +3,17 @@ import { useTranslation } from 'react-i18next'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { ArticleList } from '@/entities/Articles'
-import { Text, TextSize, VStack } from '@/shared/ui'
+import { Text, TextSize, VStack } from '@/shared/ui/deprecated'
 
 import { useGetArticleRecommendationListQuery } from '../../api/articleRecommendationsApi/articleRecommendationsApi'
 
 import styles from './ArticleRecommendationsList.module.scss'
 
 interface ArticleRecommendationsListProps {
-  className?: string
+    className?: string
 }
 
-const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> = memo(
-  (props) => {
+const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> = memo(props => {
     const { className } = props
 
     const { t } = useTranslation(['translation'])
@@ -22,7 +21,7 @@ const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> = memo(
     const { isLoading, data: articles, error } = useGetArticleRecommendationListQuery(3)
 
     if (isLoading || error || !articles) {
-      return null
+        return null
     }
 
     const mods = {}
@@ -30,16 +29,19 @@ const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> = memo(
     const additionsClasses = [className]
 
     return (
-      <VStack gap="8" className={classNames('', mods, additionsClasses)} data-testid='ArticleRecommendationsList'>
-        <Text size={TextSize.L} title={t('translation:recommend')} />
-        <ArticleList
-          articles={articles}
-          target="_blank"
-          className={styles.recommendationsList}
-        />
-      </VStack>
+        <VStack
+            gap="8"
+            className={classNames('', mods, additionsClasses)}
+            data-testid="ArticleRecommendationsList"
+        >
+            <Text size={TextSize.L} title={t('translation:recommend')} />
+            <ArticleList
+                articles={articles}
+                target="_blank"
+                className={styles.recommendationsList}
+            />
+        </VStack>
     )
-  }
-)
+})
 
 export default ArticleRecommendationsList

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { AppLink, Button, ButtonTheme, HStack, Text, TextTheme } from '@/shared/ui'
+import { AppLink, Button, ButtonTheme, HStack, Text, TextTheme } from '@/shared/ui/deprecated'
 import { LoginModal } from '@/features/AuthByUsername'
 import { getUserAuthData } from '@/entities/User'
 import { NotificationButton } from '@/features/notificationButton'
