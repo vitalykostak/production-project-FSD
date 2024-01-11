@@ -2,11 +2,20 @@ import { useRef, type FC, type ReactNode, type MutableRefObject, type UIEventHan
 import { useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import { useAppDispatch, useInfiniteScroll, useInitialEffect, useThrottle } from '@/shared/lib/hooks'
-import { saveScrollPositionActions, getSavedScrollPositionByPath } from '@/features/SaveScrollPosition'
+import {
+    useAppDispatch,
+    useInfiniteScroll,
+    useInitialEffect,
+    useThrottle,
+} from '@/shared/lib/hooks'
+import {
+    saveScrollPositionActions,
+    getSavedScrollPositionByPath,
+} from '@/features/SaveScrollPosition'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { type StateSchema } from '@/app/providers/StoreProvider'
 import { type TestProps } from '@/shared/types'
+import { toggleFeature } from '@/shared/lib/featureFlags'
 
 import styles from './Page.module.scss'
 
@@ -33,7 +42,9 @@ const Page: FC<PageProps> = props => {
     const dispatch = useAppDispatch()
     const location = useLocation()
 
-    const scrollPosition = useSelector((state: StateSchema) => getSavedScrollPositionByPath(state, location.pathname))
+    const scrollPosition = useSelector((state: StateSchema) =>
+        getSavedScrollPositionByPath(state, location.pathname),
+    )
 
     const containerRef = useRef() as MutableRefObject<HTMLDivElement>
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>
@@ -63,9 +74,15 @@ const Page: FC<PageProps> = props => {
 
     const additionsClasses = [className]
 
+    const pageClass = toggleFeature({
+        featureFlag: 'isAppRedesigned',
+        onEnabled: () => styles.PageRedesigned,
+        onDisabled: () => styles.Page,
+    })
+
     return (
         <main
-            className={classNames(styles.Page, mods, additionsClasses)}
+            className={classNames(pageClass, mods, additionsClasses)}
             ref={containerRef}
             onScroll={shouldSaveScrollPosition ? onScroll : undefined}
             id={wrapperId}

@@ -6,6 +6,8 @@ import { Sidebar } from '@/widgets/Sidebar'
 import { initAuthData, useUserInitialized } from '@/entities/User'
 import { PageLoader } from '@/widgets/PageLoader'
 import { useAppDispatch } from '@/shared/lib/hooks'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
+import { MainLayout } from '@/shared/layouts'
 
 import { AppRouter } from './providers/router'
 
@@ -24,15 +26,32 @@ const App: FC = () => {
     }
 
     return (
-        <div className={classNames('app', {})}>
-            <Suspense fallback="">
-                <Navbar />
-                <div className="content-page">
-                    <Sidebar />
-                    {isUserInitialized && <AppRouter />}
+        <ToggleFeature
+            featureFlag="isAppRedesigned"
+            onDisabled={
+                <div className={classNames('app', {})}>
+                    <Suspense fallback="">
+                        <Navbar />
+                        <div className="content-page">
+                            <Sidebar />
+                            <AppRouter />
+                        </div>
+                    </Suspense>
                 </div>
-            </Suspense>
-        </div>
+            }
+            onEnabled={
+                <div className={classNames('app_redesigned', {})}>
+                    <Suspense fallback="">
+                        <MainLayout
+                            sidebar={<Sidebar />}
+                            content={<AppRouter />}
+                            header={<Navbar />}
+                            // toolbar={<div>Toolbar</div>}
+                        />
+                    </Suspense>
+                </div>
+            }
+        />
     )
 }
 

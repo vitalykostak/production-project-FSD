@@ -1,0 +1,32 @@
+.MainLayout {
+  display: grid;
+  grid-template-areas: 'sidebar content rightBar';
+  grid-template-columns: 284px 1fr;
+  position: relative;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  justify-self: center;
+  padding: 32px;
+}
+
+.content {
+  grid-area: content;
+  max-width: 1200px;
+  justify-self: center;
+}
+
+.rightBar {
+  grid-area: rightBar;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 32px;
+}
+
+.sidebar, .rightBar{
+  position: sticky;
+  height: 100vh;
+  top: 0;
+}

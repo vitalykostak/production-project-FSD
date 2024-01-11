@@ -4,14 +4,19 @@
 @import "./themes/dark";
 @import "./themes/orange";
 
-body {
-  color: var(--primary-color);
-  font: var(--font-m);
-}
 
 .app {
   background: var(--bg-color);
   min-height: 100vh;
+  color: var(--primary-color);
+  font: var(--font-m);
+}
+
+.app_redesigned {
+  background: var(--bg-redesigned);
+  min-height: 100vh;
+  color: var(--text-redesigned);
+  font: var( --font-m-redesigned);
 }
 
 .content-page {

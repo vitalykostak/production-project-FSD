@@ -9,9 +9,9 @@ export const setFeatureFlags = (ff?: FeatureFlags) => {
 }
 
 export const getFeatureFlag = (flag: keyof FeatureFlags) => {
-    if (!featureFlags) {
-        throw new Error('Feature flags not set. Call setFeatureFlags before using getFeatureFlag.')
-    }
+    // if (!featureFlags) {
+    //     throw new Error('Feature flags not set. Call setFeatureFlags before using getFeatureFlag.')
+    // }
 
     return featureFlags?.[flag]
 }
