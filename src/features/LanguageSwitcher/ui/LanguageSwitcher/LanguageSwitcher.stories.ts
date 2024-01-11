@@ -8,7 +8,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 // TODO theme is not accessible in stories
 
 const meta = {
-    title: 'shared/LanguageSwitcher',
+    title: 'features/LanguageSwitcher',
     component: LanguageSwitcher,
 
     tags: ['autodocs'],
