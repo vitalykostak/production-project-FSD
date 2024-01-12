@@ -8,7 +8,7 @@ import Card from './Card'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-    title: 'shared/Card',
+    title: 'shared/deprecated/Card',
     component: Card,
     tags: ['autodocs'],
 } satisfies Meta<typeof Card>

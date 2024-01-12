@@ -3,12 +3,15 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated'
+import { AppLink as AppLinkDeprecated, AppLinkTheme } from '@/shared/ui/deprecated'
 import { getUserAuthData } from '@/entities/User'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
+import { AppLink, Icon } from '@/shared/ui/redesigned'
 
 import { type SidebarItemType } from '../../model/types/sidebar'
 
-import sidebarStyles from './SidebarItem.module.scss'
+import sidebarDeprecatedStyles from './SidebarItem.module.scss'
+import sidebarStyles from './SidebarItemRedesigned.module.scss'
 
 interface SidebarItemProps {
     item: SidebarItemType
@@ -26,14 +29,34 @@ const SidebarItem: FC<SidebarItemProps> = props => {
     }
 
     return (
-        <AppLink
-            className={classNames(sidebarStyles.item, { [sidebarStyles.collapsed]: collapsed })}
-            to={item.path}
-            theme={AppLinkTheme.PRIMARY}
-        >
-            <item.Icon className={sidebarStyles.icon} />
-            <span className={sidebarStyles.link}>{t(item.text)}</span>
-        </AppLink>
+        <ToggleFeature
+            featureFlag="isAppRedesigned"
+            onDisabled={
+                <AppLinkDeprecated
+                    className={classNames(sidebarDeprecatedStyles.item, {
+                        [sidebarDeprecatedStyles.collapsed]: collapsed,
+                    })}
+                    to={item.path}
+                    theme={AppLinkTheme.PRIMARY}
+                >
+                    <item.Icon className={sidebarDeprecatedStyles.icon} />
+                    <span className={sidebarDeprecatedStyles.link}>{t(item.text)}</span>
+                </AppLinkDeprecated>
+            }
+            onEnabled={
+                <AppLink
+                    className={classNames(sidebarStyles.item, {
+                        [sidebarStyles.collapsed]: collapsed,
+                    })}
+                    to={item.path}
+                    variant="primary"
+                    classNameActive={sidebarStyles.itemActive}
+                >
+                    <Icon Svg={item.Icon} />
+                    <span className={sidebarStyles.link}>{t(item.text)}</span>
+                </AppLink>
+            }
+        />
     )
 }
 

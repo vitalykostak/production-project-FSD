@@ -5,16 +5,22 @@ import { ThemeProvider } from '@/app/providers/ThemeProvider'
 
 import { type Theme } from '../../consts/theme'
 
-const ThemeDecorator = (theme: Theme) => {
-  const Decorator = (Story: StoryFn) => (
-    <ThemeProvider initialTheme={theme}>
-      <div className={`app ${theme}`}>
-        <Story />
-      </div>
-    </ThemeProvider>
-  )
+interface ThemeDecoratorOptions {
+    isAppRedesigned?: boolean
+}
 
-  return Decorator
+const ThemeDecorator = (theme: Theme, options?: ThemeDecoratorOptions) => {
+    const { isAppRedesigned } = options || {}
+
+    const Decorator = (Story: StoryFn) => (
+        <ThemeProvider initialTheme={theme}>
+            <div className={`${isAppRedesigned ? 'app_redesigned' : 'app'} ${theme}`}>
+                <Story />
+            </div>
+        </ThemeProvider>
+    )
+
+    return Decorator
 }
 
 export default ThemeDecorator

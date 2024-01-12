@@ -6,7 +6,7 @@ import Text, { TextSize, TextTheme } from './Text'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-    title: 'shared/Text',
+    title: 'shared/deprecated/Text',
     component: Text,
     tags: ['autodocs'],
 } satisfies Meta<typeof Text>

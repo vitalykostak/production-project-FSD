@@ -3,7 +3,7 @@ import Flex from './Flex'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-    title: 'shared/Stack/Flex',
+    title: 'shared/deprecated/Stack/Flex',
     component: Flex,
     tags: ['autodocs'],
 } satisfies Meta<typeof Flex>

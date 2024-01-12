@@ -6,7 +6,7 @@ import StarRating from './StarRating'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-    title: 'shared/StarRating',
+    title: 'shared/deprecated/StarRating',
     component: StarRating,
     tags: ['autodocs'],
 } satisfies Meta<typeof StarRating>

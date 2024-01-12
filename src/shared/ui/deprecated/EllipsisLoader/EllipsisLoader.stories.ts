@@ -6,7 +6,7 @@ import EllipsisLoader from './EllipsisLoader'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-    title: 'shared/EllipsisLoader',
+    title: 'shared/deprecated/EllipsisLoader',
     component: EllipsisLoader,
 
     tags: ['autodocs'],

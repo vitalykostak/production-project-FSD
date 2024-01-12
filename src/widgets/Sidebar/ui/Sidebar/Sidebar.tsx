@@ -2,11 +2,13 @@ import { type FC, useState, memo } from 'react'
 import { useSelector } from 'react-redux'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { AppLogo, Button, ButtonTheme, VStack } from '@/shared/ui/deprecated'
-import { ButtonSize } from '@/shared/ui/deprecated/Button/Button'
+import { Button, ButtonTheme, VStack } from '@/shared/ui/deprecated'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { LanguageSwitcher } from '@/features/LanguageSwitcher'
 import { ToggleFeature } from '@/shared/lib/featureFlags'
+import { AppLogo, Icon } from '@/shared/ui/redesigned'
+import { ButtonSize } from '@/shared/ui/deprecated/Button/Button'
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg'
 
 import SidebarItem from '../SidebarItem/SidebarItem'
 import { getSidebarItems } from '../../model/selectors/getSidebarItems/getSidebarItems'
@@ -18,6 +20,9 @@ interface SidebarProps {
     className?: string
 }
 
+/**
+ * @deprecated
+ */
 const SidebarDeprecated: FC<SidebarProps> = memo(({ className }) => {
     const [collapsed, setCollapsed] = useState<boolean>(false)
 
@@ -67,6 +72,8 @@ const SidebarRedesigned: FC<SidebarProps> = memo(({ className }) => {
 
     const toggleSidebar = () => setCollapsed(prev => !prev)
 
+    const SidebarItems = useSelector(getSidebarItems)
+
     return (
         <aside
             data-testid={'sidebar'}
@@ -78,17 +85,26 @@ const SidebarRedesigned: FC<SidebarProps> = memo(({ className }) => {
                 [className],
             )}
         >
-            <Button
+            <Icon
+                Svg={ArrowIcon}
                 onClick={toggleSidebar}
+                clickable
                 data-testid="toggle-button"
                 className={sidebarRedesignedStyles.collapseBtn}
-                theme={ButtonTheme.BACKGROUND_INVERTED}
-                size={ButtonSize.L}
-                square
-            >
-                {collapsed ? '>' : '<'}
-            </Button>
+            />
             <AppLogo />
+            <div className={sidebarRedesignedStyles.items}>
+                {SidebarItems.map(item => (
+                    <SidebarItem key={item.path} item={item} collapsed={collapsed} />
+                ))}
+            </div>
+            <div className={sidebarRedesignedStyles.switchers}>
+                <ThemeSwitcher />
+                <LanguageSwitcher
+                    className={classNames(sidebarRedesignedStyles.languageSwitcherContainer)}
+                    short={collapsed}
+                />
+            </div>
         </aside>
     )
 })

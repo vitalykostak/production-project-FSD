@@ -1,18 +1,18 @@
 .MainLayout {
   display: grid;
   grid-template-areas: 'sidebar content rightBar';
-  grid-template-columns: 284px 1fr;
+  grid-template-columns: auto 1fr auto;
   position: relative;
 }
 
 .sidebar {
   grid-area: sidebar;
-  justify-self: center;
   padding: 32px;
 }
 
 .content {
   grid-area: content;
+  width: 100%;
   max-width: 1200px;
   justify-self: center;
 }

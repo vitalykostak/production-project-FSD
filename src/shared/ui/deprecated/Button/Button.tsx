@@ -12,6 +12,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     max?: boolean
 }
 
+/**
+ * @deprecated
+ */
 export enum ButtonTheme {
     CLEAR = 'clear',
     CLEAR_INVERTED = 'clearInverted',
@@ -22,6 +25,9 @@ export enum ButtonTheme {
     BACKGROUND_INVERTED = 'backgroundInverted',
 }
 
+/**
+ * @deprecated
+ */
 export enum ButtonSize {
     M = 'size_m',
     L = 'size_l',

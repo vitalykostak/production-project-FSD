@@ -6,7 +6,7 @@ import Code from './Code'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-    title: 'shared/Code',
+    title: 'shared/deprecated/Code',
     component: Code,
     tags: ['autodocs'],
 } satisfies Meta<typeof Code>

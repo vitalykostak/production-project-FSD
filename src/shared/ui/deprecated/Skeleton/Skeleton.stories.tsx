@@ -6,7 +6,7 @@ import Skeleton, { type SkeletonProps } from './Skeleton'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-    title: 'shared/Skeleton',
+    title: 'shared/deprecated/Skeleton',
     component: Skeleton,
     tags: ['autodocs'],
 } satisfies Meta<typeof Skeleton>

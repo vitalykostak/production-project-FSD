@@ -3,7 +3,7 @@ import Overlay from './Overlay'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-    title: 'shared/Overlay',
+    title: 'shared/deprecated/Overlay',
     component: Overlay,
     tags: ['autodocs'],
 } satisfies Meta<typeof Overlay>
