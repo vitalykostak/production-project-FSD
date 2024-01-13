@@ -3,7 +3,7 @@ import { memo } from 'react'
 import AppSvg from '@/shared/assets/icons/app-image.svg'
 import { classNames } from '@/shared/lib/classNames/classNames'
 
-import HStack from '../../deprecated/Stack/HStack/HStack'
+import HStack from '../Stack/HStack/HStack'
 
 import styles from './AppLogo.module.scss'
 

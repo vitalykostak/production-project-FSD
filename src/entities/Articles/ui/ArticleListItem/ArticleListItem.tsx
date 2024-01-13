@@ -2,10 +2,11 @@ import { memo, type FC, type HTMLAttributeAnchorTarget } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { AppLink, Avatar, Button, Card, Icon, Text } from '@/shared/ui/deprecated'
+import { AppLink, Button, Card, Icon, Text } from '@/shared/ui/deprecated'
 import EyeIcon from '@/shared/assets/icons/eye-icon.svg'
 import { ButtonTheme } from '@/shared/ui/deprecated/Button/Button'
 import { getArticleDetailsRoute } from '@/shared/consts/router'
+import { Avatar } from '@/shared/ui/redesigned'
 
 import { type Article, type ArticleTextBlock } from '../../model/types/articles'
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent'

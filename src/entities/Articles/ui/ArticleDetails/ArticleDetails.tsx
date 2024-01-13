@@ -4,17 +4,10 @@ import { useTranslation } from 'react-i18next'
 import { useAppDispatch } from '@/shared/lib/hooks'
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import {
-    TextTheme,
-    Text,
-    TextAlign,
-    Skeleton,
-    Avatar,
-    TextSize,
-    Icon,
-} from '@/shared/ui/deprecated'
+import { TextTheme, Text, TextAlign, Skeleton, TextSize, Icon } from '@/shared/ui/deprecated'
 import EyeIcon from '@/shared/assets/icons/eye-icon.svg'
 import CalendarIcon from '@/shared/assets/icons/calendar.svg'
+import { Avatar } from '@/shared/ui/redesigned'
 
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'

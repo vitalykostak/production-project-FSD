@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { ArticleList } from '@/entities/Articles'
-import { Text, TextSize, VStack } from '@/shared/ui/deprecated'
+import { Text, TextSize } from '@/shared/ui/deprecated'
+import { VStack } from '@/shared/ui/redesigned'
 
 import { useGetArticleRecommendationListQuery } from '../../api/articleRecommendationsApi/articleRecommendationsApi'
 

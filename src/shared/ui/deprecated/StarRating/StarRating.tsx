@@ -3,7 +3,7 @@ import { memo, type FC, useCallback, useState, useEffect } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import StarIcon from '@/shared/assets/icons/star.svg'
 
-import HStack from '../Stack/HStack/HStack'
+import HStack from '../../redesigned/Stack/HStack/HStack'
 
 import styles from './StarRating.module.scss'
 

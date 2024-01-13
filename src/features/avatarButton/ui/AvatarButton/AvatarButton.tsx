@@ -3,9 +3,10 @@ import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Avatar, Dropdown } from '@/shared/ui/deprecated'
+import { Dropdown } from '@/shared/ui/deprecated'
 import { getUserAuthData, isUserAdmin, isUserManager, useUserActions } from '@/entities/User'
 import { getAdminPanelRoute, getProfileRoute } from '@/shared/consts/router'
+import { Avatar } from '@/shared/ui/redesigned'
 
 interface AvatarButtonProps {
     className?: string

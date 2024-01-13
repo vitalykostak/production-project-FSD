@@ -6,7 +6,7 @@ import { type DirectionType } from '@/shared/types'
 
 import popupStyles from '../../styles/Popup.module.scss'
 import Button, { ButtonTheme } from '../../../Button/Button'
-import HStack from '../../../Stack/HStack/HStack'
+import HStack from '../../../../redesigned/Stack/HStack/HStack'
 
 import styles from './ListBox.module.scss'
 

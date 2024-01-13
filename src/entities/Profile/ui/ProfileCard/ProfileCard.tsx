@@ -1,19 +1,11 @@
 import { memo, type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import {
-    EllipsesLoader,
-    Input,
-    Text,
-    TextAlign,
-    TextTheme,
-    Avatar,
-    VStack,
-    HStack,
-} from '@/shared/ui/deprecated'
+import { EllipsesLoader, Input, Text, TextAlign, TextTheme } from '@/shared/ui/deprecated'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { type CURRENCY, CurrencySelect } from '@/entities/Currency'
 import { CountrySelect, type COUNTRY } from '@/entities/Country'
+import { Avatar, HStack, VStack } from '@/shared/ui/redesigned'
 
 import { type Profile } from '../../model/types/profile'
 

@@ -2,11 +2,11 @@ import { type FC, useState, memo } from 'react'
 import { useSelector } from 'react-redux'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Button, ButtonTheme, VStack } from '@/shared/ui/deprecated'
+import { Button, ButtonTheme } from '@/shared/ui/deprecated'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { LanguageSwitcher } from '@/features/LanguageSwitcher'
 import { ToggleFeature } from '@/shared/lib/featureFlags'
-import { AppLogo, Icon } from '@/shared/ui/redesigned'
+import { AppLogo, Icon, VStack } from '@/shared/ui/redesigned'
 import { ButtonSize } from '@/shared/ui/deprecated/Button/Button'
 import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg'
 

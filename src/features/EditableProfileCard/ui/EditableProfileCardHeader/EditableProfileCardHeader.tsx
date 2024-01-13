@@ -3,10 +3,11 @@ import { memo, type FC, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
-import { Button, ButtonTheme, HStack, Text } from '@/shared/ui/deprecated'
+import { Button, ButtonTheme, Text } from '@/shared/ui/deprecated'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks'
 import { getUserAuthData } from '@/entities/User'
+import { HStack } from '@/shared/ui/redesigned'
 
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly'
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'

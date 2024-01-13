@@ -7,14 +7,13 @@ import {
     Modal,
     StarRating,
     Text,
-    VStack,
-    HStack,
     Button,
     Input,
     Card,
     ButtonTheme,
     Drawer,
 } from '@/shared/ui/deprecated'
+import { HStack, VStack } from '@/shared/ui/redesigned'
 
 import styles from './Rating.module.scss'
 

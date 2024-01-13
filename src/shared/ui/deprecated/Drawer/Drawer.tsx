@@ -3,8 +3,8 @@ import { type ReactNode, type FC, useEffect, useCallback } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTheme } from '@/shared/lib/hooks'
 
-import Portal from '../Portal/Portal'
-import Overlay from '../Overlay/Overlay'
+import Portal from '../../redesigned/Portal/Portal'
+import Overlay from '../../redesigned/Overlay/Overlay'
 import { AnimationProvider, useAnimationContext } from '../../../lib/components/AnimationProvider'
 
 import styles from './Drawer.module.scss'

@@ -1,9 +1,10 @@
 import { memo, type FC } from 'react'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { AppLink, Avatar, Skeleton, Text } from '@/shared/ui/deprecated'
+import { AppLink, Skeleton, Text } from '@/shared/ui/deprecated'
 import { getProfileRoute } from '@/shared/consts/router'
 import { type TestProps } from '@/shared/types'
+import { Avatar } from '@/shared/ui/redesigned'
 
 import { type Comment } from '../../model/types/comment'
 
