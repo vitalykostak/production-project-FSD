@@ -1,0 +1,19 @@
+.options {
+  z-index: 10000;
+  position: absolute;
+  background-color: var(--dark-bg-redesigned);
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
+}
+
+.item {
+  padding: 10px 20px;
+}
+
+.activeItem {
+  background-color: var(--inverted-primary-color);
+}
+
+.disabledItem{
+  opacity: 0.5;
+}

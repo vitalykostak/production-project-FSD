@@ -1,0 +1,20 @@
+.trigger {
+  border: none;
+  outline: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  padding-block: 0;
+  padding-inline: 0;
+  cursor: pointer;
+}
+
+.panel {
+  z-index: 10000;
+  position: absolute;
+  background-color: var(--dark-bg-redesigned);
+  border-radius: 12px;
+  border:1px solid var(--accent-redesigned);
+  box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
+}

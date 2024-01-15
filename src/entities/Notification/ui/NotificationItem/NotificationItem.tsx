@@ -1,8 +1,14 @@
 import { memo, type FC } from 'react'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { AppLink, Card, Text } from '@/shared/ui/deprecated'
+import {
+    AppLink as AppLinkDeprecated,
+    Card as CardDeprecated,
+    Text as TextDeprecated,
+} from '@/shared/ui/deprecated'
 import { CardTheme } from '@/shared/ui/deprecated/Card/Card'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
+import { AppLink, Card, Text } from '@/shared/ui/redesigned'
 
 import { type Notification } from '../../types/notification'
 
@@ -21,19 +27,52 @@ const NotificationItem: FC<NotificationItemProps> = memo(props => {
     const additionsClasses = [className]
 
     const content = (
-        <Card
-            theme={CardTheme.OUTLINE}
-            className={classNames(styles.NotificationItem, mods, additionsClasses)}
-        >
-            <Text title={item.title} text={item.description} />
-        </Card>
+        <ToggleFeature
+            featureFlag="isAppRedesigned"
+            onDisabled={
+                <CardDeprecated
+                    theme={CardTheme.OUTLINE}
+                    className={classNames(styles.NotificationItem, mods, additionsClasses)}
+                >
+                    <TextDeprecated title={item.title} text={item.description} />
+                </CardDeprecated>
+            }
+            onEnabled={
+                <Card
+                    variant="outline"
+                    className={classNames(styles.NotificationItem, mods, additionsClasses)}
+                >
+                    <Text title={item.title} text={item.description} />
+                </Card>
+            }
+        />
     )
 
     if (item.href) {
         return (
-            <AppLink to={item.href} target="_blank" rel="noreferrer" className={styles.link}>
-                {content}
-            </AppLink>
+            <ToggleFeature
+                featureFlag="isAppRedesigned"
+                onDisabled={
+                    <AppLinkDeprecated
+                        to={item.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={styles.link}
+                    >
+                        {content}
+                    </AppLinkDeprecated>
+                }
+                onEnabled={
+                    <AppLink
+                        to={item.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={styles.link}
+                    >
+                        {content}
+                    </AppLink>
+                }
+            />
         )
     }
 

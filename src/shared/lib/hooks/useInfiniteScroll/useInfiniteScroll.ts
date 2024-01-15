@@ -1,5 +1,7 @@
 import { useEffect, type MutableRefObject } from 'react'
 
+import { toggleFeature } from '../../featureFlags'
+
 interface UseInfiniteScrollProps {
     containerRef: MutableRefObject<HTMLElement>
     triggerRef: MutableRefObject<HTMLElement>
@@ -18,7 +20,11 @@ export const useInfiniteScroll = (props: UseInfiniteScrollProps) => {
         const triggerElement = triggerRef.current
 
         const intersectionOptions = {
-            root: containerElement,
+            root: toggleFeature({
+                featureFlag: 'isAppRedesigned',
+                onDisabled: () => containerElement,
+                onEnabled: () => undefined,
+            }),
             rootMargin: '0px',
             threshold: 1.0,
         }

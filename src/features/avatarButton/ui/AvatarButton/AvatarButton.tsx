@@ -3,10 +3,11 @@ import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Dropdown } from '@/shared/ui/deprecated'
+import { Dropdown as DropdownDeprecated, Avatar as AvatarDeprecated } from '@/shared/ui/deprecated'
 import { getUserAuthData, isUserAdmin, isUserManager, useUserActions } from '@/entities/User'
 import { getAdminPanelRoute, getProfileRoute } from '@/shared/consts/router'
-import { Avatar } from '@/shared/ui/redesigned'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
+import { Avatar, Dropdown } from '@/shared/ui/redesigned'
 
 interface AvatarButtonProps {
     className?: string
@@ -37,32 +38,47 @@ const AvatarButton: FC<AvatarButtonProps> = memo(props => {
         return null
     }
 
+    const items = [
+        ...(isAdminPanelAvailable
+            ? [
+                  {
+                      content: 'Admin panel',
+                      href: getAdminPanelRoute(),
+                  },
+              ]
+            : []),
+        {
+            content: t('profile:profile'),
+            href: getProfileRoute(userAuthData.id),
+        },
+        { content: t('translation:sign_out'), onClick: onLogout },
+    ]
+
     return (
-        <Dropdown
-            className={classNames('', mods, additionsClasses)}
-            direction="bottomLeft"
-            trigger={
-                <Avatar
-                    src={userAuthData.avatar}
-                    size={30}
-                    invertedErrorFallbackColor={invertedAvatarErrorFallbackColor}
+        <ToggleFeature
+            featureFlag="isAppRedesigned"
+            onDisabled={
+                <DropdownDeprecated
+                    className={classNames('', mods, additionsClasses)}
+                    direction="bottomLeft"
+                    trigger={
+                        <AvatarDeprecated
+                            src={userAuthData.avatar}
+                            size={30}
+                            invertedErrorFallbackColor={invertedAvatarErrorFallbackColor}
+                        />
+                    }
+                    items={items}
                 />
             }
-            items={[
-                ...(isAdminPanelAvailable
-                    ? [
-                          {
-                              content: 'Admin panel',
-                              href: getAdminPanelRoute(),
-                          },
-                      ]
-                    : []),
-                {
-                    content: t('profile:profile'),
-                    href: getProfileRoute(userAuthData.id),
-                },
-                { content: t('translation:sign_out'), onClick: onLogout },
-            ]}
+            onEnabled={
+                <Dropdown
+                    className={classNames('', mods, additionsClasses)}
+                    direction="bottomLeft"
+                    trigger={<Avatar src={userAuthData.avatar} size={40} />}
+                    items={items}
+                />
+            }
         />
     )
 })
