@@ -1,8 +1,8 @@
-import { memo, type ButtonHTMLAttributes, type FC } from 'react'
+import { memo, type ButtonHTMLAttributes, type FC, type ReactNode } from 'react'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 
-import buttonStyle from './Button.module.scss'
+import buttonStyles from './Button.module.scss'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
@@ -10,9 +10,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: ButtonSize
     square?: boolean
     max?: boolean
+    addonLeft?: ReactNode
+    addonRight?: ReactNode
 }
 
-type ButtonVariant = 'clear' | 'primary' | 'outline'
+type ButtonVariant = 'clear' | 'primary' | 'outline' | 'filled'
 
 type ButtonSize = 'm' | 'l' | 'xl'
 
@@ -25,24 +27,28 @@ const Button: FC<ButtonProps> = memo(props => {
         square = false,
         disabled,
         max,
+        addonLeft,
+        addonRight,
         ...otherButtonProps
     } = props
 
     const mods = {
-        [buttonStyle.square]: square,
-        [buttonStyle.disabled]: disabled,
-        [buttonStyle.max]: max,
+        [buttonStyles.square]: square,
+        [buttonStyles.disabled]: disabled,
+        [buttonStyles.max]: max,
     }
 
-    const additionsClasses = [className, buttonStyle[variant], buttonStyle[size]]
+    const additionsClasses = [className, buttonStyles[variant], buttonStyles[size]]
 
     return (
         <button
             disabled={disabled}
-            className={classNames(buttonStyle.Button, mods, additionsClasses)}
+            className={classNames(buttonStyles.Button, mods, additionsClasses)}
             {...otherButtonProps}
         >
+            {addonLeft && <div className={buttonStyles.addonLeft}>{addonLeft}</div>}
             {children}
+            {addonRight && <div className={buttonStyles.addonRight}>{addonRight}</div>}
         </button>
     )
 })

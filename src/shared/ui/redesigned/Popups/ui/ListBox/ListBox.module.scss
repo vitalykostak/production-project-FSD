@@ -4,14 +4,20 @@
   background-color: var(--dark-bg-redesigned);
   border-radius: 12px;
   box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
+  border:1px solid var(--accent-redesigned);
+  overflow: hidden;
 }
 
 .item {
   padding: 10px 20px;
 }
 
-.activeItem {
-  background-color: var(--inverted-primary-color);
+.selected {
+  background-color: var(--light-bg-redesigned);
+}
+
+.activeItem,.selected {
+  cursor: pointer;
 }
 
 .disabledItem{

@@ -17,7 +17,7 @@ export interface FlexProps extends HTMLAttributes<HTMLDivElement>, TestProps {
 
 type FlexJustify = 'start' | 'end' | 'center' | 'between'
 type FlexAlign = 'start' | 'end' | 'center'
-type FlexDirection = 'row' | 'column'
+export type FlexDirection = 'row' | 'column'
 type Gap = '4' | '8' | '12' | '16'
 
 const justifyClassesMapping: Record<FlexJustify, string> = {

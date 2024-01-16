@@ -1,5 +1,7 @@
 .Button {
-  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  padding: 6px 15px;
   outline: none;
   border: none;
   cursor: pointer;
@@ -10,7 +12,6 @@
   }
 }
 
-
 .clear {
   padding: 0;
   margin: 0;
@@ -20,6 +21,11 @@
 
 .square {
   padding: 0;
+}
+
+.filled{
+  background: var(--light-bg-redesigned);
+  border-radius: 34px;
 }
 
 .square.m {
@@ -59,3 +65,13 @@
 .max{
   width: 100%;
 }
+
+.addonLeft, .addonRight {
+  display: flex;
+
+  svg {
+    fill:var(--hint-redesigned)
+  }
+}
+
+

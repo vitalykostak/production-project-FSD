@@ -10,11 +10,13 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
     variant?: CardTheme
     max?: boolean
     cardPadding?: CardPadding
+    cardBorder?: CardBorder
 }
 
-type CardTheme = 'normal' | 'outline'
+type CardTheme = 'normal' | 'outline' | 'light'
 
 type CardPadding = '0' | '8' | '16' | '24'
+type CardBorder = 'borderNormal' | 'borderRound'
 
 const cardPaddingClassMapper: Record<CardPadding, string> = {
     0: styles.padding0,
@@ -30,15 +32,21 @@ const Card: FC<CardProps> = props => {
         max,
         variant = 'normal',
         cardPadding = '8',
+        cardBorder = 'borderNormal',
         ...otherDivProps
     } = props
 
     const mods = { [styles.max]: max }
 
-    const additionsClasses = [className, styles[variant], cardPaddingClassMapper[cardPadding]]
+    const additionsClasses = [
+        className,
+        styles[variant],
+        cardPaddingClassMapper[cardPadding],
+        styles[cardBorder],
+    ]
 
     return (
-        <div className={classNames(styles.Card, mods, additionsClasses)} {...otherDivProps}>
+        <div className={classNames('', mods, additionsClasses)} {...otherDivProps}>
             {children}
         </div>
     )

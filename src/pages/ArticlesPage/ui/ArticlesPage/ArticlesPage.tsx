@@ -7,12 +7,16 @@ import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
 import { Page } from '@/widgets/Page'
 import { ArticlesPageFirstVisitGreetingModal } from '@/features/articlesPageFirstVisitGreeting'
 import { VStack } from '@/shared/ui/redesigned'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
+import { StickyLayout } from '@/shared/layouts'
 
 import { articlesPageReducer } from '../../model/slices/articlesSlice/articlesPageSlice'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 import ArticlesPageFilters from '../ArticlesPageFilters/ArticlesPageFilters'
 import ArticleInfiniteList from '../ArticleInfiniteList/ArticleInfiniteList'
+import ArticlesViewContainer from '../ArticlesViewContainer/ArticlesViewContainer'
+import ArticlesFilterContainer from '../ArticlesFilterContainer/ArticlesFilterContainer'
 
 interface ArticlesPageProps {
     className?: string
@@ -43,20 +47,48 @@ const ArticlesPage: FC<ArticlesPageProps> = memo(props => {
         void dispatch(initArticlesPage(searchParams))
     })
 
+    const content = (
+        <ToggleFeature
+            featureFlag="isAppRedesigned"
+            onDisabled={
+                <Page
+                    shouldSaveScrollPosition
+                    onScrollEnd={onLoadNextPart}
+                    className={classNames('', mods, additionsClasses)}
+                    data-testid="ArticlesPage"
+                >
+                    <VStack gap="16">
+                        <ArticlesPageFilters />
+                        <ArticleInfiniteList />
+                    </VStack>
+                    <ArticlesPageFirstVisitGreetingModal />
+                </Page>
+            }
+            onEnabled={
+                <StickyLayout
+                    left={<ArticlesViewContainer />}
+                    content={
+                        <Page
+                            shouldSaveScrollPosition
+                            onScrollEnd={onLoadNextPart}
+                            className={classNames('', mods, additionsClasses)}
+                            data-testid="ArticlesPage"
+                        >
+                            <VStack gap="16">
+                                <ArticleInfiniteList />
+                            </VStack>
+                            <ArticlesPageFirstVisitGreetingModal />
+                        </Page>
+                    }
+                    right={<ArticlesFilterContainer />}
+                />
+            }
+        />
+    )
+
     return (
         <DynamicModuleLoader reducers={reducers} shouldRemoveOnUnmout={false}>
-            <Page
-                shouldSaveScrollPosition
-                onScrollEnd={onLoadNextPart}
-                className={classNames('', mods, additionsClasses)}
-                data-testid="ArticlesPage"
-            >
-                <VStack gap="16">
-                    <ArticlesPageFilters />
-                    <ArticleInfiniteList />
-                </VStack>
-                <ArticlesPageFirstVisitGreetingModal />
-            </Page>
+            {content}
         </DynamicModuleLoader>
     )
 })

@@ -1,7 +1,3 @@
-.Card {
-  border-radius: 12px;
-}
-
 .normal {
   background-color: var(--dark-bg-redesigned);
 }
@@ -9,6 +5,11 @@
 .outline {
   border: 1px solid var(--accent-redesigned);
 }
+
+.light {
+  background: var(--light-bg-redesigned);
+}
+
 
 .max {
   width: 100%;
@@ -28,4 +29,12 @@
 
 .padding24 {
   padding: 24px;
+}
+
+.borderNormal {
+  border-radius: 12px;
+}
+
+.borderRound{
+  border-radius: 40px;
 }

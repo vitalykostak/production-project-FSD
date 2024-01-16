@@ -1,12 +1,12 @@
-import { Fragment } from 'react'
+import { Fragment, useMemo } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { type DirectionType } from '@/shared/types'
 
-import { Button, ButtonTheme } from '../../../../deprecated'
 import popupStyles from '../../styles/Popup.module.scss'
 import HStack from '../../../../redesigned/Stack/HStack/HStack'
+import Button from '../../../Button/Button'
 
 import styles from './ListBox.module.scss'
 
@@ -40,7 +40,8 @@ const ListBox = <T extends string>(props: ListBoxProps<T>) => {
     } = props
 
     const inferredValue = value ?? defaultValue
-    const inferredContent = items?.find(i => i.value === value)?.content || defaultValue
+    const inferredContent =
+        useMemo(() => items?.find(i => i.value === value)?.content, [items, value]) || defaultValue
 
     const additionsClasses = [className]
 
@@ -63,11 +64,14 @@ const ListBox = <T extends string>(props: ListBoxProps<T>) => {
                 disabled={readonly}
             >
                 <HListBox.Button as={'div'}>
-                    <Button theme={ButtonTheme.OUTLINE} disabled={readonly}>
+                    <Button
+                        variant="filled"
+                        disabled={readonly}
+                        // addonRight={<Icon Svg={ArrowIcon} width={26} height={26} />}
+                    >
                         {inferredContent}
                     </Button>
                 </HListBox.Button>
-
                 <HListBox.Options
                     className={classNames(styles.options, {}, [popupStyles[direction]])}
                 >
@@ -83,9 +87,10 @@ const ListBox = <T extends string>(props: ListBoxProps<T>) => {
                                     className={classNames(styles.item, {
                                         [styles.activeItem]: active,
                                         [styles.disabledItem]: item.disabled,
+                                        [styles.selected]: selected,
                                     })}
                                 >
-                                    {item.content + `${selected ? '!!!' : ''}`}
+                                    {item.content}
                                 </li>
                             )}
                         </HListBox.Option>

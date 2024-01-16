@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Select, type SelectOption } from '@/shared/ui/deprecated'
 import { type SortOrder } from '@/shared/types'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
+import { ListBox, Text, VStack } from '@/shared/ui/redesigned'
 
 import { ArticlesSortField } from '../../model/consts/articlesSortField'
 
@@ -59,21 +61,41 @@ const ArticleSortSelector: FC<ArticleSortSelectorProps> = memo(props => {
     const additionsClasses = [className]
 
     return (
-        <div className={classNames(styles.ArticleSortSelector, mods, additionsClasses)}>
-            <Select<ArticlesSortField>
-                label={t('translation:sorted_by')}
-                options={sortFieldOptions}
-                value={sort}
-                onChange={onChangeSort}
-            />
-            <Select<SortOrder>
-                label={t('translation:ordered_by')}
-                options={orderOptions}
-                value={order}
-                onChange={onChangeOrder}
-                className={styles.orderSelector}
-            />
-        </div>
+        <ToggleFeature
+            featureFlag="isAppRedesigned"
+            onDisabled={
+                <div className={classNames(styles.ArticleSortSelector, mods, additionsClasses)}>
+                    <Select<ArticlesSortField>
+                        label={t('translation:sorted_by')}
+                        options={sortFieldOptions}
+                        value={sort}
+                        onChange={onChangeSort}
+                    />
+                    <Select<SortOrder>
+                        label={t('translation:ordered_by')}
+                        options={orderOptions}
+                        value={order}
+                        onChange={onChangeOrder}
+                        className={styles.orderSelector}
+                    />
+                </div>
+            }
+            onEnabled={
+                <VStack className={classNames('', mods, additionsClasses)} gap="8">
+                    <Text text={t('translation:sorted_by')} />
+                    <ListBox<ArticlesSortField>
+                        items={sortFieldOptions}
+                        value={sort}
+                        onChange={onChangeSort}
+                    />
+                    <ListBox<SortOrder>
+                        items={orderOptions}
+                        value={order}
+                        onChange={onChangeOrder}
+                    />
+                </VStack>
+            }
+        />
     )
 })
 

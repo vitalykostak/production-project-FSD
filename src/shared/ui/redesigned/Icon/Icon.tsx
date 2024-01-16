@@ -33,11 +33,11 @@ const Icon: FC<IconProps> = memo(props => {
         return (
             <button
                 type="button"
-                className={classNames(styles.button, {}, additionsClasses)}
+                className={classNames(styles.button, {}, [])}
                 onClick={props.onClick}
             >
                 <Svg
-                    className={classNames(styles.Icon, mods, [])}
+                    className={classNames(styles.Icon, mods, additionsClasses)}
                     {...otherSvgProps}
                     onClick={undefined}
                 />
