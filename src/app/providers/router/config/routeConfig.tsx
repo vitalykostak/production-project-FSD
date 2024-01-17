@@ -20,7 +20,9 @@ import {
     getMainRoute,
     getNotFoundRoute,
     getProfileRoute,
+    getSettingsRoute,
 } from '@/shared/consts/router'
+import { SettingsPage } from '@/pages/Settings'
 
 import { type AppRouteProps } from '../types/router'
 
@@ -63,6 +65,11 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
         element: <AdminPanelPage />,
         authOnly: true,
         roles: [UserRole.MANAGER, UserRole.ADMIN],
+    },
+
+    [AppRoutes.SETTINGS]: {
+        path: getSettingsRoute(),
+        element: <SettingsPage />,
     },
 
     // Forbidden

@@ -1,3 +1,4 @@
-export { setFeatureFlags, getFeatureFlag } from './featureFlagsManager'
-export { toggleFeature } from './toggleFeature'
-export { default as ToggleFeature } from './ToggleFeature/ToggleFeature'
+export { setFeatureFlags, getFeatureFlag } from './lib/featureFlagsManager'
+export { toggleFeature } from './lib/toggleFeature'
+export { default as ToggleFeature } from './components/ToggleFeature/ToggleFeature'
+export { updateUserFeatureFlags } from './services/updateUserFeatureFlags/updateUserFeatureFlags'

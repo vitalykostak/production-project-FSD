@@ -1,8 +1,9 @@
 import { memo, type FC } from 'react'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Skeleton } from '@/shared/ui/deprecated'
-import { VStack } from '@/shared/ui/redesigned'
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated'
+import { Skeleton as SkeletonRedesigned, VStack } from '@/shared/ui/redesigned'
+import { toggleFeature } from '@/shared/lib/featureFlags'
 
 import { useGetNotificationListQuery } from '../../api/notificationApi/notificationApi'
 import NotificationItem from '../NotificationItem/NotificationItem'
@@ -29,6 +30,12 @@ const NotificationList: FC<NotificationListProps> = memo(props => {
     const mods = {}
 
     const additionsClasses = [className]
+
+    const Skeleton = toggleFeature({
+        featureFlag: 'isAppRedesigned',
+        onDisabled: () => SkeletonDeprecated,
+        onEnabled: () => SkeletonRedesigned,
+    })
 
     if (isLoading) {
         return (

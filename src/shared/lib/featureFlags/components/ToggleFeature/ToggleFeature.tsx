@@ -2,7 +2,7 @@ import { type FC, type ReactNode } from 'react'
 
 import { type FeatureFlags } from '@/shared/types'
 
-import { getFeatureFlag } from '../featureFlagsManager'
+import { getFeatureFlag } from '../../lib/featureFlagsManager'
 
 interface ToggleFeatureProps {
     featureFlag: keyof FeatureFlags

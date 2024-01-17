@@ -23,7 +23,7 @@ interface ListBoxProps<T extends string> {
     direction?: DirectionType
 }
 
-interface ListBoxItem {
+export interface ListBoxItem {
     value: string
     content: string
     disabled?: boolean

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Dropdown as DropdownDeprecated, Avatar as AvatarDeprecated } from '@/shared/ui/deprecated'
 import { getUserAuthData, isUserAdmin, isUserManager, useUserActions } from '@/entities/User'
-import { getAdminPanelRoute, getProfileRoute } from '@/shared/consts/router'
+import { getAdminPanelRoute, getProfileRoute, getSettingsRoute } from '@/shared/consts/router'
 import { ToggleFeature } from '@/shared/lib/featureFlags'
 import { Avatar, Dropdown } from '@/shared/ui/redesigned'
 
@@ -50,6 +50,10 @@ const AvatarButton: FC<AvatarButtonProps> = memo(props => {
         {
             content: t('profile:profile'),
             href: getProfileRoute(userAuthData.id),
+        },
+        {
+            content: t('translation:settings'),
+            href: getSettingsRoute(),
         },
         { content: t('translation:sign_out'), onClick: onLogout },
     ]

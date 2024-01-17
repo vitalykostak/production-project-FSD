@@ -1,4 +1,8 @@
 {
+    "new": "Новий",
+    "old": "Поточний",
+    "choose_ui_version": "Виберіть версію UI",
+    "settings": "Налаштування",
     "language": "Українська",
     "app_name": "UlbiTvApp",
     "language_contracted": "UA",

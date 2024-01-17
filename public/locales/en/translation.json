@@ -1,4 +1,8 @@
 {
+    "new": "New",
+    "old": "Old",
+    "choose_ui_version": "Chose UI version",
+    "settings": "Settings",
     "language": "English",
     "app_name": "UlbiTvApp",
     "language_contracted": "EN",
