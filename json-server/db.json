@@ -1152,7 +1152,8 @@
             "avatar": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.YiaRzLjKeita5FGhjVu5ZQHaHa%26pid%3DApi&f=1&ipt=94b07cb95209f68ee67c1876517815ad54c69e96abdddd78766316ff4cccdd9d&ipo=images",
             "features": {
                 "isArticleRatingEnabled": true,
-                "isCounterEnabled": true
+                "isCounterEnabled": true,
+                "isAppRedesigned": true
             },
             "jsonSettings": {
                 "0": "{",
@@ -1188,7 +1189,7 @@
                 "30": "e",
                 "31": "\"",
                 "32": "}",
-                "uiTheme": "app_dark_ui_theme",
+                "uiTheme": "app_orange_ui_theme",
                 "hasArticlesPageBeenOpened": true
             }
         },
@@ -1229,7 +1230,7 @@
             "country": "UKRAINE",
             "currency": "USD",
             "city": "NightCity",
-            "username": "admina",
+            "username": "adminaf",
             "avatar": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.YiaRzLjKeita5FGhjVu5ZQHaHa%26pid%3DApi&f=1&ipt=94b07cb95209f68ee67c1876517815ad54c69e96abdddd78766316ff4cccdd9d&ipo=images",
             "id": "1"
         },

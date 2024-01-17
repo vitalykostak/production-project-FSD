@@ -18,7 +18,7 @@ export interface FlexProps extends HTMLAttributes<HTMLDivElement>, TestProps {
 type FlexJustify = 'start' | 'end' | 'center' | 'between'
 type FlexAlign = 'start' | 'end' | 'center'
 export type FlexDirection = 'row' | 'column'
-type Gap = '4' | '8' | '12' | '16'
+type Gap = '4' | '8' | '12' | '16' | '24'
 
 const justifyClassesMapping: Record<FlexJustify, string> = {
     start: styles.justifyStart,
@@ -43,6 +43,7 @@ const gapClassesMapping: Record<Gap, string> = {
     8: styles.gap8,
     12: styles.gap12,
     16: styles.gap16,
+    24: styles.gap24,
 }
 
 const Flex: FC<FlexProps> = props => {

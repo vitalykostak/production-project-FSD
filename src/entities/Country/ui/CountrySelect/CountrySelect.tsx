@@ -2,7 +2,9 @@ import { memo, type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { ListBox, type SelectOption } from '@/shared/ui/deprecated'
+import { ListBox as ListBoxDeprecated, type SelectOption } from '@/shared/ui/deprecated'
+import { ListBox } from '@/shared/ui/redesigned'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
 
 import { COUNTRY } from '../../model/consts/country'
 
@@ -27,15 +29,21 @@ const CountrySelect: FC<CountrySelectProps> = memo(props => {
 
     const additionsClasses = [className]
 
+    const listProps = {
+        label: t('choose_country'),
+        value,
+        onChange,
+        items: options,
+        className: classNames('', mods, additionsClasses),
+        readonly,
+        direction: 'topRight' as const,
+    }
+
     return (
-        <ListBox<COUNTRY>
-            label={t('choose_country')}
-            value={value}
-            onChange={onChange}
-            items={options}
-            className={classNames('', mods, additionsClasses)}
-            readonly={readonly}
-            direction="topRight"
+        <ToggleFeature
+            featureFlag="isAppRedesigned"
+            onDisabled={<ListBoxDeprecated<COUNTRY> {...listProps} />}
+            onEnabled={<ListBox<COUNTRY> {...listProps} />}
         />
     )
 })

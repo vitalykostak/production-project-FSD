@@ -3,10 +3,12 @@ import { Listbox as HListBox } from '@headlessui/react'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { type DirectionType } from '@/shared/types'
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg'
 
 import popupStyles from '../../styles/Popup.module.scss'
 import HStack from '../../../../redesigned/Stack/HStack/HStack'
 import Button from '../../../Button/Button'
+import Icon from '../../../Icon/Icon'
 
 import styles from './ListBox.module.scss'
 
@@ -67,7 +69,7 @@ const ListBox = <T extends string>(props: ListBoxProps<T>) => {
                     <Button
                         variant="filled"
                         disabled={readonly}
-                        // addonRight={<Icon Svg={ArrowIcon} width={26} height={26} />}
+                        addonRight={<Icon Svg={ArrowIcon} width={26} height={26} />}
                     >
                         {inferredContent}
                     </Button>

@@ -11,6 +11,9 @@ import {
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 
+import HStack from '../Stack/HStack/HStack'
+import Text from '../Text/Text'
+
 import inputStyles from './Input.module.scss'
 
 type HtmlInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readonly'>
@@ -18,6 +21,7 @@ type HtmlInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onC
 interface InputProps extends HtmlInputProps {
     className?: string
     value?: string
+    label?: string
     onChange?: (value: string) => void
     readonly?: boolean
     addonLeft?: ReactNode
@@ -35,6 +39,7 @@ const Input: FC<InputProps> = memo(props => {
         readonly,
         addonLeft,
         addonRight,
+        label,
         ...otherInputProps
     } = props
 
@@ -64,7 +69,7 @@ const Input: FC<InputProps> = memo(props => {
 
     const additionsClasses = [className]
 
-    return (
+    const input = (
         <div className={classNames(inputStyles.InputWrapper, {}, additionsClasses)}>
             {addonLeft && <div className={inputStyles.addonLeft}>{addonLeft}</div>}
             <input
@@ -83,6 +88,17 @@ const Input: FC<InputProps> = memo(props => {
             {addonRight && <div className={inputStyles.addonRight}>{addonRight}</div>}
         </div>
     )
+
+    if (label) {
+        return (
+            <HStack gap="12" align="center">
+                <Text text={label} />
+                {input}
+            </HStack>
+        )
+    }
+
+    return input
 })
 
 export default Input

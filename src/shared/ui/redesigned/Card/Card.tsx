@@ -7,13 +7,13 @@ import styles from './Card.module.scss'
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string
     children?: ReactNode
-    variant?: CardTheme
+    variant?: CardVariant
     max?: boolean
     cardPadding?: CardPadding
     cardBorder?: CardBorder
 }
 
-type CardTheme = 'normal' | 'outline' | 'light'
+type CardVariant = 'normal' | 'outline' | 'light'
 
 type CardPadding = '0' | '8' | '16' | '24'
 type CardBorder = 'borderNormal' | 'borderRound'

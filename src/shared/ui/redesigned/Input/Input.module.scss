@@ -33,7 +33,7 @@
   padding-right: 8px;
 }
 
-.InputWrapper:has(.input:focus)  {
+.InputWrapper:has(.input:focus:not(:read-only, :disabled)) {
   border: 1px solid var(--accent-redesigned);
 
   svg {

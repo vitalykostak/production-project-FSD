@@ -6,65 +6,65 @@ import { COUNTRY } from '@/entities/Country/testing'
 
 import { type Profile } from '../../model/types/profile'
 
-import ProfileCard from './ProfileCard'
+import ProfileCardRedesigned from './ProfileCard'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'entities/Profile/ProfileCard',
-  component: ProfileCard,
-  tags: ['autodocs']
-} satisfies Meta<typeof ProfileCard>
+    title: 'entities/Profile/ProfileCard',
+    component: ProfileCardRedesigned,
+    tags: ['autodocs'],
+} satisfies Meta<typeof ProfileCardRedesigned>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 const profile: Profile = {
-  username: 'Username',
-  age: 30,
-  avatar: AvatarTestImg,
-  lastName: 'Last name',
-  first: 'Firs name',
-  currency: CURRENCY.EUR,
-  country: COUNTRY.USA,
-  city: 'Night City'
+    username: 'Username',
+    age: 30,
+    avatar: AvatarTestImg,
+    lastName: 'Last name',
+    first: 'Firs name',
+    currency: CURRENCY.EUR,
+    country: COUNTRY.USA,
+    city: 'Night City',
 }
 
 export const Primary: Story = {
-  args: {
-    data: profile
-  }
+    args: {
+        data: profile,
+    },
 }
 
 export const Dark: Story = {
-  args: {
-    data: profile
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
+    args: {
+        data: profile,
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
 }
 
 export const Error: Story = {
-  args: {
-    error: 'string'
-  }
+    args: {
+        error: 'string',
+    },
 }
 
 export const ErrorDark: Story = {
-  args: {
-    error: 'string'
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
+    args: {
+        error: 'string',
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
 }
 
 export const Loading: Story = {
-  args: {
-    isLoading: true
-  }
+    args: {
+        isLoading: true,
+    },
 }
 
 export const LoadingDark: Story = {
-  args: {
-    isLoading: true
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
+    args: {
+        isLoading: true,
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
 }

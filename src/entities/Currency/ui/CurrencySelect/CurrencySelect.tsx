@@ -2,7 +2,9 @@ import { memo, type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { ListBox, type SelectOption } from '@/shared/ui/deprecated'
+import { ListBox as ListBoxDeprecated, type SelectOption } from '@/shared/ui/deprecated'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
+import { ListBox } from '@/shared/ui/redesigned'
 
 import { CURRENCY } from '../../model/consts/currency'
 
@@ -27,15 +29,21 @@ const CurrencySelect: FC<CurrencySelectProps> = memo(props => {
 
     const additionsClasses = [className]
 
+    const listProps = {
+        items: options,
+        value,
+        onChange,
+        readonly,
+        label: t('choose_currency'),
+        className: classNames('', mods, additionsClasses),
+        direction: 'topRight' as const,
+    }
+
     return (
-        <ListBox<CURRENCY>
-            items={options}
-            value={value}
-            onChange={onChange}
-            readonly={readonly}
-            label={t('choose_currency')}
-            className={classNames('', mods, additionsClasses)}
-            direction="topRight"
+        <ToggleFeature
+            featureFlag="isAppRedesigned"
+            onDisabled={<ListBoxDeprecated<CURRENCY> {...listProps} />}
+            onEnabled={<ListBox<CURRENCY> {...listProps} />}
         />
     )
 })
