@@ -35,7 +35,6 @@ const ArticleListItemRedesigned: FC<ArticleListItemProps> = memo(props => {
 
     const { t } = useTranslation('translation')
 
-    const types = <Text text={article.type.join(', ')} className={styles.types} />
     const views = (
         <HStack gap="8">
             <Icon Svg={EyeIcon} className={styles.viewsIcon} />
@@ -98,16 +97,25 @@ const ArticleListItemRedesigned: FC<ArticleListItemProps> = memo(props => {
                 target={target}
                 className={styles.appLink}
             >
-                <Card>
-                    <div className={styles.imageWrapper}>
-                        <img src={article.img} alt={article.title} className={styles.img} />
-                        <Text text={article.createdAt} className={styles.articleDate} />
-                    </div>
-                    <div className={styles.infoWrapper}>
-                        {types}
-                        {views}
-                    </div>
-                    <Text text={article.title} className={styles.title} />
+                <Card cardBorder="borderRound" className={styles.card}>
+                    <VStack gap="8" max>
+                        <AppImage src={article.img} alt={article.title} className={styles.img} />
+                        <VStack className={styles.footer} gap="8" max>
+                            <Text title={article.title} className={styles.title} />
+                            <HStack justify="between" align="center" max>
+                                <Text
+                                    text={new Date(article.createdAt).toLocaleDateString()}
+                                    className={styles.articleDate}
+                                />
+                                {views}
+                            </HStack>
+                            <Avatar
+                                size={32}
+                                src={article?.user?.avatar}
+                                className={styles.avatar}
+                            />
+                        </VStack>
+                    </VStack>
                 </Card>
             </AppLink>
         </div>
