@@ -1,7 +1,9 @@
 import { memo, type FC } from 'react'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Card, Skeleton } from '@/shared/ui/deprecated'
+import { Card as CardDeprecated, Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated'
+import { Skeleton as SkeletonRedesigned, Card as CardRedesigned } from '@/shared/ui/redesigned'
+import { toggleFeature } from '@/shared/lib/featureFlags'
 
 import { ArticleListView } from '../../model/consts/consts'
 
@@ -14,6 +16,17 @@ interface ArticleListItemSkeletonProps {
 
 const ArticleListItemSkeleton: FC<ArticleListItemSkeletonProps> = memo(props => {
     const { className, view = ArticleListView.SMALL } = props
+
+    const Skeleton = toggleFeature({
+        featureFlag: 'isAppRedesigned',
+        onDisabled: () => SkeletonDeprecated,
+        onEnabled: () => SkeletonRedesigned,
+    })
+    const Card = toggleFeature({
+        featureFlag: 'isAppRedesigned',
+        onDisabled: () => CardDeprecated,
+        onEnabled: () => CardRedesigned,
+    })
 
     const mods = {}
 

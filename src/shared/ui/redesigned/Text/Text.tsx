@@ -13,6 +13,7 @@ interface TextProps extends TestProps {
     variant?: TextVariant
     align?: TextAlign
     size?: TextSize
+    bold?: boolean
 }
 
 type TextVariant = 'primary' | 'error' | 'accent'
@@ -43,10 +44,15 @@ const Text: FC<TextProps> = memo(props => {
         variant = 'primary',
         align = 'left',
         size = 'm',
+        bold,
         'data-testid': dataTestId = 'Text',
     } = props
 
     const HeaderTag = headerSizeMapping[size]
+
+    const mods = {
+        [textStyles.bold]: bold,
+    }
 
     const additionsClasses = [
         className,
@@ -56,7 +62,7 @@ const Text: FC<TextProps> = memo(props => {
     ]
 
     return (
-        <div className={classNames(textStyles.Text, {}, additionsClasses)}>
+        <div className={classNames(textStyles.Text, mods, additionsClasses)}>
             {title && (
                 <HeaderTag className={textStyles.title} data-testid={`${dataTestId}.Title`}>
                     {title}
