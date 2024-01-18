@@ -3,17 +3,8 @@ import { useTranslation } from 'react-i18next'
 import { BrowserView, MobileView } from 'react-device-detect'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import {
-    Modal,
-    StarRating,
-    Text,
-    Button,
-    Input,
-    Card,
-    ButtonTheme,
-    Drawer,
-} from '@/shared/ui/deprecated'
-import { HStack, VStack } from '@/shared/ui/redesigned'
+import { StarRating, Text, Button, Input, Card, ButtonTheme } from '@/shared/ui/deprecated'
+import { HStack, VStack, Drawer, Modal } from '@/shared/ui/redesigned'
 
 import styles from './Rating.module.scss'
 

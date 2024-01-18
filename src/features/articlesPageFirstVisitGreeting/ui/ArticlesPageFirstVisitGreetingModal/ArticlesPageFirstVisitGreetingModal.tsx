@@ -1,9 +1,10 @@
 import { memo, type FC, useState, useCallback, useEffect } from 'react'
 import { isMobile } from 'react-device-detect'
 
-import { Drawer, Modal, Text } from '@/shared/ui/deprecated'
+import { Text } from '@/shared/ui/deprecated'
 import { updateUserJsonSetting, useUserJsonSettings } from '@/entities/User'
 import { useAppDispatch } from '@/shared/lib/hooks'
+import { Drawer, Modal } from '@/shared/ui/redesigned'
 
 const ArticlesPageFirstVisitGreetingModal: FC = memo(() => {
     const dispatch = useAppDispatch()

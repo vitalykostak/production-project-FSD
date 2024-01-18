@@ -5,7 +5,6 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import {
     Popover as PopoverDeprecated,
     Icon as IconDeprecated,
-    Drawer,
     Button as ButtonDeprecated,
     ButtonTheme,
 } from '@/shared/ui/deprecated'
@@ -13,7 +12,7 @@ import NotificationIconDeprecated from '@/shared/assets/icons/notification.svg'
 import NotificationIcon from '@/shared/assets/icons/notificationNew.svg'
 import { NotificationList } from '@/entities/Notification'
 import { ToggleFeature } from '@/shared/lib/featureFlags'
-import { Icon, Popover } from '@/shared/ui/redesigned'
+import { Drawer, Icon, Popover } from '@/shared/ui/redesigned'
 
 import styles from './NotificationButton.module.scss'
 

@@ -1,6 +1,7 @@
 import { Suspense, type FC } from 'react'
 
-import { EllipsesLoader, Modal } from '@/shared/ui/deprecated'
+import { EllipsesLoader } from '@/shared/ui/deprecated'
+import { Modal } from '@/shared/ui/redesigned'
 
 import LoginFormAsync from '../LoginForm/LoginFormAsync'
 

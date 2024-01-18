@@ -8,6 +8,7 @@ import { PageLoader } from '@/widgets/PageLoader'
 import { useAppDispatch } from '@/shared/lib/hooks'
 import { ToggleFeature } from '@/shared/lib/featureFlags'
 import { MainLayout } from '@/shared/layouts'
+import { APP_HTML_ELEMENT_ID } from '@/shared/consts/app'
 
 import { AppRouter } from './providers/router'
 
@@ -29,7 +30,7 @@ const App: FC = () => {
         <ToggleFeature
             featureFlag="isAppRedesigned"
             onDisabled={
-                <div className={classNames('app', {})}>
+                <div id={APP_HTML_ELEMENT_ID} className={classNames('app', {})}>
                     <Suspense fallback="">
                         <Navbar />
                         <div className="content-page">
@@ -40,7 +41,7 @@ const App: FC = () => {
                 </div>
             }
             onEnabled={
-                <div className={classNames('app_redesigned', {})}>
+                <div id={APP_HTML_ELEMENT_ID} className={classNames('app_redesigned', {})}>
                     <Suspense fallback="">
                         <MainLayout
                             sidebar={<Sidebar />}

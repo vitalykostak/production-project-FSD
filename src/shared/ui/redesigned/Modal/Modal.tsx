@@ -2,10 +2,10 @@ import { type ReactNode, type FC } from 'react'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useModal } from '@/shared/lib/hooks/useModal/useModal'
-import { useTheme } from '@/shared/lib/hooks'
+import { toggleFeature } from '@/shared/lib/featureFlags'
 
-import Overlay from '../../redesigned/Overlay/Overlay'
-import Portal from '../../redesigned/Portal/Portal'
+import Overlay from '../Overlay/Overlay'
+import Portal from '../Portal/Portal'
 
 import modalStyles from './Modal.module.scss'
 
@@ -19,13 +19,8 @@ interface ModalProps {
 
 const ANIMATION_DELAY = 300
 
-/**
- * @deprecated
- */
 const Modal: FC<ModalProps> = props => {
     const { className, children, isOpen, onClose, lazy } = props
-
-    const { theme } = useTheme()
 
     const { isClosing, close, isMounted } = useModal({
         onClose,
@@ -39,7 +34,14 @@ const Modal: FC<ModalProps> = props => {
     }
 
     // class of theme is needed for including current theme variables
-    const additionsClasses = [className, theme]
+    const additionsClasses = [
+        className,
+        toggleFeature({
+            featureFlag: 'isAppRedesigned',
+            onDisabled: () => modalStyles.uiDeprecatedVersion,
+            onEnabled: () => modalStyles.uiLatestVersion,
+        }),
+    ]
 
     if (lazy && !isMounted) {
         return null

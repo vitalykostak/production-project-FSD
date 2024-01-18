@@ -9,19 +9,6 @@
   justify-content: center;
 }
 
-.content {
-  padding: 20px;
-  border-top-right-radius: 12px;
-  border-top-left-radius: 12px;
-  background: var(--bg-color);
-  transition: 0.3s transform;
-  transform: translateY(100%);
-  min-height: 100px;
-  height: 70%;
-  width: 100%;
-  overflow: hidden auto;
-}
-
 .opened {
   pointer-events: auto;
   opacity: 1;
@@ -44,7 +31,18 @@
   height: calc(100vh + 100px);
   width: 100%;
   border-radius: 12px 12px 0;
-  background: var(--bg-color);
   touch-action: none;
+}
+
+.uiDeprecatedVersion {
+  &.sheet {
+    background: var(--bg-color);
+  }
+}
+
+.uiLatestVersion {
+  &.sheet {
+    background: var(--light-bg-redesigned);
+  }
 }
 
