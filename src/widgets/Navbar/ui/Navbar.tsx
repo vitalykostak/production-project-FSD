@@ -3,14 +3,20 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { AppLink, Button, ButtonTheme, Text, TextTheme } from '@/shared/ui/deprecated'
+import {
+    AppLink,
+    Button as ButtonDeprecated,
+    ButtonTheme,
+    Text,
+    TextTheme,
+} from '@/shared/ui/deprecated'
 import { LoginModal } from '@/features/AuthByUsername'
 import { getUserAuthData } from '@/entities/User'
 import { NotificationButton } from '@/features/notificationButton'
 import { AvatarButton } from '@/features/avatarButton'
 import { getArticleCreateRoute } from '@/shared/consts/router'
 import { ToggleFeature } from '@/shared/lib/featureFlags'
-import { HStack } from '@/shared/ui/redesigned'
+import { Button, HStack } from '@/shared/ui/redesigned'
 
 import navbarStyles from './Navbar.module.scss'
 import navbarRedesignedStyles from './NavbarRedesigned.module.scss'
@@ -21,13 +27,15 @@ interface NavbarProps {
 
 const NavbarDeprecated: FC<NavbarProps> = memo(({ className }) => {
     const { t } = useTranslation(['translation', 'article'])
-
     const userAuthData = useSelector(getUserAuthData)
 
     const [isAuthModal, setisAuthModal] = useState<boolean>(false)
     const onShowModal = useCallback(() => setisAuthModal(true), [])
 
-    const onClose = useCallback(() => setisAuthModal(false), [])
+    const onClose = useCallback(() => {
+        setisAuthModal(false)
+        window.location.reload()
+    }, [])
 
     if (userAuthData) {
         return (
@@ -49,9 +57,9 @@ const NavbarDeprecated: FC<NavbarProps> = memo(({ className }) => {
     return (
         <header className={classNames(navbarStyles.Navbar, {}, [className])}>
             <div className={navbarStyles.links}>
-                <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
+                <ButtonDeprecated theme={ButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
                     {t('translation:sign_in')}
-                </Button>
+                </ButtonDeprecated>
                 {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onClose} />}
             </div>
         </header>
@@ -66,7 +74,10 @@ const NavbarRedesigned: FC<NavbarProps> = memo(({ className }) => {
     const [isAuthModal, setisAuthModal] = useState<boolean>(false)
     const onShowModal = useCallback(() => setisAuthModal(true), [])
 
-    const onClose = useCallback(() => setisAuthModal(false), [])
+    const onClose = useCallback(() => {
+        setisAuthModal(false)
+        window.location.reload()
+    }, [])
 
     if (userAuthData) {
         return (
@@ -80,9 +91,9 @@ const NavbarRedesigned: FC<NavbarProps> = memo(({ className }) => {
     }
 
     return (
-        <header className={classNames(navbarStyles.Navbar, {}, [className])}>
-            <div className={navbarStyles.links}>
-                <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
+        <header className={classNames('', {}, [className])}>
+            <div className={navbarRedesignedStyles.links}>
+                <Button variant="outline" onClick={onShowModal}>
                     {t('translation:sign_in')}
                 </Button>
                 {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onClose} />}

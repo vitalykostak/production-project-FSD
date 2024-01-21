@@ -3,10 +3,12 @@ import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Text, TextSize } from '@/shared/ui/deprecated'
+import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated'
+import { Text } from '@/shared/ui/redesigned'
 import { AddCommentForm, useAddCommentFormText } from '@/features/AddCommentForm'
 import { CommentList } from '@/entities/Comment'
 import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
 
 import { getArticleDetailsCommentsSelectors } from '../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice'
 import { getArticleDetailsCommentsLoading } from '../../model/selectors/articleDetailsComments/articleDetailsComments'
@@ -50,11 +52,24 @@ const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo(props => {
             className={classNames(styles.ArticleDetailsComments, mods, additionsClasses)}
             data-testid="ArticleDetailsComments"
         >
-            <Text
-                size={TextSize.L}
-                title={t('translation:comments')}
-                data-testid="ArticleDetailsComments"
+            <ToggleFeature
+                featureFlag="isAppRedesigned"
+                onDisabled={
+                    <TextDeprecated
+                        size={TextSize.L}
+                        title={t('translation:comments')}
+                        data-testid="ArticleDetailsComments"
+                    />
+                }
+                onEnabled={
+                    <Text
+                        size="l"
+                        title={t('translation:comments')}
+                        data-testid="ArticleDetailsComments"
+                    />
+                }
             />
+
             <AddCommentForm
                 onSendComment={sendCommentHandler}
                 text={addCommentFormText}

@@ -11,6 +11,8 @@ import { MainLayout } from '@/shared/layouts'
 import { APP_HTML_ELEMENT_ID } from '@/shared/consts/app'
 
 import { AppRouter } from './providers/router'
+import { useAppToolBar } from './lib/hooks'
+import withTheme from './providers/ThemeProvider/ui/withTheme'
 
 const App: FC = () => {
     const dispatch = useAppDispatch()
@@ -21,6 +23,9 @@ const App: FC = () => {
     useEffect(() => {
         void dispatch(initAuthData())
     }, [dispatch])
+
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
+    const toolbar = useAppToolBar()
 
     if (!isUserInitialized) {
         return <PageLoader />
@@ -47,7 +52,7 @@ const App: FC = () => {
                             sidebar={<Sidebar />}
                             content={<AppRouter />}
                             header={<Navbar />}
-                            // toolbar={<div>Toolbar</div>}
+                            toolbar={toolbar}
                         />
                     </Suspense>
                 </div>
@@ -56,4 +61,4 @@ const App: FC = () => {
     )
 }
 
-export default App
+export default withTheme(App)

@@ -1,5 +1,6 @@
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/consts/theme'
+import FeatureFlagsDecorator from '@/shared/config/storybook/FeatureFlagsDecorator'
 
 import Tabs, { type TabItem } from './Tabs'
 
@@ -23,10 +24,16 @@ const tabs: TabItem[] = [
 
 export const Primary: Story = {
     args: { tabs, value: 'tab_2' },
-    decorators: [ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }
 
 export const PrimaryDark: Story = {
     args: { tabs, value: 'tab_2' },
-    decorators: [ThemeDecorator(Theme.DARK, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.DARK, { isAppRedesigned: true }),
+    ],
 }

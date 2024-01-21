@@ -3,8 +3,24 @@ import { useTranslation } from 'react-i18next'
 import { BrowserView, MobileView } from 'react-device-detect'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { StarRating, Text, Button, Input, Card, ButtonTheme } from '@/shared/ui/deprecated'
-import { HStack, VStack, Drawer, Modal } from '@/shared/ui/redesigned'
+import {
+    Text as TextDeprecated,
+    Button as ButtonDeprecated,
+    Input as InputDeprecated,
+    Card as CardDeprecated,
+    ButtonTheme,
+} from '@/shared/ui/deprecated'
+import {
+    HStack,
+    VStack,
+    Drawer,
+    Modal,
+    Text,
+    Button,
+    Card,
+    StarRating,
+} from '@/shared/ui/redesigned'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
 
 import styles from './Rating.module.scss'
 
@@ -52,8 +68,14 @@ const Rating: FC<RatingProps> = memo(props => {
 
     const modalContent = (
         <>
-            {feedbackTitle && <Text title={feedbackTitle} />}
-            <Input placeholder="feedback" value={feedback} onChange={setFeedback} />
+            {feedbackTitle && (
+                <ToggleFeature
+                    featureFlag="isAppRedesigned"
+                    onDisabled={<TextDeprecated title={feedbackTitle} />}
+                    onEnabled={<Text title={feedbackTitle} />}
+                />
+            )}
+            <InputDeprecated placeholder="feedback" value={feedback} onChange={setFeedback} />
         </>
     )
 
@@ -61,27 +83,53 @@ const Rating: FC<RatingProps> = memo(props => {
 
     const additionsClasses = [className]
 
-    return (
-        <Card className={classNames(styles.Rating, mods, additionsClasses)} max>
+    const content = (
+        <>
             <VStack gap="16" align="center">
-                <Text title={title} />
+                <ToggleFeature
+                    featureFlag="isAppRedesigned"
+                    onDisabled={<TextDeprecated title={title} />}
+                    onEnabled={<Text title={title} />}
+                />
                 <StarRating onSelect={starSelectHandler} selected={selectedStars} />
                 <BrowserView>
                     <Modal lazy isOpen={isOpenModal}>
                         <VStack gap="16" max>
                             {modalContent}
-                            <HStack justify="end" max gap="12">
-                                <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelFeedback}>
-                                    {t('translation:cancel')}
-                                </Button>
-                                <Button
-                                    theme={ButtonTheme.OUTLINE}
-                                    onClick={onSendFeedback}
-                                    disabled={!feedback}
-                                >
-                                    {t('translation:send')}
-                                </Button>
-                            </HStack>
+                            <ToggleFeature
+                                featureFlag="isAppRedesigned"
+                                onDisabled={
+                                    <HStack justify="end" max gap="12">
+                                        <ButtonDeprecated
+                                            theme={ButtonTheme.OUTLINE_RED}
+                                            onClick={onCancelFeedback}
+                                        >
+                                            {t('translation:cancel')}
+                                        </ButtonDeprecated>
+                                        <ButtonDeprecated
+                                            theme={ButtonTheme.OUTLINE}
+                                            onClick={onSendFeedback}
+                                            disabled={!feedback}
+                                        >
+                                            {t('translation:send')}
+                                        </ButtonDeprecated>
+                                    </HStack>
+                                }
+                                onEnabled={
+                                    <HStack justify="end" max gap="12">
+                                        <Button variant="outline" onClick={onCancelFeedback}>
+                                            {t('translation:cancel')}
+                                        </Button>
+                                        <Button
+                                            variant="outline"
+                                            onClick={onSendFeedback}
+                                            disabled={!feedback}
+                                        >
+                                            {t('translation:send')}
+                                        </Button>
+                                    </HStack>
+                                }
+                            />
                         </VStack>
                     </Modal>
                 </BrowserView>
@@ -93,19 +141,55 @@ const Rating: FC<RatingProps> = memo(props => {
                     >
                         <VStack gap="16" max>
                             {modalContent}
-                            <Button
-                                theme={ButtonTheme.OUTLINE}
-                                onClick={onSendFeedback}
-                                disabled={!feedback}
-                                max
-                            >
-                                {t('translation:send')}
-                            </Button>
+                            <ToggleFeature
+                                featureFlag="isAppRedesigned"
+                                onDisabled={
+                                    <ButtonDeprecated
+                                        theme={ButtonTheme.OUTLINE}
+                                        onClick={onSendFeedback}
+                                        disabled={!feedback}
+                                        max
+                                    >
+                                        {t('translation:send')}
+                                    </ButtonDeprecated>
+                                }
+                                onEnabled={
+                                    <Button
+                                        variant="outline"
+                                        onClick={onSendFeedback}
+                                        disabled={!feedback}
+                                        max
+                                    >
+                                        {t('translation:send')}
+                                    </Button>
+                                }
+                            />
                         </VStack>
                     </Drawer>
                 </MobileView>
             </VStack>
-        </Card>
+        </>
+    )
+
+    return (
+        <ToggleFeature
+            featureFlag="isAppRedesigned"
+            onDisabled={
+                <CardDeprecated className={classNames(styles.Rating, mods, additionsClasses)} max>
+                    {content}
+                </CardDeprecated>
+            }
+            onEnabled={
+                <Card
+                    max
+                    cardPadding="24"
+                    cardBorder="borderRound"
+                    className={classNames(styles.Rating, mods, additionsClasses)}
+                >
+                    {content}
+                </Card>
+            }
+        />
     )
 })
 

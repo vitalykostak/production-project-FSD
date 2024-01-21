@@ -1,0 +1,66 @@
+.selected,
+.disabled {
+  cursor: default;
+}
+
+
+.StarRating{
+  .star {
+    padding-right: 2px;
+    padding-left: 2px;
+    cursor: pointer;
+
+    path:first-child {
+      fill: none;
+      stroke: var(--primary-color);
+    }
+
+    path:last-child {
+      fill: none;
+    }
+  }
+
+  .hovered,
+  .selected {
+    path:first-child {
+      // fill: none;
+      stroke: var(--primary-color);
+    }
+
+    path:last-child {
+      fill: var(--primary-color);
+    }
+  }
+}
+
+.StarRatingRedesigned{
+  .star {
+    padding-right: 2px;
+    padding-left: 2px;
+    cursor: pointer;
+
+    path:first-child {
+      fill: none;
+      stroke: var(--accent-redesigned);
+    }
+
+    path:last-child {
+      fill: none;
+    }
+  }
+
+  .hovered,
+  .selected {
+    path:first-child {
+      // fill: none;
+      stroke: var(--accent-redesigned);
+    }
+
+    path:last-child {
+      fill: var(--accent-redesigned);
+    }
+  }
+}
+
+
+

@@ -1,8 +1,9 @@
 import { type PayloadAction } from '@reduxjs/toolkit'
 
-import { USER_LOCAL_STORAGE_KEY } from '@/shared/consts/localStorageKeys'
+import { LOCAL_STORAGE_UI_VERSION, USER_LOCAL_STORAGE_KEY } from '@/shared/consts/localStorageKeys'
 import { buildSlice } from '@/shared/lib/store'
 import { setFeatureFlags } from '@/shared/lib/featureFlags'
+import { UiInterfaceVersion } from '@/shared/types'
 
 import { type User, type UserSchema } from '../types/user'
 import { updateUserJsonSetting } from '../services/updateUserJsonSettings/updateUserJsonSettings'
@@ -22,6 +23,12 @@ export const userSlice = buildSlice({
             setFeatureFlags(action.payload.features)
 
             localStorage.setItem(USER_LOCAL_STORAGE_KEY, action.payload.id)
+            localStorage.setItem(
+                LOCAL_STORAGE_UI_VERSION,
+                action.payload.features?.isAppRedesigned
+                    ? UiInterfaceVersion.LATEST
+                    : UiInterfaceVersion.DEPRECATED,
+            )
         },
         logout: state => {
             state.authData = undefined
@@ -38,6 +45,12 @@ export const userSlice = buildSlice({
             state.authData = action.payload
             setFeatureFlags(action.payload.features)
             localStorage.setItem(USER_LOCAL_STORAGE_KEY, action.payload.id)
+            localStorage.setItem(
+                LOCAL_STORAGE_UI_VERSION,
+                action.payload.features?.isAppRedesigned
+                    ? UiInterfaceVersion.LATEST
+                    : UiInterfaceVersion.DEPRECATED,
+            )
             state._initialized = true
         })
         builder.addCase(initAuthData.rejected, state => {

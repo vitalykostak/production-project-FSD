@@ -1,4 +1,5 @@
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
+import FeatureFlagsDecorator from '@/shared/config/storybook/FeatureFlagsDecorator'
 import { Theme } from '@/shared/consts/theme'
 
 import Input from './Input'
@@ -18,14 +19,20 @@ export const InputWithValue: Story = {
     args: {
         value: 'Input',
     },
-    decorators: [ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }
 
 export const InputWithValueDark: Story = {
     args: {
         value: 'Input',
     },
-    decorators: [ThemeDecorator(Theme.DARK, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.DARK, { isAppRedesigned: true }),
+    ],
 }
 
 export const InputWithPlaceholderValue: Story = {
@@ -33,7 +40,10 @@ export const InputWithPlaceholderValue: Story = {
         value: 'password',
         placeholder: 'type Password',
     },
-    decorators: [ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }
 
 export const InputWithValuePlaceholderDark: Story = {
@@ -41,5 +51,8 @@ export const InputWithValuePlaceholderDark: Story = {
         value: 'password',
         placeholder: 'type Password',
     },
-    decorators: [ThemeDecorator(Theme.DARK, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.DARK, { isAppRedesigned: true }),
+    ],
 }

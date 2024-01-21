@@ -1,5 +1,6 @@
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/consts/theme'
+import FeatureFlagsDecorator from '@/shared/config/storybook/FeatureFlagsDecorator'
 
 import Button from '../../../Button/Button'
 
@@ -26,5 +27,8 @@ export const Primary: Story = {
             { content: 'Content 4', disabled: false },
         ],
     },
-    decorators: [ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }

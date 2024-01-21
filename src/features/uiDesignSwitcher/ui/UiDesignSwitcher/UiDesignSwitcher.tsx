@@ -15,8 +15,7 @@ import {
     updateUserFeatureFlags,
 } from '@/shared/lib/featureFlags'
 import { useAppDispatch } from '@/shared/lib/hooks'
-
-import { UiInterfaceVersion } from '../../model/types/UiInterfaceVersion'
+import { UiInterfaceVersion } from '@/shared/types/ui'
 
 interface UiDesignSwitcherProps {
     className?: string

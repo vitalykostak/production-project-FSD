@@ -4,10 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { useAppDispatch } from '@/shared/lib/hooks'
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { TextTheme, Text, TextAlign, Skeleton, TextSize, Icon } from '@/shared/ui/deprecated'
-import EyeIcon from '@/shared/assets/icons/eye-icon.svg'
-import CalendarIcon from '@/shared/assets/icons/calendar.svg'
-import { Avatar } from '@/shared/ui/redesigned'
+import { Text, Skeleton, AppImage, VStack } from '@/shared/ui/redesigned'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
 
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
@@ -23,6 +21,7 @@ import ArticleImageBlockComponent from '../ArticleImageBlockComponent/ArticleIma
 import { ArticleBlockType } from '../../model/consts/consts'
 
 import styles from './ArticleDetails.module.scss'
+import ArticleDetailsDeprecated from './ArticleDetailsDeprecated/ArticleDetailsDeprecated'
 
 interface ArticleDetailsProps {
     className?: string
@@ -33,7 +32,7 @@ const reducersList: ReducersList = {
     articleDetails: articleDetailsReducer,
 }
 
-const ArticleDetails: FC<ArticleDetailsProps> = memo(props => {
+const ArticleDetailsRedesigned: FC<ArticleDetailsProps> = memo(props => {
     const { className, id } = props
 
     const { t } = useTranslation('article')
@@ -84,7 +83,7 @@ const ArticleDetails: FC<ArticleDetailsProps> = memo(props => {
 
     if (isArticleDetailsLoading) {
         content = (
-            <>
+            <VStack gap="12" max>
                 <Skeleton
                     width="200px"
                     height="200px"
@@ -95,42 +94,25 @@ const ArticleDetails: FC<ArticleDetailsProps> = memo(props => {
                 <Skeleton width="600px" height="24px" className={styles.skeleton} />
                 <Skeleton width="100%" height="200px" className={styles.skeleton} />
                 <Skeleton width="100%" height="200px" className={styles.skeleton} />
-            </>
+            </VStack>
         )
     } else if (articleDetailsError) {
-        content = (
-            <Text
-                theme={TextTheme.ERROR}
-                title={t('error_while_loading')}
-                align={TextAlign.CENTER}
-            />
-        )
+        content = <Text variant="error" title={t('error_while_loading')} align="center" />
     } else {
         content = (
             <>
-                <div className={styles.avatarWrapper} data-testid="ArticleDetailsAvatar">
-                    <Avatar size={200} src={articleDetailsData?.img} />
-                </div>
                 <Text
                     title={articleDetailsData?.title}
-                    text={articleDetailsData?.subtitle}
-                    size={TextSize.L}
+                    size="l"
                     data-testid="ArticleDetailsHeaders"
+                    bold
                 />
-                <div className={styles.articleInfo}>
-                    <Icon className={styles.articleInfoIcon} Svg={EyeIcon} />
-                    <Text
-                        text={String(articleDetailsData?.views)}
-                        data-testid="ArticleDetailsViews"
-                    />
-                </div>
-                <div className={styles.articleInfo}>
-                    <Icon className={styles.articleInfoIcon} Svg={CalendarIcon} />
-                    <Text
-                        text={String(articleDetailsData?.createdAt)}
-                        data-testid="ArticleDetailsCreatedAt"
-                    />
-                </div>
+                <Text text={articleDetailsData?.subtitle} />
+                <AppImage
+                    fallback={<Skeleton height="420px" width="100%" borderRadius="16" />}
+                    src={articleDetailsData?.img}
+                    className={styles.img}
+                />
                 {articleDetailsData?.blocks?.map(renderBlock)}
             </>
         )
@@ -148,5 +130,13 @@ const ArticleDetails: FC<ArticleDetailsProps> = memo(props => {
         </DynamicModuleLoader>
     )
 })
+
+const ArticleDetails: FC<ArticleDetailsProps> = memo(props => (
+    <ToggleFeature
+        featureFlag="isAppRedesigned"
+        onDisabled={<ArticleDetailsDeprecated {...props} />}
+        onEnabled={<ArticleDetailsRedesigned {...props} />}
+    />
+))
 
 export default ArticleDetails

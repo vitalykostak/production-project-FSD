@@ -1,5 +1,6 @@
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/consts/theme'
+import FeatureFlagsDecorator from '@/shared/config/storybook/FeatureFlagsDecorator'
 
 import AppLink from './AppLink'
 
@@ -24,17 +25,28 @@ export const PrimaryDark: Story = {
     args: {
         variant: 'primary',
     },
-    decorators: [ThemeDecorator(Theme.DARK, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.DARK, { isAppRedesigned: true }),
+    ],
 }
 
 export const Red: Story = {
     args: {
         variant: 'red',
     },
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }
+
 export const RedDark: Story = {
     args: {
         variant: 'red',
     },
-    decorators: [ThemeDecorator(Theme.DARK, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.DARK, { isAppRedesigned: true }),
+    ],
 }

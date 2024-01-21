@@ -7,6 +7,7 @@ import { Theme } from '../../src/shared/consts/theme'
 // include global styles
 import '../../src/app/styles/index.scss'
 import ReduxStoreDecorator from '../../src/shared/config/storybook/ReduxStoreDecorator'
+import FeatureFlagsDecorator from '../../src/shared/config/storybook/FeatureFlagsDecorator'
 
 const preview: Preview = {
     parameters: {
@@ -20,6 +21,7 @@ const preview: Preview = {
     },
     decorators: [
         BrowserRouterDecorator,
+        FeatureFlagsDecorator({}),
         ThemeDecorator(Theme.LIGHT),
         SuspenseDecorator,
         ReduxStoreDecorator({}),

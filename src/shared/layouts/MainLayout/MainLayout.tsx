@@ -24,8 +24,8 @@ const MainLayout: FC<MainLayoutProps> = memo(props => {
             <div className={styles.sidebar}>{sidebar}</div>
             <div className={styles.content}>{content}</div>
             <div className={styles.rightBar}>
-                <div className={styles.header}>{header}</div>
-                <div className={styles.toolbar}>{toolbar}</div>
+                {header}
+                {toolbar}
             </div>
         </div>
     )

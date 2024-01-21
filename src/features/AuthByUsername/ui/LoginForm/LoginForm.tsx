@@ -3,9 +3,17 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Button, ButtonTheme, Input, Text, TextTheme } from '@/shared/ui/deprecated'
+import {
+    Button as ButtonDeprecated,
+    ButtonTheme,
+    Input as InputDeprecated,
+    Text as TextDeprecated,
+    TextTheme,
+} from '@/shared/ui/deprecated'
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib'
 import { useAppDispatch } from '@/shared/lib/hooks'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
+import { Button, Input, Text } from '@/shared/ui/redesigned'
 
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
@@ -67,33 +75,72 @@ const LoginForm: FC<LoginFormProps> = memo(props => {
 
     return (
         <DynamicModuleLoader reducers={dynamicReducers} shouldRemoveOnUnmout>
-            <div className={classNames(loginFormStyles.LoginForm, {}, additionsClasses)}>
-                <Text title={t('authorization_form')} />
-                {error && <Text text={t('incorrect_login_credentials')} theme={TextTheme.ERROR} />}
-                <Input
-                    placeholder={t('type_username')}
-                    type="text"
-                    className={loginFormStyles.input}
-                    autoFocus
-                    onChange={onChangeUsername}
-                    value={username}
-                />
-                <Input
-                    placeholder={t('type_password')}
-                    type="text"
-                    className={loginFormStyles.input}
-                    onChange={onChangePassword}
-                    value={password}
-                />
-                <Button
-                    className={loginFormStyles.loginButton}
-                    theme={ButtonTheme.OUTLINE}
-                    onClick={onLoginClick}
-                    disabled={isLoading}
-                >
-                    {t('sign_in')}
-                </Button>
-            </div>
+            <ToggleFeature
+                featureFlag="isAppRedesigned"
+                onDisabled={
+                    <div className={classNames(loginFormStyles.LoginForm, {}, additionsClasses)}>
+                        <TextDeprecated title={t('authorization_form')} />
+                        {error && (
+                            <TextDeprecated
+                                text={t('incorrect_login_credentials')}
+                                theme={TextTheme.ERROR}
+                            />
+                        )}
+                        <InputDeprecated
+                            placeholder={t('type_username')}
+                            type="text"
+                            className={loginFormStyles.input}
+                            autoFocus
+                            onChange={onChangeUsername}
+                            value={username}
+                        />
+                        <InputDeprecated
+                            placeholder={t('type_password')}
+                            type="text"
+                            className={loginFormStyles.input}
+                            onChange={onChangePassword}
+                            value={password}
+                        />
+                        <ButtonDeprecated
+                            className={loginFormStyles.loginButton}
+                            theme={ButtonTheme.OUTLINE}
+                            onClick={onLoginClick}
+                            disabled={isLoading}
+                        >
+                            {t('sign_in')}
+                        </ButtonDeprecated>
+                    </div>
+                }
+                onEnabled={
+                    <div className={classNames(loginFormStyles.LoginForm, {}, additionsClasses)}>
+                        <Text title={t('authorization_form')} />
+                        {error && <Text text={t('incorrect_login_credentials')} variant="error" />}
+                        <Input
+                            placeholder={t('type_username')}
+                            type="text"
+                            className={loginFormStyles.input}
+                            autoFocus
+                            onChange={onChangeUsername}
+                            value={username}
+                        />
+                        <Input
+                            placeholder={t('type_password')}
+                            type="text"
+                            className={loginFormStyles.input}
+                            onChange={onChangePassword}
+                            value={password}
+                        />
+                        <Button
+                            className={loginFormStyles.loginButton}
+                            variant="outline"
+                            onClick={onLoginClick}
+                            disabled={isLoading}
+                        >
+                            {t('sign_in')}
+                        </Button>
+                    </div>
+                }
+            />
         </DynamicModuleLoader>
     )
 })

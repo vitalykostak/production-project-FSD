@@ -1,10 +1,16 @@
 import { memo, type FC, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Button, ButtonTheme, Input } from '@/shared/ui/deprecated'
+import {
+    Button as ButtonDeprecated,
+    ButtonTheme,
+    Input as InputDeprecated,
+} from '@/shared/ui/deprecated'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib'
 import { type TestProps } from '@/shared/types'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
+import { Button, Input, Card, HStack } from '@/shared/ui/redesigned'
 
 import {
     addCommentFormReducer,
@@ -43,25 +49,54 @@ const AddCommentForm: FC<AddCommentFormProps> = memo(props => {
 
     return (
         <DynamicModuleLoader reducers={reducers} shouldRemoveOnUnmout>
-            <div
-                className={classNames(styles.AddCommentForm, mods, additionsClasses)}
-                data-testid={dataTestId}
-            >
-                <Input
-                    className={styles.input}
-                    value={text}
-                    placeholder={t('input_comment')}
-                    onChange={changeHandler}
-                    data-testid={`${dataTestId}.Input`}
-                />
-                <Button
-                    onClick={sendCommentHandler}
-                    theme={ButtonTheme.OUTLINE}
-                    data-testid={`${dataTestId}.SendButton`}
-                >
-                    {t('send')}
-                </Button>
-            </div>
+            <ToggleFeature
+                featureFlag="isAppRedesigned"
+                onDisabled={
+                    <div
+                        className={classNames(styles.AddCommentForm, mods, additionsClasses)}
+                        data-testid={dataTestId}
+                    >
+                        <InputDeprecated
+                            className={styles.input}
+                            value={text}
+                            placeholder={t('input_comment')}
+                            onChange={changeHandler}
+                            data-testid={`${dataTestId}.Input`}
+                        />
+                        <ButtonDeprecated
+                            onClick={sendCommentHandler}
+                            theme={ButtonTheme.OUTLINE}
+                            data-testid={`${dataTestId}.SendButton`}
+                        >
+                            {t('send')}
+                        </ButtonDeprecated>
+                    </div>
+                }
+                onEnabled={
+                    <Card cardPadding="24" cardBorder="borderRound">
+                        <HStack
+                            gap="8"
+                            className={classNames('', mods, additionsClasses)}
+                            data-testid={dataTestId}
+                        >
+                            <Input
+                                className={styles.input}
+                                value={text}
+                                placeholder={t('input_comment')}
+                                onChange={changeHandler}
+                                data-testid={`${dataTestId}.Input`}
+                            />
+                            <Button
+                                onClick={sendCommentHandler}
+                                variant="outline"
+                                data-testid={`${dataTestId}.SendButton`}
+                            >
+                                {t('send')}
+                            </Button>
+                        </HStack>
+                    </Card>
+                }
+            />
         </DynamicModuleLoader>
     )
 })

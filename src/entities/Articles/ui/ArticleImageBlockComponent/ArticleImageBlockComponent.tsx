@@ -1,7 +1,9 @@
 import { memo, type FC } from 'react'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Text, TextAlign } from '@/shared/ui/deprecated'
+import { Text as TextDeprecated, TextAlign } from '@/shared/ui/deprecated'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
+import { AppImage, Text } from '@/shared/ui/redesigned'
 
 import { type ArticleImageBlock } from '../../model/types/articles'
 
@@ -21,8 +23,19 @@ const ArticleImageBlockComponent: FC<ArticleImageBlockComponentProps> = memo(pro
 
     return (
         <div className={classNames('', mods, additionsClasses)}>
-            <img src={block.src} alt={block.src} className={styles.img} />
-            {block.title && <Text text={block.title} align={TextAlign.CENTER} />}
+            <ToggleFeature
+                featureFlag="isAppRedesigned"
+                onDisabled={<img src={block.src} alt={block.src} className={styles.img} />}
+                onEnabled={<AppImage src={block.src} alt={block.src} className={styles.img} />}
+            />
+
+            {block.title && (
+                <ToggleFeature
+                    featureFlag="isAppRedesigned"
+                    onDisabled={<TextDeprecated text={block.title} align={TextAlign.CENTER} />}
+                    onEnabled={<Text text={block.title} align="center" />}
+                />
+            )}
         </div>
     )
 })

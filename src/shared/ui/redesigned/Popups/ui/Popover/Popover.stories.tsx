@@ -1,5 +1,6 @@
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/consts/theme'
+import FeatureFlagsDecorator from '@/shared/config/storybook/FeatureFlagsDecorator'
 
 import Popover from './Popover'
 
@@ -26,7 +27,10 @@ export const Primary: Story = {
         trigger: 'Trigger',
         children: 'Children',
     },
-    decorators: [ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }
 
 export const BottomLeft: Story = {
@@ -35,7 +39,10 @@ export const BottomLeft: Story = {
         children: 'Children',
         direction: 'bottomLeft',
     },
-    decorators: [ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }
 
 export const BottomRight: Story = {
@@ -44,7 +51,10 @@ export const BottomRight: Story = {
         children: 'Children',
         direction: 'bottomRight',
     },
-    decorators: [ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }
 
 export const TopLeft: Story = {
@@ -53,7 +63,10 @@ export const TopLeft: Story = {
         children: 'Children',
         direction: 'topLeft',
     },
-    decorators: [ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }
 
 export const TopRight: Story = {
@@ -62,5 +75,8 @@ export const TopRight: Story = {
         children: 'Children',
         direction: 'topRight',
     },
-    decorators: [ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }

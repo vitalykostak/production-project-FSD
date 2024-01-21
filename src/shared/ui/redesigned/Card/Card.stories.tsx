@@ -1,4 +1,5 @@
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
+import FeatureFlagsDecorator from '@/shared/config/storybook/FeatureFlagsDecorator'
 import { Theme } from '@/shared/consts/theme'
 
 import Text from '../Text/Text'
@@ -20,21 +21,30 @@ export const Primary: Story = {
     args: {
         children: <Text title="Title" text="Example text" />,
     },
-    decorators: [ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }
 
 export const PrimaryDark: Story = {
     args: {
         children: <Text title="Title" text="Example text" />,
     },
-    decorators: [ThemeDecorator(Theme.DARK, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.DARK, { isAppRedesigned: true }),
+    ],
 }
 export const PrimaryOutline: Story = {
     args: {
         children: <Text title="Title" text="Example text" />,
         variant: 'outline',
     },
-    decorators: [ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }
 
 export const PrimaryOutlineDark: Story = {
@@ -42,5 +52,8 @@ export const PrimaryOutlineDark: Story = {
         children: <Text title="Title" text="Example text" />,
         variant: 'outline',
     },
-    decorators: [ThemeDecorator(Theme.DARK, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.DARK, { isAppRedesigned: true }),
+    ],
 }

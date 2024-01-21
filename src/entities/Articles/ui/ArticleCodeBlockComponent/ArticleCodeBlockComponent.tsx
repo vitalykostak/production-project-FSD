@@ -1,7 +1,9 @@
 import { memo, type FC } from 'react'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Code } from '@/shared/ui/deprecated'
+import { Code as CodeDeprecated } from '@/shared/ui/deprecated'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
+import { Code } from '@/shared/ui/redesigned'
 
 import { type ArticleCodeBlock } from '../../model/types/articles'
 
@@ -21,7 +23,11 @@ const ArticleCodeBlockComponent: FC<ArticleCodeBlockComponentProps> = memo(props
 
     return (
         <div className={classNames(styles.ArticleCodeBlockComponent, mods, additionsClasses)}>
-            <Code text={block.code} />
+            <ToggleFeature
+                featureFlag="isAppRedesigned"
+                onDisabled={<CodeDeprecated text={block.code} />}
+                onEnabled={<Code text={block.code} />}
+            />
         </div>
     )
 })

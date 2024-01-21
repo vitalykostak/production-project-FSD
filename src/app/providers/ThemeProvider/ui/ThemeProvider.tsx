@@ -3,7 +3,6 @@ import { type FC, useMemo, useState, useEffect } from 'react'
 import { ThemeContext } from '@/shared/lib/context/ThemeContext'
 import { LOCAL_STORAGE_UI_THEME_KEY } from '@/shared/consts/localStorageKeys'
 import { Theme } from '@/shared/consts/theme'
-import { useUserInitialized, useUserJsonSettings } from '@/entities/User'
 
 interface Props {
     children: React.ReactNode
@@ -13,15 +12,12 @@ interface Props {
 const storedTheme = localStorage?.getItem(LOCAL_STORAGE_UI_THEME_KEY) as Theme
 const isStoredThemeValid = Object.values(Theme).includes(storedTheme)
 
-const selectedTheme = isStoredThemeValid ? storedTheme : Theme.LIGHT
+const fallbackTheme = isStoredThemeValid ? storedTheme : Theme.LIGHT
 
 const ThemeProvider: FC<Props> = props => {
     const { children, initialTheme } = props
 
-    const isUserInitialized = useUserInitialized()
-    const userJsonSettings = useUserJsonSettings()
-
-    const [theme, setTheme] = useState<Theme>(initialTheme || selectedTheme)
+    const [theme, setTheme] = useState<Theme>(initialTheme || fallbackTheme)
     const [isThemeInitialized, setThemeInitialized] = useState<boolean>(false)
 
     const defaultProps = useMemo(() => ({ theme, setTheme }), [theme])
@@ -31,21 +27,18 @@ const ThemeProvider: FC<Props> = props => {
             return
         }
 
-        if (isUserInitialized && userJsonSettings?.uiTheme) {
-            const isUserJsonSettingsThemeValid = Object.values(Theme).includes(
-                userJsonSettings.uiTheme,
-            )
+        if (initialTheme) {
+            const isUserJsonSettingsThemeValid = Object.values(Theme).includes(initialTheme)
 
-            const inferredTheme = isUserJsonSettingsThemeValid
-                ? userJsonSettings.uiTheme
-                : selectedTheme
+            const inferredTheme = isUserJsonSettingsThemeValid ? initialTheme : fallbackTheme
             setTheme(inferredTheme)
             setThemeInitialized(true)
         }
-    }, [setTheme, isUserInitialized, userJsonSettings.uiTheme, isThemeInitialized])
+    }, [setTheme, initialTheme, isThemeInitialized])
 
     useEffect(() => {
-        document.body.className = theme
+        Object.values(Theme).forEach(t => document?.body.classList?.remove(t))
+        document.body.classList.add(theme)
     }, [theme])
 
     return <ThemeContext.Provider value={defaultProps}>{children}</ThemeContext.Provider>

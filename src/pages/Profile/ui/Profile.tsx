@@ -6,6 +6,8 @@ import { Page } from '@/widgets/Page'
 import { ProfileRating } from '@/features/profileRating'
 import { VStack } from '@/shared/ui/redesigned'
 
+import styles from './ProfilePage.module.scss'
+
 const Profile = () => {
     const { id } = useParams<{ id: string }>()
 
@@ -16,7 +18,7 @@ const Profile = () => {
     }
 
     return (
-        <Page data-testid="ProfilePage">
+        <Page data-testid="ProfilePage" className={styles.ProfilePage}>
             <VStack gap="16" max>
                 <EditableProfileCard id={id} />
                 <ProfileRating profileId={id} />

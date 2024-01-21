@@ -25,3 +25,17 @@ export const getAdminPanelRoute = () => '/admin_panel'
 export const getSettingsRoute = () => '/settings'
 export const getForbiddenRoute = () => '/forbidden'
 export const getNotFoundRoute = () => '*'
+
+export const routeEnumMapByPath: Record<string, AppRoutes> = {
+    [getMainRoute()]: AppRoutes.MAIN,
+    [getAboutRoute()]: AppRoutes.ABOUT,
+    [getProfileRoute(':id')]: AppRoutes.PROFILE,
+    [getArticlesRoute()]: AppRoutes.ARTICLES,
+    [getArticleDetailsRoute(':id')]: AppRoutes.ARTICLES_DETAILS,
+    [getArticleCreateRoute()]: AppRoutes.ARTICLE_CREATE,
+    [getArticleEditRoute(':id')]: AppRoutes.ARTICLE_EDIT,
+    [getAdminPanelRoute()]: AppRoutes.ADMIN_PANEL,
+    [getSettingsRoute()]: AppRoutes.SETTINGS,
+    [getForbiddenRoute()]: AppRoutes.FORBIDDEN,
+    [getNotFoundRoute()]: AppRoutes.NOT_FOUND,
+}

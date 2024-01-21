@@ -1,5 +1,6 @@
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/consts/theme'
+import FeatureFlagsDecorator from '@/shared/config/storybook/FeatureFlagsDecorator'
 
 import ListBox from './ListBox'
 
@@ -34,25 +35,40 @@ const args = {
 
 export const Primary: Story = {
     args,
-    decorators: [ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }
 
 export const TopLeft: Story = {
     args: { ...args, direction: 'topLeft' },
-    decorators: [ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }
 
 export const TopRight: Story = {
     args: { ...args, direction: 'topRight' },
-    decorators: [ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }
 
 export const BottomLeft: Story = {
     args: { ...args, direction: 'bottomLeft' },
-    decorators: [ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }
 
 export const BottomRight: Story = {
     args: { ...args, direction: 'bottomRight' },
-    decorators: [ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true })],
+    decorators: [
+        FeatureFlagsDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, { isAppRedesigned: true }),
+    ],
 }

@@ -16,7 +16,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 type CardVariant = 'normal' | 'outline' | 'light'
 
 type CardPadding = '0' | '8' | '16' | '24'
-type CardBorder = 'borderNormal' | 'borderRound'
+type CardBorder = 'borderNormal' | 'borderRound' | 'borderRoundPartial'
 
 const cardPaddingClassMapper: Record<CardPadding, string> = {
     0: styles.padding0,

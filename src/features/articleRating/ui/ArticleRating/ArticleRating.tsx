@@ -4,7 +4,9 @@ import { useSelector } from 'react-redux'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Rating } from '@/entities/Rating'
 import { getUserAuthData } from '@/entities/User'
-import { Skeleton } from '@/shared/ui/deprecated'
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
+import { Skeleton } from '@/shared/ui/redesigned'
 
 import {
     useGetArticleRatingQuery,
@@ -55,7 +57,13 @@ const ArticleRating: FC<ArticleRatingProps> = memo(props => {
     )
 
     if (isLoading) {
-        return <Skeleton width="100%" height="124px" />
+        return (
+            <ToggleFeature
+                featureFlag="isAppRedesigned"
+                onDisabled={<SkeletonDeprecated width="100%" height="124px" />}
+                onEnabled={<Skeleton width="100%" height="124px" />}
+            />
+        )
     }
 
     const mods = {}

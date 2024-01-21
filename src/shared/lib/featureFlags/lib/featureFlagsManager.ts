@@ -1,6 +1,17 @@
+import { LOCAL_STORAGE_UI_VERSION } from '@/shared/consts/localStorageKeys'
+import { UiInterfaceVersion } from '@/shared/types'
+
 import { type FeatureFlags } from '../../../types/featureFlags'
 
-let featureFlags: FeatureFlags
+const defaultFeatureFlags: Partial<FeatureFlags> = {
+    isAppRedesigned: localStorage.getItem(LOCAL_STORAGE_UI_VERSION) === UiInterfaceVersion.LATEST,
+}
+
+let featureFlags: Partial<FeatureFlags> = {
+    ...defaultFeatureFlags,
+}
+
+console.log({ featureFlags })
 
 export const setFeatureFlags = (ff?: FeatureFlags) => {
     if (ff) {
