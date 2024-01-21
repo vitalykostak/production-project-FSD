@@ -9,7 +9,7 @@ void i18n
     .use(initReactI18next) // bind react-i18next to the instance
     .init({
         fallbackLng: 'en',
-        debug: IS_DEV,
+        debug: false,
 
         interpolation: {
             escapeValue: false, // not needed for react!!

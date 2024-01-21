@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { Button, ButtonTheme } from '@/shared/ui/deprecated'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { LanguageSwitcher } from '@/features/LanguageSwitcher'
-import { ToggleFeature, toggleFeature } from '@/shared/lib/featureFlags'
+import { ToggleFeature } from '@/shared/lib/featureFlags'
 import { AppLogo, Icon, VStack } from '@/shared/ui/redesigned'
 import { ButtonSize } from '@/shared/ui/deprecated/Button/Button'
 import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg'
@@ -110,13 +110,6 @@ const SidebarRedesigned: FC<SidebarProps> = memo(({ className }) => {
 })
 
 const Sidebar: FC<SidebarProps> = memo(props => {
-    console.log(
-        toggleFeature({
-            featureFlag: 'isAppRedesigned',
-            onDisabled: () => false,
-            onEnabled: () => true,
-        }),
-    )
     return (
         <ToggleFeature
             featureFlag="isAppRedesigned"

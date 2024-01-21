@@ -24,7 +24,9 @@ const Popover: FC<PopoverProps> = props => {
 
     return (
         <HPopover className={classNames(popupStyles.Popup, mods, additionsClasses)}>
-            <HPopover.Button className={styles.trigger}>{trigger}</HPopover.Button>
+            <HPopover.Button as="div" className={styles.trigger}>
+                {trigger}
+            </HPopover.Button>
             <HPopover.Panel className={classNames(styles.panel, {}, [popupStyles[direction]])}>
                 {children}
             </HPopover.Panel>

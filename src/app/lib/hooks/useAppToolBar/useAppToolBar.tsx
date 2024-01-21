@@ -6,7 +6,7 @@ import { ScrollToTopBar } from '@/widgets/ScrollToTopBar'
 
 export const useAppToolBar = () => {
     const currentAppRoute = useCurrentAppRoute()
-    console.log({ currentAppRoute })
+
     if (!currentAppRoute) {
         return undefined
     }

@@ -11,8 +11,6 @@ let featureFlags: Partial<FeatureFlags> = {
     ...defaultFeatureFlags,
 }
 
-console.log({ featureFlags })
-
 export const setFeatureFlags = (ff?: FeatureFlags) => {
     if (ff) {
         featureFlags = ff
