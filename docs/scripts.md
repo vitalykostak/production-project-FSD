@@ -1,0 +1,26 @@
+### Scripts
+
+`npm run start:dev-server` - Start the project backend.
+`npm run start` - Start the project frontend using webpack (backend not run).
+`npm run start:dev` - Launch the project using webpack (frontend and backend).
+`npm run start:vite` - Start the project frontend using vite (backend not run).
+`npm run start:vite:dev` - Launch the project using vite (frontend and backend).
+`npm run build:prod` - Create a production build (webpack).
+`npm run build:dev` - Create a development build (webpack).
+`npm run lint:ts` - Run linting on `.ts .tsx` files.
+`npm run lint:ts:fix` - Run linting and fix on `.ts .tsx` files
+`npm run lint:scss` - Run linting on styles files `.scss`
+`npm run lint:scss:fix` - Run linting and fix on styles files `.scss`
+`npm run test:unit` - Run Jest unit tests - `**/*.test.{ts,tsx}`
+`npm run test:ui` - Run UI screenshot tests.
+`npm run test:ui:husky` - Run UI screenshot tests on pre-push hook.
+`npm run test:ui:ok` - Approve all UI differences.
+`npm run test:ui:ci` - Run CI UI screenshot tests.
+`npm run test:ui:report` - Build UI screenshot test report to compare differences.
+`npm run format:ts` - Run prettier on `.ts .tsx` files.
+`npm run format:ts:fix` - Run prettier with fixing on `.ts .tsx` files.
+`npm run storybook` - Run storybook
+`npm run storybook:build` - Build storybook
+`npm run generate-feature-slice -- [layer] [slice]` - Automatically create a new slice.
+`npm run remove-feature-flag -- [featureFlagName] [requiredFlagState]` - Automatically remove a feature flag.
+`npm run cy:run` - Run end-to-end tests.
