@@ -1,8 +1,8 @@
 ### Launch project
 
-`npm ci` - Install project dependencies.
-`npm run start:dev` - Start the project in the development environment using webpack.
-`npm run start:vite:dev` - Start the project in the development environment using vite.(fastest HMR)
+-   `npm ci` - Install project dependencies.
+-   `npm run start:dev` - Start the project in the development environment using webpack.
+-   `npm run start:vite:dev` - Start the project in the development environment using vite.(fastest HMR)
 
 ### Architecture
 
