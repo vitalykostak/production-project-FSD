@@ -37,6 +37,10 @@ const NotificationList: FC<NotificationListProps> = memo(props => {
         onEnabled: () => SkeletonRedesigned,
     })
 
+    if (error) {
+        return null
+    }
+
     if (isLoading) {
         return (
             <VStack
